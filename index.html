@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Well Placed — A Curated Guide to Miami Wellness</title>
+<meta name="description" content="A curated guide of the spaces, gatherings, and groups focused on health and wellness in Miami.">
+<meta property="og:title" content="The Well Placed">
+<meta property="og:description" content="A curated guide of the spaces, gatherings, and groups focused on health and wellness in Miami.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&family=Great+Vibes&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+  :root {
+    --sand: #f7f3ec;
+    --ink: #1f2a24;
+    --sage: #5c7263;
+    --sage-dark: #46594d;
+    --clay: #c8795a;
+    --line: rgba(31, 42, 36, 0.12);
+    --card: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--sand);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .wrap-narrow { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+  .hero { padding: 72px 0 56px; text-align: center; }
+  .lockup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .lockup .lk-the {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+    letter-spacing: 0.3em;
+    text-indent: 0.3em;
+    color: var(--sage-dark);
+  }
+  .lockup .lk-well {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3rem, 9vw, 4rem);
+    line-height: 0.9;
+    color: var(--clay);
+    margin: 4px 0 -0.28em;
+    position: relative;
+    z-index: 1;
+  }
+  .lockup .lk-placed {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 8vw, 3.6rem);
+    letter-spacing: 0.02em;
+    line-height: 1.05;
+    color: var(--ink);
+  }
+  .lockup .lk-miami {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.45em;
+    text-indent: 0.45em;
+    color: var(--sage-dark);
+    margin-top: 12px;
+  }
+  .lede {
+    font-size: 1.125rem;
+    color: rgba(31, 42, 36, 0.75);
+    max-width: 54ch;
+    margin: 0 auto 40px;
+  }
+
+  .signup form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .signup input[type="email"] {
+    flex: 1 1 260px;
+    max-width: 340px;
+    padding: 14px 18px;
+    font: 500 0.95rem 'Inter', sans-serif;
+    color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .signup input[type="email"]:focus { border-color: var(--sage); }
+  .signup button {
+    padding: 14px 26px;
+    font: 600 0.95rem 'Inter', sans-serif;
+    color: #fff;
+    background: var(--sage-dark);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .signup button:hover { background: var(--ink); }
+  .fine { font-size: 0.8rem; color: rgba(31, 42, 36, 0.5); margin-top: 12px; }
+
+  .guide { padding: 56px 0 72px; border-top: 1px solid var(--line); }
+  .guide-head { text-align: center; margin-bottom: 32px; }
+  .guide-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(1.7rem, 4vw, 2.2rem);
+  }
+  .guide-head p { color: rgba(31, 42, 36, 0.65); font-size: 0.95rem; margin-top: 6px; }
+
+  .tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .tab {
+    font: 600 0.9rem 'Inter', sans-serif;
+    padding: 10px 22px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--sage-dark);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .tab.active { background: var(--sage-dark); color: #fff; border-color: var(--sage-dark); }
+  .tab:not(.active):hover { border-color: var(--sage-dark); }
+
+  .filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
+  .filters select {
+    font: 500 0.85rem 'Inter', sans-serif;
+    padding: 9px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--ink);
+    cursor: pointer;
+    outline: none;
+  }
+  .count { text-align: center; font-size: 0.8rem; color: rgba(31,42,36,0.5); margin-bottom: 20px; }
+
+  .tab svg, .card h3 svg {
+    width: 14px; height: 14px;
+    fill: none; stroke: currentColor;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    vertical-align: -2px; margin-right: 7px;
+  }
+  .card h3 svg { color: var(--clay); width: 15px; height: 15px; }
+  #show-more {
+    font: 600 0.9rem 'Inter', sans-serif;
+    padding: 12px 32px;
+    border: 1px solid var(--sage-dark);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--sage-dark);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  #show-more:hover { background: var(--sage-dark); color: #fff; }
+
+  .view-toggle { display: none; justify-content: center; gap: 0; margin-bottom: 20px; }
+  .view-toggle.show { display: flex; }
+  .vbtn {
+    font: 600 0.82rem 'Inter', sans-serif;
+    padding: 8px 20px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--sage-dark);
+    cursor: pointer;
+  }
+  .vbtn:first-child { border-radius: 8px 0 0 8px; }
+  .vbtn:last-child { border-radius: 0 8px 8px 0; border-left: none; }
+  .vbtn.active { background: var(--sage-dark); color: #fff; border-color: var(--sage-dark); }
+  #map-wrap { display: none; }
+  #map-wrap.show { display: block; }
+  #map {
+    height: 520px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    z-index: 1;
+  }
+  .unmapped {
+    font-size: 0.78rem;
+    color: rgba(31,42,36,0.5);
+    text-align: center;
+    margin-top: 12px;
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mk svg { display: block; filter: drop-shadow(0 1px 2px rgba(31,42,36,0.35)); }
+  .leaflet-div-icon { background: none; border: none; }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 14px;
+    margin-top: 16px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(31,42,36,0.7);
+  }
+  .legend-item svg { width: 18px; height: 18px; display: block; }
+  .leaflet-popup-content { font-family: 'Inter', sans-serif; font-size: 0.82rem; line-height: 1.5; margin: 12px 14px; }
+  .leaflet-popup-content .p-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 2px; }
+  .leaflet-popup-content .p-name a { color: var(--ink); text-decoration: none; }
+  .leaflet-popup-content .p-hood { font-size: 0.72rem; font-weight: 600; color: #9c5236; margin-bottom: 6px; }
+  .leaflet-popup-content .p-dir { font-weight: 600; color: var(--sage-dark); text-decoration: none; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .card.seen { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .card { opacity: 1; transform: none; transition: none; }
+  }
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+  .card h3 a { color: var(--ink); text-decoration: none; }
+  .card h3 a:hover { color: var(--clay); }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(92, 114, 99, 0.1);
+    color: var(--sage-dark);
+  }
+  .pill.hood { background: rgba(200, 121, 90, 0.12); color: #9c5236; }
+  .pill.cost { background: rgba(31, 42, 36, 0.06); color: rgba(31,42,36,0.65); }
+  .note { font-size: 0.88rem; color: rgba(31, 42, 36, 0.75); flex: 1; }
+  .sched { font-size: 0.82rem; font-weight: 600; color: var(--sage-dark); }
+  .meet { font-size: 0.8rem; color: rgba(31, 42, 36, 0.55); }
+  details.move { font-size: 0.82rem; color: rgba(31,42,36,0.7); }
+  details.move summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--clay);
+    list-style: none;
+    font-size: 0.8rem;
+  }
+  details.move summary::-webkit-details-marker { display: none; }
+  details.move summary::before { content: "→ "; }
+  details.move[open] summary::before { content: "↓ "; }
+  details.move p { margin-top: 6px; }
+  .card .link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--sage-dark);
+    text-decoration: none;
+  }
+  .card .link:hover { color: var(--clay); }
+  .empty { text-align: center; color: rgba(31,42,36,0.5); padding: 40px 0; grid-column: 1 / -1; }
+
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(247, 243, 236, 0.93);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    z-index: 500;
+    transform: translateY(-105%);
+    transition: transform 0.3s ease;
+  }
+  .nav.show { transform: none; }
+  .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 13px 24px;
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .nav a {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .nav a:hover { color: var(--clay); }
+
+  .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    font: 600 0.92rem 'Inter', sans-serif;
+    padding: 13px 30px;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.15s;
+    border: 1px solid var(--sage-dark);
+  }
+  .btn-primary { background: var(--sage-dark); color: #fff; }
+  .btn-primary:hover { background: var(--ink); border-color: var(--ink); }
+  .btn-ghost { background: transparent; color: var(--sage-dark); }
+  .btn-ghost:hover { background: rgba(92, 114, 99, 0.09); }
+
+  .nudge {
+    margin-top: 40px;
+    padding: 22px 26px;
+    border: 1px dashed rgba(200, 121, 90, 0.5);
+    border-radius: 14px;
+    text-align: center;
+    font-size: 0.92rem;
+    color: rgba(31, 42, 36, 0.75);
+  }
+  .nudge a { color: var(--clay); font-weight: 600; text-decoration: none; }
+  .nudge a:hover { text-decoration: underline; }
+
+  .news { padding: 76px 0; border-top: 1px solid var(--line); }
+  .news-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 44px 36px;
+    text-align: center;
+  }
+  .news-kicker {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 14px;
+  }
+  .news h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3.8vw, 2.1rem);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .news h2 em { font-family: 'Great Vibes', cursive; font-style: normal; color: var(--clay); font-size: 1.25em; }
+  .news-lede { color: rgba(31, 42, 36, 0.72); max-width: 52ch; margin: 0 auto 30px; }
+  .news-what {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 18px;
+    text-align: left;
+    margin: 0 auto 34px;
+    max-width: 640px;
+  }
+  .news-what li { list-style: none; font-size: 0.86rem; color: rgba(31, 42, 36, 0.72); }
+  .news-what strong {
+    display: block;
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+  }
+  .news-what li::before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--clay);
+    margin-bottom: 10px;
+  }
+  .news-read {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--sage-dark);
+    text-decoration: none;
+  }
+  .news-read:hover { color: var(--clay); }
+
+  footer { border-top: 1px solid var(--line); padding: 32px 0 48px; }
+  footer .wrap-narrow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .foot-links { display: flex; gap: 20px; }
+  .foot-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--sage-dark);
+    text-decoration: none;
+  }
+  .foot-links a:hover { text-decoration: underline; }
+  .copyright { font-size: 0.8rem; color: rgba(31, 42, 36, 0.45); }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#guide">The Guide</a>
+    <a href="#newsletter">The Newsletter</a>
+    <a href="https://thewellplaced.substack.com/" target="_blank" rel="noopener">Substack</a>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="wrap-narrow">
+      <h1 class="lockup" aria-label="The Well Placed, Miami">
+        <span class="lk-the">THE</span>
+        <span class="lk-well">well</span>
+        <span class="lk-placed">PLACED</span>
+        <span class="lk-miami">MIAMI</span>
+      </h1>
+      <p class="lede">A curated guide of the spaces, gatherings, and groups focused on health and wellness in Miami</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#guide">Explore the guide</a>
+        <a class="btn btn-ghost" href="#newsletter">Get the newsletter</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide" id="guide">
+    <div class="wrap">
+      <div class="guide-head">
+        <h2>The Guide</h2>
+        <p>Every entry vetted. Every note written by a human who went.</p>
+      </div>
+
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="places" role="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-7.6-7-12a7 7 0 0 1 14 0c0 4.4-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Spaces</button>
+        <button class="tab" data-tab="groups" role="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.8.3 5 2.1 5 4.8"/></svg>Groups</button>
+        <button class="tab" data-tab="events" role="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M4 10h16M8 3v5M16 3v5"/></svg>Events</button>
+      </div>
+
+      <div class="filters">
+        <select id="f-cat" aria-label="Filter by category"><option value="">All categories</option></select>
+        <select id="f-hood" aria-label="Filter by neighborhood"><option value="">All neighborhoods</option></select>
+        <select id="f-gf" aria-label="Filter by good for"><option value="">Good for…</option></select>
+        <select id="f-vibe" aria-label="Filter by vibe"><option value="">Any vibe</option></select>
+        <select id="f-day" aria-label="Filter by day"><option value="">Any day</option></select>
+        <select id="f-cost" aria-label="Filter by cost">
+          <option value="">Any cost</option>
+          <option>Free</option>
+          <option>$ (Under $25)</option>
+          <option>$$ ($25-$50)</option>
+          <option>$$$ ($50+)</option>
+        </select>
+      </div>
+      <div class="view-toggle" id="view-toggle">
+        <button class="vbtn active" data-view="list">List</button>
+        <button class="vbtn" data-view="map">Map</button>
+      </div>
+      <p class="count" id="count"></p>
+
+      <div class="cards" id="cards"></div>
+      <div style="text-align:center; margin-top: 24px;">
+        <button id="show-more" style="display:none;">Show more</button>
+      </div>
+      <div id="map-wrap">
+        <div id="map"></div>
+        <div class="legend" id="legend"></div>
+        <p class="unmapped" id="unmapped"></p>
+      </div>
+
+      <p class="nudge">
+        This guide changes every week — new spaces, new crews, new reasons to leave the house.
+        <a href="#newsletter">Get the additions in your inbox →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="news" id="newsletter">
+    <div class="wrap-narrow">
+      <div class="news-card">
+        <span class="news-kicker">The Newsletter</span>
+        <h2>The <em>well</em> placed, in your inbox</h2>
+        <p class="news-lede">The guide tells you where. The newsletter tells you what changed — the space worth the drive across the causeway, the run club that quietly became 300 people, the spa-month pricing that ends Friday.</p>
+
+        <ul class="news-what">
+          <li><strong>What's new</strong>What got added to the guide this week, and why it earned the spot.</li>
+          <li><strong>First-timer moves</strong>How to walk into a place like you've been going for years.</li>
+          <li><strong>What's on</strong>The gatherings and group sessions worth planning your week around.</li>
+        </ul>
+
+        <div class="signup">
+          <form id="substack-form">
+            <input type="email" name="email" id="sub-email" placeholder="you@email.com" required aria-label="Email address">
+            <button type="submit">Subscribe</button>
+          </form>
+          <p class="fine">Free. No spam, no affiliate links, no pay-to-play listings — ever.</p>
+        </div>
+
+        <a class="news-read" href="https://thewellplaced.substack.com/" target="_blank" rel="noopener">Read it on Substack →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap-narrow">
+    <div class="foot-links">
+      <a href="#guide">The Guide</a>
+      <a href="#newsletter">Newsletter</a>
+      <a href="https://thewellplaced.substack.com/" id="newsletter-link" target="_blank" rel="noopener">Substack</a>
+      <!-- Update Instagram href when the handle is live -->
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="mailto:brianhain@gmail.com">Contact</a>
+    </div>
+    <div class="copyright">© 2026 The Well Placed · Miami, FL</div>
+  </div>
+</footer>
+
+<script>
+// ONE-LINE SWAP: set to your Substack URL once the publication exists.
+var SUBSTACK_URL = "https://thewellplaced.substack.com";
+
+var PLACES = [
+{n:"Ahana Yoga",gf:["First-Timers", "Solo Reset"],v:["Conscious/Chill"],gm:"Ahana+Yoga+Miami+Design+District",c:["Yoga/Pilates","Breathwork/Meditation"],h:"Midtown/Design District",$:"",note:"The Design District's home studio — power vinyasa to restorative, with breath and present-moment awareness built into everything they run.",move:"Start with a Power Vinyasa if you want work, Restorative if you want repair — they run five distinct class types, so read descriptions before booking.",w:"https://www.ahanayoga.com"},
+{n:"Anatomy Midtown",gf:["Serious Training"],v:["Premium/Luxury", "High-Energy"],gm:"Anatomy+Midtown+3415+NE+2nd+Ave+Miami",ll:[25.80869,-80.19114],c:["Strength"],h:"Midtown/Design District",$:"$$$ ($50+)",note:"Miami's flagship luxury gym — where serious lifters and the see-and-be-seen crowd coexist. The equipment and coaching justify the price; the scene is the bonus or the tax, depending on your mood.",move:"Buy the $100 day pass at the front desk (photo ID required) and take a class — group programming is where Anatomy separates from other luxury gyms.",w:"https://anatomyfitness.com"},
+{n:"Banana Berry",gf:["Post-Workout Fuel", "Family-Friendly"],v:["Conscious/Chill", "Free/Community"],gm:"Banana+Berry+305+Alcazar+Ave+Coral+Gables",ll:[25.75291,-80.26094],c:["Cafe/Nutrition"],h:"Gables",$:"$ (Under $25)",note:"Organic açaí and pitaya bowls a block off Miracle Mile — the post-workout stop that doesn't feel like a chore.",move:"Açaí bowl with extra granola — the order the regulars default to.",w:"https://www.banana-berry.com/"},
+{n:"Break Free Movement",gf:["First-Timers", "Community/Social"],v:["Premium/Luxury", "Social Fitness"],gm:"Break+Free+Movement+4203+Ponce+de+Leon+Blvd+Coral+Gables",ll:[25.73313,-80.25841],c:["Yoga/Pilates","Strength"],h:"Gables",$:"$$ ($25-$50)",note:"Hot yoga, mat sculpt, and aerial fitness under one roof — a full cross-training menu in Coral Gables.",move:"Start with their mobility-meets-strength fusion class — it's the clearest expression of what the studio does differently.",w:"https://www.thebreakfreemovement.com/"},
+{n:"BÜNDA Coral Gables",gf:["Serious Training", "Community/Social"],v:["High-Energy", "Social Fitness"],gm:"BUNDA+25+Merrick+Way+Coral+Gables",ll:[25.75048,-80.2552],c:["Strength"],h:"Gables",$:"$$ ($25-$50)",note:"Glute-focused branding, genuinely tough programming on Merrick Way.",move:"Book the signature BÜNDA class and arrive 10 minutes early for the equipment rundown — the room moves fast.",w:"https://www.trainbunda.com/locations/coral-gables/"},
+{n:"Carillon Miami Wellness Resort",gf:["Recovery Day", "Solo Reset", "Date Spot"],v:["Premium/Luxury", "Conscious/Chill"],gm:"Carillon+Miami+Wellness+Resort+6801+Collins+Ave+Miami+Beach",ll:[25.85326,-80.12033],c:["Sauna/Bathhouse","Recovery/Plunge"],h:"North Beach",$:"$$$ ($50+)",note:"The largest spa on the Eastern Seaboard — 70,000 sq ft of thermal circuit, including Miami's only Arctic igloo. This is the deep end of recovery.",move:"Book a 50-min massage Mon–Fri ($159) — it includes full Thermal Hydrotherapy Circuit, cabana pool, and beach access.",w:"https://www.carillonhotel.com"},
+{n:"Casa Vinyasa",gf:["First-Timers", "Solo Reset"],v:["Conscious/Chill", "Social Fitness"],gm:"Casa+Vinyasa+1430+S+Dixie+Hwy+Coral+Gables",ll:[25.71039,-80.28189],c:["Yoga/Pilates"],h:"Gables",$:"$$ ($25-$50)",note:"Infrared-heated, home-like, and built by a teacher who wanted the Gables to have real community yoga.",move:"Classic vinyasa — check the new-student intro pricing before buying single classes.",w:"https://casavinyasamiami.com/"},
+{n:"Centner Wellness Coral Gables",gf:["Recovery Day", "Solo Reset"],v:["Premium/Luxury"],gm:"Centner+Wellness+3000+Coral+Way+Miami",ll:[25.75015,-80.24279],c:["Recovery/Plunge"],h:"Gables",$:"$$$ ($50+)",note:"A full contrast-therapy suite as one piece of a much bigger longevity operation.",move:"Book a consult first — the recovery menu is deep, and staff will sequence the right stack instead of letting you guess.",w:"https://coralgables.centnerwellness.com/"},
+{n:"Crandon Park",gf:["Family-Friendly", "Recovery Day", "Serious Training"],v:["Free/Community"],gm:"Crandon+Park+6747+Crandon+Blvd+Key+Biscayne",ll:[25.708,-80.155],approx:1,c:["Outdoor/Parks","Swim","Racquet/Padel"],h:"Key Biscayne",$:"Free",note:"808 acres with a two-mile Atlantic beach, running trails, and the tennis center that used to host the Miami Open. A full training day disguised as a beach trip.",move:"Early-morning beach run on the hard-packed sand at low tide — two miles out, two back, then swim. Parking fee applies but entry is free.",w:"https://www.miamidade.gov/parks/crandon.asp"},
+{n:"Cryo Miami",gf:["Recovery Day"],v:["Premium/Luxury"],gm:"Cryo+Miami+430+S+Dixie+Hwy+Coral+Gables",ll:[25.72577,-80.26249],c:["Recovery/Plunge"],h:"Gables",$:"$$ ($25-$50)",note:"Clean, private, and quiet — cryotherapy and cold plunge without the wellness-club theater.",move:"First cryo session takes three minutes — pair it with compression to make the visit worth the drive.",w:"https://www.cryo-miami.com/"},
+{n:"David T. Kennedy Park",gf:["Community/Social", "Family-Friendly", "Serious Training"],v:["Free/Community", "Social Fitness"],gm:"David+T+Kennedy+Park+2400+S+Bayshore+Dr+Miami",ll:[25.73542,-80.2292],c:["Outdoor/Parks","Run/Cardio","Strength"],h:"Coconut Grove",$:"Free",note:"The Grove's outdoor gym on the bay — rubberized running trail, calisthenics stations, and a resistance-equipment park that's been building Grove bodies for free for decades.",move:"Loop the joint-friendly recycled-rubber trail, then hit the outdoor gym. Finish with the bay view.",w:""},
+{n:"Fight Sports Club Miami",gf:["Serious Training", "Community/Social"],v:["High-Energy", "Social Fitness"],gm:"Fight+Sports+Club+339+NE+61st+St+Miami",ll:[25.83253,-80.18939],c:["Strength"],h:"Little River",$:"$$ ($25-$50)",note:"Roberto 'Cyborg' Abreu's world-champion technique made beginner-friendly — community over intimidation.",move:"Book a fundamentals striking or BJJ class — the first session tells you if the culture fits.",w:"https://wellhub.com/en-us/search/partners/fight-sports-club-miami-little-river/"},
+{n:"Flamingo Park Aquatic Center",gf:["Serious Training", "Solo Reset", "Family-Friendly"],v:["Free/Community"],gm:"Flamingo+Park+Aquatic+Center+11th+St+Jefferson+Ave+Miami+Beach",ll:[25.783,-80.141],approx:1,c:["Swim"],h:"Miami Beach",$:"$ (Under $25)",note:"An 8-lane heated lap pool in the middle of South Beach that most visitors never find — the serious swimmer's answer to the ocean's chop.",move:"Hit the 6am lap swim — water held at 79–84°F year-round. Non-residents ~$19/session or 10-punch pass for $105.",w:"https://www.miamibeachfl.gov/city-hall/parks-and-recreation/sports-centers-fields-and-courts/aquatics/flamingo-and-normandy-pools/"},
+{n:"FootWorks",gf:["Community/Social", "First-Timers", "Serious Training"],v:["Free/Community", "Social Fitness"],gm:"FootWorks+5724+Sunset+Dr+South+Miami",ll:[25.70437,-80.28589],c:["Run/Cardio"],h:"South Miami/Pinecrest",$:"Free",note:"A running store that's really a community institution — free group runs twice a week for decades, plus marathon training programs that have built half of Miami's running culture.",move:"Show up Tuesday or Thursday at 6:30pm for the free fun run — all paces welcome. Thursday ends with group dinner at Sports Grill.",w:"https://footworksmiami.com"},
+{n:"GreenG Juice Bar",gf:["Post-Workout Fuel"],v:["Conscious/Chill", "Free/Community"],gm:"GreenG+Juice+Bar+222+NE+25th+St+Miami",ll:[25.80081,-80.1905],c:["Cafe/Nutrition"],h:"Wynwood/Edgewater",$:"$ (Under $25)",note:"Edgewater's cold-press and açaí staple since 2014 — no rebrand needed.",move:"Cold-pressed green juice plus a protein smoothie — built for the post-workout window.",w:"https://greengjuicebar.com/"},
+{n:"Hauser Bayside Pilates",gf:["First-Timers", "Solo Reset"],v:["Conscious/Chill", "Premium/Luxury"],gm:"Hauser+Bayside+Pilates+1819+West+Ave+Miami+Beach",ll:[25.79382,-80.1425],c:["Yoga/Pilates"],h:"Miami Beach",$:"$$ ($25-$50)",note:"South Beach's only fully certified Stott studio — old-school technique over Instagram flash.",move:"Book a beginner-friendly reformer session and say it's your first time — small classes mean real form coaching.",w:"http://www.hauserpilates.com/"},
+{n:"JETSET Pilates Sunset Harbour",gf:["Serious Training", "First-Timers"],v:["Premium/Luxury", "High-Energy"],gm:"JETSET+Pilates+1860+West+Ave+Miami+Beach",ll:[25.79421,-80.14263],c:["Yoga/Pilates","Strength"],h:"Miami Beach",$:"$$ ($25-$50)",note:"50 minutes of reformer-meets-cardio in the heart of Sunset Harbour's fitness strip.",move:"Book the 50-minute signature reformer class and arrive 15 early — beginner spots go quickly at peak times.",w:"https://jetsetpilates.com/fl/sunset-harbour/"},
+{n:"Just Juice MIA",gf:["Post-Workout Fuel"],v:["Free/Community", "Conscious/Chill"],gm:"Just+Juice+MIA+201+NW+37th+St+Miami",ll:[25.81111,-80.1995],c:["Cafe/Nutrition"],h:"Wynwood/Edgewater",$:"$ (Under $25)",note:"Cold-pressed juices, wellness shots, and dragonfruit bowls on Wynwood's north edge — a real neighborhood spot, not a chain.",move:"Fresh-pressed juice and an açaí — quick counter stop after a Wynwood or Design District workout.",w:"https://www.justjuicemia.com/"},
+{n:"LEGACY Little River",gf:["Serious Training"],v:["High-Energy", "Social Fitness"],gm:"LEGACY+7400+NW+Miami+Ct+Miami",ll:[25.84306,-80.1973],c:["Strength"],h:"Little River",$:"$$ ($25-$50)",note:"12,000-square-foot flagship built around partner interval training — HIIT with a community backbone.",move:"Book a coached small-group session — this is a training gym with programming, not a machines-and-headphones gym.",w:"https://legacyfit.com/"},
+{n:"Life Time Gables",gf:["Serious Training", "Family-Friendly"],v:["Premium/Luxury", "Social Fitness"],gm:"Life+Time+237+S+Dixie+Hwy+Coral+Gables",ll:[25.72806,-80.25958],c:["Strength"],h:"Gables",$:"$$$ ($50+)",note:"Full-service athletic club on South Dixie — also the Wednesday-night starting line for Gables Run Club.",move:"Take the tour before joining — the pool deck, recovery amenities, and class breadth are what justify the price.",w:"https://www.lifetime.life/"},
+{n:"Margaret Pace Park",gf:["Community/Social", "Serious Training", "Family-Friendly"],v:["Free/Community", "High-Energy"],gm:"Margaret+Pace+Park+1745+N+Bayshore+Dr+Miami",ll:[25.79153,-80.18703],c:["Outdoor/Parks","Strength","Racquet/Padel"],h:"Wynwood/Edgewater",$:"Free",note:"Eight bayfront acres in Edgewater with a 27-feature calisthenics rig — the most complete free outdoor training setup in the urban core.",move:"Work the fitness rig — pull-up and parallel bars, rope climb, plyo steps, levers, dips — stations run along the jogging path.",w:""},
+{n:"Matheson Hammock Park",gf:["Family-Friendly", "Recovery Day", "Date Spot"],v:["Free/Community", "Conscious/Chill"],gm:"Matheson+Hammock+Park+9610+Old+Cutler+Rd+Coral+Gables",ll:[25.678,-80.263],approx:1,c:["Outdoor/Parks","Swim"],h:"Gables",$:"Free",note:"The man-made atoll pool flushed by the tide is one of Miami's genuinely unique swims — salt water, skyline views, and mangroves on Old Cutler.",move:"Swim the atoll pool at high tide, then rent a kayak or SUP from the PADL kiosk and paddle the mangrove channels.",w:"https://www.miamidade.gov/parks/matheson-hammock.asp"},
+{n:"Miami Ice Club",gf:["Community/Social", "Recovery Day"],v:["Social Fitness", "Conscious/Chill"],gm:"Miami+Ice+Club+Little+River+Miami",c:["Recovery/Plunge"],h:"Little River",$:"$$ ($25-$50)",note:"Wim Hof-certified breathwork and ice baths, based in Little River but roaming to Wynwood, Brickell, and South Beach.",move:"Follow their Instagram and RSVP to the next session — arrive early for the guided breathwork before the water.",w:"https://www.miamiiceclub.com/"},
+{n:"Mimi Yoga & Pilates (Coconut Grove)",gf:["First-Timers", "Solo Reset"],v:["Premium/Luxury", "Conscious/Chill"],gm:"Mimi+Yoga+2829+Bird+Ave+Miami",ll:[25.73555,-80.2391],c:["Yoga/Pilates"],h:"Coconut Grove",$:"$$ ($25-$50)",note:"Infrared-heated flows in a design-forward space — Mimi's second location after Wynwood proved the concept.",move:"Mat class first, reformer once you know the style.",w:"https://mimiyoga.com/"},
+{n:"Mimi Yoga & Pilates (Wynwood)",gf:["First-Timers", "Solo Reset"],v:["Premium/Luxury", "Conscious/Chill"],gm:"Mimi+Yoga+278+NW+27th+Street+Miami",ll:[25.80206,-80.20071],c:["Yoga/Pilates"],h:"Wynwood/Edgewater",$:"$$ ($25-$50)",note:"The original — an instant hit for a design that photographs as well as it stretches you.",move:"Start with a mat class, move to reformer after a couple of visits — the progression is the point here.",w:"https://mimiyoga.com/"},
+{n:"Mood LifeClub",gf:["First-Timers", "Community/Social"],v:["Social Fitness", "Conscious/Chill"],gm:"Mood+LifeClub+Key+Biscayne",c:["Yoga/Pilates","Strength"],h:"Key Biscayne",$:"",note:"Key Biscayne's boutique everything-studio — vinyasa, aerial, barre, HIIT, and trampoline in groups capped at eight.",move:"Classes cap at 8, so book ahead — try aerial yoga if you've never hung upside down over the ocean breeze.",w:""},
+{n:"Normandy Isle Park & Pool",gf:["Solo Reset", "Family-Friendly", "Serious Training"],v:["Free/Community"],gm:"Normandy+Isle+Park+Pool+Miami+Beach",ll:[25.85189,-80.13745],c:["Swim"],h:"North Beach",$:"",note:"North Beach's neighborhood lap pool — four heated lanes, no scene, no crowds. The quiet counterpart to Flamingo Park.",move:"Come for a weekday morning swim — 4 lanes at 79–84°F year-round, plus a kids' water playground.",w:"https://www.miamibeachfl.gov/city-hall/parks-and-recreation/sports-centers-fields-and-courts/aquatics/flamingo-and-normandy-pools/"},
+{n:"North Shore Open Space Park",gf:["Solo Reset", "Recovery Day", "Family-Friendly"],v:["Free/Community", "Conscious/Chill"],gm:"North+Shore+Open+Space+Park+Miami+Beach",ll:[25.868,-80.12],approx:1,c:["Outdoor/Parks","Run/Cardio"],h:"North Beach",$:"Free",note:"Forty blocks north of the South Beach circus: dune-backed beach, shaded paved paths, and outdoor exercise equipment with the ocean as your gym wall.",move:"Run the paved path through the sea grape canopy, stop at the exercise stations, finish with an ocean dip.",w:""},
+{n:"Om Movement",gf:["Community/Social", "First-Timers"],v:["Conscious/Chill", "Social Fitness"],gm:"Om+Movement+2895+McFarlane+Rd+Coconut+Grove",ll:[25.72735,-80.24134],c:["Yoga/Pilates","Strength"],h:"Coconut Grove",$:"$$ ($25-$50)",note:"Yoga, Pilates, and kettlebells a quarter-mile from Peacock Park, plus a free community class every first Friday.",move:"Book an evening flow — the after-work classes carry the community.",w:"https://www.ommovementstudio.com/"},
+{n:"Open Door Yoga",gf:["First-Timers", "Solo Reset"],v:["Conscious/Chill", "Free/Community"],gm:"Open+Door+Yoga+2801+Florida+Ave+Coconut+Grove",ll:[25.72919,-80.23955],c:["Yoga/Pilates"],h:"Coconut Grove",$:"$$ ($25-$50)",note:"Playful, all-levels, and unpretentious — flow, Yin, and something called 'Funyasa.'",move:"Book ahead — it's a small Grove room — and start with the slower flow.",w:"https://opendooryoga.com/"},
+{n:"Pause Studio Brickell",gf:["Recovery Day", "Solo Reset"],v:["Premium/Luxury", "Conscious/Chill"],gm:"Pause+Studio+25+SW+9th+St+Miami",ll:[25.7655,-80.1938],c:["Recovery/Plunge"],h:"Brickell",$:"$$$ ($50+)",note:"Private infrared sauna, cold plunge, and float therapy — contrast therapy without the locker-room energy.",move:"The sauna + cold plunge circuit is the entry point; add a float once you've done contrast a couple of times.",w:"https://pausestudio.com/brickell/contrast-therapy"},
+{n:"Pause Studio Coral Gables",gf:["Recovery Day", "Solo Reset"],v:["Premium/Luxury", "Conscious/Chill"],gm:"Pause+Studio+111+Palermo+Ave+Coral+Gables",ll:[25.74572,-80.25673],c:["Recovery/Plunge"],h:"Gables",$:"$$$ ($50+)",note:"Same private suite model as Brickell, plus a $35 'Sauna Social' if you want company in the heat.",move:"Sauna + cold plunge circuit first visit, float later.",w:"https://pausestudio.com/locations/coral-gables"},
+{n:"Pilathon (Little River)",gf:["Serious Training"],v:["Premium/Luxury"],gm:"Pilathon+8301+NE+2nd+Ave+Miami",ll:[25.85165,-80.19288],c:["Yoga/Pilates"],h:"Little River",$:"$$$ ($50+)",note:"The Little River outpost of the reformer studio locals keep quiet about.",move:"Take the foundations class before the athletic reformer formats — Pilathon's pace punishes cold starts.",w:"https://pilathon.com/"},
+{n:"Pilathon (Wynwood)",gf:["Serious Training"],v:["Premium/Luxury"],gm:"Pilathon+Cynergi+Building+Wynwood+Miami",c:["Yoga/Pilates"],h:"Wynwood/Edgewater",$:"$$$ ($50+)",note:"Smart, small-format reformer and TRX classes — vibrant energy, serious instruction.",move:"Foundations class first — the athletic formats assume you know the equipment.",w:"https://pilathon.com/wynwood/"},
+{n:"Pinecrest Gardens",gf:["Family-Friendly", "Solo Reset", "Community/Social"],v:["Conscious/Chill", "Free/Community"],gm:"Pinecrest+Gardens+11000+Red+Rd+Pinecrest",ll:[25.66846,-80.28417],c:["Outdoor/Parks"],h:"South Miami/Pinecrest",$:"$ (Under $25)",note:"The old Parrot Jungle grounds turned botanical park — 20 acres of tropical canopy hosting the Sunday farmers market, free garden yoga, and the best slow morning in south Miami-Dade.",move:"Come Sunday: free Vinyasa in the garden 8:30–9:30am, then walk the farmers market for produce and breakfast.",w:"https://www.pinecrestgardens.org"},
+{n:"Pinecrest Pilates",gf:["First-Timers", "Recovery Day"],v:["Conscious/Chill"],gm:"Pinecrest+Pilates+Pinecrest+FL",c:["Yoga/Pilates"],h:"South Miami/Pinecrest",$:"",note:"Serving Pinecrest since 2003 — a privately owned classical studio that predates the reformer boom by two decades. Instruction over aesthetics.",move:"Call ahead — this is an appointment-based studio, and they'll match you to the right session.",w:"https://pinecrestpilates.com"},
+{n:"Polestar Pilates — Dadeland",gf:["Recovery Day", "First-Timers", "Serious Training"],v:["Conscious/Chill"],gm:"Polestar+Pilates+Dadeland+Miami",c:["Yoga/Pilates"],h:"South Miami/Pinecrest",$:"",note:"The flagship studio of a global pilates education company — where the people who train the trainers actually teach. The rehab-and-precision end of the spectrum.",move:"If you're working around an injury, book a private first — rehabilitation is Polestar's actual specialty.",w:"https://polestarmiami.com"},
+{n:"Pulse Fitness",gf:["First-Timers", "Serious Training"],v:["Social Fitness"],gm:"Pulse+Fitness+5864+Sunset+Dr+South+Miami",ll:[25.70424,-80.2887],c:["Yoga/Pilates","Strength"],h:"South Miami/Pinecrest",$:"",note:"Reformer-based training right on Sunset Drive — the South Miami answer to the boutique pilates wave.",move:"Book an intro reformer class — expect sweat, not just stretch.",w:"https://www.pulseitout.com"},
+{n:"Pura Vida — South Miami",gf:["Post-Workout Fuel", "Remote Work", "Family-Friendly"],v:["Social Fitness", "Conscious/Chill"],gm:"Pura+Vida+6022+S+Dixie+Hwy+South+Miami",ll:[25.70277,-80.29142],c:["Cafe/Nutrition"],h:"South Miami/Pinecrest",$:"$ (Under $25)",note:"The wellness café empire's southern outpost — all-day breakfast, cold-pressed juice, and the most reliable post-workout bowl within reach of Pinecrest.",move:"Açaí bowl or avocado toast with pasture-raised eggs, plus a wellness shot.",w:"https://www.puravidamiami.com/locations/florida/southmiami"},
+{n:"Raw Fit-Miami",gf:["Serious Training", "Community/Social"],v:["High-Energy", "Social Fitness"],gm:"Raw+Fit+6350+NE+4th+Ave+Miami",ll:[25.83388,-80.1891],c:["Strength"],h:"Little River",$:"$$ ($25-$50)",note:"Circuit and functional training near Little Haiti Soccer Park — no frills, just work.",move:"Book a fundamentals group session first — the coached classes are the core of the gym.",w:"https://wellhub.com/en-us/search/partners/raw-fit-miami-e0675dbd-1884-40ee-8ee7-58b1cbfb7b50/"},
+{n:"Raw Jūce Brickell",gf:["Post-Workout Fuel", "Remote Work"],v:["Conscious/Chill", "Free/Community"],gm:"Raw+Juce+900+S+Miami+Ave+Miami",ll:[25.76539,-80.19334],c:["Cafe/Nutrition"],h:"Brickell",$:"$ (Under $25)",note:"12 years in and still the Brickell default for a smoothie that isn't secretly a milkshake.",move:"A jūce bowl and a ginger wellness shot — in and out in ten minutes.",w:"https://rawjuce.com/"},
+{n:"Reserve Padel — Design District",gf:["Community/Social", "Serious Training"],v:["Premium/Luxury", "Social Fitness"],gm:"Reserve+Padel+75+NE+39th+St+Miami",ll:[25.81276,-80.19393],c:["Racquet/Padel"],h:"Midtown/Design District",$:"$$$ ($50+)",note:"The members-only sibling — three glass courts dropped into the middle of the Design District's fashion blocks. Padel as a luxury good.",move:"Members-only — play the Seaplane Base first and decide whether the Reserve ecosystem is your scene.",w:"https://www.reservepadel.com"},
+{n:"Reserve Padel — Seaplane Base",gf:["Date Spot", "Community/Social"],v:["Premium/Luxury", "Social Fitness"],gm:"Reserve+Padel+Miami+Seaplane+Base+1000+MacArthur+Causeway",ll:[25.78726,-80.17926],c:["Racquet/Padel"],h:"Downtown",$:"$$$ ($50+)",note:"Padel with seaplanes landing behind you — five glass courts on the water, a beachfront deck, and a bar. The most cinematic racquet venue in Miami.",move:"Book a non-member court at an off-peak weekday slot — daytime rates run meaningfully below peak pricing.",w:"https://www.reservepadel.com/miami-seaplane"},
+{n:"Rickenbacker Causeway & Virginia Key",gf:["Serious Training", "Community/Social", "Solo Reset"],v:["High-Energy", "Free/Community"],gm:"Rickenbacker+Causeway+Virginia+Key+Miami",ll:[25.745,-80.174],approx:1,c:["Run/Cardio","Outdoor/Parks"],h:"Key Biscayne",$:"Free",note:"Miami's cathedral of outdoor training — the bridge repeats every cyclist and runner in this city has suffered on, with water views in every direction.",move:"Park at Virginia Key and run toward the William Powell Bridge — the climb is the only real hill in Miami.",w:"https://greatruns.com/key-biscayne/"},
+{n:"Skanda Yoga Studio",gf:["First-Timers", "Solo Reset", "Community/Social"],v:["Conscious/Chill", "Premium/Luxury"],gm:"Skanda+Yoga+Studio+1800+SW+1st+Ave+Miami",ll:[25.75844,-80.1984],c:["Yoga/Pilates"],h:"Brickell",$:"$$ ($25-$50)",note:"Power Vinyasa with an alignment obsession — Brickell's most serious mat practice.",move:"Take the signature Skanda flow and check new-student intro pricing.",w:"https://www.skandayoga.com/"},
+{n:"Studio Three",gf:["Serious Training", "Community/Social"],v:["Premium/Luxury", "High-Energy"],gm:"Studio+Three+96+NW+29th+St+Miami",ll:[25.80382,-80.19709],c:["Strength","Yoga/Pilates"],h:"Wynwood/Edgewater",$:"$$$ ($50+)",note:"9,000 square feet, three modalities, one very good sound system — Gensler-designed and it shows.",move:"Start with the Interval class — the signature format — then sample Cycle or Yoga once you know the room.",w:"https://studiothree.com/studio/miami/"},
+{n:"Suva Yoga",gf:["Solo Reset", "First-Timers"],v:["Conscious/Chill"],gm:"Suva+Yoga+166+Alhambra+Circle+Coral+Gables",ll:[25.75247,-80.25805],c:["Yoga/Pilates"],h:"Gables",$:"$$ ($25-$50)",note:"Sound bowls and slow flows on Alhambra Circle — the antidote to a Brickell trading day.",move:"Book a slow flow first — the gentler classes show this small room at its best.",w:"https://www.suvayoga.net/"},
+{n:"SWEAT440 Brickell",gf:["First-Timers", "Serious Training"],v:["High-Energy", "Social Fitness"],gm:"SWEAT440+25+SW+9th+St+Miami",ll:[25.76545,-80.1937],c:["Strength"],h:"Brickell",$:"$$ ($25-$50)",note:"40-minute strength classes starting every 10 minutes — no excuse not to fit it in.",move:"Just show up — and check the standing free-first-class intro offer before paying.",w:"https://sweat440.com/gyms/florida/brickell-33130/"},
+{n:"The Ice Room",gf:["Recovery Day", "Solo Reset"],v:["Premium/Luxury", "High-Energy"],gm:"The+Ice+Room+1200+Brickell+Bay+Drive+Miami",ll:[25.76179,-80.18982],c:["Recovery/Plunge"],h:"Brickell",$:"$$$ ($50+)",note:"Membership-model cold plunge on Brickell Bay Drive — for people who've made recovery a lifestyle line item.",move:"Book the sauna + plunge contrast circuit — staff walk first-timers through timing and breathing protocols.",w:"https://www.theiceroommiami.com/"},
+{n:"The Plantisserie",gf:["Post-Workout Fuel", "Remote Work", "Date Spot"],v:["Conscious/Chill"],gm:"The+Plantisserie+7316+NE+2nd+Ave+Miami",ll:[25.84231,-80.19266],c:["Cafe/Nutrition"],h:"Little River",$:"$$ ($25-$50)",note:"Organic, plant-based deli and market that's been quietly feeding Little River since 2015.",move:"A plant-based pastry and a matcha — take the window seat, stay longer than planned.",w:"https://www.theplantisserie.com/"},
+{n:"The Sacred Space Miami",gf:["Solo Reset", "Community/Social", "Date Spot"],v:["Conscious/Chill", "Premium/Luxury"],gm:"The+Sacred+Space+Miami+105+NE+24th+St+Miami",ll:[25.79991,-80.19319],c:["Breathwork/Meditation","Yoga/Pilates","Cafe/Nutrition"],h:"Wynwood/Edgewater",$:"",note:"An acre of calm in the middle of Wynwood — breathwork, sound baths, The Class, and plant-based food from Plant Miami, all on one campus.",move:"Book a sound bath or breathwork session, then stay for dinner at Plant Miami — the sequence is the experience.",w:"https://thesacredspacemiami.com"},
+{n:"The Standard Spa",gf:["Recovery Day", "Date Spot", "Solo Reset"],v:["Premium/Luxury", "Conscious/Chill"],gm:"The+Standard+Spa+40+Island+Ave+Miami+Beach",ll:[25.79061,-80.14716],c:["Sauna/Bathhouse","Recovery/Plunge"],h:"Miami Beach",$:"$$$ ($50+)",note:"Miami's original wellness-as-lifestyle property. Hamam, arctic plunge, and a bayfront infinity pool where the pace slows down on its own.",move:"Book a spa service over $125 on a Mon–Thu — it unlocks the full hydrotherapy playground.",w:"https://www.standardhotels.com/miami"},
+{n:"The Underline — Brickell Backyard",gf:["Community/Social", "First-Timers", "Serious Training"],v:["Free/Community", "Social Fitness"],gm:"The+Underline+Brickell+Backyard+700+SW+1st+Ave+Miami",ll:[25.76723,-80.19584],c:["Outdoor/Parks","Strength","Run/Cardio"],h:"Brickell",$:"Free",note:"A free outdoor gym under the Metrorail — the first stretch of a 10-mile linear park. Proof that Miami's best training real estate costs nothing.",move:"Bodyweight circuit at the Urban Gym, then a run north toward the Miami River. Free group fitness events run regularly.",w:"https://www.theunderline.org"},
+{n:"TREMBLE Brickell",gf:["Serious Training", "First-Timers"],v:["High-Energy", "Premium/Luxury"],gm:"TREMBLE+1060+Brickell+Ave+Miami",ll:[25.76307,-80.19157],c:["Strength","Yoga/Pilates"],h:"Brickell",$:"$$ ($25-$50)",note:"Same reformer-cardio hybrid as the Beach location, tucked into the 1060 building mezzanine.",move:"Book the signature reformer-strength class and arrive 15 early for the machine intro.",w:"https://www.makeittremble.com/"},
+{n:"TREMBLE Miami Beach",gf:["Serious Training", "First-Timers"],v:["High-Energy", "Premium/Luxury"],gm:"TREMBLE+1935+West+Ave+Miami+Beach",ll:[25.79491,-80.14252],c:["Yoga/Pilates","Strength"],h:"Miami Beach",$:"$$ ($25-$50)",note:"Low-impact, high-intensity reformer work that leaves you shaking — literally the point.",move:"Signature reformer-strength class, arrive 15 early — same drill as Brickell.",w:"https://www.makeittremble.com/miamibeach"},
+{n:"TronFit Gym",gf:["Serious Training"],v:["High-Energy"],gm:"TronFit+Gym+7275+NE+4th+Ave+Miami",ll:[25.84196,-80.18928],c:["Strength"],h:"Little River",$:"$$ ($25-$50)",note:"Boxing, martial arts, and fitness in one circuit — a gritty counterpoint to the boutique studios up the road.",move:"Grab a trainer intro or come with a program — you get out what you bring.",w:"https://tronfitgym.com/"},
+{n:"Ultra Padel Club (Magic City)",gf:["Community/Social", "Serious Training", "First-Timers"],v:["Social Fitness", "High-Energy"],gm:"Ultra+Padel+Club+Magic+City+Miami",c:["Racquet/Padel"],h:"Little River",$:"$$ ($25-$50)",note:"29 courts — the largest padel facility in the US, with a pool and wellness center attached. Always a court, always a game.",move:"Book an outdoor court (from $28/90min) via Playtomic, or jump into a group clinic — open matchmaking is the fastest way in.",w:"https://ultrapadelclub.com/ultra-padel-miami-magic-city"},
+{n:"Venetian Pool",gf:["Family-Friendly", "Date Spot", "Solo Reset"],v:["Conscious/Chill", "Free/Community"],gm:"Venetian+Pool+2701+De+Soto+Blvd+Coral+Gables",ll:[25.74604,-80.27347],c:["Swim"],h:"Gables",$:"$ (Under $25)",note:"A 1920s quarry turned spring-fed swimming grotto — caves, waterfalls, and the most beautiful public pool in America. Not a lap pool; a ritual.",move:"Weekday at opening (11am) before the families arrive — swim the grotto, then sit under the waterfall.",w:"https://www.coralgables.com/attractions/venetian-pool"},
+{n:"Wynwood Padel Club",gf:["First-Timers", "Community/Social"],v:["Social Fitness", "Free/Community"],gm:"Wynwood+Padel+Club+Miami",c:["Racquet/Padel"],h:"Wynwood/Edgewater",$:"",note:"The OG — running since 2016, before Miami's padel boom had a name. Beginner-friendly pricing and the least pretentious courts in town.",move:"This is the place to learn — beginner clinics and student memberships from $10 make it the lowest-stakes entry into padel.",w:""},
+{n:"Wynwood Yoga Studio",gf:["First-Timers", "Community/Social"],v:["High-Energy", "Conscious/Chill"],gm:"Wynwood+Yoga+2920+NW+5th+Ave+Miami",ll:[25.80395,-80.20331],c:["Yoga/Pilates"],h:"Wynwood/Edgewater",$:"$$ ($25-$50)",note:"Hot power yoga, Mysore mornings, candlelit Yin at night — a full schedule for every mood.",move:"Check the new-student pass and start with an all-levels flow — the community feel is the draw.",w:"https://wynwoodyogastudio.com/"}
+];
+
+var GROUPS = [
+{n:"Brickell Run Club",v:["High-Energy", "Social Fitness", "Free/Community"],d:["Tue"],c:["Run/Cardio"],h:"Brickell",$:"Free",note:"700+ runners, Tuesday nights, Nike-powered chaos — the closest thing Miami has to a running megachurch.",sched:"Tuesdays, 7:00 PM",meet:"Fortune International HQ, 1300 Brickell Ave",w:"https://www.instagram.com/brickellrunclub/"},
+{n:"Club Allenby Run Club",v:["Conscious/Chill", "Social Fitness"],d:["Sat"],c:["Run/Cardio"],h:"Wynwood/Edgewater",$:"Free",note:"Saturday 8am run into coffee and breakfast at Novela — the slow, social version of run club.",sched:"Saturdays, 8:00 AM",meet:"Ends at Novela Cafe Social, 2323 N Miami Ave",w:"https://www.cluballenby.com/events/runclub"},
+{n:"Coconut Grove Run Club",v:["Social Fitness", "Free/Community"],d:["Wed", "Fri", "Sun"],c:["Run/Cardio"],h:"Coconut Grove",$:"Free",note:"Three runs a week through the Grove's canopy streets — beginner-friendly and genuinely neighborhood-y.",sched:"Wed 6:30 PM · Fri 6:00 AM · Sun 7:00 AM",meet:"Regatta Park (Wed), Alice Wainwright Park (Fri), Chug's Diner (Sun)",w:"https://www.coconutgrove.run/"},
+{n:"Dolphins & Rainbows Swim Group",v:["Free/Community", "Conscious/Chill"],d:["Sun"],c:["Swim","Outdoor/Parks"],h:"Miami Beach",$:"Free",note:"A welcoming crew of capable open-water swimmers who meet Sunday mornings in South Beach — the rare structured way into ocean swimming in Miami.",sched:"Sundays, early morning",meet:"South Beach — exact spot posted weekly",w:""},
+{n:"Everglades Bicycle Club",v:["Social Fitness", "Free/Community"],d:["Sat"],c:["Run/Cardio","Outdoor/Parks"],h:"Gables",$:"",note:"South Florida's premier cycling club since 1976 — 50 years in 2026. Leader-led, no-drop rides mean nobody gets left on the Rickenbacker with a flat.",sched:"Saturdays, 7:30 AM",meet:"Ponce de Leon Blvd, Coral Gables",w:"https://www.evergladesbc.com"},
+{n:"Gables Run Club",v:["Social Fitness", "Free/Community"],d:["Wed"],c:["Run/Cardio"],h:"Gables",$:"Free",note:"Wednesday nights out of Life Time Gables — polished, punctual, and quietly competitive.",sched:"Wednesdays, 7:00 PM",meet:"Life Time Gables, 237 S Dixie Hwy",w:"https://www.facebook.com/gablesrunclub/"},
+{n:"iRun & Company Social Runs",v:["Free/Community", "Social Fitness"],d:["Mon", "Thu"],c:["Run/Cardio"],h:"Midtown/Design District",$:"Free",note:"The Upper Eastside's running-store-as-clubhouse — free workout Mondays and social run Thursdays from the shop, all levels welcome.",sched:"Mondays (workout) · Thursdays (social run)",meet:"iRun & Company, Buena Vista/MiMo",w:""},
+{n:"Miami Critical Mass",v:["Free/Community", "High-Energy", "Social Fitness"],d:["Fri"],c:["Run/Cardio","Outdoor/Parks"],h:"Downtown",$:"Free",note:"Miami's monthly mass bike ride — 12–18 miles at conversational pace through the city, rain or shine. The biggest rolling social event on two wheels.",sched:"Last Friday monthly — meet 6:30 PM, ride 7:15 PM",meet:"Government Center, Downtown",w:"https://www.themiamibikescene.com/p/miami-critical-mass-guidelines.html"},
+{n:"Miami Run Club",v:["Social Fitness", "Free/Community"],d:["Tue", "Wed"],c:["Run/Cardio"],h:"Miami Beach",$:"Free",note:"Fiesta Tuesdays and 6am Breakfast Club runs — community first, splits second.",sched:"Tue 7:15 PM · Wed 6:00 AM",meet:"Julia & Henry's (Tue); Flamingo Track (Wed)",w:"https://miamirun.club/"},
+{n:"South Beach Run Club",v:["High-Energy", "Social Fitness"],d:["Thu"],c:["Run/Cardio"],h:"Miami Beach",$:"Free",note:"7:01pm sharp outside Nike on Lincoln Road — DJs, ocean air, and a crowd that dresses for the after-party.",sched:"Thursdays, 7:01 PM",meet:"Nike, 1035 Lincoln Road",w:"https://www.instagram.com/southbeachrunclub/"},
+{n:"TeamFootWorks Fun Runs",v:["Free/Community", "Social Fitness"],d:["Tue", "Thu"],c:["Run/Cardio"],h:"South Miami/Pinecrest",$:"Free",note:"The longest-running free group run south of the Grove — 3.7 to 5 miles, every pace welcome, Thursday post-run dinner at Sports Grill.",sched:"Tuesdays & Thursdays, 6:30 PM",meet:"FootWorks, 5724 Sunset Dr",w:"https://footworksmiami.com/footworks-fun-runs/"},
+{n:"The Wynwood Run Club",v:["Social Fitness", "Free/Community"],d:["Mon", "Wed", "Sun"],c:["Run/Cardio"],h:"Wynwood/Edgewater",$:"Free",note:"A weekly loop through Miami's mural district — art breaks, then a proper sweat.",sched:"Mon 6:00 PM · Wed 6:30 PM · Sun 9:00 AM",meet:"Crossfit Yellow Falcon, Wynwood",w:"https://www.facebook.com/WynoodRunClub/"}
+];
+
+var EVENTS = [
+{n:"3rd Street Beach Yoga",v:["Free/Community", "Conscious/Chill"],d:["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],c:["Yoga/Pilates"],h:"Miami Beach",$:"Free",note:"Sunrise and sunset, daily, by the 3rd Street lifeguard tower — as reliable as the tide.",sched:"Daily, 7:00 AM & 6:00 PM",meet:"3rd St & Ocean Drive lifeguard stand",w:"https://www.3rdstreetbeachyoga.com/"},
+{n:"NOBE Yoga in the Park",v:["Free/Community", "Conscious/Chill"],d:["Mon", "Wed"],c:["Yoga/Pilates"],h:"Miami Beach",$:"Free",note:"Monday and Wednesday evenings at Collins Park by The Bass — free, and better attended than it should be given the price.",sched:"Mon & Wed, 6:00 PM",meet:"Collins Park at The Bass",w:"https://www.miamiandbeaches.com/things-to-do/spa-wellness/free-yoga-in-miami"},
+{n:"Full Moon Yoga & Ceremony",v:["Conscious/Chill", "Free/Community"],d:[],c:["Yoga/Pilates"],h:"Miami Beach",$:"Free",note:"Monthly full-moon flow, meditation, and sound bath on the sand at South Pointe — free and refreshingly unfussy.",sched:"Monthly, full-moon evenings ~6:30 PM",meet:"South Pointe Park",w:"https://synergyyoga.org/products/free-full-moon-ceremony-yoga-meditation-sound-bath-south-pointe-beach"},
+{n:"Sunset Yoga at South Pointe Park",v:["Conscious/Chill", "Free/Community"],d:["Sun", "Mon"],c:["Yoga/Pilates"],h:"Miami Beach",$:"Free",note:"Weekly evening flow on the west lawn, water views included — bring your own mat.",sched:"Sun & Mon, 6:00 PM",meet:"South Pointe Park, west lawn",w:"https://sweatpals.com/s/miami-beach/wellness-events"},
+{n:"Lincoln Road Community Yoga",v:["Free/Community"],d:["Sun"],c:["Yoga/Pilates"],h:"Miami Beach",$:"Free",note:"Sunday 10am at Euclid Courtyard — the most low-key way to start a Lincoln Road morning.",sched:"Sundays, 10:00 AM",meet:"Euclid Courtyard, 690 Lincoln Road",w:"https://secretmiami.com/free-yoga-classes-miami/"},
+{n:"Wynwood Run Project",v:["Social Fitness", "Free/Community"],d:[],c:["Run/Cardio"],h:"Wynwood/Edgewater",$:"Free",note:"The Wynwood BID's own group run through the mural district — check their calendar for the next date.",sched:"See calendar",meet:"Varies across Wynwood",w:"https://wynwoodmiami.com/event/wynwood-run-project/"},
+{n:"Restorative Sound Bath Meditation",v:["Conscious/Chill", "Free/Community"],d:[],c:["Recovery/Plunge"],h:"Miami Beach",$:"$ (Under $25)",note:"Gentle breathwork into a full sound bath at the Miami Beach Botanical Garden — a nervous-system reset in a genuinely pretty setting.",sched:"See calendar",meet:"Miami Beach Botanical Garden",w:""},
+{n:"Saturday Yoga at The Underline",v:["Free/Community", "Conscious/Chill"],d:["Sat"],c:["Yoga/Pilates","Outdoor/Parks"],h:"Downtown",$:"Free",note:"Free weekly flow on the Inter Stage — bring a mat, towel, and water; the Metrorail rumbling overhead is part of the soundtrack.",sched:"Saturdays, 9:00 AM",meet:"The Underline Inter Stage, Downtown",w:"https://www.theunderline.org"},
+{n:"Pinecrest Farmers Market",v:["Free/Community", "Conscious/Chill"],d:["Sun"],c:["Cafe/Nutrition","Outdoor/Parks"],h:"South Miami/Pinecrest",$:"Free",note:"The south county's Sunday institution — dozens of vendors, farm produce, and the whole neighborhood in workout clothes pretending they came for vegetables.",sched:"Sundays, 9:00 AM – 2:00 PM",meet:"Pinecrest Gardens, 11000 Red Rd",w:"https://pinecrestfarmermarket.com/"},
+{n:"Yoga in the Garden — Pinecrest",v:["Free/Community", "Conscious/Chill"],d:["Sun"],c:["Yoga/Pilates","Outdoor/Parks"],h:"South Miami/Pinecrest",$:"Free",note:"Free community Vinyasa under the banyans — the quietest hour Pinecrest Gardens sees all week.",sched:"Sundays, 8:30 – 9:30 AM",meet:"Pinecrest Gardens, 11000 Red Rd",w:"https://www.pinecrestgardens.org/Arts-Events/Markets"},
+{n:"Thursday Yoga — Vizcaya Station",v:["Free/Community", "Conscious/Chill"],d:["Thu"],c:["Yoga/Pilates","Outdoor/Parks"],h:"Coconut Grove",$:"Free",note:"The Underline's after-work flow at Vizcaya Station — free, outdoors, and timed for the sunset commute home.",sched:"Thursdays, 7:00 PM",meet:"Vizcaya Station Plaza, The Underline",w:"https://www.theunderline.org"},
+{n:"HIIT & RUN at The Underline",v:["High-Energy", "Free/Community", "Social Fitness"],d:["Sun"],c:["Strength","Run/Cardio"],h:"Brickell",$:"Free",note:"Thirty minutes of HIIT at the Urban Gym, then a 30-minute run up the trail — free, coached, and under the Metrorail shade.",sched:"1st & 3rd Sundays, 10:30 AM",meet:"The Underline Urban Gym, 700 SW 1st Ave",w:"https://www.theunderline.org"},
+{n:"Miami Spa Months at Carillon",v:["Premium/Luxury", "Conscious/Chill"],d:[],c:["Sauna/Bathhouse","Recovery/Plunge"],h:"North Beach",$:"$$$ ($50+)",note:"The best window all year to try the Eastern Seaboard's biggest spa — Miami Spa Months pricing makes the 70,000 sq ft thermal circuit almost reasonable.",sched:"Annual, summer (Jul–Sep)",meet:"Carillon Miami, 6801 Collins Ave",w:"https://www.carillonhotel.com/en/experiences/miami-spa-months-at-the-spa-at-carillon/"}
+];
+
+var DATA = { places: PLACES, groups: GROUPS, events: EVENTS };
+var activeTab = "places";
+
+var revealObserver = typeof IntersectionObserver !== "undefined"
+  ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add("seen");
+          revealObserver.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.08 })
+  : null;
+
+function esc(s) {
+  return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+var DAY_ORDER = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+var DAY_LABELS = { Mon: "Mondays", Tue: "Tuesdays", Wed: "Wednesdays", Thu: "Thursdays", Fri: "Fridays", Sat: "Saturdays", Sun: "Sundays" };
+
+function populateFilters() {
+  var items = DATA[activeTab];
+  var cats = {}, hoods = {}, gfs = {}, vibes = {}, days = {};
+  items.forEach(function (it) {
+    (it.c || []).forEach(function (c) { cats[c] = 1; });
+    (it.gf || []).forEach(function (g) { gfs[g] = 1; });
+    (it.v || []).forEach(function (v) { vibes[v] = 1; });
+    (it.d || []).forEach(function (d) { days[d] = 1; });
+    if (it.h) hoods[it.h] = 1;
+  });
+  document.getElementById("f-cat").innerHTML = '<option value="">All categories</option>' +
+    Object.keys(cats).sort().map(function (c) { return "<option>" + esc(c) + "</option>"; }).join("");
+  document.getElementById("f-hood").innerHTML = '<option value="">All neighborhoods</option>' +
+    Object.keys(hoods).sort().map(function (h) { return "<option>" + esc(h) + "</option>"; }).join("");
+  document.getElementById("f-gf").innerHTML = '<option value="">Good for…</option>' +
+    Object.keys(gfs).sort().map(function (g) { return "<option>" + esc(g) + "</option>"; }).join("");
+  document.getElementById("f-vibe").innerHTML = '<option value="">Any vibe</option>' +
+    Object.keys(vibes).sort().map(function (v) { return "<option>" + esc(v) + "</option>"; }).join("");
+  document.getElementById("f-day").innerHTML = '<option value="">Any day</option>' +
+    DAY_ORDER.filter(function (d) { return days[d]; })
+      .map(function (d) { return '<option value="' + d + '">' + DAY_LABELS[d] + "</option>"; }).join("");
+  document.getElementById("f-gf").style.display = activeTab === "places" ? "" : "none";
+  document.getElementById("f-day").style.display = activeTab === "places" ? "none" : "";
+}
+
+var PAGE_SIZE = 12;
+var shown = PAGE_SIZE;
+
+var TAB_ICONS = {
+  places: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-7.6-7-12a7 7 0 0 1 14 0c0 4.4-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>',
+  groups: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.8.3 5 2.1 5 4.8"/></svg>',
+  events: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M4 10h16M8 3v5M16 3v5"/></svg>'
+};
+
+function render() {
+  var cat = document.getElementById("f-cat").value;
+  var hood = document.getElementById("f-hood").value;
+  var cost = document.getElementById("f-cost").value;
+  var gf = document.getElementById("f-gf").value;
+  var vibe = document.getElementById("f-vibe").value;
+  var day = document.getElementById("f-day").value;
+  var items = DATA[activeTab].filter(function (it) {
+    if (cat && (it.c || []).indexOf(cat) === -1) return false;
+    if (hood && it.h !== hood) return false;
+    if (cost && it.$ !== cost) return false;
+    if (gf && activeTab === "places" && (it.gf || []).indexOf(gf) === -1) return false;
+    if (vibe && (it.v || []).indexOf(vibe) === -1) return false;
+    if (day && activeTab !== "places" && (it.d || []).indexOf(day) === -1) return false;
+    return true;
+  });
+
+  var label = { places: "space", groups: "group", events: "event" }[activeTab];
+  var visible = items.slice(0, shown);
+  document.getElementById("count").textContent = visible.length < items.length
+    ? "Showing " + visible.length + " of " + items.length + " " + label + "s"
+    : items.length + " " + label + (items.length === 1 ? "" : "s");
+
+  var icon = TAB_ICONS[activeTab];
+  var html = visible.map(function (it) {
+    var title = it.w
+      ? '<a href="' + esc(it.w) + '" target="_blank" rel="noopener">' + esc(it.n) + "</a>"
+      : esc(it.n);
+    var pills = (it.c || []).map(function (c) { return '<span class="pill">' + esc(c) + "</span>"; }).join("");
+    pills += '<span class="pill hood">' + esc(it.h) + "</span>";
+    if (it.$) pills += '<span class="pill cost">' + esc(it.$) + "</span>";
+    var body = '<p class="note">' + esc(it.note) + "</p>";
+    if (it.sched) body += '<p class="sched">' + esc(it.sched) + "</p>";
+    if (it.meet) body += '<p class="meet">' + esc(it.meet) + "</p>";
+    if (it.move) body += '<details class="move"><summary>First-timer move</summary><p>' + esc(it.move) + "</p></details>";
+    return '<article class="card"><h3>' + icon + title + '</h3><div class="meta">' + pills + "</div>" + body + "</article>";
+  }).join("");
+
+  var moreBtn = document.getElementById("show-more");
+  moreBtn.style.display = (items.length > shown && currentView !== "map") ? "" : "none";
+  if (items.length > shown) {
+    moreBtn.textContent = "Show " + Math.min(PAGE_SIZE, items.length - shown) + " more";
+  }
+
+  document.getElementById("cards").innerHTML =
+    html || '<p class="empty">Nothing matches those filters — yet. Try widening the net.</p>';
+
+  var cardEls = document.querySelectorAll("#cards .card");
+  if (typeof IntersectionObserver !== "undefined") {
+    cardEls.forEach(function (c, i) {
+      c.style.transitionDelay = (i % 6) * 70 + "ms";
+      revealObserver.observe(c);
+    });
+  } else {
+    cardEls.forEach(function (c) { c.classList.add("seen"); });
+  }
+
+  lastItems = items;
+  if (activeTab === "places" && currentView === "map") updateMap(items);
+}
+
+var mapObj = null, markerLayer = null, currentView = "list", lastItems = [];
+
+function initMap() {
+  mapObj = L.map("map", { scrollWheelZoom: false }).setView([25.77, -80.21], 11);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  }).addTo(mapObj);
+  markerLayer = L.layerGroup().addTo(mapObj);
+}
+
+var CAT_STYLE = {
+  "Run/Cardio":            { color: "#c8795a", glyph: '<path d="M3 12h3.5l2-6 3 12 2.2-6H21"/>' },
+  "Strength":              { color: "#9c5236", glyph: '<path d="M4.5 9v6M7.5 6.5v11M16.5 6.5v11M19.5 9v6M7.5 12h9"/>' },
+  "Yoga/Pilates":          { color: "#5c7263", glyph: '<circle cx="12" cy="5.6" r="2.1"/><path d="M12 9.2c-3.2 0-5.6 2.6-5.6 5.8M12 9.2c3.2 0 5.6 2.6 5.6 5.8M6.4 18.6h11.2"/>' },
+  "Breathwork/Meditation": { color: "#7c9885", glyph: '<circle cx="12" cy="12" r="2.2"/><path d="M12 5.5a6.5 6.5 0 0 1 0 13M12 5.5a6.5 6.5 0 0 0 0 13"/>' },
+  "Recovery/Plunge":       { color: "#4a7c96", glyph: '<path d="M12 3.5v17M4.6 7.8l14.8 8.4M19.4 7.8L4.6 16.2"/>' },
+  "Swim":                  { color: "#6a9fb5", glyph: '<circle cx="8" cy="7.5" r="2"/><path d="M3 14.5c1.9-1.4 3.8-1.4 5.7 0s3.8 1.4 5.7 0 3.8-1.4 5.6 0M3 19c1.9-1.4 3.8-1.4 5.7 0s3.8 1.4 5.7 0 3.8-1.4 5.6 0"/>' },
+  "Sauna/Bathhouse":       { color: "#a07845", glyph: '<path d="M8 3.5c0 2 2 2 2 3.9s-2 1.9-2 3.9M12 3.5c0 2 2 2 2 3.9s-2 1.9-2 3.9M16 3.5c0 2 2 2 2 3.9s-2 1.9-2 3.9M4.5 15.5h15M4.5 19.5h15"/>' },
+  "Cafe/Nutrition":        { color: "#6b8e4e", glyph: '<path d="M5 8.5h11v4.8a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V8.5zM16 9.8h1.8a2.1 2.1 0 0 1 0 4.2H16"/>' },
+  "Outdoor/Parks":         { color: "#3f6b4a", glyph: '<path d="M12 20.5v-4.2M12 16.3l-4.6-5.4h9.2L12 16.3zM12 10.9L8.4 5.5h7.2L12 10.9z"/>' },
+  "Racquet/Padel":         { color: "#7d6280", glyph: '<ellipse cx="12.5" cy="9" rx="5.2" ry="6"/><path d="M9.2 13.8L5.5 20.5"/>' }
+};
+var CAT_FALLBACK = { color: "#46594d", glyph: '<circle cx="12" cy="12" r="4"/>' };
+
+function catStyle(it) {
+  var cats = it.c || [];
+  for (var i = 0; i < cats.length; i++) {
+    if (CAT_STYLE[cats[i]]) return { key: cats[i], style: CAT_STYLE[cats[i]] };
+  }
+  return { key: "Other", style: CAT_FALLBACK };
+}
+
+function pinSvg(style, w, h) {
+  return '<svg width="' + w + '" height="' + h + '" viewBox="0 0 24 33" xmlns="http://www.w3.org/2000/svg">' +
+    '<path d="M12 0.6C5.7 0.6 0.6 5.7 0.6 12c0 7.9 11.4 20.4 11.4 20.4S23.4 19.9 23.4 12C23.4 5.7 18.3 0.6 12 0.6z" ' +
+    'fill="' + style.color + '" stroke="#f7f3ec" stroke-width="1.4"/>' +
+    '<g transform="translate(12 11.4) scale(0.5) translate(-12 -12)" fill="none" stroke="#fff" ' +
+    'stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">' + style.glyph + "</g></svg>";
+}
+
+function renderLegend(items) {
+  var seen = {};
+  items.forEach(function (it) {
+    if (!it.ll) return;
+    var cs = catStyle(it);
+    seen[cs.key] = cs.style;
+  });
+  var keys = Object.keys(seen).sort();
+  document.getElementById("legend").innerHTML = keys.map(function (k) {
+    return '<span class="legend-item">' + pinSvg(seen[k], 13, 18) + esc(k) + "</span>";
+  }).join("");
+}
+
+function updateMap(items) {
+  if (!mapObj) initMap();
+  markerLayer.clearLayers();
+  var bounds = [];
+  var unmapped = [];
+  renderLegend(items);
+  items.forEach(function (it) {
+    if (!it.ll) { unmapped.push(it.n); return; }
+    bounds.push(it.ll);
+    var name = it.w
+      ? '<a href="' + esc(it.w) + '" target="_blank" rel="noopener">' + esc(it.n) + "</a>"
+      : esc(it.n);
+    var q = it.gm ? it.gm : it.ll[0] + "," + it.ll[1];
+    var dir = '<a class="p-dir" href="https://www.google.com/maps/search/?api=1&query=' +
+      q + '" target="_blank" rel="noopener">Open in Google Maps →</a>';
+    var pc = catStyle(it);
+    var html = '<div class="p-name">' + name + '</div><div class="p-hood">' +
+      esc(pc.key) + " · " + esc(it.h) +
+      (it.approx ? " · approx. location" : "") + "</div>" + esc(it.note) + "<br>" + dir;
+    var cs = catStyle(it);
+    L.marker(it.ll, {
+      title: it.n,
+      icon: L.divIcon({
+        className: "mk",
+        html: pinSvg(cs.style, 24, 33),
+        iconSize: [24, 33],
+        iconAnchor: [12, 32],
+        popupAnchor: [0, -28]
+      })
+    }).bindPopup(html, { maxWidth: 260 }).addTo(markerLayer);
+  });
+  if (bounds.length) mapObj.fitBounds(bounds, { padding: [30, 30], maxZoom: 14 });
+  document.getElementById("unmapped").textContent = unmapped.length
+    ? "Not mapped (no fixed address): " + unmapped.join(" · ")
+    : "";
+}
+
+function setView(view) {
+  currentView = view;
+  document.querySelectorAll(".vbtn").forEach(function (b) {
+    b.classList.toggle("active", b.getAttribute("data-view") === view);
+  });
+  var showMap = view === "map" && activeTab === "places";
+  document.getElementById("map-wrap").className = showMap ? "show" : "";
+  document.getElementById("cards").style.display = showMap ? "none" : "";
+  if (showMap) document.getElementById("show-more").style.display = "none";
+  else render();
+  if (showMap) {
+    updateMap(lastItems);
+    setTimeout(function () { mapObj.invalidateSize(); }, 50);
+  }
+}
+
+document.querySelectorAll(".vbtn").forEach(function (btn) {
+  btn.addEventListener("click", function () { setView(btn.getAttribute("data-view")); });
+});
+
+document.querySelectorAll(".tab").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    document.querySelectorAll(".tab").forEach(function (b) { b.classList.remove("active"); });
+    btn.classList.add("active");
+    activeTab = btn.getAttribute("data-tab");
+    ["f-cat", "f-hood", "f-cost", "f-gf", "f-vibe", "f-day"].forEach(function (id) {
+      document.getElementById(id).value = "";
+    });
+    shown = PAGE_SIZE;
+    document.getElementById("view-toggle").className =
+      "view-toggle" + (activeTab === "places" ? " show" : "");
+    if (activeTab !== "places" && currentView === "map") setView("list");
+    populateFilters();
+    render();
+  });
+});
+document.getElementById("view-toggle").className = "view-toggle show";
+["f-cat", "f-hood", "f-cost", "f-gf", "f-vibe", "f-day"].forEach(function (id) {
+  document.getElementById(id).addEventListener("change", function () {
+    shown = PAGE_SIZE;
+    render();
+  });
+});
+
+document.getElementById("show-more").addEventListener("click", function () {
+  shown += PAGE_SIZE;
+  render();
+});
+
+document.getElementById("newsletter-link").href = SUBSTACK_URL;
+function wireForm(formId, inputId) {
+  var f = document.getElementById(formId);
+  if (!f) return;
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var email = document.getElementById(inputId).value.trim();
+    window.location.href =
+      SUBSTACK_URL.replace(/\/$/, "") + "/subscribe?email=" + encodeURIComponent(email);
+  });
+}
+wireForm("substack-form", "sub-email");
+
+var navEl = document.getElementById("nav");
+window.addEventListener("scroll", function () {
+  navEl.className = window.scrollY > 420 ? "nav show" : "nav";
+}, { passive: true });
+
+populateFilters();
+render();
+</script>
+
+</body>
+</html>
