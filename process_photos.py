@@ -22,8 +22,8 @@ from PIL import Image, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RAW = os.path.join(HERE, "photos-raw")
-OUT = os.path.join(HERE, "photos")
-HTML = os.path.join(HERE, "index.html")
+OUT  = os.path.join(HERE, "public", "photos")
+HTML = os.path.join(HERE, "public", "index.html")
 
 TARGET_W = 1600
 ASPECT = 16 / 10

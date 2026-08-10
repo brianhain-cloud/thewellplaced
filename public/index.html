@@ -20,7 +20,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
   :root {
-    --sand: #f7f3ec;
+    --page: #f7f3ec;
+    --page-rgb: 247, 243, 236;
+    --wash: #f1eade;
+    --title: #3d4f36;
     --ink: #1f2a24;
     --sage: #5c7263;
     --sage-dark: #46594d;
@@ -31,7 +34,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    background: var(--sand);
+    background: var(--page);
     color: var(--ink);
     font-family: 'Inter', -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -104,6 +107,7 @@
   .guide-head { text-align: center; margin-bottom: 22px; }
   .guide-head h2 {
     font-family: 'Playfair Display', serif;
+    color: var(--title);
     font-weight: 700;
     font-size: clamp(1.7rem, 4vw, 2.2rem);
   }
@@ -123,8 +127,50 @@
   .tab.active { background: var(--sage-dark); color: #fff; border-color: var(--sage-dark); }
   .tab:not(.active):hover { border-color: var(--sage-dark); }
 
-  .filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
-  .filters select {
+  .ask { max-width: 640px; margin: 0 auto 22px; }
+  .ask-bar { display: flex; gap: 8px; }
+  .ask-bar input {
+    flex: 1; min-width: 0;
+    font: 500 0.95rem 'Inter', sans-serif;
+    padding: 13px 18px;
+    border: 1px solid var(--line); border-radius: 999px;
+    background: var(--card); color: var(--ink); outline: none;
+    transition: border-color 0.15s;
+  }
+  .ask-bar input:focus { border-color: var(--sage-dark); }
+  .ask-bar input::placeholder { color: rgba(31,42,36,0.4); }
+  .ask-bar button {
+    font: 600 0.85rem 'Inter', sans-serif;
+    padding: 0 22px; border: none; border-radius: 999px;
+    background: var(--sage-dark); color: #fff; cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .ask-bar button:hover { opacity: 0.88; }
+  .ask-eg { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 10px; }
+  .ask-eg button {
+    font: 500 0.75rem 'Inter', sans-serif;
+    padding: 5px 12px;
+    border: 1px solid var(--line); border-radius: 999px;
+    background: transparent; color: rgba(31,42,36,0.55); cursor: pointer;
+  }
+  .ask-eg button:hover { border-color: var(--sage-dark); color: var(--sage-dark); }
+  .ask-answer {
+    text-align: center; font-size: 0.88rem; line-height: 1.6;
+    color: var(--sage-dark); margin-top: 14px; min-height: 0;
+  }
+  .ask-answer:empty { margin-top: 0; }
+  .ask-answer b { color: var(--title); font-weight: 600; }
+  .ask-answer .miss { color: var(--clay); }
+  .ask-answer .ask-kind {
+    font-size: 0.72rem; color: rgba(31,42,36,0.42);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .ask-answer a { color: inherit; }
+  .ask-answer.thinking { opacity: 0.55; }
+  .filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .ms { position: relative; }
+  .ms-btn {
+    display: inline-flex; align-items: center; gap: 8px;
     font: 500 0.85rem 'Inter', sans-serif;
     padding: 9px 14px;
     border: 1px solid var(--line);
@@ -133,7 +179,175 @@
     color: var(--ink);
     cursor: pointer;
     outline: none;
+    transition: border-color 0.15s;
   }
+  .ms-btn:hover { border-color: var(--sage-dark); }
+  .ms-btn .caret {
+    width: 9px; height: 9px; flex: none;
+    border-right: 1.6px solid currentColor; border-bottom: 1.6px solid currentColor;
+    transform: rotate(45deg) translate(-2px, -2px);
+    opacity: 0.5;
+  }
+  .ms.open .ms-btn { border-color: var(--sage-dark); }
+  .ms.on .ms-btn { background: var(--sage-dark); color: #fff; border-color: var(--sage-dark); }
+  .ms-count {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 18px; height: 18px; padding: 0 5px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.25);
+    font-size: 0.7rem; font-weight: 700;
+  }
+  .ms-panel {
+    display: none;
+    position: absolute; z-index: 40; top: calc(100% + 6px); left: 0;
+    min-width: 236px; max-height: 330px; overflow-y: auto;
+    padding: 6px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 12px 34px rgba(31,42,36,0.16);
+  }
+  .ms.open .ms-panel { display: block; }
+  .ms.flip .ms-panel { left: auto; right: 0; }
+  .ms-opt {
+    display: flex; align-items: center; gap: 9px;
+    width: 100%; text-align: left;
+    padding: 8px 10px;
+    border: none; background: none; border-radius: 8px;
+    font: 500 0.84rem 'Inter', sans-serif; color: var(--ink);
+    cursor: pointer;
+  }
+  .ms-opt:hover { background: rgba(122,143,124,0.1); }
+  .ms-opt[disabled] { opacity: 0.35; cursor: default; }
+  .ms-opt[disabled]:hover { background: none; }
+  .ms-box {
+    width: 15px; height: 15px; flex: none;
+    border: 1.5px solid var(--line); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ms-opt.on .ms-box { background: var(--sage-dark); border-color: var(--sage-dark); }
+  .ms-opt.on .ms-box::after {
+    content: ""; width: 4px; height: 8px;
+    border-right: 2px solid #fff; border-bottom: 2px solid #fff;
+    transform: rotate(45deg) translate(-1px, -1px);
+  }
+  .ms-label { flex: 1; }
+  .ms-n { font-size: 0.74rem; color: rgba(31,42,36,0.4); font-variant-numeric: tabular-nums; }
+  .ms-clear {
+    width: 100%; margin-top: 4px; padding: 8px;
+    border: none; border-top: 1px solid var(--line); background: none;
+    font: 600 0.76rem 'Inter', sans-serif; color: var(--clay);
+    cursor: pointer; border-radius: 0 0 8px 8px;
+  }
+  .ms-clear:hover { background: rgba(200,121,90,0.08); }
+
+  .active-filters {
+    display: flex; justify-content: center; align-items: center;
+    gap: 7px; flex-wrap: wrap; margin-bottom: 22px;
+  }
+  .active-filters:empty { margin-bottom: 6px; }
+  .fchip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 8px 5px 11px;
+    border-radius: 999px;
+    background: rgba(122,143,124,0.15);
+    font: 600 0.75rem 'Inter', sans-serif; color: var(--sage-dark);
+    border: none; cursor: pointer;
+  }
+  .fchip:hover { background: rgba(122,143,124,0.26); }
+  .fchip .x { font-size: 0.95rem; line-height: 1; opacity: 0.65; }
+  .fchip-all {
+    background: none; color: var(--clay); text-decoration: underline;
+    text-underline-offset: 3px; padding: 5px 4px;
+  }
+  .fchip-all:hover { background: none; opacity: 0.75; }
+  .feed { display: none; }
+  .feed.show { display: block; }
+  .fd-nav { display: flex; justify-content: center; gap: 7px; margin-bottom: 26px; }
+  .hbtn {
+    font: 600 0.78rem 'Inter', sans-serif;
+    padding: 7px 15px;
+    border: 1px solid var(--line); border-radius: 999px;
+    background: transparent; color: var(--sage-dark); cursor: pointer;
+    transition: all 0.15s;
+  }
+  .hbtn:hover { border-color: var(--sage-dark); }
+  .hbtn.on { background: var(--sage-dark); color: #fff; border-color: var(--sage-dark); }
+  .fd-head {
+    font: 600 0.7rem 'Inter', sans-serif;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(31,42,36,0.42);
+    margin: 0 0 12px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .fd-head + .fd-day, .fd-cards + .fd-head { margin-top: 0; }
+  .fd-head:not(:first-child) { margin-top: 34px; }
+  .fd-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px; margin-bottom: 4px;
+  }
+  .fd-cards:has(> :only-child) { grid-template-columns: minmax(220px, 460px); }
+  .fd-card {
+    display: flex; flex-direction: column; gap: 3px; align-items: flex-start;
+    text-align: left; padding: 14px 16px;
+    background: var(--card); border: 1px solid var(--line);
+    border-left: 3px solid var(--clay); border-radius: 0 12px 12px 0;
+    cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: transform 0.15s, border-color 0.15s;
+  }
+  .fd-card:hover { transform: translateY(-1px); border-color: var(--sage-dark); border-left-color: var(--clay); }
+  .fd-card.live { border-left-color: var(--sage); background: rgba(122,143,124,0.05); }
+  .fd-card.live .fd-when { color: var(--sage-dark); }
+  .fd-when { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; color: var(--clay); text-transform: uppercase; }
+  .fd-title {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 1rem; line-height: 1.25; color: var(--title); margin: 2px 0;
+  }
+  .fd-day { margin-bottom: 22px; }
+  .fd-date {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 0.98rem; color: var(--title);
+    margin-bottom: 6px;
+  }
+  .fd-day.today .fd-date { color: var(--clay); }
+  .fd-n {
+    font: 600 0.68rem 'Inter', sans-serif;
+    background: rgba(31,42,36,0.07); color: rgba(31,42,36,0.5);
+    padding: 1px 7px; border-radius: 999px;
+  }
+  .fd-row {
+    display: flex; align-items: baseline; gap: 12px; width: 100%;
+    text-align: left; padding: 9px 10px;
+    background: none; border: none; border-top: 1px solid var(--line);
+    cursor: pointer; font-family: 'Inter', sans-serif;
+  }
+  .fd-row:hover { background: rgba(122,143,124,0.08); }
+  .fd-row.past { opacity: 0.42; }
+  .fd-time {
+    flex: 0 0 74px; font-size: 0.76rem; font-weight: 600;
+    color: var(--clay); font-variant-numeric: tabular-nums;
+  }
+  .fd-name { flex: 1; font-size: 0.88rem; font-weight: 600; color: var(--ink); }
+  .fd-meta { font-size: 0.75rem; color: rgba(31,42,36,0.5); text-align: right; }
+  .fd-dot {
+    display: inline-block; width: 3px; height: 3px; border-radius: 50%;
+    background: rgba(31,42,36,0.3); vertical-align: 2px;
+  }
+  .fd-more {
+    margin: 6px 0 0 84px; padding: 6px 14px;
+    font: 600 0.74rem 'Inter', sans-serif;
+    border: 1px dashed var(--line); border-radius: 999px;
+    background: none; color: var(--sage-dark); cursor: pointer;
+  }
+  .fd-more:hover { border-style: solid; border-color: var(--sage-dark); }
+  @media (max-width: 560px) {
+    .fd-row { flex-wrap: wrap; gap: 4px 10px; }
+    .fd-time { flex: 0 0 66px; }
+    .fd-meta { width: 100%; text-align: left; padding-left: 78px; }
+    .fd-more { margin-left: 0; }
+  }
+
   .count { text-align: center; font-size: 0.8rem; color: rgba(31,42,36,0.5); margin-bottom: 20px; }
 
   .toolbar {
@@ -210,6 +424,9 @@
   .vbtn.active { background: var(--sage-dark); color: #fff; border-color: var(--sage-dark); }
 
   @media (max-width: 560px) {
+    .ms-panel { min-width: 200px; max-height: 260px; }
+    .filters { gap: 7px; }
+    .ms-btn { padding: 8px 12px; font-size: 0.8rem; }
         }
 
   #map-wrap { display: none; }
@@ -256,7 +473,7 @@
     aspect-ratio: 16 / 10;
     overflow: hidden;
     margin: -12px -14px 10px;
-    background: #f1eade;
+    background: var(--wash);
   }
   .leaflet-popup-content .p-thumb > img,
   .leaflet-popup-content .p-thumb > svg {
@@ -267,7 +484,7 @@
     object-fit: cover;
     display: block;
   }
-  .leaflet-popup-content .p-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 2px; }
+  .leaflet-popup-content .p-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.95rem; color: var(--title); margin-bottom: 2px; }
   .leaflet-popup-content .p-name a { color: var(--ink); text-decoration: none; }
   .leaflet-popup-content .p-hood { font-size: 0.72rem; font-weight: 600; color: #9c5236; margin-bottom: 6px; }
   .leaflet-popup-content .p-dir { font-weight: 600; color: var(--sage-dark); text-decoration: none; }
@@ -332,11 +549,12 @@
     text-transform: uppercase;
     padding: 4px 10px;
     border-radius: 999px;
-    background: rgba(247, 243, 236, 0.92);
+    background: rgba(var(--page-rgb), 0.92);
     color: var(--sage-dark);
   }
   .card h3 {
     font-family: 'Playfair Display', serif;
+    color: var(--title);
     font-weight: 700;
     font-size: 1.05rem;
     line-height: 1.3;
@@ -349,7 +567,11 @@
   .card h3 a:hover { color: var(--clay); }
   .meta { display: flex; flex-wrap: wrap; gap: 6px; }
   /* the tag row is capped in markup, so it always fits one line */
-  .card .meta { flex-wrap: nowrap; overflow: hidden; }
+  .card .meta {
+    flex-wrap: nowrap; overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 88%, transparent 100%);
+  }
   .card .meta .pill {
     flex: 0 0 auto;
     max-width: 46%;
@@ -407,7 +629,7 @@
   .nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    background: rgba(247, 243, 236, 0.93);
+    background: rgba(var(--page-rgb), 0.93);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
@@ -479,6 +701,7 @@
   }
   .news h2 {
     font-family: 'Playfair Display', serif;
+    color: var(--title);
     font-weight: 700;
     font-size: clamp(1.4rem, 3vw, 1.75rem);
     line-height: 1.2;
@@ -537,7 +760,7 @@
   .modal.show { display: flex; }
   .modal-card {
     position: relative;
-    background: var(--sand);
+    background: var(--page);
     border-radius: 18px;
     padding: 34px 28px 24px;
     width: 100%;
@@ -547,6 +770,7 @@
   }
   .modal-title {
     font-family: 'Playfair Display', serif;
+    color: var(--title);
     font-weight: 700;
     font-size: 1.5rem;
     margin-bottom: 16px;
@@ -598,7 +822,7 @@
      inside. A sparse entry and a fully filled one look like the same object. */
   .detail-card {
     position: relative;
-    background: var(--sand);
+    background: var(--page);
     border-radius: 18px;
     width: 100%;
     max-width: 600px;
@@ -617,10 +841,10 @@
     float: right;
     top: 10px; right: 10px;
     z-index: 2;
-    background: rgba(247,243,236,0.9);
+    background: rgba(var(--page-rgb), 0.9);
     border-radius: 50%;
   }
-  .d-media { position: relative; aspect-ratio: 16/10; background: #f1eade; overflow: hidden; }
+  .d-media { position: relative; aspect-ratio: 16/10; background: var(--wash); overflow: hidden; }
   .d-media > img, .d-media > svg {
     position: absolute; inset: 0;
     width: 100%; height: 100%; object-fit: cover; display: block;
@@ -628,6 +852,7 @@
   .d-body { padding: 24px 28px 30px; }
   .d-body h3 {
     font-family: 'Playfair Display', serif;
+    color: var(--title);
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 1.25;
@@ -715,7 +940,7 @@
     width: 34px; height: 34px;
     border: none;
     border-radius: 50%;
-    background: rgba(247, 243, 236, 0.9);
+    background: rgba(var(--page-rgb), 0.9);
     color: var(--ink);
     font-size: 1.3rem;
     line-height: 1;
@@ -734,11 +959,11 @@
   .ph-dot {
     width: 7px; height: 7px;
     border: none; border-radius: 50%;
-    background: rgba(247, 243, 236, 0.6);
+    background: rgba(var(--page-rgb), 0.6);
     cursor: pointer;
     padding: 0;
   }
-  .ph-dot.on { background: var(--sand); box-shadow: 0 0 0 1px rgba(31,42,36,0.3); }
+  .ph-dot.on { background: var(--page); box-shadow: 0 0 0 1px rgba(31,42,36,0.3); }
 
   /* ---- Places detail ---- */
   .d-loc-card {
@@ -850,9 +1075,9 @@
   <section class="hero">
     <div class="wrap-narrow">
       <h1 class="lockup" aria-label="The Well Placed, Miami">
-        <svg class="lockup-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1072.47 618.15" role="img" aria-label="The Well Placed, Miami"><g fill="#46594d" transform="translate(446.512 106.042)"><path transform="translate(0.000 0) scale(0.070400 -0.070400)" d="M210 604Q149 604 110.5 566.0Q72 528 50 454Q50 451 44.5 451.5Q39 452 39 454Q41 468 43.0 492.5Q45 517 47.5 546.0Q50 575 51.5 602.5Q53 630 53 647Q53 652 58.5 652.0Q64 652 64 647Q64 637 74.5 632.5Q85 628 98.0 626.5Q111 625 120 625Q206 622 321 622Q392 622 433.5 623.5Q475 625 514 625Q550 625 568.5 629.5Q587 634 592 650Q593 654 598.0 654.0Q603 654 603 650Q602 634 600.0 606.5Q598 579 597.0 548.5Q596 518 595.0 492.5Q594 467 594 454Q594 452 588.5 452.0Q583 452 582 454Q571 533 534.0 568.5Q497 604 435 604Q408 604 394.0 599.0Q380 594 375.0 580.5Q370 567 370 542V81Q370 52 376.5 37.0Q383 22 401.5 17.0Q420 12 458 12Q461 12 461.0 6.0Q461 0 458 0Q431 0 396.5 1.0Q362 2 321 2Q282 2 248.0 1.0Q214 0 185 0Q183 0 183.0 6.0Q183 12 185 12Q223 12 242.0 17.0Q261 22 267.5 37.0Q274 52 274 81V544Q274 569 269.5 581.5Q265 594 251.0 599.0Q237 604 210 604Z"/><path transform="translate(66.176 0) scale(0.070400 -0.070400)" d="M553 542Q553 571 547.0 586.0Q541 601 523.0 607.0Q505 613 468 613Q465 613 465.0 619.0Q465 625 468 625Q493 625 525.5 623.5Q558 622 601 622Q636 622 670.0 623.5Q704 625 729 625Q732 625 732.0 619.0Q732 613 729 613Q694 613 676.5 607.5Q659 602 653.0 587.5Q647 573 647 544V81Q647 52 653.0 37.0Q659 22 676.5 17.0Q694 12 729 12Q732 12 732.0 6.0Q732 0 729 0Q704 0 670.0 1.0Q636 2 601 2Q558 2 525.5 1.0Q493 0 468 0Q465 0 465.0 6.0Q465 12 468 12Q505 12 523.0 17.0Q541 22 547.0 37.0Q553 52 553 81ZM158 312V338H596V312ZM114 81V544Q114 573 108.0 587.5Q102 602 85.0 607.5Q68 613 33 613Q31 613 31.0 619.0Q31 625 33 625Q59 625 91.0 623.5Q123 622 158 622Q201 622 234.0 623.5Q267 625 293 625Q295 625 295.0 619.0Q295 613 293 613Q257 613 239.0 607.0Q221 601 215.0 586.0Q209 571 209 542V81Q209 52 215.0 37.0Q221 22 239.5 17.0Q258 12 293 12Q295 12 295.0 6.0Q295 0 293 0Q266 0 233.5 1.0Q201 2 158 2Q123 2 90.0 1.0Q57 0 32 0Q30 0 30.0 6.0Q30 12 32 12Q67 12 84.0 17.0Q101 22 107.5 37.0Q114 52 114 81Z"/><path transform="translate(140.941 0) scale(0.070400 -0.070400)" d="M476 0H42Q39 0 39.0 6.0Q39 12 42 12Q75 12 91.0 17.0Q107 22 112.5 37.0Q118 52 118 81V544Q118 573 112.5 587.5Q107 602 91.0 607.5Q75 613 42 613Q39 613 39.0 619.0Q39 625 42 625H458Q468 625 468 616L470 486Q470 484 465.0 483.5Q460 483 458 486Q447 543 412.0 571.0Q377 599 320 599H279Q254 599 239.5 593.5Q225 588 219.0 575.5Q213 563 213 542V85Q213 64 218.5 50.5Q224 37 236.0 31.5Q248 26 270 26H319Q387 26 429.0 58.5Q471 91 489 155Q490 158 495.5 157.0Q501 156 501 154Q497 126 494.0 87.0Q491 48 491 15Q491 0 476 0ZM420 226Q420 268 392.0 290.0Q364 312 308 312H168V338H309Q365 338 392.0 357.0Q419 376 419 412Q419 415 424.5 415.0Q430 415 430 412Q430 380 429.5 362.0Q429 344 429 325Q429 301 430.5 277.5Q432 254 432 226Q432 224 426.0 224.0Q420 224 420 226Z"/></g><g fill="#c8795a" transform="translate(385.581 297.066)"><g transform="translate(0.000 0) scale(0.256000 -0.256000)"><path d="M279 -2Q273 -2 268.5 -1.5Q264 -1 257 0Q232 5 222.5 27.5Q213 50 213 76Q213 92 215.5 107.5Q218 123 222 135Q213 119 199.0 96.5Q185 74 167.0 52.0Q149 30 129.0 15.0Q109 0 88 0Q67 0 49.0 12.0Q31 24 26 46Q25 51 24.5 55.5Q24 60 24 64Q24 90 31.5 118.5Q39 147 59 193Q82 245 98.5 277.5Q115 310 123 324Q136 346 164 346H226Q209 333 195.5 317.5Q182 302 162 261Q162 261 155.0 247.0Q148 233 137.5 212.0Q127 191 116.5 169.0Q106 147 99 131Q89 109 84.0 90.0Q79 71 79 57Q79 22 102 22Q118 22 138 42Q161 64 185.5 103.5Q210 143 233.0 187.0Q256 231 274.0 268.5Q292 306 301 324Q306 335 314.5 340.5Q323 346 339 346H400Q394 340 382.5 333.0Q371 326 360 308Q346 284 335.0 263.5Q324 243 305 202Q301 193 289.5 167.0Q278 141 268.0 110.0Q258 79 258 54Q258 38 265.0 28.0Q272 18 288 18Q316 18 341.5 41.0Q367 64 387.5 97.0Q408 130 421 161Q420 169 418.5 184.5Q417 200 417 211Q417 276 437.5 321.5Q458 367 492 367Q511 367 511 350Q511 347 504.5 326.5Q498 306 487.5 276.0Q477 246 464.0 213.0Q451 180 438 151Q441 134 452.0 123.0Q463 112 480 112Q500 112 517.5 130.5Q535 149 554 193Q566 193 566 184Q550 144 527.5 120.0Q505 96 477 96Q443 96 428 131Q401 77 363.5 37.5Q326 -2 279 -2Z"/></g><g transform="translate(126.720 0) scale(0.256000 -0.256000)"><path d="M131 -4Q94 -4 64.5 20.0Q35 44 35 93Q35 134 53.5 180.0Q72 226 102.5 266.5Q133 307 170.5 332.5Q208 358 246 358Q265 358 283.0 347.0Q301 336 301 309Q301 284 282.0 254.0Q263 224 228 198Q213 187 190.0 177.0Q167 167 144.0 160.5Q121 154 106 154Q101 142 96.5 122.0Q92 102 92 81Q92 56 102.0 36.0Q112 16 139 16Q172 16 200.5 35.0Q229 54 251.5 83.0Q274 112 290.0 142.0Q306 172 315 193Q327 193 327 184Q314 156 297.5 123.0Q281 90 258.5 61.5Q236 33 204.5 14.5Q173 -4 131 -4ZM113 172Q127 172 160.0 182.5Q193 193 220 216Q246 239 260.0 266.5Q274 294 274 313Q274 335 258 335Q246 335 225.0 319.0Q204 303 173 265Q154 241 137.0 213.0Q120 185 113 172Z"/></g><g transform="translate(192.256 0) scale(0.256000 -0.256000)"><path d="M106 -3Q69 -3 51.5 19.5Q34 42 34 73Q34 105 43.0 139.0Q52 173 59 196Q75 252 99.5 315.5Q124 379 153.5 440.5Q183 502 212 551Q235 590 261.5 609.5Q288 629 308 629Q324 629 333.5 617.5Q343 606 343 583Q343 567 337.5 545.0Q332 523 319 495Q284 417 235.5 339.0Q187 261 113 193Q101 165 93.0 133.0Q85 101 85 81Q85 19 127 19Q159 19 198.0 65.5Q237 112 272 193Q276 193 280.0 191.5Q284 190 284 184Q273 157 256.5 124.5Q240 92 218.5 63.0Q197 34 169.0 15.5Q141 -3 106 -3ZM121 225Q157 262 191.0 310.5Q225 359 254.5 411.5Q284 464 304 511Q311 526 315.5 544.0Q320 562 320 574Q320 588 313 588Q309 588 301.0 580.5Q293 573 280 555Q261 530 238.5 487.0Q216 444 193.0 395.0Q170 346 151.0 300.5Q132 255 121 225Z"/></g><g transform="translate(246.784 0) scale(0.256000 -0.256000)"><path d="M106 -3Q69 -3 51.5 19.5Q34 42 34 73Q34 105 43.0 139.0Q52 173 59 196Q75 252 99.5 315.5Q124 379 153.5 440.5Q183 502 212 551Q235 590 261.5 609.5Q288 629 308 629Q324 629 333.5 617.5Q343 606 343 583Q343 567 337.5 545.0Q332 523 319 495Q284 417 235.5 339.0Q187 261 113 193Q101 165 93.0 133.0Q85 101 85 81Q85 19 127 19Q159 19 198.0 65.5Q237 112 272 193Q276 193 280.0 191.5Q284 190 284 184Q273 157 256.5 124.5Q240 92 218.5 63.0Q197 34 169.0 15.5Q141 -3 106 -3ZM121 225Q157 262 191.0 310.5Q225 359 254.5 411.5Q284 464 304 511Q311 526 315.5 544.0Q320 562 320 574Q320 588 313 588Q309 588 301.0 580.5Q293 573 280 555Q261 530 238.5 487.0Q216 444 193.0 395.0Q170 346 151.0 300.5Q132 255 121 225Z"/></g></g><g fill="#1f2a24" transform="translate(60.000 486.438)"><path transform="translate(0.000 0) scale(0.230400 -0.230400)" d="M34 708Q59 707 101.5 706.0Q144 705 186 705Q234 705 279.0 706.0Q324 707 343 707Q482 707 551.0 652.0Q620 597 620 510Q620 474 606.0 434.5Q592 395 558.5 361.5Q525 328 467.0 307.0Q409 286 321 286H219V306H311Q370 306 400.5 333.0Q431 360 442.5 404.0Q454 448 454 499Q454 594 426.0 641.0Q398 688 330 688Q291 688 279.5 671.0Q268 654 268 602V112Q268 73 276.0 54.0Q284 35 307.0 29.0Q330 23 375 22V0Q344 1 295.0 2.0Q246 3 192 3Q149 3 108.0 2.0Q67 1 34 0V20Q66 22 82.0 28.0Q98 34 103.5 52.0Q109 70 109 106V602Q109 639 103.5 656.5Q98 674 81.5 680.5Q65 687 34 688Z"/><path transform="translate(152.294 0) scale(0.230400 -0.230400)" d="M349 708V688Q315 687 297.5 680.5Q280 674 274.0 656.5Q268 639 268 602V94Q268 63 272.5 48.0Q277 33 290.5 28.0Q304 23 331 23H380Q414 23 444.0 39.0Q474 55 498.0 84.5Q522 114 538.0 155.0Q554 196 562 246H585Q582 212 582 158Q582 135 583.0 91.0Q584 47 589 0Q538 2 474.0 2.5Q410 3 360 3Q335 3 296.0 3.0Q257 3 212.0 2.5Q167 2 121.0 1.5Q75 1 34 0V20Q66 22 82.0 28.0Q98 34 103.5 52.0Q109 70 109 106V602Q109 639 103.5 656.5Q98 674 81.5 680.5Q65 687 34 688V708Q59 707 101.5 706.0Q144 705 192 705Q236 705 278.5 706.0Q321 707 349 708Z"/><path transform="translate(297.677 0) scale(0.230400 -0.230400)" d="M368 710 611 84Q625 48 642.5 34.5Q660 21 674 20V0Q644 2 603.5 2.5Q563 3 522 3Q476 3 435.0 2.5Q394 2 370 0V20Q421 22 434.5 37.5Q448 53 428 104L258 569L276 595L124 199Q102 144 97.5 109.0Q93 74 102.5 55.0Q112 36 133.5 28.5Q155 21 185 20V0Q152 2 122.0 2.5Q92 3 61 3Q39 3 19.5 2.5Q0 2 -15 0V20Q6 24 28.0 47.0Q50 70 71 125L299 710Q315 709 333.5 709.0Q352 709 368 710ZM438 288V268H140L150 288Z"/><path transform="translate(455.962 0) scale(0.230400 -0.230400)" d="M397 722Q463 722 505.5 702.5Q548 683 581 657Q601 642 611.5 653.5Q622 665 626 708H649Q647 669 646.0 613.5Q645 558 645 466H622Q617 512 609.0 544.5Q601 577 587.0 602.0Q573 627 547 647Q522 672 489.0 684.0Q456 696 420 696Q366 696 328.0 667.5Q290 639 266.5 590.0Q243 541 232.0 479.5Q221 418 221 352Q221 285 232.5 223.5Q244 162 268.5 114.0Q293 66 332.0 38.0Q371 10 424 10Q457 10 490.5 22.5Q524 35 548 59Q587 89 601.0 133.5Q615 178 622 252H645Q645 157 646.0 98.5Q647 40 649 0H626Q622 43 612.5 54.0Q603 65 581 51Q544 25 502.5 5.5Q461 -14 396 -14Q290 -14 210.5 29.0Q131 72 87.0 153.0Q43 234 43 348Q43 460 88.5 544.0Q134 628 213.5 675.0Q293 722 397 722Z"/><path transform="translate(623.002 0) scale(0.230400 -0.230400)" d="M569 708Q565 664 563.5 623.0Q562 582 562 560Q562 540 563.0 522.0Q564 504 565 492H542Q532 565 511.0 607.5Q490 650 456.5 667.5Q423 685 378 685H337Q308 685 293.0 680.0Q278 675 273.0 660.0Q268 645 268 614V94Q268 63 273.0 48.0Q278 33 293.0 28.0Q308 23 337 23H386Q431 23 465.5 42.5Q500 62 524.5 109.0Q549 156 562 236H585Q582 204 582 152Q582 129 583.0 87.0Q584 45 589 0Q538 2 474.0 2.5Q410 3 360 3Q335 3 296.0 3.0Q257 3 212.0 2.5Q167 2 121.0 1.5Q75 1 34 0V20Q66 22 82.0 28.0Q98 34 103.5 52.0Q109 70 109 106V602Q109 639 103.5 656.5Q98 674 81.5 680.5Q65 687 34 688V708Q75 707 121.0 706.5Q167 706 212.0 705.5Q257 705 296.0 705.0Q335 705 360 705Q406 705 464.5 705.5Q523 706 569 708ZM413 366Q413 366 413.0 356.0Q413 346 413 346H238Q238 346 238.0 356.0Q238 366 238 366ZM442 498Q438 441 438.5 411.0Q439 381 439 356Q439 331 440.0 301.0Q441 271 445 214H422Q417 249 403.5 279.0Q390 309 365.0 327.5Q340 346 300 346V366Q330 366 351.0 378.5Q372 391 385.5 411.5Q399 432 407.0 455.0Q415 478 419 498Z"/><path transform="translate(773.683 0) scale(0.230400 -0.230400)" d="M343 708Q540 708 636.0 618.5Q732 529 732 362Q732 253 685.0 171.5Q638 90 548.5 45.0Q459 0 334 0Q318 0 292.0 1.0Q266 2 238.0 2.5Q210 3 188 3Q144 3 101.5 2.5Q59 2 34 0V20Q66 22 82.0 28.0Q98 34 103.5 52.0Q109 70 109 106V602Q109 639 103.5 656.5Q98 674 81.5 680.5Q65 687 34 688V708Q59 707 101.5 705.5Q144 704 186 705Q222 706 267.5 707.0Q313 708 343 708ZM342 690Q296 690 282.0 673.0Q268 656 268 604V104Q268 52 282.5 35.0Q297 18 343 18Q427 18 475.5 57.5Q524 97 545.0 173.0Q566 249 566 358Q566 470 543.5 543.5Q521 617 472.0 653.5Q423 690 342 690Z"/></g><g fill="#46594d" transform="translate(403.256 558.154)"><path transform="translate(0.000 0) scale(0.054400 -0.054400)" d="M118 121 128 602 155 600 144 121Q143 68 164.5 40.0Q186 12 229 12Q232 12 232.0 6.0Q232 0 229 0Q207 0 184.0 1.0Q161 2 132 2Q102 2 77.5 1.0Q53 0 31 0Q28 0 28.0 6.0Q28 12 31 12Q72 12 94.5 40.0Q117 68 118 121ZM826 12Q828 12 828.0 6.0Q828 0 826 0Q800 0 768.0 1.0Q736 2 701 2Q666 2 635.5 1.0Q605 0 580 0Q578 0 578.0 6.0Q578 12 580 12Q628 12 642.0 25.0Q656 38 653 81L632 538L676 607L420 7Q419 3 412.0 3.0Q405 3 403 7L132 542Q96 613 38 613Q35 613 35.0 619.0Q35 625 38 625Q57 625 78.5 624.0Q100 623 115 623Q137 623 154.5 624.0Q172 625 182 625Q196 625 203.5 615.5Q211 606 228 573L453 132L410 56L647 600Q653 613 660.0 619.0Q667 625 677 625Q686 625 696.5 624.0Q707 623 722 623Q752 623 773.0 624.0Q794 625 814 625Q817 625 817.0 619.0Q817 613 814 613Q768 613 746.0 596.0Q724 579 726 538L748 81Q750 52 755.5 37.0Q761 22 777.5 17.0Q794 12 826 12Z"/><path transform="translate(70.720 0) scale(0.054400 -0.054400)" d="M217 81Q217 52 222.5 37.0Q228 22 244.0 17.0Q260 12 293 12Q296 12 296.0 6.0Q296 0 293 0Q268 0 237.0 1.0Q206 2 168 2Q133 2 101.0 1.0Q69 0 44 0Q41 0 41.0 6.0Q41 12 44 12Q76 12 93.0 17.0Q110 22 115.5 37.0Q121 52 121 81V544Q121 573 115.5 587.5Q110 602 93.0 607.5Q76 613 44 613Q41 613 41.0 619.0Q41 625 44 625Q69 625 101.0 623.5Q133 622 168 622Q206 622 237.5 623.5Q269 625 293 625Q296 625 296.0 619.0Q296 613 293 613Q261 613 244.5 607.0Q228 601 222.5 586.0Q217 571 217 542Z"/><path transform="translate(113.642 0) scale(0.054400 -0.054400)" d="M179 245 192 270H472L479 245ZM711 12Q715 12 715.0 6.0Q715 0 711 0Q681 0 649.5 2.0Q618 4 589 4Q556 4 531.5 2.0Q507 0 477 0Q473 0 473.0 6.0Q473 12 477 12Q522 12 531.0 28.0Q540 44 516 91L307 516L348 583L150 137Q124 76 148.5 44.0Q173 12 232 12Q237 12 237.0 6.0Q237 0 232 0Q202 0 177.0 2.0Q152 4 114 4Q76 4 53.5 2.0Q31 0 -2 0Q-6 0 -6.0 6.0Q-6 12 -2 12Q25 12 44.5 23.0Q64 34 83.0 63.5Q102 93 125 146L340 631Q342 634 349.0 634.0Q356 634 357 631L602 137Q625 89 643.0 61.5Q661 34 677.0 23.0Q693 12 711 12Z"/><path transform="translate(176.800 0) scale(0.054400 -0.054400)" d="M118 121 128 602 155 600 144 121Q143 68 164.5 40.0Q186 12 229 12Q232 12 232.0 6.0Q232 0 229 0Q207 0 184.0 1.0Q161 2 132 2Q102 2 77.5 1.0Q53 0 31 0Q28 0 28.0 6.0Q28 12 31 12Q72 12 94.5 40.0Q117 68 118 121ZM826 12Q828 12 828.0 6.0Q828 0 826 0Q800 0 768.0 1.0Q736 2 701 2Q666 2 635.5 1.0Q605 0 580 0Q578 0 578.0 6.0Q578 12 580 12Q628 12 642.0 25.0Q656 38 653 81L632 538L676 607L420 7Q419 3 412.0 3.0Q405 3 403 7L132 542Q96 613 38 613Q35 613 35.0 619.0Q35 625 38 625Q57 625 78.5 624.0Q100 623 115 623Q137 623 154.5 624.0Q172 625 182 625Q196 625 203.5 615.5Q211 606 228 573L453 132L410 56L647 600Q653 613 660.0 619.0Q667 625 677 625Q686 625 696.5 624.0Q707 623 722 623Q752 623 773.0 624.0Q794 625 814 625Q817 625 817.0 619.0Q817 613 814 613Q768 613 746.0 596.0Q724 579 726 538L748 81Q750 52 755.5 37.0Q761 22 777.5 17.0Q794 12 826 12Z"/><path transform="translate(247.520 0) scale(0.054400 -0.054400)" d="M217 81Q217 52 222.5 37.0Q228 22 244.0 17.0Q260 12 293 12Q296 12 296.0 6.0Q296 0 293 0Q268 0 237.0 1.0Q206 2 168 2Q133 2 101.0 1.0Q69 0 44 0Q41 0 41.0 6.0Q41 12 44 12Q76 12 93.0 17.0Q110 22 115.5 37.0Q121 52 121 81V544Q121 573 115.5 587.5Q110 602 93.0 607.5Q76 613 44 613Q41 613 41.0 619.0Q41 625 44 625Q69 625 101.0 623.5Q133 622 168 622Q206 622 237.5 623.5Q269 625 293 625Q296 625 296.0 619.0Q296 613 293 613Q261 613 244.5 607.0Q228 601 222.5 586.0Q217 571 217 542Z"/></g></svg>
+        <svg class="lockup-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1072.47 618.15" role="img" aria-label="The Well Placed, Miami"><g fill="#46594d" transform="translate(446.512 106.042)"><path transform="translate(0.000 0) scale(0.070400 -0.070400)" d="M210 604Q149 604 110.5 566.0Q72 528 50 454Q50 451 44.5 451.5Q39 452 39 454Q41 468 43.0 492.5Q45 517 47.5 546.0Q50 575 51.5 602.5Q53 630 53 647Q53 652 58.5 652.0Q64 652 64 647Q64 637 74.5 632.5Q85 628 98.0 626.5Q111 625 120 625Q206 622 321 622Q392 622 433.5 623.5Q475 625 514 625Q550 625 568.5 629.5Q587 634 592 650Q593 654 598.0 654.0Q603 654 603 650Q602 634 600.0 606.5Q598 579 597.0 548.5Q596 518 595.0 492.5Q594 467 594 454Q594 452 588.5 452.0Q583 452 582 454Q571 533 534.0 568.5Q497 604 435 604Q408 604 394.0 599.0Q380 594 375.0 580.5Q370 567 370 542V81Q370 52 376.5 37.0Q383 22 401.5 17.0Q420 12 458 12Q461 12 461.0 6.0Q461 0 458 0Q431 0 396.5 1.0Q362 2 321 2Q282 2 248.0 1.0Q214 0 185 0Q183 0 183.0 6.0Q183 12 185 12Q223 12 242.0 17.0Q261 22 267.5 37.0Q274 52 274 81V544Q274 569 269.5 581.5Q265 594 251.0 599.0Q237 604 210 604Z"/><path transform="translate(66.176 0) scale(0.070400 -0.070400)" d="M553 542Q553 571 547.0 586.0Q541 601 523.0 607.0Q505 613 468 613Q465 613 465.0 619.0Q465 625 468 625Q493 625 525.5 623.5Q558 622 601 622Q636 622 670.0 623.5Q704 625 729 625Q732 625 732.0 619.0Q732 613 729 613Q694 613 676.5 607.5Q659 602 653.0 587.5Q647 573 647 544V81Q647 52 653.0 37.0Q659 22 676.5 17.0Q694 12 729 12Q732 12 732.0 6.0Q732 0 729 0Q704 0 670.0 1.0Q636 2 601 2Q558 2 525.5 1.0Q493 0 468 0Q465 0 465.0 6.0Q465 12 468 12Q505 12 523.0 17.0Q541 22 547.0 37.0Q553 52 553 81ZM158 312V338H596V312ZM114 81V544Q114 573 108.0 587.5Q102 602 85.0 607.5Q68 613 33 613Q31 613 31.0 619.0Q31 625 33 625Q59 625 91.0 623.5Q123 622 158 622Q201 622 234.0 623.5Q267 625 293 625Q295 625 295.0 619.0Q295 613 293 613Q257 613 239.0 607.0Q221 601 215.0 586.0Q209 571 209 542V81Q209 52 215.0 37.0Q221 22 239.5 17.0Q258 12 293 12Q295 12 295.0 6.0Q295 0 293 0Q266 0 233.5 1.0Q201 2 158 2Q123 2 90.0 1.0Q57 0 32 0Q30 0 30.0 6.0Q30 12 32 12Q67 12 84.0 17.0Q101 22 107.5 37.0Q114 52 114 81Z"/><path transform="translate(140.941 0) scale(0.070400 -0.070400)" d="M476 0H42Q39 0 39.0 6.0Q39 12 42 12Q75 12 91.0 17.0Q107 22 112.5 37.0Q118 52 118 81V544Q118 573 112.5 587.5Q107 602 91.0 607.5Q75 613 42 613Q39 613 39.0 619.0Q39 625 42 625H458Q468 625 468 616L470 486Q470 484 465.0 483.5Q460 483 458 486Q447 543 412.0 571.0Q377 599 320 599H279Q254 599 239.5 593.5Q225 588 219.0 575.5Q213 563 213 542V85Q213 64 218.5 50.5Q224 37 236.0 31.5Q248 26 270 26H319Q387 26 429.0 58.5Q471 91 489 155Q490 158 495.5 157.0Q501 156 501 154Q497 126 494.0 87.0Q491 48 491 15Q491 0 476 0ZM420 226Q420 268 392.0 290.0Q364 312 308 312H168V338H309Q365 338 392.0 357.0Q419 376 419 412Q419 415 424.5 415.0Q430 415 430 412Q430 380 429.5 362.0Q429 344 429 325Q429 301 430.5 277.5Q432 254 432 226Q432 224 426.0 224.0Q420 224 420 226Z"/></g><g fill="#c8795a" transform="translate(385.581 297.066)"><g transform="translate(0.000 0) scale(0.256000 -0.256000)"><path d="M279 -2Q273 -2 268.5 -1.5Q264 -1 257 0Q232 5 222.5 27.5Q213 50 213 76Q213 92 215.5 107.5Q218 123 222 135Q213 119 199.0 96.5Q185 74 167.0 52.0Q149 30 129.0 15.0Q109 0 88 0Q67 0 49.0 12.0Q31 24 26 46Q25 51 24.5 55.5Q24 60 24 64Q24 90 31.5 118.5Q39 147 59 193Q82 245 98.5 277.5Q115 310 123 324Q136 346 164 346H226Q209 333 195.5 317.5Q182 302 162 261Q162 261 155.0 247.0Q148 233 137.5 212.0Q127 191 116.5 169.0Q106 147 99 131Q89 109 84.0 90.0Q79 71 79 57Q79 22 102 22Q118 22 138 42Q161 64 185.5 103.5Q210 143 233.0 187.0Q256 231 274.0 268.5Q292 306 301 324Q306 335 314.5 340.5Q323 346 339 346H400Q394 340 382.5 333.0Q371 326 360 308Q346 284 335.0 263.5Q324 243 305 202Q301 193 289.5 167.0Q278 141 268.0 110.0Q258 79 258 54Q258 38 265.0 28.0Q272 18 288 18Q316 18 341.5 41.0Q367 64 387.5 97.0Q408 130 421 161Q420 169 418.5 184.5Q417 200 417 211Q417 276 437.5 321.5Q458 367 492 367Q511 367 511 350Q511 347 504.5 326.5Q498 306 487.5 276.0Q477 246 464.0 213.0Q451 180 438 151Q441 134 452.0 123.0Q463 112 480 112Q500 112 517.5 130.5Q535 149 554 193Q566 193 566 184Q550 144 527.5 120.0Q505 96 477 96Q443 96 428 131Q401 77 363.5 37.5Q326 -2 279 -2Z"/></g><g transform="translate(126.720 0) scale(0.256000 -0.256000)"><path d="M131 -4Q94 -4 64.5 20.0Q35 44 35 93Q35 134 53.5 180.0Q72 226 102.5 266.5Q133 307 170.5 332.5Q208 358 246 358Q265 358 283.0 347.0Q301 336 301 309Q301 284 282.0 254.0Q263 224 228 198Q213 187 190.0 177.0Q167 167 144.0 160.5Q121 154 106 154Q101 142 96.5 122.0Q92 102 92 81Q92 56 102.0 36.0Q112 16 139 16Q172 16 200.5 35.0Q229 54 251.5 83.0Q274 112 290.0 142.0Q306 172 315 193Q327 193 327 184Q314 156 297.5 123.0Q281 90 258.5 61.5Q236 33 204.5 14.5Q173 -4 131 -4ZM113 172Q127 172 160.0 182.5Q193 193 220 216Q246 239 260.0 266.5Q274 294 274 313Q274 335 258 335Q246 335 225.0 319.0Q204 303 173 265Q154 241 137.0 213.0Q120 185 113 172Z"/></g><g transform="translate(192.256 0) scale(0.256000 -0.256000)"><path d="M106 -3Q69 -3 51.5 19.5Q34 42 34 73Q34 105 43.0 139.0Q52 173 59 196Q75 252 99.5 315.5Q124 379 153.5 440.5Q183 502 212 551Q235 590 261.5 609.5Q288 629 308 629Q324 629 333.5 617.5Q343 606 343 583Q343 567 337.5 545.0Q332 523 319 495Q284 417 235.5 339.0Q187 261 113 193Q101 165 93.0 133.0Q85 101 85 81Q85 19 127 19Q159 19 198.0 65.5Q237 112 272 193Q276 193 280.0 191.5Q284 190 284 184Q273 157 256.5 124.5Q240 92 218.5 63.0Q197 34 169.0 15.5Q141 -3 106 -3ZM121 225Q157 262 191.0 310.5Q225 359 254.5 411.5Q284 464 304 511Q311 526 315.5 544.0Q320 562 320 574Q320 588 313 588Q309 588 301.0 580.5Q293 573 280 555Q261 530 238.5 487.0Q216 444 193.0 395.0Q170 346 151.0 300.5Q132 255 121 225Z"/></g><g transform="translate(246.784 0) scale(0.256000 -0.256000)"><path d="M106 -3Q69 -3 51.5 19.5Q34 42 34 73Q34 105 43.0 139.0Q52 173 59 196Q75 252 99.5 315.5Q124 379 153.5 440.5Q183 502 212 551Q235 590 261.5 609.5Q288 629 308 629Q324 629 333.5 617.5Q343 606 343 583Q343 567 337.5 545.0Q332 523 319 495Q284 417 235.5 339.0Q187 261 113 193Q101 165 93.0 133.0Q85 101 85 81Q85 19 127 19Q159 19 198.0 65.5Q237 112 272 193Q276 193 280.0 191.5Q284 190 284 184Q273 157 256.5 124.5Q240 92 218.5 63.0Q197 34 169.0 15.5Q141 -3 106 -3ZM121 225Q157 262 191.0 310.5Q225 359 254.5 411.5Q284 464 304 511Q311 526 315.5 544.0Q320 562 320 574Q320 588 313 588Q309 588 301.0 580.5Q293 573 280 555Q261 530 238.5 487.0Q216 444 193.0 395.0Q170 346 151.0 300.5Q132 255 121 225Z"/></g></g><g fill="#3d4f36" transform="translate(60.000 486.438)"><path transform="translate(0.000 0) scale(0.230400 -0.230400)" d="M34 708Q59 707 101.5 706.0Q144 705 186 705Q234 705 279.0 706.0Q324 707 343 707Q482 707 551.0 652.0Q620 597 620 510Q620 474 606.0 434.5Q592 395 558.5 361.5Q525 328 467.0 307.0Q409 286 321 286H219V306H311Q370 306 400.5 333.0Q431 360 442.5 404.0Q454 448 454 499Q454 594 426.0 641.0Q398 688 330 688Q291 688 279.5 671.0Q268 654 268 602V112Q268 73 276.0 54.0Q284 35 307.0 29.0Q330 23 375 22V0Q344 1 295.0 2.0Q246 3 192 3Q149 3 108.0 2.0Q67 1 34 0V20Q66 22 82.0 28.0Q98 34 103.5 52.0Q109 70 109 106V602Q109 639 103.5 656.5Q98 674 81.5 680.5Q65 687 34 688Z"/><path transform="translate(152.294 0) scale(0.230400 -0.230400)" d="M349 708V688Q315 687 297.5 680.5Q280 674 274.0 656.5Q268 639 268 602V94Q268 63 272.5 48.0Q277 33 290.5 28.0Q304 23 331 23H380Q414 23 444.0 39.0Q474 55 498.0 84.5Q522 114 538.0 155.0Q554 196 562 246H585Q582 212 582 158Q582 135 583.0 91.0Q584 47 589 0Q538 2 474.0 2.5Q410 3 360 3Q335 3 296.0 3.0Q257 3 212.0 2.5Q167 2 121.0 1.5Q75 1 34 0V20Q66 22 82.0 28.0Q98 34 103.5 52.0Q109 70 109 106V602Q109 639 103.5 656.5Q98 674 81.5 680.5Q65 687 34 688V708Q59 707 101.5 706.0Q144 705 192 705Q236 705 278.5 706.0Q321 707 349 708Z"/><path transform="translate(297.677 0) scale(0.230400 -0.230400)" d="M368 710 611 84Q625 48 642.5 34.5Q660 21 674 20V0Q644 2 603.5 2.5Q563 3 522 3Q476 3 435.0 2.5Q394 2 370 0V20Q421 22 434.5 37.5Q448 53 428 104L258 569L276 595L124 199Q102 144 97.5 109.0Q93 74 102.5 55.0Q112 36 133.5 28.5Q155 21 185 20V0Q152 2 122.0 2.5Q92 3 61 3Q39 3 19.5 2.5Q0 2 -15 0V20Q6 24 28.0 47.0Q50 70 71 125L299 710Q315 709 333.5 709.0Q352 709 368 710ZM438 288V268H140L150 288Z"/><path transform="translate(455.962 0) scale(0.230400 -0.230400)" d="M397 722Q463 722 505.5 702.5Q548 683 581 657Q601 642 611.5 653.5Q622 665 626 708H649Q647 669 646.0 613.5Q645 558 645 466H622Q617 512 609.0 544.5Q601 577 587.0 602.0Q573 627 547 647Q522 672 489.0 684.0Q456 696 420 696Q366 696 328.0 667.5Q290 639 266.5 590.0Q243 541 232.0 479.5Q221 418 221 352Q221 285 232.5 223.5Q244 162 268.5 114.0Q293 66 332.0 38.0Q371 10 424 10Q457 10 490.5 22.5Q524 35 548 59Q587 89 601.0 133.5Q615 178 622 252H645Q645 157 646.0 98.5Q647 40 649 0H626Q622 43 612.5 54.0Q603 65 581 51Q544 25 502.5 5.5Q461 -14 396 -14Q290 -14 210.5 29.0Q131 72 87.0 153.0Q43 234 43 348Q43 460 88.5 544.0Q134 628 213.5 675.0Q293 722 397 722Z"/><path transform="translate(623.002 0) scale(0.230400 -0.230400)" d="M569 708Q565 664 563.5 623.0Q562 582 562 560Q562 540 563.0 522.0Q564 504 565 492H542Q532 565 511.0 607.5Q490 650 456.5 667.5Q423 685 378 685H337Q308 685 293.0 680.0Q278 675 273.0 660.0Q268 645 268 614V94Q268 63 273.0 48.0Q278 33 293.0 28.0Q308 23 337 23H386Q431 23 465.5 42.5Q500 62 524.5 109.0Q549 156 562 236H585Q582 204 582 152Q582 129 583.0 87.0Q584 45 589 0Q538 2 474.0 2.5Q410 3 360 3Q335 3 296.0 3.0Q257 3 212.0 2.5Q167 2 121.0 1.5Q75 1 34 0V20Q66 22 82.0 28.0Q98 34 103.5 52.0Q109 70 109 106V602Q109 639 103.5 656.5Q98 674 81.5 680.5Q65 687 34 688V708Q75 707 121.0 706.5Q167 706 212.0 705.5Q257 705 296.0 705.0Q335 705 360 705Q406 705 464.5 705.5Q523 706 569 708ZM413 366Q413 366 413.0 356.0Q413 346 413 346H238Q238 346 238.0 356.0Q238 366 238 366ZM442 498Q438 441 438.5 411.0Q439 381 439 356Q439 331 440.0 301.0Q441 271 445 214H422Q417 249 403.5 279.0Q390 309 365.0 327.5Q340 346 300 346V366Q330 366 351.0 378.5Q372 391 385.5 411.5Q399 432 407.0 455.0Q415 478 419 498Z"/><path transform="translate(773.683 0) scale(0.230400 -0.230400)" d="M343 708Q540 708 636.0 618.5Q732 529 732 362Q732 253 685.0 171.5Q638 90 548.5 45.0Q459 0 334 0Q318 0 292.0 1.0Q266 2 238.0 2.5Q210 3 188 3Q144 3 101.5 2.5Q59 2 34 0V20Q66 22 82.0 28.0Q98 34 103.5 52.0Q109 70 109 106V602Q109 639 103.5 656.5Q98 674 81.5 680.5Q65 687 34 688V708Q59 707 101.5 705.5Q144 704 186 705Q222 706 267.5 707.0Q313 708 343 708ZM342 690Q296 690 282.0 673.0Q268 656 268 604V104Q268 52 282.5 35.0Q297 18 343 18Q427 18 475.5 57.5Q524 97 545.0 173.0Q566 249 566 358Q566 470 543.5 543.5Q521 617 472.0 653.5Q423 690 342 690Z"/></g><g fill="#46594d" transform="translate(403.256 558.154)"><path transform="translate(0.000 0) scale(0.054400 -0.054400)" d="M118 121 128 602 155 600 144 121Q143 68 164.5 40.0Q186 12 229 12Q232 12 232.0 6.0Q232 0 229 0Q207 0 184.0 1.0Q161 2 132 2Q102 2 77.5 1.0Q53 0 31 0Q28 0 28.0 6.0Q28 12 31 12Q72 12 94.5 40.0Q117 68 118 121ZM826 12Q828 12 828.0 6.0Q828 0 826 0Q800 0 768.0 1.0Q736 2 701 2Q666 2 635.5 1.0Q605 0 580 0Q578 0 578.0 6.0Q578 12 580 12Q628 12 642.0 25.0Q656 38 653 81L632 538L676 607L420 7Q419 3 412.0 3.0Q405 3 403 7L132 542Q96 613 38 613Q35 613 35.0 619.0Q35 625 38 625Q57 625 78.5 624.0Q100 623 115 623Q137 623 154.5 624.0Q172 625 182 625Q196 625 203.5 615.5Q211 606 228 573L453 132L410 56L647 600Q653 613 660.0 619.0Q667 625 677 625Q686 625 696.5 624.0Q707 623 722 623Q752 623 773.0 624.0Q794 625 814 625Q817 625 817.0 619.0Q817 613 814 613Q768 613 746.0 596.0Q724 579 726 538L748 81Q750 52 755.5 37.0Q761 22 777.5 17.0Q794 12 826 12Z"/><path transform="translate(70.720 0) scale(0.054400 -0.054400)" d="M217 81Q217 52 222.5 37.0Q228 22 244.0 17.0Q260 12 293 12Q296 12 296.0 6.0Q296 0 293 0Q268 0 237.0 1.0Q206 2 168 2Q133 2 101.0 1.0Q69 0 44 0Q41 0 41.0 6.0Q41 12 44 12Q76 12 93.0 17.0Q110 22 115.5 37.0Q121 52 121 81V544Q121 573 115.5 587.5Q110 602 93.0 607.5Q76 613 44 613Q41 613 41.0 619.0Q41 625 44 625Q69 625 101.0 623.5Q133 622 168 622Q206 622 237.5 623.5Q269 625 293 625Q296 625 296.0 619.0Q296 613 293 613Q261 613 244.5 607.0Q228 601 222.5 586.0Q217 571 217 542Z"/><path transform="translate(113.642 0) scale(0.054400 -0.054400)" d="M179 245 192 270H472L479 245ZM711 12Q715 12 715.0 6.0Q715 0 711 0Q681 0 649.5 2.0Q618 4 589 4Q556 4 531.5 2.0Q507 0 477 0Q473 0 473.0 6.0Q473 12 477 12Q522 12 531.0 28.0Q540 44 516 91L307 516L348 583L150 137Q124 76 148.5 44.0Q173 12 232 12Q237 12 237.0 6.0Q237 0 232 0Q202 0 177.0 2.0Q152 4 114 4Q76 4 53.5 2.0Q31 0 -2 0Q-6 0 -6.0 6.0Q-6 12 -2 12Q25 12 44.5 23.0Q64 34 83.0 63.5Q102 93 125 146L340 631Q342 634 349.0 634.0Q356 634 357 631L602 137Q625 89 643.0 61.5Q661 34 677.0 23.0Q693 12 711 12Z"/><path transform="translate(176.800 0) scale(0.054400 -0.054400)" d="M118 121 128 602 155 600 144 121Q143 68 164.5 40.0Q186 12 229 12Q232 12 232.0 6.0Q232 0 229 0Q207 0 184.0 1.0Q161 2 132 2Q102 2 77.5 1.0Q53 0 31 0Q28 0 28.0 6.0Q28 12 31 12Q72 12 94.5 40.0Q117 68 118 121ZM826 12Q828 12 828.0 6.0Q828 0 826 0Q800 0 768.0 1.0Q736 2 701 2Q666 2 635.5 1.0Q605 0 580 0Q578 0 578.0 6.0Q578 12 580 12Q628 12 642.0 25.0Q656 38 653 81L632 538L676 607L420 7Q419 3 412.0 3.0Q405 3 403 7L132 542Q96 613 38 613Q35 613 35.0 619.0Q35 625 38 625Q57 625 78.5 624.0Q100 623 115 623Q137 623 154.5 624.0Q172 625 182 625Q196 625 203.5 615.5Q211 606 228 573L453 132L410 56L647 600Q653 613 660.0 619.0Q667 625 677 625Q686 625 696.5 624.0Q707 623 722 623Q752 623 773.0 624.0Q794 625 814 625Q817 625 817.0 619.0Q817 613 814 613Q768 613 746.0 596.0Q724 579 726 538L748 81Q750 52 755.5 37.0Q761 22 777.5 17.0Q794 12 826 12Z"/><path transform="translate(247.520 0) scale(0.054400 -0.054400)" d="M217 81Q217 52 222.5 37.0Q228 22 244.0 17.0Q260 12 293 12Q296 12 296.0 6.0Q296 0 293 0Q268 0 237.0 1.0Q206 2 168 2Q133 2 101.0 1.0Q69 0 44 0Q41 0 41.0 6.0Q41 12 44 12Q76 12 93.0 17.0Q110 22 115.5 37.0Q121 52 121 81V544Q121 573 115.5 587.5Q110 602 93.0 607.5Q76 613 44 613Q41 613 41.0 619.0Q41 625 44 625Q69 625 101.0 623.5Q133 622 168 622Q206 622 237.5 623.5Q269 625 293 625Q296 625 296.0 619.0Q296 613 293 613Q261 613 244.5 607.0Q228 601 222.5 586.0Q217 571 217 542Z"/></g></svg>
       </h1>
-      <p class="lede">A curated guide of the spaces, gatherings, and groups focused on health and wellness in Miami</p>
+      <p class="lede">A curated guide of the spaces, gatherings, and groups focused on health and wellness in Miami. Whether you are building a healthier week or keeping up with what just opened, here is where to start.</p>
     </div>
   </section>
 
@@ -891,16 +1116,26 @@
         <button class="tab active" data-tab="places" role="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-7.6-7-12a7 7 0 0 1 14 0c0 4.4-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Spaces</button>
         <button class="tab" data-tab="groups" role="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.8.3 5 2.1 5 4.8"/></svg>Groups</button>
         <button class="tab" data-tab="events" role="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M4 10h16M8 3v5M16 3v5"/></svg>Events</button>
+        <button class="tab" data-tab="upcoming" role="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3.2 2"/><circle cx="12" cy="12" r="8.5"/></svg>This week</button>
       </div>
 
-      <div class="filters">
-        <select id="f-cat" aria-label="Filter by category"><option value="">All categories</option></select>
-        <select id="f-hood" aria-label="Filter by neighborhood"><option value="">All neighborhoods</option></select>
-        <select id="f-gf" aria-label="Filter by good for"><option value="">Good for…</option></select>
-        <select id="f-vibe" aria-label="Filter by vibe"><option value="">Any vibe</option></select>
-        <select id="f-plat" aria-label="Filter by booking platform"><option value="">Any platform</option></select>
-        <select id="f-day" aria-label="Filter by day"><option value="">Any day</option></select>
+      <div class="ask" id="ask">
+        <form class="ask-bar" id="ask-form">
+          <input id="ask-input" type="text" autocomplete="off"
+                 placeholder="Ask for what you want. Yoga in Brickell on Saturday…"
+                 aria-label="Describe what you are looking for">
+          <button type="submit" aria-label="Search">Ask</button>
+        </form>
+        <div class="ask-eg" id="ask-eg">
+          <button data-eg="free run club this week">free run club this week</button>
+          <button data-eg="cold plunge in Brickell">cold plunge in Brickell</button>
+          <button data-eg="beginner yoga on Saturday morning">beginner yoga Saturday morning</button>
+          <button data-eg="something to do with my dog">something to do with my dog</button>
+        </div>
+        <p class="ask-answer" id="ask-answer"></p>
       </div>
+      <div class="filters" id="filters"></div>
+      <div class="active-filters" id="active-filters"></div>
       <div class="toolbar">
         <div class="view-toggle" id="view-toggle">
           <button class="vbtn active" data-view="list">List</button>
@@ -912,6 +1147,7 @@
         </label>
       </div>
 
+      <div class="feed" id="feed"></div>
       <div class="cards" id="cards"></div>
       <div style="text-align:center; margin-top: 24px;">
         <button id="show-more" style="display:none;">Show more</button>
@@ -1127,7 +1363,8 @@ function groupBrands(list) {
 
 var PLACES_GROUPED = groupBrands(PLACES);
 
-var DATA = { places: PLACES_GROUPED, groups: GROUPS, events: EVENTS };
+var DATA = { places: PLACES_GROUPED, groups: GROUPS, events: EVENTS,
+             upcoming: GROUPS.concat(EVENTS) };
 var activeTab = "places";
 
 // Most recent batch date across the whole guide. Drives the "New" badge.
@@ -1153,37 +1390,113 @@ function esc(s) {
 var DAY_ORDER = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
 var DAY_LABELS = { Mon: "Mondays", Tue: "Tuesdays", Wed: "Wednesdays", Thu: "Thursdays", Fri: "Fridays", Sat: "Saturdays", Sun: "Sundays" };
 
-function populateFilters() {
-  var items = DATA[activeTab];
-  var cats = {}, hoods = {}, gfs = {}, vibes = {}, days = {}, plats = {};
-  items.forEach(function (it) {
-    (it.c || []).forEach(function (c) { cats[c] = 1; });
-    (it.plat || []).forEach(function (p) { plats[p] = 1; });
-    (activeTab === "places" ? (it.gf || []) : (it.who || [])).forEach(function (g) { gfs[g] = 1; });
-    (it.v || []).forEach(function (v) { vibes[v] = 1; });
-    (it.d || []).forEach(function (d) { days[d] = 1; });
-    (it.hoods || (it.h ? [it.h] : [])).forEach(function (h) { hoods[h] = 1; });
-  });
-  document.getElementById("f-cat").innerHTML = '<option value="">All categories</option>' +
-    Object.keys(cats).sort().map(function (c) { return "<option>" + esc(c) + "</option>"; }).join("");
-  document.getElementById("f-hood").innerHTML = '<option value="">All neighborhoods</option>' +
-    Object.keys(hoods).sort().map(function (h) { return "<option>" + esc(h) + "</option>"; }).join("");
-  document.getElementById("f-gf").innerHTML =
-    '<option value="">' + (activeTab === "places" ? "Good for…" : "Who it's for…") + "</option>" +
-    Object.keys(gfs).sort().map(function (g) { return "<option>" + esc(g) + "</option>"; }).join("");
-  document.getElementById("f-vibe").innerHTML = '<option value="">Any vibe</option>' +
-    Object.keys(vibes).sort().map(function (v) { return "<option>" + esc(v) + "</option>"; }).join("");
-  document.getElementById("f-day").innerHTML = '<option value="">Any day</option>' +
-    DAY_ORDER.filter(function (d) { return days[d]; })
-      .map(function (d) { return '<option value="' + d + '">' + DAY_LABELS[d] + "</option>"; }).join("");
-  var platKeys = Object.keys(plats).sort();
-  document.getElementById("f-plat").innerHTML = '<option value="">Any platform</option>' +
-    platKeys.map(function (p) { return "<option>" + esc(p) + "</option>"; }).join("");
-  document.getElementById("f-gf").style.display = "";
-  document.getElementById("f-day").style.display = activeTab === "places" ? "none" : "";
-  // only surface the platform filter once some entries actually carry platforms
-  document.getElementById("f-plat").style.display = platKeys.length ? "" : "none";
+// Six filters, each holding a set of selections. Within one filter the
+// selections are OR-ed; across filters they are AND-ed. Picking Yoga and Padel
+// widens the results; adding Brickell narrows them.
+var FILTERS = [
+  { k: "cat",  label: "Category",      of: function (it) { return it.c || []; } },
+  { k: "hood", label: "Neighborhood",  of: function (it) { return it.hoods || (it.h ? [it.h] : []); } },
+  { k: "gf",   label: "Good for",      of: function (it) { return activeTab === "places" ? (it.gf || []) : (it.who || []); } },
+  { k: "vibe", label: "Vibe",          of: function (it) { return it.v || []; } },
+  { k: "plat", label: "Platform",      of: function (it) { return it.plat || []; } },
+  { k: "day",  label: "Day",           of: function (it) { return it.d || []; } }
+];
+var picked = {};
+FILTERS.forEach(function (f) { picked[f.k] = []; });
+
+function filterByKey(k) {
+  for (var i = 0; i < FILTERS.length; i++) if (FILTERS[i].k === k) return FILTERS[i];
+  return null;
 }
+
+function labelFor(f) {
+  if (f.k === "gf") return activeTab === "places" ? "Good for" : "Who it's for";
+  return f.label;
+}
+
+function optLabel(k, v) { return k === "day" ? DAY_LABELS[v] : v; }
+
+function clearFilters() { FILTERS.forEach(function (f) { picked[f.k] = []; }); }
+
+function anyPicked() {
+  return FILTERS.some(function (f) { return picked[f.k].length; });
+}
+
+// entries surviving every filter except the one being drawn, so each option can
+// show how many results it would actually add
+function poolExcluding(skip) {
+  return DATA[activeTab].filter(function (it) {
+    return FILTERS.every(function (f) {
+      if (f.k === skip || !picked[f.k].length) return true;
+      var vals = f.of(it);
+      return picked[f.k].some(function (p) { return vals.indexOf(p) > -1; });
+    });
+  });
+}
+
+function matchesFilters(it) {
+  return FILTERS.every(function (f) {
+    if (!picked[f.k].length) return true;
+    var vals = f.of(it);
+    return picked[f.k].some(function (p) { return vals.indexOf(p) > -1; });
+  });
+}
+
+function populateFilters() {
+  var all = DATA[activeTab];
+  var html = "";
+
+  FILTERS.forEach(function (f) {
+    // the day filter is meaningless for Spaces, and platform only shows when used
+    if (f.k === "day" && activeTab === "places") return;
+    var universe = {};
+    all.forEach(function (it) { f.of(it).forEach(function (v) { universe[v] = 1; }); });
+    var keys = Object.keys(universe);
+    if (!keys.length) return;
+    keys = f.k === "day" ? DAY_ORDER.filter(function (d) { return universe[d]; }) : keys.sort();
+
+    // drop any selection that no longer exists on this tab
+    picked[f.k] = picked[f.k].filter(function (v) { return universe[v]; });
+
+    var pool = poolExcluding(f.k);
+    var on = picked[f.k];
+    var btn = on.length
+      ? esc(optLabel(f.k, on[0])) + (on.length > 1 ? ' <span class="ms-count">+' + (on.length - 1) + "</span>" : "")
+      : esc(labelFor(f));
+
+    var opts = keys.map(function (v) {
+      var n = pool.filter(function (it) { return f.of(it).indexOf(v) > -1; }).length;
+      var sel = on.indexOf(v) > -1;
+      return '<button class="ms-opt' + (sel ? " on" : "") + '" data-f="' + f.k + '" data-v="' + esc(v) + '"' +
+        (!n && !sel ? " disabled" : "") + '>' +
+        '<span class="ms-box"></span><span class="ms-label">' + esc(optLabel(f.k, v)) + "</span>" +
+        '<span class="ms-n">' + n + "</span></button>";
+    }).join("");
+
+    html += '<div class="ms' + (on.length ? " on" : "") + '" data-ms="' + f.k + '">' +
+      '<button class="ms-btn" data-toggle="' + f.k + '" aria-expanded="false">' + btn +
+      '<span class="caret"></span></button>' +
+      '<div class="ms-panel">' + opts +
+      (on.length ? '<button class="ms-clear" data-clear="' + f.k + '">Clear ' + esc(labelFor(f)).toLowerCase() + "</button>" : "") +
+      "</div></div>";
+  });
+
+  document.getElementById("filters").innerHTML = html;
+  renderActiveFilters();
+}
+
+function renderActiveFilters() {
+  var chips = "";
+  FILTERS.forEach(function (f) {
+    picked[f.k].forEach(function (v) {
+      chips += '<button class="fchip" data-off="' + f.k + '" data-v="' + esc(v) + '">' +
+        esc(optLabel(f.k, v)) + '<span class="x">&times;</span></button>';
+    });
+  });
+  if (chips) chips += '<button class="fchip fchip-all" data-clearall="1">Clear all</button>';
+  document.getElementById("active-filters").innerHTML = chips;
+}
+
 
 var PAGE_SIZE = 12;
 var shown = PAGE_SIZE;
@@ -1314,28 +1627,214 @@ function requestGeo() {
 var TAB_ICONS = {
   places: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-7.6-7-12a7 7 0 0 1 14 0c0 4.4-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>',
   groups: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.8.3 5 2.1 5 4.8"/></svg>',
-  events: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M4 10h16M8 3v5M16 3v5"/></svg>'
+  events: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M4 10h16M8 3v5M16 3v5"/></svg>',
+  upcoming: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3.2 2"/><circle cx="12" cy="12" r="8.5"/></svg>'
 };
 
-function render() {
-  var cat = document.getElementById("f-cat").value;
-  var hood = document.getElementById("f-hood").value;
-  var gf = document.getElementById("f-gf").value;
-  var vibe = document.getElementById("f-vibe").value;
-  var day = document.getElementById("f-day").value;
-  var plat = document.getElementById("f-plat").value;
-  var items = DATA[activeTab].filter(function (it) {
-    if (cat && (it.c || []).indexOf(cat) === -1) return false;
-    if (hood && (it.hoods ? it.hoods.indexOf(hood) === -1 : it.h !== hood)) return false;
-    if (gf) {
-      var pool = activeTab === "places" ? (it.gf || []) : (it.who || []);
-      if (pool.indexOf(gf) === -1) return false;
-    }
-    if (vibe && (it.v || []).indexOf(vibe) === -1) return false;
-    if (plat && (it.plat || []).indexOf(plat) === -1) return false;
-    if (day && activeTab !== "places" && (it.d || []).indexOf(day) === -1) return false;
-    return true;
+
+// ---------------------------------------------------------------- upcoming feed
+// One emitter turns any entry into concrete dated sessions. Adding a new source
+// later means adding an emitter, not touching the rendering below.
+var DAYRX = { Mon: /\bmon(day)?s?\b/i, Tue: /\btue(s|sday)?s?\b/i, Wed: /\bwed(nesday)?s?\b/i,
+              Thu: /\bthu(r|rs|rsday)?s?\b/i, Fri: /\bfri(day)?s?\b/i,
+              Sat: /\bsat(urday)?s?\b/i, Sun: /\bsun(day)?s?\b/i };
+var MON_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+var DAY_FULL = { Mon:"Monday", Tue:"Tuesday", Wed:"Wednesday", Thu:"Thursday",
+                 Fri:"Friday", Sat:"Saturday", Sun:"Sunday" };
+var horizon = 7;
+var expandedDays = {};
+
+function toMins(h, m, ap) {
+  h = parseInt(h, 10); m = m ? parseInt(m, 10) : 0;
+  ap = (ap || "").toLowerCase();
+  if (ap === "pm" && h !== 12) h += 12;
+  if (ap === "am" && h === 12) h = 0;
+  return h * 60 + m;
+}
+function fmtTime(mins) {
+  var h = Math.floor(mins / 60), m = mins % 60;
+  var ap = h >= 12 ? "PM" : "AM", hh = h % 12; if (hh === 0) hh = 12;
+  return hh + (m ? ":" + String(m).padStart(2, "0") : "") + " " + ap;
+}
+function dayKey(d) { return ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()]; }
+function midnight(d) { var x = new Date(d); x.setHours(0,0,0,0); return x; }
+function isoOf(d) {
+  return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+}
+function longDate(d) { return DAY_FULL[dayKey(d)] + ", " + MON_SHORT[d.getMonth()] + " " + d.getDate(); }
+function nthOfMonth(d) { return Math.floor((d.getDate() - 1) / 7) + 1; }
+function isLastOfMonth(d) { var x = new Date(d); x.setDate(x.getDate()+7); return x.getMonth() !== d.getMonth(); }
+
+// free-text schedule -> {day, mins} sessions plus a cadence rule
+function parseSchedule(str) {
+  var out = [], cadence = "";
+  if (!str) return { sessions: out, cadence: cadence };
+  if (/\b1st\s*(&|and)\s*3rd\b/i.test(str)) cadence = "1st3rd";
+  else if (/\blast\b/i.test(str) && /\bmonth/i.test(str)) cadence = "last";
+  else if (/\bmonthly\b/i.test(str) || /full[- ]moon/i.test(str)) cadence = "monthly";
+
+  str.split(/[·;]/).forEach(function (seg) {
+    var days = DAY_ORDER.filter(function (d) { return DAYRX[d].test(seg); });
+    if (/\bdaily\b|\bevery day\b/i.test(seg)) days = DAY_ORDER.slice();
+    if (!days.length) return;
+    // "8:30 to 9:30 AM" is one session starting at 8:30
+    var range = seg.replace(
+      /(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\s*(?:to|-)\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)/ig,
+      function (_m, h1, m1, ap1, _h2, _m2, ap2) { return h1 + (m1 ? ":" + m1 : "") + " " + (ap1 || ap2); });
+    var times = [], rx = /(\d{1,2})(?::(\d{2}))?\s*(am|pm)/ig, m;
+    while ((m = rx.exec(range))) times.push(toMins(m[1], m[2], m[3]));
+    // "7 AM & 6 PM" is two sessions; "meet 6:30, ride 7:15" is one
+    if (times.length > 1 && !/&|\band\b/i.test(range)) times = [Math.min.apply(null, times)];
+    days.forEach(function (d) {
+      if (times.length) times.forEach(function (t) { out.push({ day: d, mins: t }); });
+      else out.push({ day: d, mins: null });
+    });
   });
+  return { sessions: out, cadence: cadence };
+}
+
+function cadenceHolds(cadence, date) {
+  if (cadence === "1st3rd") { var n = nthOfMonth(date); return n === 1 || n === 3; }
+  if (cadence === "last") return isLastOfMonth(date);
+  if (cadence === "monthly") return nthOfMonth(date) === 1;
+  return true;
+}
+
+// every dated session inside the window, already filter-checked
+function feedSessions(days) {
+  var start = midnight(new Date());
+  var rows = [], dated = [];
+
+  for (var i = 0; i < days; i++) {
+    var date = new Date(start); date.setDate(date.getDate() + i);
+    var dk = dayKey(date), iso = isoOf(date);
+
+    ["groups", "events"].forEach(function (kind) {
+      DATA[kind].forEach(function (it) {
+        if (!matchesFilters(it)) return;
+        // a one-off with a real date is handled separately, never as a weekly row
+        if (it.ds || it.de) return;
+        var p = parseSchedule(it.sched);
+        p.sessions.forEach(function (sess) {
+          if (sess.day !== dk) return;
+          if (!cadenceHolds(p.cadence, date)) return;
+          rows.push({ iso: iso, date: date, mins: sess.mins, it: it, kind: kind });
+        });
+      });
+    });
+  }
+
+  // Tier one: finite, dated things. An event carrying only an end date is a
+  // window that is already open, so it runs from today until it closes.
+  var last = new Date(start); last.setDate(last.getDate() + days - 1);
+  var later = [];
+  DATA.events.forEach(function (it) {
+    if (!(it.ds || it.de) || !matchesFilters(it)) return;
+    var a = it.ds ? new Date(it.ds + "T00:00:00") : start;
+    var b = new Date((it.de || it.ds) + "T00:00:00");
+    if (b < start) return;                       // already over
+    if (a <= last) dated.push({ it: it, from: a, to: b, live: !it.ds || a <= start });
+    else later.push({ it: it, from: a, to: b });
+  });
+  dated.sort(function (x, y) { return x.from - y.from; });
+  later.sort(function (x, y) { return x.from - y.from; });
+  later = later.slice(0, 4);
+
+  rows.sort(function (a, b) {
+    if (a.iso !== b.iso) return a.iso < b.iso ? -1 : 1;
+    if (a.mins === null) return 1;
+    if (b.mins === null) return -1;
+    if (a.mins !== b.mins) return a.mins - b.mins;
+    return a.it.n.localeCompare(b.it.n);
+  });
+  return { rows: rows, dated: dated, later: later };
+}
+
+function dateSpan(a, b) {
+  var one = MON_SHORT[a.getMonth()] + " " + a.getDate();
+  if (isoOf(a) === isoOf(b)) return DAY_FULL[dayKey(a)] + ", " + one;
+  return one + " to " + MON_SHORT[b.getMonth()] + " " + b.getDate();
+}
+
+function feedRow(r, past) {
+  var it = r.it;
+  return '<button class="fd-row' + (past ? " past" : "") + '" data-key="' + esc(entryKey(it)) +
+    '" data-kind="' + r.kind + '">' +
+    '<span class="fd-time">' + (r.mins === null ? "See listing" : esc(fmtTime(r.mins))) + "</span>" +
+    '<span class="fd-name">' + esc(it.n) + "</span>" +
+    '<span class="fd-meta">' + esc(it.h || it.meet || "") +
+    ((it.c && it.c[0]) ? ' <span class="fd-dot"></span> ' + esc(it.c[0]) : "") + "</span></button>";
+}
+
+function renderFeed() {
+  var data = feedSessions(horizon);
+  var now = new Date();
+  var nowMins = now.getHours() * 60 + now.getMinutes();
+  var todayIso = isoOf(now);
+  var h = "";
+
+  h += '<div class="fd-nav">' + [7, 14, 30].map(function (n) {
+    return '<button class="hbtn' + (horizon === n ? " on" : "") + '" data-horizon="' + n + '">Next ' + n + " days</button>";
+  }).join("") + "</div>";
+
+  // tier one: the things that only happen once
+  function datedCards(list, ongoingLabel) {
+    return '<div class="fd-cards">' + list.map(function (d) {
+      var it = d.it;
+      var when = d.live && ongoingLabel ? "On now, through " + MON_SHORT[d.to.getMonth()] + " " + d.to.getDate()
+        : dateSpan(d.from, d.to);
+      return '<button class="fd-card' + (d.live && ongoingLabel ? " live" : "") + '" data-key="' +
+        esc(entryKey(it)) + '" data-kind="events">' +
+        '<span class="fd-when">' + esc(when) + "</span>" +
+        '<span class="fd-title">' + esc(it.n) + "</span>" +
+        '<span class="fd-meta">' + esc(it.h || "") + "</span>" +
+        (it.feat ? '<span class="pill feat">Featured</span>' : "") + "</button>";
+    }).join("") + "</div>";
+  }
+  if (data.dated.length) h += '<div class="fd-head">Happening once</div>' + datedCards(data.dated, true);
+  // one-offs are sparse; the big ones are weeks out and burying them would be wrong
+  if (data.later.length) h += '<div class="fd-head">Further ahead</div>' + datedCards(data.later, false);
+
+  // tier two: the weekly rhythm, grouped by day and capped
+  var byDay = {}, order = [];
+  data.rows.forEach(function (r) {
+    if (!byDay[r.iso]) { byDay[r.iso] = []; order.push(r.iso); }
+    byDay[r.iso].push(r);
+  });
+
+  if (order.length) h += '<div class="fd-head">On repeat</div>';
+  order.forEach(function (iso) {
+    var list = byDay[iso];
+    var date = list[0].date;
+    var isToday = iso === todayIso;
+    var open = expandedDays[iso];
+    var view = (open || list.length <= 7) ? list : list.slice(0, 5);
+    var hidden = list.length - view.length;
+    h += '<div class="fd-day' + (isToday ? " today" : "") + '">' +
+      '<div class="fd-date">' + (isToday ? "Today" : esc(longDate(date))) +
+      '<span class="fd-n">' + list.length + "</span></div>" +
+      view.map(function (r) {
+        return feedRow(r, isToday && r.mins !== null && r.mins < nowMins);
+      }).join("") +
+      (hidden > 0 ? '<button class="fd-more" data-day="' + iso + '">Show all ' + list.length + "</button>" : "") +
+      "</div>";
+  });
+
+  if (!data.dated.length && !data.later.length && !order.length) {
+    h += '<p class="empty">Nothing matches those filters in the next ' + horizon + " days.</p>";
+  }
+
+  document.getElementById("feed").innerHTML = h;
+  // only what actually falls inside the window counts toward the window
+  var total = data.rows.length + data.dated.length;
+  var txt = total + " session" + (total === 1 ? "" : "s") + " in the next " + horizon + " days";
+  if (data.later.length) txt += " · " + data.later.length + " further ahead";
+  document.getElementById("count").textContent = txt;
+}
+
+function render() {
+  if (activeTab === "upcoming") return renderFeed();
+  var items = DATA[activeTab].filter(matchesFilters);
 
   items = sortItems(items);
 
@@ -1371,9 +1870,11 @@ function render() {
     // two neighborhoods, then a count of whatever is left
     var cats = it.c || [];
     var hoods = it.hoods || (it.h ? [it.h] : []);
-    var extra = Math.max(0, cats.length - 2) + Math.max(0, hoods.length - 2);
-    pills += cats.slice(0, 2).map(function (c) { return '<span class="pill">' + esc(c) + "</span>"; }).join("");
-    pills += hoods.slice(0, 2).map(function (hh) { return '<span class="pill hood">' + esc(hh) + "</span>"; }).join("");
+    // One category and one neighborhood is all that reliably fits. Three pills
+    // truncate to stubs like "North M", which tell the reader nothing.
+    var extra = Math.max(0, cats.length - 1) + Math.max(0, hoods.length - 1);
+    pills += cats.slice(0, 1).map(function (c) { return '<span class="pill">' + esc(c) + "</span>"; }).join("");
+    pills += hoods.slice(0, 1).map(function (hh) { return '<span class="pill hood">' + esc(hh) + "</span>"; }).join("");
     if (extra) pills += '<span class="pill more-n">+' + extra + "</span>";
     // cost is deliberately absent from the UI for now. Data is still in Notion
     // cards stay a fixed height: a clamped note, plus schedule for groups and
@@ -1818,10 +2319,13 @@ function renderLegend(items) {
 function updateMap(items) {
   if (!mapObj) initMap();
   markerLayer.clearLayers();
-  // a grouped brand plots each of its locations, not one merged pin
+  // A grouped brand plots each of its locations, not one merged pin. The card
+  // matches if ANY location does, so re-test each location on its own; filtering
+  // to Brickell should not drop a Doral pin onto the map.
   var flat = [];
   items.forEach(function (it) {
-    if (it.locs) flat = flat.concat(it.locs); else flat.push(it);
+    if (it.locs) flat = flat.concat(it.locs.filter(matchesFilters));
+    else flat.push(it);
   });
   items = flat;
   var bounds = [];
@@ -1833,9 +2337,10 @@ function updateMap(items) {
     // pin name opens the detail view rather than jumping off-site
     var key = entryKey(it.br ? { n: it.br } : it);
     var name = '<a href="#e/' + esc(key) + '" class="p-open">' + esc(it.n) + "</a>";
-    var q = it.gm ? it.gm : it.ll[0] + "," + it.ll[1];
-    var dir = '<a class="p-dir" href="https://www.google.com/maps/search/?api=1&query=' +
-      q + '" target="_blank" rel="noopener">Open in Google Maps →</a>';
+    var mapUrl = it.gmu || ("https://www.google.com/maps/search/?api=1&query=" +
+      (it.gm ? it.gm : it.ll[0] + "," + it.ll[1]));
+    var dir = '<a class="p-dir" href="' + esc(mapUrl) +
+      '" target="_blank" rel="noopener">Open in Google Maps →</a>';
     var pc = catStyle(it);
     var thumbInner = placeholderSvg(it);
     if (it.img) {
@@ -1889,20 +2394,610 @@ document.querySelectorAll(".vbtn").forEach(function (btn) {
 
 
 
+// ------------------------------------------------------------------ ask bar
+// Natural language in, existing filter state out. The chat does not run its own
+// parallel search: it ticks the same checkboxes a person would, so the chips
+// show their work and the buttons still adjust it afterwards.
+var LEX = {
+  cat: {
+    "Yoga/Pilates": ["yoga","yogi","vinyasa","flow","pilates","reformer","mat","stretch","hot yoga","ashtanga","yin"],
+    "Strength": ["strength","lift","lifting","weights","gym","hiit","bootcamp","crossfit","train","training","conditioning","boxing","muay thai","jiu jitsu","bjj","mma","climb","climbing","bouldering"],
+    "Run/Cardio": ["run","running","runner","jog","5k","10k","marathon","cardio","treadmill","track"],
+    "Cycling": ["cycle","cycling","bike","biking","ride","spin","peloton"],
+    "Swim": ["swim","swimming","pool","laps","lap swim","open water","ocean swim"],
+    "Recovery/Plunge": ["recovery","plunge","cold plunge","ice","ice bath","cryo","cryotherapy","contrast","float","compression","red light","hbot"],
+    "Sauna/Bathhouse": ["sauna","steam","bathhouse","hammam","hamam","banya","infrared","heat"],
+    "Breathwork/Meditation": ["breathwork","breathing","meditate","meditation","mindful","mindfulness","sound bath","soundbath","wim hof"],
+    "Racquet/Padel": ["padel","tennis","racquet","racket","pickleball","court"],
+    "Outdoor/Parks": ["park","parks","outdoor","outside","nature","trail","beach","green","garden","gardens","hike","hiking"],
+    "Walking": ["walk","walking","stroll","steps"],
+    "Cafe/Nutrition": ["cafe","coffee","juice","smoothie","acai","food","eat","market","farmers market","nutrition"],
+    "Wellness/Health Expo": ["expo","summit","conference","panel","festival","fest","talk","workshop"]
+  },
+  hood: {
+    "Brickell": ["brickell"],
+    "Coconut Grove": ["coconut grove","the grove","grove"],
+    "Gables": ["gables","coral gables"],
+    "Wynwood/Edgewater": ["wynwood","edgewater"],
+    "Miami Beach": ["miami beach","south beach","sobe","sofi","south of fifth","lincoln road","sunset harbour","sunset harbor"],
+    "North Beach": ["north beach","nobe","surfside"],
+    "Downtown": ["downtown","worldcenter","brickell city centre"],
+    "Midtown/Design District": ["midtown","design district"],
+    "Key Biscayne": ["key biscayne","the key","rickenbacker"],
+    "Little River": ["little river","little haiti","magic city"],
+    "South Miami/Pinecrest": ["south miami","pinecrest","dadeland"],
+    "Coral Way": ["coral way"],
+    "Doral": ["doral"],
+    "Kendall": ["kendall"],
+    "Aventura": ["aventura"],
+    "North Miami/NMB": ["north miami","nmb","sunny isles"],
+    "Miami Shores/El Portal": ["miami shores","el portal"],
+    "Homestead/South Dade": ["homestead","redland","south dade"]
+  },
+  gf: {
+    "First-Timers": ["first time","first-timer","beginner","new to","never done","starting out","intro"],
+    "Serious Training": ["serious","advanced","hard","intense","performance","athlete","competitive"],
+    "Recovery Day": ["recover","recovery","rest day","sore","easy day"],
+    "Family-Friendly": ["family","kids","children","child","toddler"],
+    "Date Spot": ["date","romantic","partner"],
+    "Community/Social": ["social","meet people","friends","community","alone","by myself","new in town"],
+    "Solo Reset": ["solo","alone time","reset","quiet","decompress","unwind","calm down"],
+    "Post-Workout Fuel": ["post workout","after training","refuel"]
+  },
+  who: {
+    "Beginner-Friendly": ["beginner","first time","new to","never done"],
+    "Women-Centered": ["women","womens","women's","girls","female"],
+    "Competitive": ["competitive","race","racing","fast","serious"],
+    "Social-First": ["social","meet people","friends","chill pace"],
+    "Recovery-Focused": ["recovery","recover"],
+    "Mindfulness-Focused": ["mindful","mindfulness","meditative","calm"],
+    "All Levels": ["all levels","any level","everyone"],
+    "Families": ["family","families","kids"]
+  },
+  vibe: {
+    "Free/Community": ["free","no cost","cheap","budget","donation"],
+    "High-Energy": ["high energy","intense","loud","party","hype"],
+    "Conscious/Chill": ["chill","calm","gentle","slow","relaxed","quiet","mellow"],
+    "Premium/Luxury": ["luxury","premium","fancy","upscale","nice","splurge"],
+    "Social Fitness": ["social","community","group"]
+  },
+  day: {
+    Mon: ["monday","mondays","mon"], Tue: ["tuesday","tuesdays","tue","tues"],
+    Wed: ["wednesday","wednesdays","wed"], Thu: ["thursday","thursdays","thu","thurs"],
+    Fri: ["friday","fridays","fri"], Sat: ["saturday","saturdays","sat"],
+    Sun: ["sunday","sundays","sun"]
+  }
+};
+
+function askNorm(q) {
+  return (" " + q.toLowerCase().replace(/[^a-z0-9'\s]/g, " ").replace(/\s+/g, " ") + " ");
+}
+
+function hits(text, group) {
+  var found = [], used = [];
+  Object.keys(group).forEach(function (key) {
+    group[key].forEach(function (word) {
+      if (text.indexOf(" " + word + " ") > -1 ||
+          text.indexOf(" " + word + "s ") > -1 ||
+          text.indexOf(" " + word + "es ") > -1) {
+        if (found.indexOf(key) === -1) found.push(key);
+        if (used.indexOf(word) === -1) used.push(word);
+      }
+    });
+  });
+  return { keys: found, words: used };
+}
+
+// words the parser understood, so leftovers can be treated as free text
+function parseAsk(q) {
+  var t = askNorm(q);
+  var out = { picked: {}, tab: null, matched: [] };
+
+  // neighbourhoods win first and are cut from the string, otherwise
+  // "south beach" also scores Outdoor/Parks on the word "beach"
+  var hoodR = hits(t, LEX.hood);
+  if (hoodR.keys.length) {
+    out.picked.hood = hoodR.keys;
+    out.matched = out.matched.concat(hoodR.words);
+    hoodR.words.forEach(function (wd) { t = t.split(" " + wd + " ").join(" "); });
+  }
+  ["cat", "gf", "vibe", "day"].forEach(function (f) {
+    var r = hits(t, LEX[f]);
+    if (r.keys.length) { out.picked[f] = r.keys; out.matched = out.matched.concat(r.words); }
+  });
+  var whoR = hits(t, LEX.who);
+  out.who = whoR.keys;
+
+  // Decide the tab fresh each time. Inheriting the last question's tab made
+  // "sauna and ice bath" land on Groups just because the previous ask did.
+  if (/\b(studio|studios|gym|gyms|space|spaces|place|places|spa|court|courts|pool|sauna|where can i|near me|open now|hours)\b/.test(t)) out.tab = "places";
+  if (/\b(club|clubs|crew|group|groups|run club|meet up|meetup|community)\b/.test(t)) out.tab = "groups";
+  if (/\b(event|events|pop up|popup|summit|conference|expo|festival|fest|workshop)\b/.test(t)) out.tab = "events";
+  if (/\b(this week|next week|coming up|upcoming|tonight|today|tomorrow|whats on|what s on|weekend|schedule|when)\b/.test(t)) out.tab = "upcoming";
+  out.explicitTab = out.tab;   // null when we are only guessing
+  if (!out.tab) out.tab = out.picked.day ? "upcoming" : "places";
+
+  if (/\bweekend\b/.test(t)) { out.picked.day = ["Sat", "Sun"]; out.matched.push("weekend"); }
+
+  var stop = " i im a an the me my mine we us you your it its to do does did done in on at by for with from near next this that these those there here find show showing looking look search searching something some someone somewhere anything anyone everything place places spot spots thing things stuff go going get got take can could would should will want wanted need needs help please and or of is are am be been being what where when who whom how why which only just really very much more most best better good great nice cool fun new newest latest around close nearby anywhere else also too but if then than while during morning mornings afternoon afternoons evening evenings night nights early late am pm oclock hour hours time times day days week weeks month months friendly ";
+  // a word already living inside a matched facet label is not an unmet request:
+  // "friendly" comes free with Family-Friendly
+  var labelWords = " ";
+  Object.keys(out.picked).forEach(function (f) {
+    out.picked[f].forEach(function (v) { labelWords += String(v).toLowerCase().replace(/[^a-z0-9]+/g, " ") + " "; });
+  });
+  out.who.forEach(function (v) { labelWords += String(v).toLowerCase().replace(/[^a-z0-9]+/g, " ") + " "; });
+
+  out.rest = t.split(" ").filter(function (w) {
+    return w && stop.indexOf(" " + w + " ") === -1 &&
+      labelWords.indexOf(" " + w + " ") === -1 &&
+      !out.matched.some(function (m) { return m.indexOf(w) > -1; });
+  });
+  return out;
+}
+
+// free-text scan over every prose field, for anything the lexicon missed
+function askFullText(words) {
+  if (!words.length) return [];
+  var pools = [["places", DATA.places], ["groups", DATA.groups], ["events", DATA.events]];
+  var out = [];
+  pools.forEach(function (p) {
+    p[1].forEach(function (it) {
+      var src = it.locs ? it.locs : [it];
+      var blob = [it.n, it.note, it.sched, it.meet, (it.c || []).join(" "), (it.gf || []).join(" "),
+                  (it.who || []).join(" ")].concat(
+        src.map(function (l) {
+          return [l.space, l.know, l.move, l.bring, l.best, l.getin, l.park, l.hrs].filter(Boolean).join(" ");
+        })).filter(Boolean).join(" ").toLowerCase();
+      // whole words only, otherwise "basket" scores a hit on "basketball"
+      var score = words.filter(function (wd) {
+        if (wd.length < 3) return false;
+        var i = blob.indexOf(wd);
+        while (i > -1) {
+          var before = i === 0 ? " " : blob.charAt(i - 1);
+          var after = blob.charAt(i + wd.length) || " ";
+          if (!/[a-z0-9]/.test(before) && !/[a-z0-9]/.test(after.replace(/s$/, " "))) return true;
+          i = blob.indexOf(wd, i + 1);
+        }
+        return false;
+      }).length;
+      if (score) out.push({ it: it, kind: p[0], score: score });
+    });
+  });
+  return out.sort(function (a, b) { return b.score - a.score; });
+}
+
+
+// Count a selection against a tab WITHOUT switching to it. A tab is a hard
+// partition, so guessing one silently threw away two thirds of the guide:
+// "running in coral gables" hid Gables Run Club because it landed on Spaces.
+function askUniverse(tab, key) {
+  var u = {};
+  DATA[tab].forEach(function (it) {
+    var vals = key === "gf" ? (tab === "places" ? (it.gf || []) : (it.who || []))
+             : key === "hood" ? (it.hoods || (it.h ? [it.h] : []))
+             : key === "cat" ? (it.c || [])
+             : key === "vibe" ? (it.v || [])
+             : key === "plat" ? (it.plat || [])
+             : (it.d || []);
+    vals.forEach(function (v) { u[v] = 1; });
+  });
+  return u;
+}
+
+function askSelFor(tab, p) {
+  var sel = {};
+  ["cat", "hood", "vibe", "plat", "day"].forEach(function (k) {
+    if (p.picked[k]) sel[k] = p.picked[k].slice();
+  });
+  var soft = tab === "places" ? (p.picked.gf || []) : (p.who || []);
+  if (soft.length) sel.gf = soft.slice();
+  var asked = Object.keys(sel).length;
+  Object.keys(sel).forEach(function (k) {
+    var u = askUniverse(tab, k);
+    sel[k] = sel[k].filter(function (v) { return u[v]; });
+    if (!sel[k].length) delete sel[k];
+  });
+  // How many of the requested facets survived. Without this a tab that can
+  // honour none of them ends up with an empty selection, which matches
+  // everything, and "padel in Doral" lands on all 27 groups.
+  sel.__asked = asked;
+  sel.__kept = Object.keys(sel).length - 1;
+  return sel;
+}
+
+function askCount(tab, sel) {
+  if (sel.__asked > 0 && sel.__kept === 0) return 0;   // honours nothing, so it is not an answer
+  return DATA[tab].filter(function (it) {
+    return Object.keys(sel).filter(function (k) { return k.indexOf("__") !== 0; }).every(function (k) {
+      var vals = k === "gf" ? (tab === "places" ? (it.gf || []) : (it.who || []))
+               : k === "hood" ? (it.hoods || (it.h ? [it.h] : []))
+               : k === "cat" ? (it.c || [])
+               : k === "vibe" ? (it.v || [])
+               : k === "plat" ? (it.plat || [])
+               : (it.d || []);
+      return sel[k].some(function (v) { return vals.indexOf(v) > -1; });
+    });
+  }).length;
+}
+
+// ============================================================ the closed harness
+// Every translator, lexicon or model, must return an intent whose values already
+// exist in the guide. The enums below are derived from the data at load, so they
+// can never drift from Notion, and anything outside them is discarded before it
+// reaches the renderer. A model cannot name a listing, because the only strings
+// it is permitted to emit are these.
+var ASK_ENUM = (function () {
+  var sets = { cat: {}, hood: {}, gf: {}, vibe: {}, plat: {}, day: {} };
+  ["places", "groups", "events"].forEach(function (t) {
+    DATA[t].forEach(function (it) {
+      (it.c || []).forEach(function (v) { sets.cat[v] = 1; });
+      (it.hoods || (it.h ? [it.h] : [])).forEach(function (v) { sets.hood[v] = 1; });
+      (it.gf || []).forEach(function (v) { sets.gf[v] = 1; });
+      (it.who || []).forEach(function (v) { sets.gf[v] = 1; });
+      (it.v || []).forEach(function (v) { sets.vibe[v] = 1; });
+      (it.plat || []).forEach(function (v) { sets.plat[v] = 1; });
+      (it.d || []).forEach(function (v) { sets.day[v] = 1; });
+    });
+  });
+  var out = {};
+  Object.keys(sets).forEach(function (k) { out[k] = Object.keys(sets[k]).sort(); });
+  out.tab = ["places", "groups", "events", "upcoming"];
+  return out;
+})();
+
+// Whatever a translator returns, only these shapes and values survive.
+function sanitizeIntent(raw) {
+  var safe = { picked: {}, who: [], explicitTab: null, rest: [] };
+  if (!raw || typeof raw !== "object") return safe;
+
+  ["cat", "hood", "vibe", "plat", "day"].forEach(function (k) {
+    var vals = raw.picked && raw.picked[k];
+    if (!Array.isArray(vals)) return;
+    var kept = vals.filter(function (v) { return ASK_ENUM[k].indexOf(v) > -1; });
+    if (kept.length) safe.picked[k] = kept;
+  });
+
+  // gf and who share a slot but hold different vocabularies per tab
+  var soft = [].concat(
+    (raw.picked && Array.isArray(raw.picked.gf)) ? raw.picked.gf : [],
+    Array.isArray(raw.who) ? raw.who : []
+  ).filter(function (v) { return ASK_ENUM.gf.indexOf(v) > -1; });
+  if (soft.length) {
+    safe.picked.gf = soft.slice();
+    safe.who = soft.slice();
+  }
+
+  if (typeof raw.explicitTab === "string" && ASK_ENUM.tab.indexOf(raw.explicitTab) > -1) {
+    safe.explicitTab = raw.explicitTab;
+  }
+  safe.tab = safe.explicitTab || (safe.picked.day ? "upcoming" : "places");
+
+  if (Array.isArray(raw.rest)) {
+    safe.rest = raw.rest.filter(function (v) { return typeof v === "string" && v.length < 30; }).slice(0, 8);
+  }
+  return safe;
+}
+
+function intentIsEmpty(i) {
+  return !Object.keys(i.picked).length && !i.explicitTab;
+}
+
+
+function setTabTo(name) {
+  var btn = document.querySelector('.tab[data-tab="' + name + '"]');
+  if (btn && activeTab !== name) { btn.click(); return true; }
+  return false;
+}
+
+function executeIntent(p, q) {
+  var ans = document.getElementById("ask-answer");
+  var TABS = ["places", "groups", "events"];      // candidates for an automatic landing
+  var ALL = TABS.concat(["upcoming"]);            // upcoming is only chosen explicitly
+  var LABEL = { places: "space", groups: "group", events: "event", upcoming: "session" };
+
+  var counts = {}, sels = {};
+  ALL.forEach(function (t) { sels[t] = askSelFor(t, p); counts[t] = askCount(t, sels[t]); });
+
+  var target;
+  if (p.explicitTab) target = p.explicitTab;
+  else {
+    target = TABS.slice().sort(function (a, b) {
+      if (sels[b].__kept !== sels[a].__kept) return sels[b].__kept - sels[a].__kept;
+      if (counts[b] !== counts[a]) return counts[b] - counts[a];
+      return TABS.indexOf(a) - TABS.indexOf(b);
+    })[0];
+    if (!counts[target]) target = "places";
+  }
+
+  setTabTo(target);
+  clearFilters();
+  Object.keys(sels[target]).forEach(function (k) {
+    if (k.indexOf("__") !== 0) picked[k] = sels[target][k].slice();
+  });
+  populateFilters();
+  shown = PAGE_SIZE;
+  render();
+
+  var applied = [];
+  FILTERS.forEach(function (f) {
+    picked[f.k].forEach(function (v) { applied.push(f.k === "day" ? DAY_LABELS[v] : v); });
+  });
+  var results = DATA[activeTab].filter(matchesFilters);
+  var n = results.length;
+
+  function link(r) {
+    return '<b><a href="#e/' + esc(entryKey(r.it)) + '" data-kind="' + r.kind + '">' + esc(r.it.n) + "</a></b>";
+  }
+  function tabLink(t) {
+    return '<a href="#guide" data-tab-jump="' + t + '">' + counts[t] + " " +
+      LABEL[t] + (counts[t] === 1 ? "" : "s") + "</a>";
+  }
+
+  // what the same question finds on the tabs we did not land on
+  var elsewhere = TABS.filter(function (t) {
+    return t !== activeTab && counts[t] > 0 && sels[t].__kept === sels[activeTab].__kept;
+  });
+  var alsoTxt = elsewhere.length
+    ? " Also <b>" + elsewhere.map(tabLink).join("</b> and <b>") + "</b>."
+    : "";
+
+  var unknown = p.rest.filter(function (wdd) { return wdd.length > 2; });
+  var blobOf = function (it) {
+    var src = it.locs ? it.locs : [it];
+    return [it.n, it.note, it.sched, it.meet, (it.c || []).join(" ")].concat(
+      src.map(function (l) {
+        return [l.space, l.know, l.move, l.bring, l.best, l.getin, l.park].filter(Boolean).join(" ");
+      })).filter(Boolean).join(" ").toLowerCase();
+  };
+
+  if (!applied.length && unknown.length) {
+    var free = askFullText(unknown);
+    clearFilters(); populateFilters(); render();
+    ans.innerHTML = free.length
+      ? "No filter covers <b>" + esc(unknown.join(" or ")) + "</b>, but this comes closest: " +
+        free.slice(0, 4).map(link).join(", ") + "."
+      : '<span class="miss">The guide does not have anything on ' + esc(unknown.join(" or ")) +
+        ".</span> Try a category, a neighborhood, or a day.";
+    return;
+  }
+
+  var unmet = unknown.filter(function (wd) {
+    return !results.some(function (it) { return blobOf(it).indexOf(wd) > -1; });
+  });
+
+  if (n > 0 && !unmet.length) {
+    // A narrow question deserves the actual names, not a count plus a tab to go
+    // hunt in. "Running in Coral Gables" should say Gables Run Club out loud.
+    var grand = TABS.reduce(function (a, t) { return a + counts[t]; }, 0);
+    if (applied.length && grand > 0 && grand <= 6) {
+      var every = [];
+      TABS.forEach(function (t) {
+        if (!counts[t]) return;              // this tab honours none of the question
+        DATA[t].filter(function (it) {
+          return Object.keys(sels[t]).filter(function (k) { return k.indexOf("__") !== 0; }).every(function (k) {
+            var vals = k === "gf" ? (t === "places" ? (it.gf || []) : (it.who || []))
+                     : k === "hood" ? (it.hoods || (it.h ? [it.h] : []))
+                     : k === "cat" ? (it.c || [])
+                     : k === "vibe" ? (it.v || [])
+                     : k === "plat" ? (it.plat || [])
+                     : (it.d || []);
+            return sels[t][k].some(function (v) { return vals.indexOf(v) > -1; });
+          });
+        }).forEach(function (it) { every.push({ it: it, kind: t }); });
+      });
+      if (every.length) {
+        ans.innerHTML = "<b>" + grand + "</b> match" + (grand === 1 ? "" : "es") + " for " +
+          applied.map(function (a) { return "<b>" + esc(a) + "</b>"; }).join(" + ") + ": " +
+          every.map(function (r) {
+            return link(r) + ' <span class="ask-kind">' + LABEL[r.kind] + "</span>";
+          }).join(", ") + ".";
+        return;
+      }
+    }
+    ans.innerHTML = "Showing <b>" + n + " " + LABEL[activeTab] + (n === 1 ? "" : "s") + "</b>" +
+      (applied.length ? " for " + applied.map(function (a) { return "<b>" + esc(a) + "</b>"; }).join(" + ") : "") +
+      "." + alsoTxt;
+    return;
+  }
+
+  var near = askFullText(unmet.length ? unmet : p.rest);
+  if (n > 0 && unmet.length) {
+    ans.innerHTML = "Showing <b>" + n + " " + LABEL[activeTab] + (n === 1 ? "" : "s") + "</b> for " +
+      applied.map(function (a) { return "<b>" + esc(a) + "</b>"; }).join(" + ") +
+      ', but <span class="miss">nothing here pairs that with ' + esc(unmet.join(" and ")) + "</span>." +
+      (near.length ? " Closest on that: " + near.slice(0, 3).map(link).join(", ") + "." : "") + alsoTxt;
+    return;
+  }
+  if (near.length) {
+    ans.innerHTML = '<span class="miss">Nothing matches all of that yet.</span> Closest: ' +
+      near.slice(0, 3).map(link).join(", ") + "." + alsoTxt;
+    return;
+  }
+  if (applied.length > 1) {
+    var keep = picked.cat.length ? "cat" : FILTERS.filter(function (f) { return picked[f.k].length; })[0].k;
+    var kept = picked[keep].slice();
+    clearFilters(); picked[keep] = kept; populateFilters(); render();
+    var m = DATA[activeTab].filter(matchesFilters).length;
+    ans.innerHTML = '<span class="miss">Nothing matches all of that.</span> Loosened to <b>' +
+      esc(applied[0]) + "</b>, which gives " + m + " " + LABEL[activeTab] + (m === 1 ? "" : "s") + ".";
+    return;
+  }
+  clearFilters(); populateFilters(); render();
+  ans.innerHTML = '<span class="miss">The guide does not cover that yet.</span> ' +
+    "Try a category, a neighborhood, or a day.";
+}
+
+
+// ---------------------------------------------------------------- translators
+// Each returns an intent, or null to pass. The harness sanitizes whatever comes
+// back, so a translator can be wrong but it cannot be dangerous.
+function lexiconTranslate(q) {
+  var p = parseAsk(q);
+  return sanitizeIntent({
+    picked: p.picked, who: p.who, explicitTab: p.explicitTab, rest: p.rest
+  });
+}
+
+// Chrome ships Gemini Nano on-device. Desktop only, needs a large free-disk
+// budget, and is absent from Safari, Firefox and every phone, so it is strictly
+// an enhancement: when it is missing or slow, the lexicon still answers.
+var askAI = { checked: false, ready: false, session: null };
+
+var ASK_SCHEMA = {
+  type: "object",
+  additionalProperties: false,
+  properties: {
+    picked: {
+      type: "object",
+      additionalProperties: false,
+      properties: {
+        cat:  { type: "array", items: { type: "string", enum: ASK_ENUM.cat } },
+        hood: { type: "array", items: { type: "string", enum: ASK_ENUM.hood } },
+        gf:   { type: "array", items: { type: "string", enum: ASK_ENUM.gf } },
+        vibe: { type: "array", items: { type: "string", enum: ASK_ENUM.vibe } },
+        day:  { type: "array", items: { type: "string", enum: ASK_ENUM.day } }
+      }
+    },
+    explicitTab: { type: "string", enum: ASK_ENUM.tab },
+    rest: { type: "array", items: { type: "string" } }
+  }
+};
+
+function askSystemPrompt() {
+  return [
+    "You translate a question about a Miami wellness guide into filter values.",
+    "Return JSON only. Never write prose. Never invent a business name.",
+    "Use only values from these lists.",
+    "cat: " + ASK_ENUM.cat.join(", "),
+    "hood: " + ASK_ENUM.hood.join(", "),
+    "gf: " + ASK_ENUM.gf.join(", "),
+    "vibe: " + ASK_ENUM.vibe.join(", "),
+    "day: " + ASK_ENUM.day.join(", "),
+    "explicitTab is places for venues, groups for clubs and crews,",
+    "events for one-off happenings, upcoming when the question is about timing.",
+    "Put any word you could not map into rest."
+  ].join("\n");
+}
+
+async function askAIProbe() {
+  if (askAI.checked) return askAI.ready;
+  askAI.checked = true;
+  try {
+    if (typeof LanguageModel === "undefined") return false;
+    var avail = await LanguageModel.availability();
+    askAI.ready = avail === "available" || avail === "downloadable" || avail === "downloading";
+    askAI.state = avail;
+  } catch (err) {
+    askAI.ready = false;
+  }
+  return askAI.ready;
+}
+
+function withTimeout(promise, ms) {
+  return Promise.race([
+    promise,
+    new Promise(function (_, reject) { setTimeout(function () { reject(new Error("slow")); }, ms); })
+  ]);
+}
+
+async function aiTranslate(q) {
+  if (!askAI.ready) return null;
+  try {
+    if (!askAI.session) {
+      askAI.session = await withTimeout(
+        LanguageModel.create({ initialPrompts: [{ role: "system", content: askSystemPrompt() }] }), 8000);
+    }
+    var raw = await withTimeout(
+      askAI.session.prompt(q, { responseConstraint: ASK_SCHEMA }), 6000);
+    var parsed = typeof raw === "string" ? JSON.parse(raw) : raw;
+    var intent = sanitizeIntent(parsed);
+    return intentIsEmpty(intent) ? null : intent;
+  } catch (err) {
+    askAI.ready = false;          // one failure is enough, stop paying the wait
+    return null;
+  }
+}
+
+// ---------------------------------------------------------------- entry point
+async function runAsk(q) {
+  var ans = document.getElementById("ask-answer");
+  q = (q || "").trim();
+  if (!q) { ans.innerHTML = ""; return; }
+
+  // the lexicon answers immediately, so the page is never waiting on a model
+  var intent = lexiconTranslate(q);
+  executeIntent(intent, q);
+  ans.setAttribute("data-translator", "lexicon");
+
+  var ready = await askAIProbe();
+  if (!ready) return;
+
+  // only bother the model when the lexicon clearly came up short
+  if (!intentIsEmpty(intent) && !intent.rest.length) return;
+
+  ans.classList.add("thinking");
+  var better = await aiTranslate(q);
+  ans.classList.remove("thinking");
+  if (better) {
+    executeIntent(better, q);
+    ans.setAttribute("data-translator", "on-device");
+  }
+}
+
+document.getElementById("ask-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  runAsk(document.getElementById("ask-input").value);
+});
+document.getElementById("ask-eg").addEventListener("click", function (e) {
+  var b = e.target.closest("[data-eg]");
+  if (!b) return;
+  document.getElementById("ask-input").value = b.getAttribute("data-eg");
+  runAsk(b.getAttribute("data-eg"));
+});
+document.getElementById("ask-answer").addEventListener("click", function (e) {
+  var j = e.target.closest("a[data-tab-jump]");
+  if (j) {
+    e.preventDefault();
+    var qq = document.getElementById("ask-input").value;
+    var pp = lexiconTranslate(qq);
+    setTabTo(j.getAttribute("data-tab-jump"));
+    clearFilters();
+    var sel = askSelFor(activeTab, pp);
+    Object.keys(sel).forEach(function (k) { if (k.indexOf("__") !== 0) picked[k] = sel[k].slice(); });
+    populateFilters(); shown = PAGE_SIZE; render();
+    var cnt = DATA[activeTab].filter(matchesFilters).length;
+    document.getElementById("ask-answer").innerHTML =
+      "Showing <b>" + cnt + " " + ({ places: "space", groups: "group", events: "event" }[activeTab]) +
+      (cnt === 1 ? "" : "s") + "</b> for that. Adjust with the filters below.";
+    return;
+  }
+  var a = e.target.closest("a[data-kind]");
+  if (!a) return;
+  e.preventDefault();
+  detailTab = a.getAttribute("data-kind");
+  openDetail(a.getAttribute("href").replace("#e/", ""));
+});
+
+
 document.querySelectorAll(".tab").forEach(function (btn) {
   btn.addEventListener("click", function () {
     document.querySelectorAll(".tab").forEach(function (b) { b.classList.remove("active"); });
     btn.classList.add("active");
     activeTab = btn.getAttribute("data-tab");
-    ["f-cat", "f-hood", "f-gf", "f-vibe", "f-day", "f-plat"].forEach(function (id) {
-      document.getElementById(id).value = "";
-    });
+    clearFilters();
+    expandedDays = {};
     shown = PAGE_SIZE;
     activeSort = activeTab === "events" ? "when" : "az";
     // the map only makes sense for Spaces, which are the only entries with pins
+    var feed = activeTab === "upcoming";
     var vt = document.getElementById("view-toggle");
     vt.className = activeTab === "places" ? "view-toggle show" : "view-toggle";
     if (activeTab !== "places" && currentView === "map") setView("list");
+    document.getElementById("feed").className = feed ? "feed show" : "feed";
+    document.getElementById("cards").style.display = feed ? "none" : "";
+    document.getElementById("show-more").style.display = "none";
+    document.querySelector(".sort-wrap").style.display = feed ? "none" : "";
     populateFilters();
     populateSorts();
     render();
@@ -1910,11 +3005,104 @@ document.querySelectorAll(".tab").forEach(function (btn) {
 });
 document.getElementById("view-toggle").className = "view-toggle show";
 
-["f-cat", "f-hood", "f-gf", "f-vibe", "f-day", "f-plat"].forEach(function (id) {
-  document.getElementById(id).addEventListener("change", function () {
-    shown = PAGE_SIZE;
-    render();
+// one delegated handler for every dropdown: open, tick, clear
+function closeMenus() {
+  document.querySelectorAll(".ms.open").forEach(function (m) {
+    m.classList.remove("open");
+    var b = m.querySelector(".ms-btn");
+    if (b) b.setAttribute("aria-expanded", "false");
   });
+}
+
+function afterFilterChange(keepOpen) {
+  shown = PAGE_SIZE;
+  expandedDays = {};
+  populateFilters();
+  if (keepOpen) {
+    var m = document.querySelector('[data-ms="' + keepOpen + '"]');
+    if (m) {
+      m.classList.add("open");
+      m.querySelector(".ms-btn").setAttribute("aria-expanded", "true");
+      var p = m.querySelector(".ms-panel");
+      if (p && p.getBoundingClientRect) {
+        var rr = p.getBoundingClientRect();
+        if (rr.right > (window.innerWidth || 1200) - 8) m.classList.add("flip");
+      }
+    }
+  }
+  render();
+}
+
+document.getElementById("filters").addEventListener("click", function (e) {
+  if (!e.target.closest) return;
+
+  var toggle = e.target.closest("[data-toggle]");
+  if (toggle) {
+    var wrap = toggle.parentNode;
+    var wasOpen = wrap.classList.contains("open");
+    closeMenus();
+    if (!wasOpen) {
+      wrap.classList.add("open");
+      toggle.setAttribute("aria-expanded", "true");
+      // keep the panel on screen when the button sits near the right edge
+      var panel = wrap.querySelector(".ms-panel");
+      wrap.classList.remove("flip");
+      if (panel && panel.getBoundingClientRect) {
+        var r = panel.getBoundingClientRect();
+        if (r.right > (window.innerWidth || 1200) - 8) wrap.classList.add("flip");
+      }
+    }
+    return;
+  }
+
+  var opt = e.target.closest(".ms-opt");
+  if (opt && !opt.disabled) {
+    var k = opt.getAttribute("data-f"), v = opt.getAttribute("data-v");
+    var i = picked[k].indexOf(v);
+    if (i > -1) picked[k].splice(i, 1); else picked[k].push(v);
+    afterFilterChange(k);   // stay open so several can be ticked in a row
+    return;
+  }
+
+  var clear = e.target.closest("[data-clear]");
+  if (clear) {
+    picked[clear.getAttribute("data-clear")] = [];
+    afterFilterChange(null);
+  }
+});
+
+document.getElementById("feed").addEventListener("click", function (e) {
+  if (!e.target.closest) return;
+  var hz = e.target.closest("[data-horizon]");
+  if (hz) { horizon = parseInt(hz.getAttribute("data-horizon"), 10); expandedDays = {}; renderFeed(); return; }
+  var more = e.target.closest("[data-day]");
+  if (more) { expandedDays[more.getAttribute("data-day")] = 1; renderFeed(); return; }
+  var row = e.target.closest("[data-key]");
+  if (row) {
+    detailTab = row.getAttribute("data-kind");
+    openDetail(row.getAttribute("data-key"));
+  }
+});
+
+document.getElementById("active-filters").addEventListener("click", function (e) {
+  if (!e.target.closest) return;
+  if (e.target.closest("[data-clearall]")) { clearFilters(); afterFilterChange(null); return; }
+  var off = e.target.closest("[data-off]");
+  if (off) {
+    var k = off.getAttribute("data-off"), v = off.getAttribute("data-v");
+    var i = picked[k].indexOf(v);
+    if (i > -1) picked[k].splice(i, 1);
+    afterFilterChange(null);
+  }
+});
+
+document.addEventListener("click", function (e) {
+  if (e.target.closest && e.target.closest(".ms")) return;
+  closeMenus();
+});
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") closeMenus();
 });
 
 document.getElementById("f-sort").addEventListener("change", function (e) {

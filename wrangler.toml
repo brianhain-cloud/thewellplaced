@@ -1,0 +1,9 @@
+name = "thewellplaced"
+compatibility_date = "2026-08-10"
+
+# Only public/ is published. Keeping the deployable files in their own directory
+# means .git, the Notion build inputs and the scripts cannot be served by
+# accident. An ignore list did not reliably exclude them.
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
