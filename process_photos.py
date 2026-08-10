@@ -34,6 +34,52 @@ EXTS = {".jpg", ".jpeg", ".png", ".webp", ".avif", ".bmp", ".tif", ".tiff"}
 ALIASES = {
     "anatomyfitness": "Anatomy Midtown",
     "barrysbootcamp": "Barry's Miami Midtown",
+    "biscaynenationalpark": "Biscayne National Park, Dante Fascell Visitor Center",
+    "biohackitwomenshealthworkshop": "Biohack-It Women's Health Workshop & Panel",
+    "breathetribe": "BreathTribe Miami",
+    "bunda": "BÜNDA Coral Gables",
+    "carillonwellness": "Carillon Miami Wellness Resort",
+    "clubpilates": "Club Pilates South Beach",
+    "clubstudio": "Club Studio Miami",
+    "coffeeandchillmiami": "Coffee & Chill",
+    "davidkennedypark": "David T. Kennedy Park",
+    "dolphinsrainbows": "Dolphins & Rainbows Swim Group",
+    "eosfitness": "EoS Fitness Kendall",
+    "fullmoonyogasynergy": "Full Moon Yoga & Ceremony South Pointe",
+    "girlsonthewalk": "Girls On the Walk Miami",
+    "hiitruntheunderline": "HIIT & RUN at The Underline",
+    "jetset": "JETSET Pilates Sunset Harbour",
+    "kasayoga": "Kasa Yoga Studio",
+    "legacylittleriver": "LEGACY Little River",
+    "lifetimegables": "Life Time Gables",
+    "lincolnroadcommunityyoga": "Lincoln Road Free Community Yoga",
+    "mimiyoga": "Mimi Yoga & Pilates (Wynwood)",
+    "normandyislepark": "Normandy Isle Park & Pool",
+    "ommovement": "Om Movement",
+    "padelxmiami": "Padel X",
+    "pausestudio": "Pause Studio Brickell",
+    "polestarpilates": "Polestar Pilates Studio, Dadeland",
+    "rawfitmiami": "Raw Fit-Miami",
+    "reservepadel": "Reserve Padel, Seaplane Base",
+    "reservepadeldesigndistrict": "Reserve Padel, Design District",
+    "resetcryotherapy": "Reset Cryotherapy South Beach",
+    "restorativesoundbathatbotanicalgarden": "Restorative Sound Bath Meditation",
+    "skandayoga": "Skanda Yoga Studio",
+    "studiothreemiami": "Studio Three",
+    "sunsetyogasouthpointepark": "Sunset Yoga at South Pointe Park",
+    "sweat440": "SWEAT440 Brickell",
+    "theboardwalks": "The Board Walks, Miami",
+    "thestandardmiami": "The Standard Spa",
+    "theunderline": "The Underline, Brickell Backyard",
+    "tremble": "TREMBLE Brickell",
+    "ufcmiami": "UFC Gym Doral",
+    "ultimatewellnessconference": "Ultimate Wellness Conference at Faena Forum",
+    "ultrapadelaventura": "Ultra Padel Club, Aventura",
+    "ultrapadelmagiccity": "Ultra Padel Club (Magic City)",
+    "vizcayavillagewellnessclasses": "Vizcaya Village Sunday Wellness Classes",
+    "werunthecity": "We Run The City",
+    "yogaintheparkaventura": "Yoga in the Park, Aventura",
+    "youfitgyms": "YouFit Gyms Coral Way",
 }
 
 
@@ -56,7 +102,14 @@ def slugify(s):
 
 
 def entry_names(html):
-    return re.findall(r'\{n:"((?:[^"\\]|\\.)*)"', html)
+    return re.findall(r'\{"n":"((?:[^"\\]|\\.)*)"', html)
+
+
+def photo_index(filename):
+    """Trailing number picks the order: 'Venetian Pool 2.jpg' is the second photo."""
+    stem = os.path.splitext(os.path.basename(filename))[0]
+    m = re.search(r"[\s_-]+(\d+)$", stem)
+    return int(m.group(1)) if m else 1
 
 
 def match_entry(filename, names):
@@ -105,16 +158,19 @@ def process_image(src, dst):
     return q, os.path.getsize(dst)
 
 
-def set_img(html, name, path):
+def set_imgs(html, name, paths):
+    """Write img: (the lead photo) and imgs: (the full carousel) for one entry."""
     esc = re.escape(name)
-    # already has img: -> replace it
-    pat_existing = re.compile(r'(\{n:"' + esc + r'",)img:"[^"]*",')
-    if pat_existing.search(html):
-        return pat_existing.sub(lambda m: m.group(1) + 'img:"%s",' % path, html, count=1), "updated"
-    pat = re.compile(r'(\{n:"' + esc + r'",)')
+    field = '"img":"%s",' % paths[0]
+    if len(paths) > 1:
+        field += '"imgs":[%s],' % ",".join('"%s"' % p for p in paths)
+    html = re.sub(r'(\{"n":"' + esc + r'",)"img":"[^"]*",("imgs":\[[^\]]*\],)?',
+                  lambda m: m.group(1), html, count=1)
+    pat = re.compile(r'(\{"n":"' + esc + r'",)')
     if not pat.search(html):
         return html, "entry-not-found"
-    return pat.sub(lambda m: m.group(1) + 'img:"%s",' % path, html, count=1), "added"
+    return pat.sub(lambda m: m.group(1) + field, html, count=1), (
+        "%d photos" % len(paths) if len(paths) > 1 else "1 photo")
 
 
 def main():
@@ -129,17 +185,28 @@ def main():
     if not files:
         sys.exit("photos-raw/ is empty — drop some photos in first.")
 
-    done, skipped = [], []
+    # group every raw file by the entry it belongs to, ordered by any trailing number
+    groups, skipped = {}, []
     for f in files:
         name = match_entry(f, names)
         if not name:
             skipped.append((f, "no matching entry"))
             continue
+        groups.setdefault(name, []).append(f)
+
+    done = []
+    for name, fl in sorted(groups.items()):
+        fl.sort(key=lambda x: (photo_index(x), x))
         slug = slugify(name)
-        dst = os.path.join(OUT, slug + ".jpg")
-        q, size = process_image(os.path.join(RAW, f), dst)
-        html, status = set_img(html, name, "photos/%s.jpg" % slug)
-        done.append((f, name, slug, q, size // 1024, status))
+        paths = []
+        for i, f in enumerate(fl):
+            suffix = "" if i == 0 else "-%d" % (i + 1)
+            dst = os.path.join(OUT, slug + suffix + ".jpg")
+            q, size = process_image(os.path.join(RAW, f), dst)
+            paths.append("photos/%s%s.jpg" % (slug, suffix))
+            done.append((f, name, slug + suffix, q, size // 1024, ""))
+        html, status = set_imgs(html, name, paths)
+        done[-1] = done[-1][:5] + (status,)
 
     open(HTML, "w", encoding="utf-8").write(html)
 
