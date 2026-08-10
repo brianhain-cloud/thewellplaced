@@ -12,3 +12,6 @@ photos-raw/
 
 # The Astro experiment. Kept locally for reference, not deployed.
 wellplaced-astro/
+
+# wrangler local state, holds your Cloudflare account id
+.wrangler/
