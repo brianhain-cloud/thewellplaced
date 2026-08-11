@@ -44,19 +44,66 @@ def days_of(sched):
     if re.search(r"\bdaily\b|\bevery day\b", sched, re.I): return ORDER[:]
     return [d for d in ORDER if re.search(DAYRX[d], sched, re.I)]
 
+def geo_variants(addr):
+    """Address spellings to try, best first.
+
+    The Census geocoder wants a plain street address. It returns nothing for a
+    unit number, a trailing country, or a venue name in front of the street,
+    all of which are normal in Notion. So try the address as written, then
+    progressively stripped, and stop at the first hit."""
+    seen, out = set(), []
+    def add(a):
+        a = re.sub(r"\s{2,}", " ", a).strip(" ,")
+        if a and a not in seen:
+            seen.add(a); out.append(a)
+
+    add(addr)
+    a = re.sub(r",?\s*(United States|USA|US)\s*$", "", addr, flags=re.I)
+    add(a)
+    # "Jill Mallory Studio of Dance, 13270 SW 87th Ave, ..." -> drop the venue
+    a = re.sub(r"^[^,]*[A-Za-z][^,]*,\s*(?=\d)", "", a)
+    add(a)
+    # Drop a unit, suite or floor. "Fl" is deliberately not in this list: it is
+    # also the state, and stripping it took the zip code with it.
+    a = re.sub(r",?\s*(Unit|Ste\.?|Suite|Apt\.?|Floor)\s*#?\s*[\w-]+", "", a, flags=re.I)
+    a = re.sub(r",?\s*#\s*[\w-]+", "", a)
+    add(a)
+    # and finally anything parenthesised, e.g. "(Inside Upper Buena Vista)"
+    add(re.sub(r"\s*\([^)]*\)", "", a))
+    return out
+
+def census(form):
+    url = ("https://geocoding.geo.census.gov/geocoder/locations/onelineaddress"
+           "?address=" + urllib.parse.quote(form) + "&benchmark=2020&format=json")
+    with urllib.request.urlopen(url, timeout=20) as r:
+        m = json.load(r)["result"]["addressMatches"]
+    return [round(m[0]["coordinates"]["y"], 5), round(m[0]["coordinates"]["x"], 5)] if m else None
+
+def osm(form):
+    """OpenStreetMap fallback. The Census file has real gaps, mostly newer
+    streets and highway addresses, and it simply returns nothing for them."""
+    url = ("https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q="
+           + urllib.parse.quote(form))
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "thewellplaced.com build script (brianhain@gmail.com)"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        m = json.load(r)
+    return [round(float(m[0]["lat"]), 5), round(float(m[0]["lon"]), 5)] if m else None
+
 def geocode(addr):
     if not addr: return None, False
     if addr in cache: return cache[addr], False
-    url = ("https://geocoding.geo.census.gov/geocoder/locations/onelineaddress"
-           "?address=" + urllib.parse.quote(addr) + "&benchmark=2020&format=json")
-    try:
-        with urllib.request.urlopen(url, timeout=20) as r:
-            m = json.load(r)["result"]["addressMatches"]
-        ll = [round(m[0]["coordinates"]["y"], 5), round(m[0]["coordinates"]["x"], 5)] if m else None
-    except Exception:
-        ll = None
+    ll = None
+    for lookup, pause in ((census, 0.4), (osm, 1.1)):   # OSM asks for 1 req/sec
+        for form in geo_variants(addr):
+            try:
+                ll = lookup(form)
+            except Exception:
+                ll = None
+            time.sleep(pause)
+            if ll: break
+        if ll: break
     cache[addr] = ll
-    time.sleep(0.4)
     return ll, True
 
 def trim(o):

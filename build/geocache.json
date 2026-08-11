@@ -1,8 +1,4 @@
 {
-"Miami, FL": null,
-"3252 Buena Vista Blvd, Unit #102, Miami, FL 33137": null,
-"South Miami / Cutler area, Miami, FL": null,
-"Doral, Miami, FL": null,
 "325 NW 28th St, Miami, FL": [
 25.8029,
 -80.20145
@@ -11,15 +7,10 @@
 25.89098,
 -80.22713
 ],
-"Little Havana, Miami, FL": null,
-"Multiple Miami-Dade College campuses, Miami, FL": null,
-"Sunny Isles Beach, FL": null,
 "2165 NE 163rd St, North Miami Beach, FL": [
 25.92614,
 -80.15666
 ],
-"9549 S Dixie Hwy, Miami, FL 33156": null,
-"Pinecrest, Miami, FL": null,
 "5700 Collins Ave, Miami Beach, FL": [
 25.83662,
 -80.12085
@@ -28,5 +19,49 @@
 25.92584,
 -80.16771
 ],
-"3525 NE 163rd St, North Miami Beach, FL 33160, United States": null
+"Jill Mallory Studio of Dance, 13270 SW 87th Ave, Miami, FL 33176": [
+25.6469,
+-80.3343
+],
+"8853 SW 132nd St, Miami, FL 33176": [
+25.64754,
+-80.33735
+],
+"6095 NW 72nd Ave, Miami, FL 33166": [
+25.82887,
+-80.31376
+],
+"250 NE 61st St, Miami, FL 33137": [
+25.83234,
+-80.1912
+],
+"760 SW 10th Ave, Miami, FL 33130": [
+25.7663,
+-80.21131
+],
+"17100 Collins Ave, Ste 201, Sunny Isles Beach, FL 33160": [
+25.93482,
+-80.12177
+],
+"434 SW 3rd Ave, Miami, FL 33130": [
+25.76956,
+-80.19929
+],
+"5855 SW 111th St, Miami, FL 33156": [
+25.66779,
+-80.28687
+],
+"3252 Buena Vista Blvd, Unit #102, Miami, FL 33137": [
+25.80699,
+-80.19401
+],
+"Multiple Miami-Dade College campuses, Miami, FL": null,
+"9549 S Dixie Hwy, Miami, FL 33156": [
+25.68127,
+-80.31568
+],
+"3525 NE 163rd St, North Miami Beach, FL 33160, United States": [
+25.93035,
+-80.13491
+]
 }
