@@ -2973,10 +2973,9 @@ document.getElementById("ask-answer").addEventListener("click", function (e) {
     var sel = askSelFor(activeTab, pp);
     Object.keys(sel).forEach(function (k) { if (k.indexOf("__") !== 0) picked[k] = sel[k].slice(); });
     populateFilters(); shown = PAGE_SIZE; render();
-    var cnt = DATA[activeTab].filter(matchesFilters).length;
-    document.getElementById("ask-answer").innerHTML =
-      "Showing <b>" + cnt + " " + ({ places: "space", groups: "group", events: "event" }[activeTab]) +
-      (cnt === 1 ? "" : "s") + "</b> for that. Adjust with the filters below.";
+    // Jumping tabs lands on the cards for that tab. Same rule as a fresh ask:
+    // the grid is the answer, so clear the line rather than restate the count.
+    document.getElementById("ask-answer").innerHTML = "";
     return;
   }
   var a = e.target.closest("a[data-kind]");
