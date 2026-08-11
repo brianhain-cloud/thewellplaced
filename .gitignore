@@ -15,3 +15,6 @@ wellplaced-astro/
 
 # wrangler local state, holds your Cloudflare account id
 .wrangler/
+
+# Notion integration token, local only
+.env

@@ -78,12 +78,39 @@ can rename and re-run.
 ## Rebuilding from Notion
 
 ```bash
-cd build && python3 build.py
+python3 build/sync.py     # Notion  -> build/*.json
+python3 build/build.py    # *.json  -> build/data.js
 ```
 
-Reads the JSON snapshots in `build/`, applies the house style, geocodes new
-addresses through the US Census geocoder, and writes `data.js`. The three arrays
-then go into `public/index.html`.
+`sync.py` pulls all three databases and writes the snapshots. `--dry-run` shows
+what would change without touching anything, which is the safe way to check
+whether a sync is even needed.
+
+`build.py` reads those snapshots, applies the house style, geocodes any new
+address, and writes `data.js`. The three arrays then go into
+`public/index.html`, and `node build/gen_enums.js` regenerates the Worker's
+vocabulary.
+
+### The token
+
+`sync.py` needs a Notion internal integration token, read from `.env` at the
+repo root. `.env` is git-ignored; `.env.example` shows the shape.
+
+1. Go to <https://www.notion.so/profile/integrations> and create a new internal
+   integration in the workspace that holds The Well Placed.
+2. Give it read access. It never writes, so no write capability is needed.
+3. Copy the secret into `.env` as `NOTION_TOKEN=...`.
+4. Open each of the three databases in Notion, then `...` menu, Connections,
+   and add the integration. A token alone is not enough; Notion also requires
+   the integration to be connected to each database, and a missing connection
+   shows up as a 404.
+
+### When a property is renamed
+
+`sync.py` maps Notion property names to the short keys `build.py` expects. Rename
+a property in Notion and that column arrives empty, so the script counts a few
+required fields and refuses to write if any of them come back completely empty.
+If it stops with that error, fix the name in `sync.py` rather than working around it.
 
 ## House style
 

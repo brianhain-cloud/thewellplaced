@@ -106,6 +106,10 @@ def geocode(addr):
     cache[addr] = ll
     return ll, True
 
+def phone(v):
+    """Any dash in a phone number is a hyphen, never a range."""
+    return re.sub(r"[‐-―]", "-", v).strip() if v else v
+
 def trim(o):
     return {k: v for k, v in o.items() if v not in (None, "", [], False)}
 
@@ -150,7 +154,11 @@ for r in active:
         # Addresses go through clean() too. A Notion address can carry an en dash
         # in a block range ("11th–15th St") and the no-dash rule covers the whole
         # site, not just the prose.
-        "tel": r.get("tel"), "addr": clean(r.get("addr")),
+        #
+        # A phone number cannot: clean() reads a dash between digits as a range
+        # and would turn "(305) 224-6399" into "224 to 6399". A dash typed into
+        # a phone number is always meant to be a plain hyphen.
+        "tel": phone(r.get("tel")), "addr": clean(r.get("addr")),
         "w": lk[0], "book": lk[1],
         "ig": handle(lk[2], "instagram.com"), "fb": lk[3], "tt": handle(lk[4], "tiktok.com"),
         "yt": lk[5], "li": lk[6], "gmu": lk[7],

@@ -285,16 +285,25 @@
   .fd-cards:has(> :only-child) { grid-template-columns: minmax(220px, 460px); }
   .fd-card {
     display: flex; flex-direction: column; gap: 3px; align-items: flex-start;
-    text-align: left; padding: 14px 16px;
+    text-align: left; padding: 14px 16px; width: 100%;
     background: var(--card); border: 1px solid var(--line);
-    border-left: 3px solid var(--clay); border-radius: 0 12px 12px 0;
+    border-left: 3px solid var(--accent, var(--clay)); border-radius: 0 12px 12px 0;
     cursor: pointer; font-family: 'Inter', sans-serif;
-    transition: transform 0.15s, border-color 0.15s;
+    transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
   }
-  .fd-card:hover { transform: translateY(-1px); border-color: var(--sage-dark); border-left-color: var(--clay); }
+  .fd-card:hover {
+    transform: translateY(-1px); border-color: var(--sage-dark);
+    border-left-color: var(--accent, var(--clay));
+    box-shadow: 0 4px 14px rgba(31,42,36,0.07);
+  }
+  .fd-card.past { opacity: 0.45; }
   .fd-card.live { border-left-color: var(--sage); background: rgba(122,143,124,0.05); }
   .fd-card.live .fd-when { color: var(--sage-dark); }
-  .fd-when { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; color: var(--clay); text-transform: uppercase; }
+  .fd-when {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+    color: var(--accent, var(--clay)); text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+  }
   .fd-title {
     font-family: 'Playfair Display', serif; font-weight: 700;
     font-size: 1rem; line-height: 1.25; color: var(--title); margin: 2px 0;
@@ -312,37 +321,14 @@
     background: rgba(31,42,36,0.07); color: rgba(31,42,36,0.5);
     padding: 1px 7px; border-radius: 999px;
   }
-  .fd-row {
-    display: flex; align-items: baseline; gap: 12px; width: 100%;
-    text-align: left; padding: 9px 10px;
-    background: none; border: none; border-top: 1px solid var(--line);
-    cursor: pointer; font-family: 'Inter', sans-serif;
-  }
-  .fd-row:hover { background: rgba(122,143,124,0.08); }
-  .fd-row.past { opacity: 0.42; }
-  .fd-time {
-    flex: 0 0 74px; font-size: 0.76rem; font-weight: 600;
-    color: var(--clay); font-variant-numeric: tabular-nums;
-  }
-  .fd-name { flex: 1; font-size: 0.88rem; font-weight: 600; color: var(--ink); }
-  .fd-meta { font-size: 0.75rem; color: rgba(31,42,36,0.5); text-align: right; }
-  .fd-dot {
-    display: inline-block; width: 3px; height: 3px; border-radius: 50%;
-    background: rgba(31,42,36,0.3); vertical-align: 2px;
-  }
+  .fd-meta { font-size: 0.75rem; color: rgba(31,42,36,0.5); }
   .fd-more {
-    margin: 6px 0 0 84px; padding: 6px 14px;
+    margin: 10px 0 0; padding: 6px 14px;
     font: 600 0.74rem 'Inter', sans-serif;
     border: 1px dashed var(--line); border-radius: 999px;
     background: none; color: var(--sage-dark); cursor: pointer;
   }
   .fd-more:hover { border-style: solid; border-color: var(--sage-dark); }
-  @media (max-width: 560px) {
-    .fd-row { flex-wrap: wrap; gap: 4px 10px; }
-    .fd-time { flex: 0 0 66px; }
-    .fd-meta { width: 100%; text-align: left; padding-left: 78px; }
-    .fd-more { margin-left: 0; }
-  }
 
   .count { text-align: center; font-size: 0.8rem; color: rgba(31,42,36,0.5); margin-bottom: 20px; }
 
@@ -1112,7 +1098,7 @@
         <button class="tab active" data-tab="places" role="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-7.6-7-12a7 7 0 0 1 14 0c0 4.4-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Spaces</button>
         <button class="tab" data-tab="groups" role="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.8.3 5 2.1 5 4.8"/></svg>Groups</button>
         <button class="tab" data-tab="events" role="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M4 10h16M8 3v5M16 3v5"/></svg>Events</button>
-        <button class="tab" data-tab="upcoming" role="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3.2 2"/><circle cx="12" cy="12" r="8.5"/></svg>This week</button>
+        <button class="tab" data-tab="upcoming" role="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3.2 2"/><circle cx="12" cy="12" r="8.5"/></svg>Schedule</button>
       </div>
 
       <div class="ask" id="ask">
@@ -1660,10 +1646,13 @@ function toMins(h, m, ap) {
   if (ap === "am" && h === 12) h = 0;
   return h * 60 + m;
 }
+// One shape for every time on the schedule: "7:00 AM", never "7 AM". Minutes
+// are always printed so the column lines up and 7 AM cannot be mistaken for a
+// different kind of entry than 7:30.
 function fmtTime(mins) {
   var h = Math.floor(mins / 60), m = mins % 60;
   var ap = h >= 12 ? "PM" : "AM", hh = h % 12; if (hh === 0) hh = 12;
-  return hh + (m ? ":" + String(m).padStart(2, "0") : "") + " " + ap;
+  return hh + ":" + String(m).padStart(2, "0") + " " + ap;
 }
 function dayKey(d) { return ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()]; }
 function midnight(d) { var x = new Date(d); x.setHours(0,0,0,0); return x; }
@@ -1765,14 +1754,18 @@ function dateSpan(a, b) {
   return one + " to " + MON_SHORT[b.getMonth()] + " " + b.getDate();
 }
 
+// A recurring session gets the same card as everything else in the guide, and
+// the same accent colour as its map pin, so a category is recognisable across
+// the list, the map and here without reading a word.
 function feedRow(r, past) {
   var it = r.it;
-  return '<button class="fd-row' + (past ? " past" : "") + '" data-key="' + esc(entryKey(it)) +
-    '" data-kind="' + r.kind + '">' +
-    '<span class="fd-time">' + (r.mins === null ? "See listing" : esc(fmtTime(r.mins))) + "</span>" +
-    '<span class="fd-name">' + esc(it.n) + "</span>" +
-    '<span class="fd-meta">' + esc(it.h || it.meet || "") +
-    ((it.c && it.c[0]) ? ' <span class="fd-dot"></span> ' + esc(it.c[0]) : "") + "</span></button>";
+  var cs = catStyle(it);
+  var meta = [it.h || it.meet || "", (it.c && it.c[0]) || ""].filter(Boolean);
+  return '<button class="fd-card' + (past ? " past" : "") + '" style="--accent:' + cs.style.color + '"' +
+    ' data-key="' + esc(entryKey(it)) + '" data-kind="' + r.kind + '">' +
+    '<span class="fd-when">' + (r.mins === null ? "Time varies" : esc(fmtTime(r.mins))) + "</span>" +
+    '<span class="fd-title">' + esc(it.n) + "</span>" +
+    '<span class="fd-meta">' + esc(meta.join(" · ")) + "</span></button>";
 }
 
 function renderFeed() {
@@ -1792,7 +1785,8 @@ function renderFeed() {
       var it = d.it;
       var when = d.live && ongoingLabel ? "On now, through " + MON_SHORT[d.to.getMonth()] + " " + d.to.getDate()
         : dateSpan(d.from, d.to);
-      return '<button class="fd-card' + (d.live && ongoingLabel ? " live" : "") + '" data-key="' +
+      return '<button class="fd-card' + (d.live && ongoingLabel ? " live" : "") +
+        '" style="--accent:' + catStyle(it).style.color + '" data-key="' +
         esc(entryKey(it)) + '" data-kind="events">' +
         '<span class="fd-when">' + esc(when) + "</span>" +
         '<span class="fd-title">' + esc(it.n) + "</span>" +
@@ -1822,9 +1816,9 @@ function renderFeed() {
     h += '<div class="fd-day' + (isToday ? " today" : "") + '">' +
       '<div class="fd-date">' + (isToday ? "Today" : esc(longDate(date))) +
       '<span class="fd-n">' + list.length + "</span></div>" +
-      view.map(function (r) {
+      '<div class="fd-cards">' + view.map(function (r) {
         return feedRow(r, isToday && r.mins !== null && r.mins < nowMins);
-      }).join("") +
+      }).join("") + "</div>" +
       (hidden > 0 ? '<button class="fd-more" data-day="' + iso + '">Show all ' + list.length + "</button>" : "") +
       "</div>";
   });
@@ -2248,7 +2242,10 @@ var CAT_STYLE = {
   "Cafe/Nutrition":        { color: "#6b8e4e", glyph: '<path d="M5 8.5h11v4.8a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V8.5zM16 9.8h1.8a2.1 2.1 0 0 1 0 4.2H16"/>' },
   "Outdoor/Parks":         { color: "#3f6b4a", glyph: '<path d="M12 20.5v-4.2M12 16.3l-4.6-5.4h9.2L12 16.3zM12 10.9L8.4 5.5h7.2L12 10.9z"/>' },
   "Racquet/Padel":         { color: "#7d6280", glyph: '<ellipse cx="12.5" cy="9" rx="5.2" ry="6"/><path d="M9.2 13.8L5.5 20.5"/>' },
-  "Dance":                 { color: "#b0708f", glyph: '<circle cx="7.5" cy="17.5" r="2.4"/><circle cx="16.5" cy="15.5" r="2.4"/><path d="M9.9 17.5V6.8l9-1.9v10.6"/>' }
+  "Dance":                 { color: "#b0708f", glyph: '<circle cx="7.5" cy="17.5" r="2.4"/><circle cx="16.5" cy="15.5" r="2.4"/><path d="M9.9 17.5V6.8l9-1.9v10.6"/>' },
+  "Cycling":               { color: "#c9922f", glyph: '<circle cx="5.6" cy="16.4" r="3.4"/><circle cx="18.4" cy="16.4" r="3.4"/><path d="M5.6 16.4l4.2-7.8h4.6l4 7.8M9.2 8.6h4.4"/>' },
+  "Walking":               { color: "#7f8f9e", glyph: '<circle cx="13.4" cy="4.6" r="1.9"/><path d="M12.8 8.2l-2.6 4.2 2.1 2.1 1.1 5.1M12.3 14.5l-3.6 5.6M14.9 9.6l3.1 2.1"/>' },
+  "Wellness/Health Expo":  { color: "#6a5f9e", glyph: '<path d="M4.5 9.2h15v10.3h-15zM4.5 9.2l1.8-4h11.4l1.8 4M9.4 19.5v-5.1h3.4v5.1"/>' }
 };
 var CAT_FALLBACK = { color: "#46594d", glyph: '<circle cx="12" cy="12" r="4"/>' };
 
