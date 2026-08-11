@@ -161,10 +161,6 @@
   .ask-answer:empty { margin-top: 0; }
   .ask-answer b { color: var(--title); font-weight: 600; }
   .ask-answer .miss { color: var(--clay); }
-  .ask-answer .ask-kind {
-    font-size: 0.72rem; color: rgba(31,42,36,0.42);
-    text-transform: uppercase; letter-spacing: 0.06em;
-  }
   .ask-answer a { color: inherit; }
   .ask-answer.thinking { opacity: 0.55; }
   .filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
@@ -2767,34 +2763,9 @@ function executeIntent(p, q) {
   });
 
   if (n > 0 && !unmet.length) {
-    // A narrow question deserves the actual names, not a count plus a tab to go
-    // hunt in. "Running in Coral Gables" should say Gables Run Club out loud.
-    var grand = TABS.reduce(function (a, t) { return a + counts[t]; }, 0);
-    if (applied.length && grand > 0 && grand <= 6) {
-      var every = [];
-      TABS.forEach(function (t) {
-        if (!counts[t]) return;              // this tab honours none of the question
-        DATA[t].filter(function (it) {
-          return Object.keys(sels[t]).filter(function (k) { return k.indexOf("__") !== 0; }).every(function (k) {
-            var vals = k === "gf" ? (t === "places" ? (it.gf || []) : (it.who || []))
-                     : k === "hood" ? (it.hoods || (it.h ? [it.h] : []))
-                     : k === "cat" ? (it.c || [])
-                     : k === "vibe" ? (it.v || [])
-                     : k === "plat" ? (it.plat || [])
-                     : (it.d || []);
-            return sels[t][k].some(function (v) { return vals.indexOf(v) > -1; });
-          });
-        }).forEach(function (it) { every.push({ it: it, kind: t }); });
-      });
-      if (every.length) {
-        ans.innerHTML = "<b>" + grand + "</b> match" + (grand === 1 ? "" : "es") + " for " +
-          applied.map(function (a) { return "<b>" + esc(a) + "</b>"; }).join(" + ") + ": " +
-          every.map(function (r) {
-            return link(r) + ' <span class="ask-kind">' + LABEL[r.kind] + "</span>";
-          }).join(", ") + ".";
-        return;
-      }
-    }
+    // The cards below are the answer. This line says what was understood and how
+    // much it found, and alsoTxt points at the other tabs; naming every result
+    // here only duplicated the grid.
     ans.innerHTML = "Showing <b>" + n + " " + LABEL[activeTab] + (n === 1 ? "" : "s") + "</b>" +
       (applied.length ? " for " + applied.map(function (a) { return "<b>" + esc(a) + "</b>"; }).join(" + ") : "") +
       "." + alsoTxt;
