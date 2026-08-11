@@ -1,0 +1,15 @@
+{
+  "name": "The Well Placed",
+  "short_name": "Well Placed",
+  "description": "A curated guide to the spaces, groups, and gatherings focused on health and wellness in Miami.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f3ec",
+  "theme_color": "#f7f3ec",
+  "icons": [
+    { "src": "/logo/favicon-48.png", "sizes": "48x48", "type": "image/png" },
+    { "src": "/logo/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/logo/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/logo/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
