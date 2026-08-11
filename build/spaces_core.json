@@ -23,7 +23,7 @@
   ],
   "pf": null,
   "hrs": "Class and service schedules vary; confirm live availability through the official booking flow.",
-  "tel": "(786) 865-7177",
+  "tel": "786-865-7177",
   "addr": "2223 SW 13th Ave, Miami, FL 33145"
  },
  {
@@ -50,9 +50,9 @@
    "Reservation Required"
   ],
   "pf": null,
-  "hrs": "Mon–Fri 5:30 AM–9 PM; Sat–Sun 8 AM–4 PM.",
-  "tel": "(786) 717-7470",
-  "addr": "14901 NE 20th Ave, Studio A, North Miami, FL"
+  "hrs": "Mon–Fri 5:30 AM–9 PM; Sat–Sun 8 AM–4 PM (confirmed on official site).",
+  "tel": "786-717-7470",
+  "addr": "14901 NE 20th Ave, Studio A, North Miami, FL 33181"
  },
  {
   "n": "Ahana Yoga",
@@ -107,8 +107,8 @@
    "Reservation Required"
   ],
   "pf": null,
-  "hrs": "Mon–Fri 5 AM–10 PM; Sat–Sun 7 AM–7 PM. Verify before publishing.",
-  "tel": "(786) 275-4477",
+  "hrs": "Mon–Fri 5 AM–10 PM; Sat–Sun 7 AM–7 PM (confirmed on official site).",
+  "tel": "786-275-4477",
   "addr": "3363 Pan American Drive, Coconut Grove, FL 33133"
  },
  {
@@ -135,8 +135,8 @@
    "Reservation Required"
   ],
   "pf": null,
-  "hrs": "Mon–Fri 5 AM–10 PM; Sat–Sun 8 AM–7 PM. Verify before publishing.",
-  "tel": "(305) 423-8364",
+  "hrs": "Mon–Fri 5 AM–10 PM; Sat–Sun 8 AM–7 PM (confirmed on official site).",
+  "tel": "305-423-8364",
   "addr": "3450 NW 83rd Ave, Suite 200, Doral, FL 33122"
  },
  {
@@ -190,7 +190,7 @@
    "Reservation Required"
   ],
   "pf": null,
-  "hrs": "Mon–Fri 5 AM–10 PM; Sat–Sun 8 AM–8 PM. Verify before publishing.",
+  "hrs": "Mon–Fri 5 AM–10 PM; Sat–Sun 8 AM–8 PM (confirmed on official site).",
   "tel": "(786) 300-7415",
   "addr": "3415 NE 2nd Ave, Miami, FL 33137"
  },
@@ -218,6 +218,33 @@
   "hrs": "Court, coworking, and wellness hours vary; book through Playtomic or contact AREA Centre to confirm.",
   "tel": "(305) 333-1477",
   "addr": "6700 NW 77th Ct #200, Doral, FL 33166"
+ },
+ {
+  "n": "Art In Motion Jiu-Jitsu Academy",
+  "br": null,
+  "h": null,
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Family-Friendly"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Miami, FL"
  },
  {
   "n": "Barry's Miami Midtown",
@@ -323,7 +350,7 @@
    "Class Pack"
   ],
   "pf": null,
-  "hrs": "Class schedule varies; verify before publishing.",
+  "hrs": "Class schedule varies; listings indicate roughly 7 AM–9 PM daily. Verify on the official app before publishing.",
   "tel": "(305) 456-8234",
   "addr": "4203 Ponce de Leon Blvd, Suite 200, Coral Gables, FL 33146"
  },
@@ -382,6 +409,34 @@
   "addr": "6801 Collins Ave, Miami Beach, FL 33141"
  },
  {
+  "n": "Carlson Gracie Miami",
+  "br": null,
+  "h": "Kendall",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Family-Friendly"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Miami, FL"
+ },
+ {
   "n": "Casa Vinyasa",
   "br": null,
   "h": "Gables",
@@ -402,7 +457,7 @@
    "Class Pack"
   ],
   "pf": null,
-  "hrs": "Class schedule varies; verify before publishing.",
+  "hrs": "Per Google (business-updated): Mon 6 AM–1 PM & 5:30–9:30 PM; Tue 7:30 AM–1 PM & 5:30–8:30 PM; Wed 6 AM–1 PM & 5:30–9:30 PM; Thu 7:30 AM–1 PM & 5:30–8:30 PM; Fri 6 AM–1 PM & 5–6:30 PM; Sat 8 AM–12 PM; Sun 8 AM–1:30 PM & 5:30–8 PM.",
   "tel": "(786) 238-7327",
   "addr": "1430 S Dixie Hwy, Suite 113-115, Coral Gables, FL 33146"
  },
@@ -665,6 +720,33 @@
   "addr": "6747 Crandon Blvd, Key Biscayne, FL 33149"
  },
  {
+  "n": "Crow Jiu-Jitsu Academy",
+  "br": null,
+  "h": "South Miami/Pinecrest",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Family-Friendly"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "South Miami / Pinecrest, FL"
+ },
+ {
   "n": "Dance Empire",
   "br": null,
   "h": "South Miami/Pinecrest",
@@ -794,6 +876,34 @@
   "addr": "8400 Mills Dr, Kendall, FL"
  },
  {
+  "n": "Fight Sports Club",
+  "br": null,
+  "h": null,
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness",
+   "High-Energy"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Miami, FL"
+ },
+ {
   "n": "Fight Sports Club Miami",
   "br": null,
   "h": "Little River",
@@ -851,6 +961,34 @@
   "addr": "999 11th St / 11th–15th St, Miami Beach, FL 33139"
  },
  {
+  "n": "Freestyle Fighting Academy",
+  "br": null,
+  "h": "Kendall",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Membership"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "1423 SW 107th Ave, Miami, FL 33174"
+ },
+ {
   "n": "Fruit & Spice Park",
   "br": "Miami-Dade Parks",
   "h": "Homestead/South Dade",
@@ -904,6 +1042,34 @@
   "hrs": "Check official website for current hours.",
   "tel": null,
   "addr": "325 NW 28th St, Miami, FL"
+ },
+ {
+  "n": "Ground Game Theory",
+  "br": null,
+  "h": "Kendall",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Westchester, Miami, FL"
  },
  {
   "n": "JETSET Pilates Downtown Miami",
@@ -983,6 +1149,33 @@
   "hrs": "Class schedule varies; use the official studio schedule to confirm current times.",
   "tel": "(786) 542-5009",
   "addr": "1860 West Ave, 2nd Floor, Miami Beach, FL 33139"
+ },
+ {
+  "n": "Jorge Pereira BJJ",
+  "br": null,
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Miami Beach, FL"
  },
  {
   "n": "Karibe Dance Studio",
@@ -1144,6 +1337,33 @@
   "hrs": "Daily 7 AM–10 PM.",
   "tel": "(305) 533-3552",
   "addr": "1745 N. Bayshore Drive, Miami, FL 33132"
+ },
+ {
+  "n": "Mario Sperry Jiu-Jitsu",
+  "br": null,
+  "h": "Downtown",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "760 NW 4th St, Suite 101, Miami, FL 33128"
  },
  {
   "n": "Matheson Hammock Park",
@@ -1374,6 +1594,32 @@
   "addr": "278 NW 27th Street, Miami, FL 33127"
  },
  {
+  "n": "Moti Horenstein Krav-Maga MMA",
+  "br": null,
+  "h": "Aventura",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "North Dade / Aventura service area, Miami, FL"
+ },
+ {
   "n": "Nara Bollywood Dance Academy",
   "br": null,
   "h": "Brickell",
@@ -1556,6 +1802,31 @@
   "addr": "1111 Lincoln Road, Ste 8, Miami Beach, FL 33139"
  },
  {
+  "n": "PALAPA at Upper Buena Vista",
+  "br": null,
+  "h": "Miami Shores/El Portal",
+  "st": "Active",
+  "c": [],
+  "gf": [
+   "Community/Social",
+   "Solo Reset",
+   "First-Timers"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Free/Community"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "5040 NE 2nd Ave, Miami, FL"
+ },
+ {
   "n": "Pause Studio Brickell",
   "br": "Pause Studio",
   "h": "Brickell",
@@ -1606,31 +1877,6 @@
   "hrs": "Appointment and service availability varies; book through the official location page.",
   "tel": "(305) 239-5619",
   "addr": "Plaza Coral Gables, 111 Palermo Ave #214, Coral Gables, FL 33134"
- },
- {
-  "n": "Pinecrest Dance Project",
-  "br": null,
-  "h": "South Miami/Pinecrest",
-  "st": "Active",
-  "c": [
-   "Dance"
-  ],
-  "gf": [
-   "First-Timers",
-   "Community/Social"
-  ],
-  "v": [
-   "Social Fitness"
-  ],
-  "ac": [
-   "Class Pack"
-  ],
-  "pf": [
-   "Direct Only"
-  ],
-  "hrs": null,
-  "tel": null,
-  "addr": "5855 SW 111th St, Miami, FL 33156"
  },
  {
   "n": "Pinecrest Gardens",
@@ -1737,6 +1983,32 @@
   "addr": "6350 NE 4th Ave, Miami, FL 33138"
  },
  {
+  "n": "Renzo Gracie Doral",
+  "br": null,
+  "h": "Doral",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Family-Friendly"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "7500 NW 104th Ave, B203, Doral, FL"
+ },
+ {
   "n": "Reserve Padel — Design District",
   "br": "Reserve Padel",
   "h": "Midtown/Design District",
@@ -1813,6 +2085,61 @@
   "hrs": "Mon–Fri 10 AM–7 PM; Sat–Sun 10 AM–3 PM.",
   "tel": "(305) 763-8297",
   "addr": "1800 Purdy Ave, Miami Beach, FL"
+ },
+ {
+  "n": "Rilion Gracie Jiu-Jitsu Doral",
+  "br": null,
+  "h": "Doral",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Family-Friendly"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Doral, FL"
+ },
+ {
+  "n": "Rilion Gracie Jiu-Jitsu Miami Lakes",
+  "br": null,
+  "h": null,
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness",
+   "High-Energy"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Miami Lakes, FL"
  },
  {
   "n": "SILA Miami",
@@ -2110,6 +2437,29 @@
   "hrs": null,
   "tel": "(888) 507-9328",
   "addr": "1916 Bay Rd, Miami Beach, FL 33139"
+ },
+ {
+  "n": "Tanda Tango",
+  "br": null,
+  "h": "North Miami/NMB",
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": null,
+  "tel": null,
+  "addr": "1831 NE 123rd St, North Miami, FL"
  },
  {
   "n": "Tango a Tiempo",
@@ -2422,6 +2772,34 @@
   "hrs": "Daily 7:30 AM–8 PM.",
   "tel": "(305) 340-3540",
   "addr": "3455 NE 207th St, Building 2, Aventura, FL 33180"
+ },
+ {
+  "n": "Valente Brothers Jiu-Jitsu",
+  "br": null,
+  "h": "North Miami/NMB",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Family-Friendly"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Reservation Required"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "16360 NE 26th Ave, North Miami Beach, FL 33160"
  },
  {
   "n": "Venetian Pool",

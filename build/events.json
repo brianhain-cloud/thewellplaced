@@ -1,41 +1,12 @@
 [
  {
-  "n": "Full Moon Yoga & Ceremony South Pointe",
-  "h": "Miami Beach",
+  "n": "Ecstatic Dance Miami — Full Moon Immersion",
+  "h": null,
   "c": [
-   "Yoga/Pilates"
+   "Dance"
   ],
   "v": [
    "Conscious/Chill",
-   "Free/Community"
-  ],
-  "who": [
-   "Solo",
-   "Friends",
-   "Beginners"
-  ],
-  "etype": "Series",
-  "feat": false,
-  "sched": "Monthly; next verified session: Thu, Aug 27, 2026, 7:00–8:30 PM. Confirm each month on the Synergy Yoga event page.",
-  "dstart": null,
-  "dend": null,
-  "meet": "South Pointe Beach, near the first red-and-white lifeguard tower",
-  "note": "Monthly full-moon flow, meditation, and sound bath on the sand at South Pointe — free and refreshingly unfussy.",
-  "know": "Free monthly beach ceremony with slow-flow yoga, breathwork, meditation, and sound bath near the first red-and-white lifeguard tower at South Pointe Beach.",
-  "bring": "Yoga mat or towel, water, blanket or warm layer, and optional sacred items such as crystals, malas, photos, or written intentions.",
-  "book": "https://synergyyoga.org/products/free-full-moon-ceremony-yoga-meditation-sound-bath-south-pointe-beach",
-  "ig": "https://instagram.com/synergyyoga"
- },
- {
-  "n": "HIIT & RUN at The Underline",
-  "h": "Brickell",
-  "c": [
-   "Strength",
-   "Run/Cardio"
-  ],
-  "v": [
-   "High-Energy",
-   "Free/Community",
    "Social Fitness"
   ],
   "who": [
@@ -43,235 +14,122 @@
    "Friends",
    "Beginners"
   ],
-  "etype": "Series",
+  "etype": "Pop-Up",
   "feat": false,
-  "sched": "1st & 3rd Sundays, 10:30–11:30 AM; July follows a 2nd & 4th Sunday schedule",
-  "dstart": null,
-  "dend": null,
-  "meet": "The Underline Urban Gym, nearest address 700 SW 1st Ave",
-  "note": "Thirty minutes of HIIT at the Urban Gym, then a 30-minute run up the trail — free, coached, and under the Metrorail shade.",
-  "know": "Free 60-minute community workout: 30 minutes of HIIT followed by a 30-minute guided run along The Underline. Hosted at The Underline Urban Gym near Brickell Metrorail.",
-  "bring": "Comfortable running shoes, refillable water bottle, sweat towel, and positive energy.",
-  "book": "https://www.eventbrite.com/e/hiit-run-workout-at-the-underline-tickets-1988913383470",
+  "sched": null,
+  "dstart": "2026-08-29",
+  "dend": "2026-08-29",
+  "meet": "Hollywood Lakes / South Lake, Hollywood, FL 33020 (regional Broward listing)",
+  "note": "Regional full-moon immersion with ecstatic dance, embodiment, contact improv, sound healing and aquatic healingwork.",
+  "know": null,
+  "bring": null,
+  "book": "https://www.eventbrite.com/e/ecstatic-dance-miami-august-29th-full-moon-immersion-tickets-1995326751025",
   "ig": null
  },
  {
-  "n": "Miami Spa Months at Carillon",
-  "h": "North Beach",
+  "n": "EXPANSION Ecstatic Dance Miami — SUBSQWAD",
+  "h": "Little River",
   "c": [
-   "Sauna/Bathhouse",
-   "Recovery/Plunge"
+   "Dance"
   ],
   "v": [
-   "Premium/Luxury",
+   "Conscious/Chill",
+   "Social Fitness",
+   "Free/Community"
+  ],
+  "who": [
+   "Solo",
+   "Friends",
+   "Beginners"
+  ],
+  "etype": "Pop-Up",
+  "feat": false,
+  "sched": null,
+  "dstart": "2026-08-28",
+  "dend": "2026-08-28",
+  "meet": "Lion's Den, 150 NW 73rd St, Second Floor, Miami, FL 33150",
+  "note": "Alcohol-free ecstatic-dance journey for embodied movement, expression and connection.",
+  "know": null,
+  "bring": null,
+  "book": "https://www.ecstatic-flow.com/event-details/expansion-ecstatic-dance-miami-friday-aug-28-subsqwad-lions-den",
+  "ig": null
+ },
+ {
+  "n": "Alma de Tango",
+  "h": "Downtown",
+  "c": [
+   "Dance"
+  ],
+  "v": [
+   "Social Fitness",
+   "Conscious/Chill"
+  ],
+  "who": [],
+  "etype": null,
+  "feat": false,
+  "sched": "Mondays: beginner 7 PM and intermediate 8 PM.",
+  "dstart": null,
+  "dend": null,
+  "meet": null,
+  "note": "Argentine tango classes and milonga community; no partner required for the Monday group sessions.",
+  "know": null,
+  "bring": null,
+  "book": "https://www.almadetangomiami.com/argentine-tango-classes",
+  "ig": null
+ },
+ {
+  "n": "Yoga in the Park — Aventura",
+  "h": "Aventura",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "v": [
+   "Free/Community",
    "Conscious/Chill"
   ],
   "who": [
    "Solo",
-   "Friends"
+   "Friends",
+   "Beginners"
   ],
-  "etype": "Pop-Up",
+  "etype": "Series",
   "feat": false,
-  "sched": "Annual: July 1–August 31; current offers valid through Aug 31, 2026",
+  "sched": "Fridays, 9:00–10:00 AM",
   "dstart": null,
-  "dend": "2026-08-31",
-  "meet": "Carillon Miami Wellness Resort, 6801 Collins Ave",
-  "note": "The best window all year to try the Eastern Seaboard's biggest spa — Miami Spa Months pricing makes the 70,000 sq ft thermal circuit almost reasonable.",
-  "know": "Annual July–August Miami Spa Months promotion at Carillon, featuring discounted luxury spa and wellness treatments. Carillon is known for its large thermal hydrotherapy circuit and resort-style spa experience.",
-  "bring": "Swimsuit or spa-ready attire; confirm treatment, arrival time, and access details when booking. Bring ID and payment method for spa check-in.",
-  "book": "https://www.carillonhotel.com/en/experiences/miami-spa-months-at-the-spa-at-carillon/",
+  "dend": null,
+  "meet": "Founders Park, Aventura",
+  "note": "A dependable, no-cost Friday morning outdoor yoga option for Aventura residents and visitors, with online city registration required.",
+  "know": "Free Friday morning yoga at Founders Park in Aventura. Classes start at 9 AM and run about one hour; registration is handled through the City’s online registration system.",
+  "bring": "Yoga mat, small towel, and water. Aventura residents may want a park ID for easier access; non-residents may need to pay the park entrance fee.",
+  "book": "https://www.cityofaventura.com/251/Yoga-in-the-Park",
   "ig": null
  },
  {
-  "n": "More Life Summit",
-  "h": "Downtown",
+  "n": "Biohack-It Women’s Health Workshop & Panel",
+  "h": "Wynwood/Edgewater",
   "c": [
    "Wellness/Health Expo"
   ],
   "v": [
-   "High-Energy",
    "Premium/Luxury",
-   "Social Fitness"
+   "Conscious/Chill"
   ],
   "who": [
    "Solo",
    "Friends",
-   "Wellness Pros",
-   "Founder/Operator"
+   "Wellness Pros"
   ],
   "etype": "Pop-Up",
-  "feat": true,
-  "sched": "Annual summit; 2026 dates are Oct 10–11 at James L. Knight Center.",
-  "dstart": "2026-10-10",
-  "dend": "2026-10-11",
-  "meet": "James L. Knight Center, 400 SE 2nd Ave",
-  "note": "The strongest longevity and human-performance listing of the season: a two-day summit blending cellular health, fitness, faith, expert talks, an expo, hands-on labs, and attendee programming.",
-  "know": "Two-day longevity, performance, faith, and purpose summit with keynote sessions, expo access, hands-on technology activations, Sunday devotional, and curated networking.",
-  "bring": "Notebook, layers for conference rooms, and anything needed for a full expo/conference day. Review ticket tier details before going; lodging is not included.",
-  "book": "https://morelifemvmt.com/health-events-miami",
-  "ig": null
- },
- {
-  "n": "Pinecrest Farmers Market",
-  "h": "South Miami/Pinecrest",
-  "c": [
-   "Cafe/Nutrition",
-   "Outdoor/Parks"
-  ],
-  "v": [
-   "Free/Community",
-   "Conscious/Chill"
-  ],
-  "who": [
-   "Solo",
-   "Friends",
-   "Families"
-  ],
-  "etype": "Series",
   "feat": false,
-  "sched": "Sundays, 9:00 AM–2:00 PM, year-round; rain or shine",
-  "dstart": null,
-  "dend": null,
-  "meet": "Pinecrest Gardens South Parking Lot, 11000 Red Road",
-  "note": "The south county's Sunday institution — dozens of vendors, farm produce, and the whole neighborhood in workout clothes pretending they came for vegetables.",
-  "know": "Long-running Sunday market at Pinecrest Gardens with local produce, artisanal foods, flowers, handmade goods, gifts, and live community energy. Often paired with a free morning Vinyasa yoga class before the market.",
-  "bring": "Reusable shopping bags, water, sun protection, and payment method for vendors. Arrive earlier for easier parking and best selection.",
-  "book": "https://www.pinecrestgardens.org/Arts-Events/Events-Calendar/Farmers-Market",
-  "ig": null
- },
- {
-  "n": "Restorative Sound Bath Meditation",
-  "h": "Miami Beach",
-  "c": [
-   "Recovery/Plunge"
-  ],
-  "v": [
-   "Conscious/Chill",
-   "Free/Community"
-  ],
-  "who": [
-   "Solo",
-   "Friends",
-   "Beginners"
-  ],
-  "etype": "Series",
-  "feat": false,
-  "sched": "Occasional Sundays; next verified session: Aug 16, 2026, 9:30–10:15 AM. Confirm future dates on the Garden calendar.",
-  "dstart": null,
-  "dend": null,
-  "meet": "Miami Beach Botanical Garden, 2000 Convention Center Drive",
-  "note": "Gentle breathwork into a full sound bath at the Miami Beach Botanical Garden — a nervous-system reset in a genuinely pretty setting.",
-  "know": "All-levels sound journey in the Miami Beach Botanical Garden designed to calm the nervous system and support deep rest using bowls and other instruments. Chairs and a few mats may be available, but bringing your own setup is best.",
-  "bring": "Yoga mat or blanket, water, and anything needed to sit or lie comfortably. You do not need to sit cross-legged.",
-  "book": "https://www.mbgarden.org/calendar",
-  "ig": null
- },
- {
-  "n": "Saturday Yoga at The Underline",
-  "h": "Downtown",
-  "c": [
-   "Yoga/Pilates",
-   "Outdoor/Parks"
-  ],
-  "v": [
-   "Free/Community",
-   "Conscious/Chill"
-  ],
-  "who": [
-   "Solo",
-   "Friends",
-   "Beginners"
-  ],
-  "etype": "Series",
-  "feat": false,
-  "sched": "Saturdays, 9:00–10:00 AM",
-  "dstart": null,
-  "dend": null,
-  "meet": "The Underline Urban Gym / Inter Stage near Brickell Metrorail, SW 7th St & SW 1st Ave",
-  "note": "Free weekly flow on the Inter Stage — bring a mat, towel, and water; the Metrorail rumbling overhead is part of the soundtrack.",
-  "know": "Free weekly all-levels yoga class at The Underline, powered by Baptist Health South Florida. Registration is required and attendees are encouraged to arrive 15 minutes before class.",
-  "bring": "Yoga mat, water, towel, and comfortable clothes. The location is accessible by Metrorail, bike, foot, or nearby public parking.",
-  "book": "https://www.eventbrite.com/e/uyoga-the-urban-gym-tickets-784676788397",
-  "ig": null
- },
- {
-  "n": "Sunset Yoga at South Pointe Park",
-  "h": "Miami Beach",
-  "c": [
-   "Yoga/Pilates"
-  ],
-  "v": [
-   "Conscious/Chill",
-   "Free/Community"
-  ],
-  "who": [],
-  "etype": "Series",
-  "feat": false,
-  "sched": "Sundays and Mondays, 5:30–6:30 PM; weekly. Confirm weekly instances in SweatPals.",
-  "dstart": "2026-07-19",
-  "dend": null,
-  "meet": "South Pointe Park, west lawn beside Smith & Wollensky, facing the water, Miami Beach, FL",
-  "note": "Weekly evening flow on the west lawn, water views included — bring your own mat.",
-  "know": null,
-  "bring": "Yoga mat, water, and a light layer; all levels welcome",
-  "book": "https://sweatpals.com/",
-  "ig": null
- },
- {
-  "n": "The Aventura Market",
-  "h": "Aventura",
-  "c": [
-   "Cafe/Nutrition",
-   "Outdoor/Parks"
-  ],
-  "v": [
-   "Free/Community",
-   "Social Fitness"
-  ],
-  "who": [
-   "Solo",
-   "Friends",
-   "Families"
-  ],
-  "etype": "Series",
-  "feat": false,
-  "sched": "Fridays & Saturdays, 10:00 AM–9:30 PM; Sundays, 11:00 AM–8:00 PM",
-  "dstart": null,
-  "dend": null,
-  "meet": "Aventura Mall, 19501 Biscayne Blvd",
-  "note": "Weekly outdoor market with local produce and prepared food — an easy way to build a market walk into the routine.",
-  "know": "Large indoor weekend market at Aventura Mall featuring local vendors across specialty foods, baked goods, produce, plants, gifts, jewelry, handcrafted goods, and home décor.",
-  "bring": "Reusable tote, appetite for samples/snacks, and payment method for vendors. Good rainy-day option since it is inside the mall.",
-  "book": "https://aventuramall.com/aventura-market/",
-  "ig": null
- },
- {
-  "n": "Thursday Evening Yoga — Vizcaya Station Plaza",
-  "h": "Coconut Grove",
-  "c": [
-   "Yoga/Pilates",
-   "Outdoor/Parks"
-  ],
-  "v": [
-   "Free/Community",
-   "Conscious/Chill"
-  ],
-  "who": [
-   "Solo",
-   "Friends",
-   "Beginners"
-  ],
-  "etype": "Series",
-  "feat": false,
-  "sched": "Thursdays, 7:00–8:00 PM, through Feb 11, 2027",
-  "dstart": null,
-  "dend": null,
-  "meet": "The Underline Vizcaya Station Plaza, 3205 SW 1st Ave",
-  "note": "The Underline's after-work flow at Vizcaya Station — free, outdoors, and timed for the sunset commute home.",
-  "know": "Free Thursday evening all-levels yoga at The Underline's Vizcaya Station Plaza, powered by Baptist Health and led by Anny Noratto. Registration is required; arrive 15 minutes early.",
-  "bring": "Yoga mat, water, and sweat towel. Limited loaner mats may be available with valid ID while supplies last.",
-  "book": "https://www.eventbrite.com/e/uyoga-vizcaya-station-plaza-tickets-976592463347",
-  "ig": null
+  "sched": null,
+  "dstart": "2026-10-04",
+  "dend": "2026-10-04",
+  "meet": "The Sacred Space Miami, 105 NE 24th St",
+  "note": "A premium, science-forward women’s health event centered on hormones, fertility, reproductive wellness, perimenopause, and longevity—an excellent fit for the platform’s biohacking and health-science edge.",
+  "know": "Full-day women’s health, hormones, and longevity experience at The Sacred Space Miami with expert-led workshops and panel programming. Event runs 10 AM–4 PM.",
+  "bring": "Bring a notebook, water, and anything you’ll want for a full-day wellness workshop. Check Eventbrite for final agenda and ticket details before attending.",
+  "book": "https://www.eventbrite.com/e/biohack-it-womens-health-workshop-panel-powered-by-the-sacred-space-tickets-1987526627646",
+  "ig": "https://www.instagram.com/biohack_it/"
  },
  {
   "n": "Ultimate Wellness Conference at Faena Forum",
@@ -302,6 +160,119 @@
   "ig": null
  },
  {
+  "n": "More Life Summit",
+  "h": "Downtown",
+  "c": [
+   "Wellness/Health Expo"
+  ],
+  "v": [
+   "High-Energy",
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "who": [
+   "Solo",
+   "Friends",
+   "Wellness Pros",
+   "Founder/Operator"
+  ],
+  "etype": "Pop-Up",
+  "feat": true,
+  "sched": "Annual summit; 2026 dates are Oct 10–11 at James L. Knight Center.",
+  "dstart": "2026-10-10",
+  "dend": "2026-10-11",
+  "meet": "James L. Knight Center, 400 SE 2nd Ave",
+  "note": "The strongest longevity and human-performance listing of the season: a two-day summit blending cellular health, fitness, faith, expert talks, an expo, hands-on labs, and attendee programming.",
+  "know": "Two-day longevity, performance, faith, and purpose summit with keynote sessions, expo access, hands-on technology activations, Sunday devotional, and curated networking.",
+  "bring": "Notebook, layers for conference rooms, and anything needed for a full expo/conference day. Review ticket tier details before going; lodging is not included.",
+  "book": "https://morelifemvmt.com/health-events-miami",
+  "ig": "https://www.instagram.com/morelifemvmt/"
+ },
+ {
+  "n": "The Aventura Market",
+  "h": "Aventura",
+  "c": [
+   "Cafe/Nutrition",
+   "Outdoor/Parks"
+  ],
+  "v": [
+   "Free/Community",
+   "Social Fitness"
+  ],
+  "who": [
+   "Solo",
+   "Friends",
+   "Families"
+  ],
+  "etype": "Series",
+  "feat": false,
+  "sched": "Fridays & Saturdays, 10:00 AM–9:30 PM; Sundays, 11:00 AM–8:00 PM",
+  "dstart": null,
+  "dend": null,
+  "meet": "Aventura Mall, 19501 Biscayne Blvd",
+  "note": "Weekly outdoor market with local produce and prepared food — an easy way to build a market walk into the routine.",
+  "know": "Large indoor weekend market at Aventura Mall featuring local vendors across specialty foods, baked goods, produce, plants, gifts, jewelry, handcrafted goods, and home décor.",
+  "bring": "Reusable tote, appetite for samples/snacks, and payment method for vendors. Good rainy-day option since it is inside the mall.",
+  "book": "https://aventuramall.com/aventura-market/",
+  "ig": "https://www.instagram.com/aventuramall/"
+ },
+ {
+  "n": "Saturday Yoga at The Underline",
+  "h": "Downtown",
+  "c": [
+   "Yoga/Pilates",
+   "Outdoor/Parks"
+  ],
+  "v": [
+   "Free/Community",
+   "Conscious/Chill"
+  ],
+  "who": [
+   "Solo",
+   "Friends",
+   "Beginners"
+  ],
+  "etype": "Series",
+  "feat": false,
+  "sched": "Saturdays, 9:00–10:00 AM",
+  "dstart": null,
+  "dend": null,
+  "meet": "The Underline Urban Gym / Inter Stage near Brickell Metrorail, SW 7th St & SW 1st Ave",
+  "note": "Free weekly flow on the Inter Stage — bring a mat, towel, and water; the Metrorail rumbling overhead is part of the soundtrack.",
+  "know": "Free weekly all-levels yoga class at The Underline, powered by Baptist Health South Florida. Registration is required and attendees are encouraged to arrive 15 minutes before class.",
+  "bring": "Yoga mat, water, towel, and comfortable clothes. The location is accessible by Metrorail, bike, foot, or nearby public parking.",
+  "book": "https://www.eventbrite.com/e/uyoga-the-urban-gym-tickets-784676788397",
+  "ig": "https://www.instagram.com/theunderlinemia/"
+ },
+ {
+  "n": "Pinecrest Farmers Market",
+  "h": "South Miami/Pinecrest",
+  "c": [
+   "Cafe/Nutrition",
+   "Outdoor/Parks"
+  ],
+  "v": [
+   "Free/Community",
+   "Conscious/Chill"
+  ],
+  "who": [
+   "Solo",
+   "Friends",
+   "Families"
+  ],
+  "etype": "Series",
+  "feat": false,
+  "sched": "Sundays, 9:00 AM–2:00 PM, year-round; rain or shine",
+  "dstart": null,
+  "dend": null,
+  "meet": "Pinecrest Gardens South Parking Lot, 11000 Red Road",
+  "note": "The south county's Sunday institution — dozens of vendors, farm produce, and the whole neighborhood in workout clothes pretending they came for vegetables.",
+  "know": "Long-running Sunday market at Pinecrest Gardens with local produce, artisanal foods, flowers, handmade goods, gifts, and live community energy. Often paired with a free morning Vinyasa yoga class before the market.",
+  "bring": "Reusable shopping bags, water, sun protection, and payment method for vendors. Arrive earlier for easier parking and best selection.",
+  "book": "https://www.pinecrestgardens.org/Arts-Events/Events-Calendar/Farmers-Market",
+  "ig": "https://www.instagram.com/pinecrest_gardens/"
+ },
+ {
   "n": "Yoga in the Garden — Pinecrest Gardens",
   "h": "South Miami/Pinecrest",
   "c": [
@@ -330,10 +301,11 @@
   "ig": null
  },
  {
-  "n": "Yoga in the Park — Aventura",
-  "h": "Aventura",
+  "n": "Thursday Evening Yoga — Vizcaya Station Plaza",
+  "h": "Coconut Grove",
   "c": [
-   "Yoga/Pilates"
+   "Yoga/Pilates",
+   "Outdoor/Parks"
   ],
   "v": [
    "Free/Community",
@@ -346,21 +318,51 @@
   ],
   "etype": "Series",
   "feat": false,
-  "sched": "Fridays, 9:00–10:00 AM",
+  "sched": "Thursdays, 7:00–8:00 PM, through Feb 11, 2027",
   "dstart": null,
   "dend": null,
-  "meet": "Founders Park, Aventura",
-  "note": "A dependable, no-cost Friday morning outdoor yoga option for Aventura residents and visitors, with online city registration required.",
-  "know": "Free Friday morning yoga at Founders Park in Aventura. Classes start at 9 AM and run about one hour; registration is handled through the City's online registration system.",
-  "bring": "Yoga mat, small towel, and water. Aventura residents may want a park ID for easier access; non-residents may need to pay the park entrance fee.",
-  "book": "https://www.cityofaventura.com/251/Yoga-in-the-Park",
+  "meet": "The Underline Vizcaya Station Plaza, 3205 SW 1st Ave",
+  "note": "The Underline's after-work flow at Vizcaya Station — free, outdoors, and timed for the sunset commute home.",
+  "know": "Free Thursday evening all-levels yoga at The Underline’s Vizcaya Station Plaza, powered by Baptist Health and led by Anny Noratto. Registration is required; arrive 15 minutes early.",
+  "bring": "Yoga mat, water, and sweat towel. Limited loaner mats may be available with valid ID while supplies last.",
+  "book": "https://www.eventbrite.com/e/uyoga-vizcaya-station-plaza-tickets-976592463347",
   "ig": null
  },
  {
-  "n": "Biohack-It Women's Health Workshop & Panel",
-  "h": "Wynwood/Edgewater",
+  "n": "HIIT & RUN at The Underline",
+  "h": "Brickell",
   "c": [
-   "Wellness/Health Expo"
+   "Strength",
+   "Run/Cardio"
+  ],
+  "v": [
+   "High-Energy",
+   "Free/Community",
+   "Social Fitness"
+  ],
+  "who": [
+   "Solo",
+   "Friends",
+   "Beginners"
+  ],
+  "etype": "Series",
+  "feat": false,
+  "sched": "1st & 3rd Sundays, 10:30–11:30 AM; July follows a 2nd & 4th Sunday schedule",
+  "dstart": null,
+  "dend": null,
+  "meet": "The Underline Urban Gym, nearest address 700 SW 1st Ave",
+  "note": "Thirty minutes of HIIT at the Urban Gym, then a 30-minute run up the trail — free, coached, and under the Metrorail shade.",
+  "know": "Free 60-minute community workout: 30 minutes of HIIT followed by a 30-minute guided run along The Underline. Hosted at The Underline Urban Gym near Brickell Metrorail.",
+  "bring": "Comfortable running shoes, refillable water bottle, sweat towel, and positive energy.",
+  "book": "https://www.eventbrite.com/e/hiit-run-workout-at-the-underline-tickets-1988913383470",
+  "ig": "https://www.instagram.com/theunderlinemia/"
+ },
+ {
+  "n": "Miami Spa Months at Carillon",
+  "h": "North Beach",
+  "c": [
+   "Sauna/Bathhouse",
+   "Recovery/Plunge"
   ],
   "v": [
    "Premium/Luxury",
@@ -368,20 +370,95 @@
   ],
   "who": [
    "Solo",
-   "Friends",
-   "Wellness Pros"
+   "Friends"
   ],
   "etype": "Pop-Up",
   "feat": false,
-  "draft": true,
-  "sched": null,
-  "dstart": "2026-10-04",
-  "dend": "2026-10-04",
-  "meet": "The Sacred Space Miami, 105 NE 24th St",
-  "note": "A premium, science-forward women’s health event centered on hormones, fertility, reproductive wellness, perimenopause, and longevity—an excellent fit for the platform’s biohacking and health-science edge.",
-  "know": "Full-day women’s health, hormones, and longevity experience at The Sacred Space Miami with expert-led workshops and panel programming. Event runs 10 AM–4 PM.",
-  "bring": "Bring a notebook, water, and anything you’ll want for a full-day wellness workshop. Check Eventbrite for final agenda and ticket details before attending.",
-  "book": "https://www.eventbrite.com/e/biohack-it-womens-health-workshop-panel-powered-by-the-sacred-space-tickets-1987526627646",
+  "sched": "Annual: July 1–August 31; current offers valid through Aug 31, 2026",
+  "dstart": null,
+  "dend": null,
+  "meet": "Carillon Miami Wellness Resort, 6801 Collins Ave",
+  "note": "The best window all year to try the Eastern Seaboard's biggest spa — Miami Spa Months pricing makes the 70,000 sq ft thermal circuit almost reasonable.",
+  "know": "Annual July–August Miami Spa Months promotion at Carillon, featuring discounted luxury spa and wellness treatments. Carillon is known for its large thermal hydrotherapy circuit and resort-style spa experience.",
+  "bring": "Swimsuit or spa-ready attire; confirm treatment, arrival time, and access details when booking. Bring ID and payment method for spa check-in.",
+  "book": "https://www.carillonhotel.com/en/experiences/miami-spa-months-at-the-spa-at-carillon/",
   "ig": null
+ },
+ {
+  "n": "Full Moon Yoga & Ceremony South Pointe",
+  "h": "Miami Beach",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Free/Community"
+  ],
+  "who": [
+   "Solo",
+   "Friends",
+   "Beginners"
+  ],
+  "etype": "Series",
+  "feat": false,
+  "sched": "Monthly; next verified session: Thu, Aug 27, 2026, 7:00–8:30 PM. Confirm each month on the Synergy Yoga event page.",
+  "dstart": null,
+  "dend": null,
+  "meet": "South Pointe Beach, near the first red-and-white lifeguard tower",
+  "note": "Monthly full-moon flow, meditation, and sound bath on the sand at South Pointe — free and refreshingly unfussy.",
+  "know": "Free monthly beach ceremony with slow-flow yoga, breathwork, meditation, and sound bath near the first red-and-white lifeguard tower at South Pointe Beach.",
+  "bring": "Yoga mat or towel, water, blanket or warm layer, and optional sacred items such as crystals, malas, photos, or written intentions.",
+  "book": "https://synergyyoga.org/products/free-full-moon-ceremony-yoga-meditation-sound-bath-south-pointe-beach",
+  "ig": "https://www.instagram.com/synergyyoga/"
+ },
+ {
+  "n": "Sunset Yoga at South Pointe Park",
+  "h": "Miami Beach",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Free/Community"
+  ],
+  "who": [],
+  "etype": "Series",
+  "feat": false,
+  "sched": "Sundays and Mondays, 5:30–6:30 PM; weekly. Confirm weekly instances in SweatPals.",
+  "dstart": "2026-07-19",
+  "dend": null,
+  "meet": "South Pointe Park, west lawn beside Smith & Wollensky, facing the water, Miami Beach, FL",
+  "note": "Weekly evening flow on the west lawn, water views included — bring your own mat.",
+  "know": null,
+  "bring": "Yoga mat, water, and a light layer; all levels welcome",
+  "book": "https://sweatpals.com/class/sunset-yoga-by-the-bay-south-pointe-530pm-45/2026-08-09",
+  "ig": "https://www.instagram.com/sweatpalsapp/"
+ },
+ {
+  "n": "Restorative Sound Bath Meditation",
+  "h": "Miami Beach",
+  "c": [
+   "Recovery/Plunge"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Free/Community"
+  ],
+  "who": [
+   "Solo",
+   "Friends",
+   "Beginners"
+  ],
+  "etype": "Series",
+  "feat": false,
+  "sched": "Occasional Sundays; next verified session: Aug 16, 2026, 9:30–10:15 AM. Confirm future dates on the Garden calendar.",
+  "dstart": null,
+  "dend": null,
+  "meet": "Miami Beach Botanical Garden, 2000 Convention Center Drive",
+  "note": "Gentle breathwork into a full sound bath at the Miami Beach Botanical Garden — a nervous-system reset in a genuinely pretty setting.",
+  "know": "All-levels sound journey in the Miami Beach Botanical Garden designed to calm the nervous system and support deep rest using bowls and other instruments. Chairs and a few mats may be available, but bringing your own setup is best.",
+  "bring": "Yoga mat or blanket, water, and anything needed to sit or lie comfortably. You do not need to sit cross-legged.",
+  "book": "https://www.mbgarden.org/calendar/sound-bath-meditation-w-franci-mc8ma-lhaze-ksbhx-arrpd-3be8x-rafwp-enll6-6jxzk-d55m2-w55de-jab2f-8nnya-njghb-m84p4-3t44m",
+  "ig": "https://www.instagram.com/miamibeachgarden/"
  }
 ]

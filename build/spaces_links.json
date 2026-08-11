@@ -1,826 +1,66 @@
 {
- "ActiveSoul Wellness Studio": [
-  "https://activesoulwellnessstudio.com/",
-  "https://activesoulwellnessstudio.com/",
-  "https://www.instagram.com/activesoulwellness/",
-  "https://www.facebook.com/people/ActiveSoul-Wellness-Studio/61561748591103/",
-  "https://www.tiktok.com/@activesoulwellness",
+ "PALAPA at Upper Buena Vista": [
   null,
   null,
-  "https://www.google.com/maps/search/?api=1&query=ActiveSoul+Wellness+Studio+Coral+Way+Miami+FL"
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
  ],
- "Adapt": [
-  "https://trainadapt.com/",
-  "https://trainadapt.com/",
-  "https://www.instagram.com/trainadapt/",
-  "https://www.facebook.com/trainadapt",
+ "Jorge Pereira BJJ": [
+  "https://www.jorgepereirajiujitsu.com/",
   null,
-  "https://www.youtube.com/channel/UCw8UdHB4WPzxxWHEi_YFS1Q",
   null,
-  "https://www.google.com/maps/search/?api=1&query=Adapt+14901+NE+20th+Ave+Studio+A+North+Miami+FL"
+  null,
+  null,
+  null,
+  null,
+  null
  ],
- "Ahana Yoga": [
-  "https://www.ahanayoga.com",
-  "https://www.ahanayoga.com/",
-  "https://www.instagram.com/ahanayoga/",
+ "Carlson Gracie Miami": [
+  "https://carlsongraciemiami.com/",
   null,
   null,
   null,
   null,
-  "https://www.google.com/maps/search/?api=1&query=Ahana+Yoga+Miami+Design+District"
+  null,
+  null,
+  null
  ],
- "Anatomy Coconut Grove": [
-  "https://anatomyfitness.com/",
-  "https://anatomyfitness.com/locations/",
-  "https://www.instagram.com/anatomyfitness/",
+ "Freestyle Fighting Academy": [
+  "https://mmamiami.com/",
   null,
   null,
   null,
   null,
-  "https://www.google.com/maps/search/?api=1&query=Anatomy+3363+Pan+American+Drive+Coconut+Grove+FL+33133"
+  null,
+  null,
+  null
  ],
- "Anatomy Doral": [
-  "https://anatomyfitness.com/locations/",
-  "https://anatomyfitness.com/locations/",
-  "https://www.instagram.com/anatomyfitness/",
+ "Rilion Gracie Jiu-Jitsu Doral": [
+  "https://riliongraciedoral.com/",
   null,
   null,
   null,
   null,
-  "https://www.google.com/maps/search/?api=1&query=Anatomy+3450+NW+83rd+Ave+Suite+200+Doral+FL+33122"
+  null,
+  null,
+  null
  ],
- "Anatomy Miami Beach": [
-  "https://anatomyfitness.com/locations/",
-  "https://anatomyfitness.com/locations/",
-  "https://www.instagram.com/anatomyfitness/",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Anatomy+1212+Lincoln+Road+Suite+204+Miami+Beach+FL+33139"
- ],
- "Anatomy Midtown": [
-  "https://anatomyfitness.com",
-  "https://anatomyfitness.com/locations/",
-  "https://www.instagram.com/anatomyfitness/",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Anatomy+Midtown+3415+NE+2nd+Ave+Miami"
- ],
- "Area Centre Padel": [
-  "https://areacentre.com/",
-  "https://playtomic.com/clubs/area-center-doral",
-  null,
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Area+Centre+Padel+6700+NW+77th+Ct+%23200+Doral+FL+33166"
- ],
- "Barry's Miami Midtown": [
-  "https://www.barrys.com/studio/midtown-miami",
-  "https://www.barrys.com/pricing/midtown-miami",
-  "https://www.instagram.com/barrys",
-  "https://www.facebook.com/BarrysBootcamp/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Barry%27s+3250+NE+1st+Ave+Suite+105+Miami+FL+33137"
- ],
- "Biscayne National Park — Dante Fascell Visitor Center": [
-  "https://www.nps.gov/bisc/planyourvisit/visitorcenters.htm",
-  "https://www.biscaynenationalparkinstitute.org/",
-  "https://www.instagram.com/biscaynenps",
-  "https://www.facebook.com/BiscayneNPS",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Dante+Fascell+Visitor+Center+9700+SW+328th+St+Homestead+FL"
- ],
- "Break Free Movement": [
-  "https://www.thebreakfreemovement.com/",
-  "https://www.thebreakfreemovement.com/schedule",
-  "https://www.instagram.com/thebreakfreemvmt",
-  "https://www.facebook.com/thebreakfreemvmt",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Break+Free+Movement+4203+Ponce+de+Leon+Blvd+Coral+Gables"
- ],
- "BÜNDA Coral Gables": [
-  "https://www.trainbunda.com/locations/coral-gables/",
-  "https://trainbunda.com/locations/coral-gables/",
-  "https://www.instagram.com/trainbundacoralgables",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=BUNDA+25+Merrick+Way+Coral+Gables"
- ],
- "Carillon Miami Wellness Resort": [
-  "https://www.carillonhotel.com",
-  "https://www.carillonhotel.com/en/experiences/day-passes/",
-  "https://www.instagram.com/carillonhotel",
-  "https://www.facebook.com/CarillonHotel",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Carillon+Miami+Wellness+Resort+6801+Collins+Ave+Miami+Beach"
- ],
- "Casa Vinyasa": [
-  "https://casavinyasamiami.com/",
-  "https://casavinyasamiami.com/schedule",
-  "https://www.instagram.com/casavinyasa_miami",
-  "https://www.facebook.com/CasaVinyasaMiami/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Casa+Vinyasa+1430+S+Dixie+Hwy+Coral+Gables"
- ],
- "Centner Wellness Brickell": [
-  "https://brickell.centnerwellness.com/",
-  "https://book-a-tour.centnerwellness.com/",
-  "https://www.instagram.com/centnerwellness/",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Centner+Wellness+2333+Brickell+Ave+Suite+A-1+Miami+FL+33129"
- ],
- "Centner Wellness Edgewater": [
-  "https://edgewater.centnerwellness.com/",
-  "https://edgewater.centnerwellness.com/",
-  "https://www.instagram.com/centnerwellnessedge/",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Centner+Wellness+2336+Biscayne+Blvd+Miami+FL+33137"
- ],
- "Centner Wellness Gables": [
-  "https://coralgables.centnerwellness.com/",
-  "https://www.centner.me/",
-  "https://www.instagram.com/centnergables/",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Centner+Wellness+3000+Coral+Way+Commercial+Unit+3+Miami+FL+33145"
- ],
- "Champions Padel Club": [
-  "https://championspadelclub.com/",
-  "https://championspadelclub.playbypoint.com/",
-  "https://www.instagram.com/championspadelclub",
-  "https://www.facebook.com/championspadelclub",
-  null,
-  "https://www.youtube.com/@ChampionsPadelClub",
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Champions+Padel+Club+1360+NW+88th+Ave+Doral+FL+33172"
- ],
- "Club Pilates Aventura": [
-  "https://www.clubpilates.com/location/aventura",
-  "https://www.clubpilates.com/location/aventura",
-  "https://www.instagram.com/clubpilatesaventura",
-  "https://www.facebook.com/211808769627245",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Club+Pilates+19021+Biscayne+Blvd+Aventura+FL"
- ],
- "Club Pilates Midtown Miami": [
-  "https://www.clubpilates.com/location/midtownmiami",
-  "https://www.clubpilates.com/location/midtownmiami",
-  "https://www.instagram.com/clubpilatesmidtownmiami",
-  "https://www.facebook.com/112925919423756",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Club+Pilates+Midtown+Miami+3252+Buena+Vista+Blvd+Unit+102+Miami+FL+33137"
- ],
- "Club Pilates South Beach": [
-  "https://www.clubpilates.com/location/southbeach",
-  "https://www.clubpilates.com/location/southbeach",
-  "https://instagram.com/clubpilatessouthbeach",
-  "https://www.facebook.com/clubpilatessouthbeach/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Club+Pilates+South+Beach+1824+Alton+Rd+Miami+Beach+FL+33139"
- ],
- "Club Pilates West Kendall": [
-  "https://www.clubpilates.com/location/westkendall",
-  "https://www.clubpilates.com/location/westkendall",
-  "https://www.instagram.com/clubpilates_westkendall/",
-  "https://www.facebook.com/clubpilateswestkendall/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Club+Pilates+West+Kendall+Miami+FL"
- ],
- "Club Studio Miami": [
-  "https://www.clubstudiofitness.com/",
-  "https://www.clubstudiofitness.com/Pages/freepass.aspx?clubID=1391",
-  "https://www.instagram.com/ClubStudioFitness",
-  "https://www.facebook.com/ClubStudioFitness",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Club+Studio+850+NE+2nd+Ave+Miami+FL"
- ],
- "Crandon Park": [
-  "https://www.miamidade.gov/parks/crandon.asp",
-  null,
-  "https://instagram.com/miamidadeparks",
-  "https://www.facebook.com/miamidadeparks",
-  null,
-  "https://www.youtube.com/user/MiamiDadeTV",
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Crandon+Park+6747+Crandon+Blvd+Key+Biscayne"
- ],
- "David T. Kennedy Park": [
-  "https://www.miamiandbeaches.com/l/outdoor-experiences/david-kennedy-park/2981",
-  "https://www.miamigov.com/Residents/Parks-Directory/David-T.-Kennedy-Park",
-  "https://www.instagram.com/cityofmiami/",
-  "https://www.facebook.com/CityOfMiamiGov/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=David+T+Kennedy+Park+2400+S+Bayshore+Dr+Miami"
- ],
- "EoS Fitness Kendall": [
-  "https://www.eosfitness.com/",
-  "https://www.eosfitness.com/gym/kendall-mills-dr",
-  "https://www.instagram.com/eosfitness",
-  "https://www.facebook.com/EoSFitness",
-  "https://www.tiktok.com/@eosfitness",
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=EoS+Fitness+8400+Mills+Dr+Kendall+FL"
- ],
- "Fight Sports Club Miami": [
-  "https://wellhub.com/en-us/search/partners/fight-sports-club-miami-little-river/",
+ "Fight Sports Club": [
   "https://fightsportsclub.com/",
   null,
   null,
   null,
   null,
   null,
-  "https://www.google.com/maps/search/?api=1&query=Fight+Sports+Club+339+NE+61st+St+Miami"
- ],
- "Flamingo Park": [
-  "https://www.miamibeachfl.gov/city-hall/parks-and-recreation/parks-facilities-directory/flamingo-park/",
-  null,
-  "https://www.instagram.com/miamibeachnews/",
-  "https://www.facebook.com/cityofmiamibeach/",
-  null,
-  "https://www.youtube.com/user/cityofmiamibeach",
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Flamingo+Park+999+11th+St+Miami+Beach+FL+33139"
- ],
- "Fruit & Spice Park": [
-  "https://www.miamidade.gov/parks/fruit-spice.asp",
-  "https://www.miamidade.gov/fruitandspicepark/plan-your-visit.page",
-  "https://www.instagram.com/fruitandspicepark",
-  "https://www.facebook.com/fruitandspicepark",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Fruit+%26+Spice+Park+24801+SW+187th+Ave+Homestead+FL+33031"
- ],
- "JETSET Pilates Downtown Miami": [
-  "https://jetsetpilates.com/fl/downtown-miami/",
-  "https://jetsetpilates.com/fl/downtown-miami/",
-  "https://www.instagram.com/jetsetpilates",
-  "https://www.facebook.com/jetsetpilatesmiami",
-  null,
-  null,
-  "https://www.linkedin.com/company/jetset-pilates",
-  "https://www.google.com/maps/search/?api=1&query=JETSET+Pilates+151+SE+1st+St+Suite+10+Miami+FL+33131"
- ],
- "JETSET Pilates SoFi": [
-  "https://jetsetpilates.com/fl/sofi/",
-  "https://jetsetpilates.com/fl/sofi/",
-  "https://www.instagram.com/jetsetpilates",
-  "https://www.facebook.com/jetsetpilatesmiami",
-  null,
-  null,
-  "https://www.linkedin.com/company/jetset-pilates",
-  "https://www.google.com/maps/search/?api=1&query=JETSET+Pilates+110+Washington+Ave+Suite+CU8+Miami+Beach+FL+33139"
- ],
- "JETSET Pilates Sunset Harbour": [
-  "https://jetsetpilates.com/fl/sunset-harbour/",
-  "https://jetsetpilates.com/fl/sunset-harbour/",
-  "https://www.instagram.com/jetsetpilatessunsetharbour",
-  "https://www.facebook.com/jetsetpilatesmiami",
-  null,
-  null,
-  "https://www.linkedin.com/company/jetset-pilates",
-  "https://www.google.com/maps/search/?api=1&query=JETSET+Pilates+1860+West+Ave+Miami+Beach"
- ],
- "Kasa Yoga Studio": [
-  "https://kasayogastudios.com/",
-  "https://www.kasayogastudios.com/",
-  "https://www.instagram.com/kasayogastudios/",
-  "https://www.facebook.com/profile.php?id=61554156358759",
-  null,
-  "https://www.youtube.com/@KasaYogaStudios",
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Kasa+Yoga+Studio+North+Miami+Beach+FL"
- ],
- "Las Rocas Climbing Gym": [
-  "https://lasrocasclimbing.com/",
-  "https://climber.hellocapitan.com/LasRocas/memberships-and-passes/",
-  "https://www.instagram.com/lasrocasmiami/",
-  null,
-  "https://www.tiktok.com/@lasrocasmiami",
-  null,
   null,
   null
  ],
- "LEGACY Little River": [
-  "https://legacyfit.com/",
-  "https://legacyfit.com/membership",
-  "https://www.instagram.com/legacylittleriver/",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=LEGACY+7400+NW+Miami+Ct+Miami"
- ],
- "Life Time Gables": [
-  "https://www.lifetime.life/",
-  "https://www.lifetime.life/locations/fl/coral-gables.html",
-  null,
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Life+Time+237+S+Dixie+Hwy+Coral+Gables"
- ],
- "Margaret Pace Park": [
-  "https://www.miamiandbeaches.com/l/outdoor-experiences/margaret-pace-park/23894",
-  "https://www.miami.gov/Parks-Public-Places/Reserve-a-Park-Facility",
-  "https://www.instagram.com/cityofmiami/",
-  "https://www.facebook.com/CityOfMiamiGov/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Margaret+Pace+Park+1745+N+Bayshore+Dr+Miami"
- ],
- "Matheson Hammock Park": [
-  "https://www.miamidade.gov/parks/matheson-hammock.asp",
-  null,
-  "https://instagram.com/miamidadeparks",
-  "https://www.facebook.com/miamidadeparks",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Matheson+Hammock+Park+9610+Old+Cutler+Rd+Coral+Gables"
- ],
- "Miami Shores Aquatic Center": [
-  "https://www.msvfl.gov/parks-recreation/pages/aquatic-center",
-  "https://www.msvfl.gov/RentalPermitInformation",
-  null,
-  "https://www.facebook.com/msvfl.gov",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Miami+Shores+Aquatic+Center+10200+Biscayne+Blvd+Miami+Shores+FL"
- ],
- "Mimi Yoga & Pilates (Coconut Grove)": [
-  "https://mimiyoga.com/",
-  "https://mimiyoga.com/pages/studio",
-  "https://www.instagram.com/mimiyogastudio",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Mimi+Yoga+2829+Bird+Ave+Miami"
- ],
- "Mimi Yoga & Pilates (Wynwood)": [
-  "https://mimiyoga.com/",
-  "https://mimiyoga.com/pages/studio",
-  "https://www.instagram.com/mimiyogastudio",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Mimi+Yoga+278+NW+27th+Street+Miami"
- ],
- "Normandy Isle Park & Pool": [
-  "https://www.miamibeachfl.gov/city-hall/parks-and-recreation/sports-centers-fields-and-courts/aquatics/flamingo-and-normandy-pools/",
-  "https://www.miamibeachfl.gov/city-hall/parks-and-recreation/parks-facilities-directory/normandy-isle-park/",
-  "https://www.instagram.com/miamibeachnews/",
-  "https://www.facebook.com/cityofmiamibeach/",
-  null,
-  "https://www.youtube.com/user/cityofmiamibeach",
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Normandy+Isle+Park+Pool+Miami+Beach"
- ],
- "North Shore Open Space Park": [
-  "https://www.yelp.com/biz/north-shore-open-space-park-miami-beach",
-  "https://www.miamibeachfl.gov/city-hall/parks-and-recreation/rentals/open-space-rentals/",
-  null,
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=North+Shore+Open+Space+Park+Miami+Beach"
- ],
- "Om Movement": [
-  "https://www.ommovementstudio.com/",
-  "https://www.ommovementstudio.com/yoga-group-classes",
-  "https://www.instagram.com/ommovement",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Om+Movement+2895+McFarlane+Rd+Coconut+Grove"
- ],
- "Open Door Yoga": [
-  "https://opendooryoga.com/",
-  "https://opendooryoga.com/yoga-membership-class-pricing/",
-  "https://www.instagram.com/open.door.yoga",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Open+Door+Yoga+2801+Florida+Ave+Coconut+Grove"
- ],
- "Padel X": [
-  "https://padelx.us/",
-  "https://playtomic.com/clubs/padel-x-miami",
-  "https://www.instagram.com/padelx.us/",
-  "https://www.facebook.com/padelx.us",
-  "https://www.tiktok.com/@padel.x",
-  "https://www.youtube.com/@PadelXUSA",
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Padel+X+Downtown+Miami+FL"
- ],
- "Padel X Summer Club": [
-  "https://lincolnroad.com/padelxsummerclub/",
-  "https://playtomic.com/clubs/padel-x-summer-club",
-  "https://www.instagram.com/padelx.us/",
-  "https://www.facebook.com/padelx.us",
-  "https://www.tiktok.com/@padel.x",
-  "https://www.youtube.com/@PadelXUSA",
-  null,
-  "https://www.google.com/maps/search/?api=1&query=1111+Lincoln+Road+Miami+Beach+FL+33139"
- ],
- "Pause Studio Brickell": [
-  "https://pausestudio.com/brickell/contrast-therapy",
-  "https://pausestudio.com/brickell/contrast-therapy",
-  "https://www.instagram.com/pause.miami",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Pause+Studio+25+SW+9th+St+Miami"
- ],
- "Pause Studio Coral Gables": [
-  "https://pausestudio.com/locations/coral-gables",
-  "https://pausestudio.com/locations/coral-gables",
-  "https://www.instagram.com/pause.miami",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Pause+Studio+111+Palermo+Ave+Coral+Gables"
- ],
- "Pinecrest Gardens": [
-  "https://www.pinecrestgardens.org",
-  "https://www.pinecrestgardens.org/About-Us/Plan-Your-Visit/Admission",
-  "https://www.instagram.com/pinecrest_gardens/",
-  "https://www.facebook.com/PinecrestGarden",
-  null,
-  "https://www.youtube.com/channel/UCCJeFEX1NkDf7lm7iWMCjMg",
-  "https://www.linkedin.com/company/pinecrest-gardens",
-  "https://www.google.com/maps/search/?api=1&query=Pinecrest+Gardens+11000+Red+Rd+Pinecrest"
- ],
- "Polestar Pilates Studio — Dadeland": [
-  "https://polestarmiami.com",
-  "https://polestarmiami.com/",
-  "https://www.instagram.com/polestarstudiodadeland/",
-  "https://www.facebook.com/PolestarPilatesDadeland/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Polestar+Pilates+Dadeland+Miami"
- ],
- "Pulse Fitness": [
-  "https://www.pulseitout.com",
-  "https://www.pulseitout.com/schedule/south-miami",
-  "https://www.instagram.com/pulseitout_",
-  "https://facebook.com/profile.php?id=100095302972514",
-  "https://www.tiktok.com/@pulseitout_",
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Pulse+Fitness+5864+Sunset+Dr+South+Miami"
- ],
- "Raw Fit-Miami": [
-  "https://www.rawfitmiami.com/",
-  "https://www.rawfitmiami.com/",
-  "https://www.instagram.com/rawfitmiami",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Raw+Fit+6350+NE+4th+Ave+Miami"
- ],
- "Reserve Padel — Design District": [
-  "https://www.reservepadel.com",
-  null,
-  "https://www.instagram.com/reservepadel/",
-  "https://www.facebook.com/reservepadel/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Reserve+Padel+75+NE+39th+St+Miami"
- ],
- "Reserve Padel — Seaplane Base": [
-  "https://www.reservepadel.com/miami-seaplane",
-  "https://www.reservepadel.com/miami-seaplane",
-  "https://www.instagram.com/reservepadel/",
-  "https://www.facebook.com/reservepadel/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Reserve+Padel+Miami+Seaplane+Base+1000+MacArthur+Causeway"
- ],
- "Reset Cryotherapy South Beach": [
-  "https://resetcryotherapy.com/",
-  "https://resetcryotherapy.com/",
-  "https://www.instagram.com/resetcryotherapy",
-  "https://www.facebook.com/resetcryotherapy/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Reset+Cryotherapy+1800+Purdy+Ave+Miami+Beach+FL"
- ],
- "SILA Miami": [
-  "https://silamiami.com",
-  "https://www.mindbodyonline.com/explore/locations/sila-miami",
-  "https://www.instagram.com/SilaMiami/",
-  null,
-  null,
-  null,
-  "https://www.linkedin.com/company/silamiami",
-  null
- ],
- "Skanda Yoga Studio": [
-  "https://www.skandayogastudio.com/",
-  "https://www.skandayogastudio.com/",
-  "https://www.instagram.com/skandayogastudio",
-  "https://www.facebook.com/skandayogastudio/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Skanda+Yoga+Studio+1800+SW+1st+Ave+Miami"
- ],
- "Smart Padel House": [
-  "https://smartpadelhouse.com/",
-  "https://playtomic.com/clubs/smart-padel-house",
-  null,
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Smart+Padel+House+8440+NW+64th+St+Unit+1+Doral+FL+33166"
- ],
- "Studio Three": [
-  "https://studiothree.com/studio/miami/",
-  "https://studiothree.com/studio/miami/",
-  "https://www.instagram.com/studiothree/",
-  "https://www.facebook.com/studiothreemembers",
-  "https://www.tiktok.com/@studiothreetok",
-  null,
-  "https://www.linkedin.com/company/studiothree",
-  "https://www.google.com/maps/search/?api=1&query=Studio+Three+96+NW+29th+St+Miami"
- ],
- "Sunset Padel": [
-  "https://sunsetpadel.com/",
-  "https://sunsetpadel.com/",
-  "https://www.instagram.com/sunsetpadel/",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Sunset+Padel+1880+West+Ave+Miami+Beach+FL"
- ],
- "Suva Yoga": [
-  "https://www.suvayoga.net/",
-  "https://www.suvayoga.net/instudio-schedule-3",
-  "https://www.instagram.com/suvayoga",
-  "https://www.facebook.com/people/Suva-Yoga/61565690169253/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Suva+Yoga+166+Alhambra+Circle+Coral+Gables"
- ],
- "SWEAT Studio Aventura": [
-  "https://www.sweatstudiomiami.com/",
-  "https://www.sweatstudiomiami.com/",
-  "https://www.instagram.com/sweatstudio_miami",
-  "https://www.facebook.com/sweatstudiomia/",
-  "https://www.tiktok.com/@sweatstudiomiami",
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=SWEAT+Studio+15400+Biscayne+Blvd+Aventura+FL"
- ],
- "SWEAT440 Brickell": [
-  "https://sweat440.com/gyms/florida/brickell-33130/",
-  "https://sweat440.com/gyms/florida/brickell-33130/",
-  "https://www.instagram.com/sweat440brickell",
-  "https://www.facebook.com/sweat440/",
-  "https://www.tiktok.com/@sweat440",
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=SWEAT440+25+SW+9th+St+Miami"
- ],
- "SWEAT440 Coral Gables": [
-  "https://sweat440.com/gyms/florida/coral-gables-33146/",
-  "https://sweat440.com/gyms/florida/coral-gables-33146/",
-  "https://www.instagram.com/sweat440gables/",
-  "https://www.facebook.com/sweat440/",
-  "https://www.tiktok.com/@sweat440",
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=SWEAT440+301+Altara+Ave+Suite+111+Coral+Gables+FL+33146"
- ],
- "SWEAT440 Doral": [
-  "https://sweat440.com/gyms/florida/doral-33166/",
-  "https://sweat440.com/gyms/florida/doral-33166/",
-  "https://www.instagram.com/sweat440doral/",
-  "https://www.facebook.com/sweat440/",
-  "https://www.tiktok.com/@sweat440",
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=SWEAT440+Doral+8395+NW+53rd+St+Miami+FL+33166"
- ],
- "SWEAT440 Miami Beach": [
-  "https://sweat440.com/gyms/florida/miami-beach-33139/",
-  "https://sweat440.com/gyms/florida/miami-beach-33139/",
-  "https://www.instagram.com/sweat440sobe",
-  "https://www.facebook.com/sweat440/",
-  "https://www.tiktok.com/@sweat440",
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=SWEAT440+1916+Bay+Rd+Miami+Beach+FL+33139"
- ],
- "The Edge Rock Gym": [
-  "https://theedgerockgymmiami.com/",
-  "https://www.theedgerockgymmiami.com/",
-  "https://www.instagram.com/theedgerockgymmia",
-  "https://www.facebook.com/theedgerockgymmia",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=The+Edge+Rock+Gym+13972+SW+139th+Ct+Miami+FL"
- ],
- "The Ice Room": [
-  "https://www.theiceroommiami.com/",
-  "https://www.theiceroommiami.com/what-we-offer",
-  "https://www.instagram.com/theiceroom.mia/",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=The+Ice+Room+1200+Brickell+Bay+Drive+Miami"
- ],
- "The Set Padel Haus": [
-  "https://thesetpadelhaus.com/",
-  "https://playtomic.com/clubs/the-set-miami",
-  "https://www.instagram.com/thesetpadelhaus",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=The+Set+Padel+Haus+1800+NW+108th+Ave+Doral+FL+33172"
- ],
- "The Standard Spa": [
-  "https://www.standardhotels.com/miami",
-  "https://www.standardhotels.com/miami/properties/miami-beach#spa",
-  "https://www.instagram.com/thestandardmiami",
-  "https://www.facebook.com/TheStandardMiami/",
-  "https://www.tiktok.com/@thestandardmiami",
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=The+Standard+Spa+40+Island+Ave+Miami+Beach"
- ],
- "The Underline — Brickell Backyard": [
-  "https://www.theunderline.org",
-  null,
-  "https://instagram.com/theunderlinemia",
-  "https://facebook.com/theunderlinemia",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=The+Underline+Brickell+Backyard+700+SW+1st+Ave+Miami"
- ],
- "TREMBLE Brickell": [
-  "https://www.makeittremble.com/",
-  "https://www.makeittremble.com/",
-  "https://www.instagram.com/makeittremble_",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=TREMBLE+1060+Brickell+Ave+Miami"
- ],
- "TREMBLE Miami Beach": [
-  "https://www.makeittremble.com/miamibeach",
-  "https://www.makeittremble.com/miamibeach",
-  "https://www.instagram.com/makeittremble_",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=TREMBLE+1935+West+Ave+Miami+Beach"
- ],
- "UFC Gym Doral": [
-  "https://www.ufcgym.com/locations/doral",
-  "https://www.ufcgym.com/locations/doral",
-  "https://www.instagram.com/ufcfitdoral/",
-  "https://www.facebook.com/ufcfitdoral/",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=UFC+Gym+Doral+FL"
- ],
- "Ultra Padel Club (Magic City)": [
-  "https://ultrapadelclub.com/ultra-padel-miami-magic-city",
-  "https://ultrapadelclub.com/ultra-padel-miami-magic-city",
-  "https://www.instagram.com/ultraclubofficial/",
-  "https://www.facebook.com/UltraClubMiami",
-  null,
-  null,
-  "https://www.linkedin.com/company/ultra-padel-club-miami",
-  "https://www.google.com/maps/search/?api=1&query=Ultra+Padel+Club+Magic+City+Miami"
- ],
- "Ultra Padel Club — Aventura": [
-  "https://ultraclub.me/",
-  "https://ultraclub.me/play",
-  "https://www.instagram.com/ultraclubofficial/",
-  "https://www.facebook.com/UltraClubMiami",
-  null,
-  null,
-  "https://www.linkedin.com/company/ultra-padel-club-miami",
-  "https://www.google.com/maps/search/?api=1&query=Ultra+Padel+Club+3455+NE+207th+St+Building+2+Aventura+FL+33180"
- ],
- "Venetian Pool": [
-  "https://www.coralgables.com/attractions/venetian-pool",
-  "https://www.coralgables.com/attractions/venetian-pool",
-  "https://www.instagram.com/cityofcoralgables/",
-  "https://www.facebook.com/cityofcoralgables",
-  null,
-  "https://www.youtube.com/coralgablestv",
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Venetian+Pool+2701+De+Soto+Blvd+Coral+Gables"
- ],
- "Wynwood Padel Club": [
-  "https://wynwoodpadelclub.com/",
-  "https://book.wynwoodpadelmiami.com/book/wynwood-padel-club",
-  "https://www.instagram.com/wynwoodpadelclub/",
-  null,
-  null,
-  null,
-  "https://www.linkedin.com/company/wynwood-padel-club",
-  "https://www.google.com/maps/search/?api=1&query=Wynwood+Padel+Club+Miami"
- ],
- "Wynwood Yoga Studio": [
-  "https://wynwoodyogastudio.com/",
-  "https://wynwoodyogastudio.com/",
-  "https://www.instagram.com/wynwood_yoga",
-  null,
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=Wynwood+Yoga+2920+NW+5th+Ave+Miami"
- ],
- "yogamakesme": [
-  "https://yogamakesme.com/",
-  "https://yogamakesme.com/schedule",
-  "https://www.instagram.com/yoga.makes.me/",
-  "https://www.facebook.com/yogamakesme",
-  null,
-  null,
-  null,
-  "https://www.google.com/maps/search/?api=1&query=yogamakesme+North+Miami+Beach+FL"
- ],
- "YouFit Gyms Coral Way": [
-  "https://youfit.com/gyms/coral-way/",
-  "https://youfit.com/locations/florida/miami-coral-way",
-  "https://www.instagram.com/youfitgyms/",
-  "https://www.facebook.com/YouFitGyms/",
-  "https://www.tiktok.com/@youfitgyms/",
-  "https://www.youtube.com/c/youfitgyms/",
-  "https://www.linkedin.com/company/youfitgyms/",
-  "https://www.google.com/maps/search/?api=1&query=YouFit+Gyms+7070+Coral+Way+Miami+FL"
- ],
- "Grotto Baths": [
-  "https://www.grottobaths.com/",
+ "Mario Sperry Jiu-Jitsu": [
+  "https://mariosperry.com/",
   null,
   null,
   null,
@@ -829,8 +69,8 @@
   null,
   null
  ],
- "Belly Motions": [
-  "https://bellymotions.com/",
+ "Valente Brothers Jiu-Jitsu": [
+  "https://www.valentebrothers.com/",
   null,
   null,
   null,
@@ -839,8 +79,8 @@
   null,
   null
  ],
- "Dance Empire": [
-  "https://danceempire.com/",
+ "Crow Jiu-Jitsu Academy": [
+  "https://www.crowjiujitsu.com/",
   null,
   null,
   null,
@@ -849,8 +89,8 @@
   null,
   null
  ],
- "Dance Town South Florida": [
-  "https://www.dancetownsouthflorida.com/",
+ "Moti Horenstein Krav-Maga MMA": [
+  "https://mhka.com/bjj-classes-near-me-miami/",
   null,
   null,
   null,
@@ -859,8 +99,68 @@
   null,
   null
  ],
- "DanceArts Miami": [
-  "https://danceartsmiami.com/",
+ "Ground Game Theory": [
+  "https://groundgametheory.com/",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "Renzo Gracie Doral": [
+  null,
+  null,
+  "https://www.instagram.com/renzogracie_doral/",
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "Rilion Gracie Jiu-Jitsu Miami Lakes": [
+  "https://riliongraciemiamilakes.com/classes/bjj-training-no-gi/",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "Art In Motion Jiu-Jitsu Academy": [
+  "https://artinmotionjiujitsu.com/",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "Tanda Tango": [
+  "https://tandatango.com/",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "Miami Dance Academy": [
+  null,
+  null,
+  "https://www.instagram.com/miamidance.academy/",
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "Miami Dade College Continuing Education Dance": [
+  "https://ce.mdc.edu/public/category/programStream.do?method=load&selectedProgramAreaId=1017614&selectedProgramStreamId=1192798",
   null,
   null,
   null,
@@ -889,38 +189,8 @@
   null,
   null
  ],
- "Miami Dade College Continuing Education Dance": [
-  "https://ce.mdc.edu/public/category/programStream.do?method=load&selectedProgramAreaId=1017614&selectedProgramStreamId=1192798",
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null
- ],
- "Miami Dance Academy": [
-  null,
-  null,
-  "https://www.instagram.com/miamidance.academy/",
-  null,
-  null,
-  null,
-  null,
-  null
- ],
- "Miami Dance Center": [
-  null,
-  null,
-  "https://www.instagram.com/miamidancecenter/",
-  null,
-  null,
-  null,
-  null,
-  null
- ],
- "Miami Dance Collective": [
-  "https://miamidancecollective.com/",
+ "DanceArts Miami": [
+  "https://danceartsmiami.com/",
   null,
   null,
   null,
@@ -939,8 +209,48 @@
   null,
   null
  ],
- "Pinecrest Dance Project": [
-  "https://pinecrestdanceproject.com/experiences-for-adults/",
+ "Miami Dance Center": [
+  null,
+  null,
+  "https://www.instagram.com/miamidancecenter/",
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "Tango Times Dance Studio": [
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "Dance Town South Florida": [
+  "https://www.dancetownsouthflorida.com/",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "Dance Empire": [
+  "https://danceempire.com/",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "Belly Motions": [
+  "https://bellymotions.com/",
   null,
   null,
   null,
@@ -959,8 +269,8 @@
   null,
   null
  ],
- "Tango Times Dance Studio": [
-  null,
+ "Miami Dance Collective": [
+  "https://miamidancecollective.com/",
   null,
   null,
   null,
@@ -968,5 +278,835 @@
   null,
   null,
   null
+ ],
+ "Grotto Baths": [
+  "https://www.grottobaths.com/",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "Las Rocas Climbing Gym": [
+  "https://lasrocasclimbing.com/",
+  "https://climber.hellocapitan.com/LasRocas/memberships-and-passes/",
+  "https://www.instagram.com/lasrocasmiami/",
+  null,
+  "https://www.tiktok.com/@lasrocasmiami",
+  null,
+  null,
+  null
+ ],
+ "SILA Miami": [
+  "https://silamiami.com",
+  "https://www.mindbodyonline.com/explore/locations/sila-miami",
+  "https://www.instagram.com/SilaMiami/",
+  null,
+  null,
+  null,
+  "https://www.linkedin.com/company/silamiami",
+  null
+ ],
+ "Ultra Padel Club — Aventura": [
+  "https://ultraclub.me/",
+  "https://ultraclub.me/play",
+  "https://www.instagram.com/ultraclubofficial/",
+  "https://www.facebook.com/UltraClubMiami",
+  null,
+  null,
+  "https://www.linkedin.com/company/ultra-padel-club-miami",
+  "https://www.google.com/maps/search/?api=1&query=Ultra+Padel+Club+3455+NE+207th+St+Building+2+Aventura+FL+33180"
+ ],
+ "Padel X Summer Club": [
+  "https://lincolnroad.com/padelxsummerclub/",
+  "https://playtomic.com/clubs/padel-x-summer-club",
+  "https://www.instagram.com/padelx.us/",
+  "https://www.facebook.com/padelx.us",
+  "https://www.tiktok.com/@padelx.us",
+  "https://www.youtube.com/@PadelXUSA",
+  "https://www.linkedin.com/company/padelxus",
+  "https://www.google.com/maps/search/?api=1&query=1111+Lincoln+Road+Miami+Beach+FL+33139"
+ ],
+ "SWEAT440 Coral Gables": [
+  "https://sweat440.com/gyms/florida/coral-gables-33146/",
+  "https://sweat440.com/gyms/florida/coral-gables-33146/",
+  "https://www.instagram.com/sweat440gables/",
+  "https://www.facebook.com/sweat440/",
+  "https://www.tiktok.com/@sweat440",
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=SWEAT440+301+Altara+Ave+Suite+111+Coral+Gables+FL+33146"
+ ],
+ "JETSET Pilates SoFi": [
+  "https://jetsetpilates.com/fl/sofi/",
+  "https://jetsetpilates.com/fl/sofi/",
+  "https://www.instagram.com/jetsetpilates",
+  "https://www.facebook.com/jetsetpilatesmiami",
+  null,
+  null,
+  "https://www.linkedin.com/company/jetset-pilates",
+  "https://www.google.com/maps/search/?api=1&query=JETSET+Pilates+110+Washington+Ave+Suite+CU8+Miami+Beach+FL+33139"
+ ],
+ "SWEAT440 Miami Beach": [
+  "https://sweat440.com/gyms/florida/miami-beach-33139/",
+  "https://sweat440.com/gyms/florida/miami-beach-33139/",
+  "https://www.instagram.com/sweat440sobe",
+  "https://www.facebook.com/sweat440/",
+  "https://www.tiktok.com/@sweat440",
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=SWEAT440+1916+Bay+Rd+Miami+Beach+FL+33139"
+ ],
+ "JETSET Pilates Downtown Miami": [
+  "https://jetsetpilates.com/fl/downtown-miami/",
+  "https://jetsetpilates.com/fl/downtown-miami/",
+  "https://www.instagram.com/jetsetpilates",
+  "https://www.facebook.com/jetsetpilatesmiami",
+  null,
+  null,
+  "https://www.linkedin.com/company/jetset-pilates",
+  "https://www.google.com/maps/search/?api=1&query=JETSET+Pilates+151+SE+1st+St+Suite+10+Miami+FL+33131"
+ ],
+ "Anatomy Doral": [
+  "https://anatomyfitness.com/locations/",
+  "https://anatomyfitness.com/locations/",
+  "https://www.instagram.com/anatomyfitness/",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Anatomy+3450+NW+83rd+Ave+Suite+200+Doral+FL+33122"
+ ],
+ "Anatomy Coconut Grove": [
+  "https://anatomyfitness.com/",
+  "https://anatomyfitness.com/locations/",
+  "https://www.instagram.com/anatomyfitness/",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Anatomy+3363+Pan+American+Drive+Coconut+Grove+FL+33133"
+ ],
+ "SWEAT440 Doral": [
+  "https://sweat440.com/gyms/florida/doral-33166/",
+  "https://sweat440.com/gyms/florida/doral-33166/",
+  "https://www.instagram.com/sweat440doral/",
+  "https://www.facebook.com/sweat440/",
+  "https://www.tiktok.com/@sweat440",
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=SWEAT440+Doral+8395+NW+53rd+St+Miami+FL+33166"
+ ],
+ "Club Pilates South Beach": [
+  "https://www.clubpilates.com/location/southbeach",
+  "https://www.clubpilates.com/location/southbeach",
+  "https://instagram.com/clubpilatessouthbeach",
+  "https://www.facebook.com/clubpilatessouthbeach/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Club+Pilates+South+Beach+1824+Alton+Rd+Miami+Beach+FL+33139"
+ ],
+ "Club Pilates Midtown Miami": [
+  "https://www.clubpilates.com/location/midtownmiami",
+  "https://www.clubpilates.com/location/midtownmiami",
+  "https://www.instagram.com/clubpilatesmidtownmiami",
+  "https://www.facebook.com/112925919423756",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Club+Pilates+Midtown+Miami+3252+Buena+Vista+Blvd+Unit+102+Miami+FL+33137"
+ ],
+ "Anatomy Miami Beach": [
+  "https://anatomyfitness.com/locations/",
+  "https://anatomyfitness.com/locations/",
+  "https://www.instagram.com/anatomyfitness/",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Anatomy+1212+Lincoln+Road+Suite+204+Miami+Beach+FL+33139"
+ ],
+ "Centner Wellness Edgewater": [
+  "https://edgewater.centnerwellness.com/",
+  "https://edgewater.centnerwellness.com/",
+  "https://www.instagram.com/centnerwellnessedge/",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Centner+Wellness+2336+Biscayne+Blvd+Miami+FL+33137"
+ ],
+ "Centner Wellness Brickell": [
+  "https://brickell.centnerwellness.com/",
+  "https://book-a-tour.centnerwellness.com/",
+  "https://www.instagram.com/centnerwellness/",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Centner+Wellness+2333+Brickell+Ave+Suite+A-1+Miami+FL+33129"
+ ],
+ "Sunset Padel": [
+  "https://sunsetpadel.com/",
+  "https://sunsetpadel.com/",
+  "https://www.instagram.com/sunsetpadel/",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Sunset+Padel+1880+West+Ave+Miami+Beach+FL"
+ ],
+ "Barry's Miami Midtown": [
+  "https://www.barrys.com/studio/midtown-miami",
+  "https://www.barrys.com/pricing/midtown-miami",
+  "https://www.instagram.com/barrys",
+  "https://www.facebook.com/BarrysBootcamp/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Barry%27s+3250+NE+1st+Ave+Suite+105+Miami+FL+33137"
+ ],
+ "Reset Cryotherapy South Beach": [
+  "https://resetcryotherapy.com/",
+  "https://resetcryotherapy.com/",
+  "https://www.instagram.com/resetcryotherapy",
+  "https://www.facebook.com/resetcryotherapy/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Reset+Cryotherapy+1800+Purdy+Ave+Miami+Beach+FL"
+ ],
+ "YouFit Gyms Coral Way": [
+  "https://youfit.com/gyms/coral-way/",
+  "https://youfit.com/locations/florida/miami-coral-way",
+  "https://www.instagram.com/youfitgyms/",
+  "https://www.facebook.com/YouFitGyms/",
+  "https://www.tiktok.com/@youfitgyms/",
+  "https://www.youtube.com/c/youfitgyms/",
+  "https://www.linkedin.com/company/youfitgyms/",
+  "https://www.google.com/maps/search/?api=1&query=YouFit+Gyms+7070+Coral+Way+Miami+FL"
+ ],
+ "Club Studio Miami": [
+  "https://www.clubstudiofitness.com/",
+  "https://www.clubstudiofitness.com/Pages/freepass.aspx?clubID=1391",
+  "https://www.instagram.com/ClubStudioFitness",
+  "https://www.facebook.com/ClubStudioFitness",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Club+Studio+850+NE+2nd+Ave+Miami+FL"
+ ],
+ "Fruit & Spice Park": [
+  "https://www.miamidade.gov/parks/fruit-spice.asp",
+  "https://www.miamidade.gov/fruitandspicepark/plan-your-visit.page",
+  "https://www.instagram.com/fruitandspicepark",
+  "https://www.facebook.com/fruitandspicepark",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Fruit+%26+Spice+Park+24801+SW+187th+Ave+Homestead+FL+33031"
+ ],
+ "ActiveSoul Wellness Studio": [
+  "https://activesoulwellnessstudio.com/",
+  "https://activesoulwellnessstudio.com/",
+  "https://www.instagram.com/activesoulwellness/",
+  "https://www.facebook.com/people/ActiveSoul-Wellness-Studio/61561748591103/",
+  "https://www.tiktok.com/@activesoulwellness",
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=ActiveSoul+Wellness+Studio+Coral+Way+Miami+FL"
+ ],
+ "Padel X": [
+  "https://padelx.us/",
+  "https://playtomic.com/clubs/padel-x-miami",
+  "https://www.instagram.com/padelx.us/",
+  "https://www.facebook.com/padelx.us",
+  "https://www.tiktok.com/@padel.x",
+  "https://www.youtube.com/@PadelXUSA",
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Padel+X+Downtown+Miami+FL"
+ ],
+ "Biscayne National Park — Dante Fascell Visitor Center": [
+  "https://www.nps.gov/bisc/planyourvisit/visitorcenters.htm",
+  "https://www.biscaynenationalparkinstitute.org/",
+  "https://www.instagram.com/biscaynenps",
+  "https://www.facebook.com/BiscayneNPS",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Dante+Fascell+Visitor+Center+9700+SW+328th+St+Homestead+FL"
+ ],
+ "Miami Shores Aquatic Center": [
+  "https://www.msvfl.gov/parks-recreation/pages/aquatic-center",
+  "https://www.msvfl.gov/RentalPermitInformation",
+  null,
+  "https://www.facebook.com/msvfl.gov",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Miami+Shores+Aquatic+Center+10200+Biscayne+Blvd+Miami+Shores+FL"
+ ],
+ "The Set Padel Haus": [
+  "https://thesetpadelhaus.com/",
+  "https://playtomic.com/clubs/the-set-miami",
+  "https://www.instagram.com/thesetpadelhaus",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=The+Set+Padel+Haus+1800+NW+108th+Ave+Doral+FL+33172"
+ ],
+ "Club Pilates West Kendall": [
+  "https://www.clubpilates.com/location/westkendall",
+  "https://www.clubpilates.com/location/westkendall",
+  "https://www.instagram.com/clubpilates_westkendall/",
+  "https://www.facebook.com/clubpilateswestkendall/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Club+Pilates+West+Kendall+Miami+FL"
+ ],
+ "Smart Padel House": [
+  "https://smartpadelhouse.com/",
+  "https://playtomic.com/clubs/smart-padel-house",
+  null,
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Smart+Padel+House+8440+NW+64th+St+Unit+1+Doral+FL+33166"
+ ],
+ "UFC Gym Doral": [
+  "https://www.ufcgym.com/locations/doral",
+  "https://www.ufcgym.com/locations/doral",
+  "https://www.instagram.com/ufcfitdoral/",
+  "https://www.facebook.com/ufcfitdoral/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=UFC+Gym+Doral+FL"
+ ],
+ "EoS Fitness Kendall": [
+  "https://www.eosfitness.com/",
+  "https://www.eosfitness.com/gym/kendall-mills-dr",
+  "https://www.instagram.com/eosfitness",
+  "https://www.facebook.com/EoSFitness",
+  "https://www.tiktok.com/@eosfitness",
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=EoS+Fitness+8400+Mills+Dr+Kendall+FL"
+ ],
+ "The Edge Rock Gym": [
+  "https://theedgerockgymmiami.com/",
+  "https://www.theedgerockgymmiami.com/",
+  "https://www.instagram.com/theedgerockgymmia",
+  "https://www.facebook.com/theedgerockgymmia",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=The+Edge+Rock+Gym+13972+SW+139th+Ct+Miami+FL"
+ ],
+ "Area Centre Padel": [
+  "https://areacentre.com/",
+  "https://playtomic.com/clubs/area-center-doral",
+  null,
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Area+Centre+Padel+6700+NW+77th+Ct+%23200+Doral+FL+33166"
+ ],
+ "Champions Padel Club": [
+  "https://championspadelclub.com/",
+  "https://championspadelclub.playbypoint.com/",
+  "https://www.instagram.com/championspadelclub",
+  "https://www.facebook.com/championspadelclub",
+  null,
+  "https://www.youtube.com/@ChampionsPadelClub",
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Champions+Padel+Club+1360+NW+88th+Ave+Doral+FL+33172"
+ ],
+ "Club Pilates Aventura": [
+  "https://www.clubpilates.com/location/aventura",
+  "https://www.clubpilates.com/location/aventura",
+  "https://www.instagram.com/clubpilatesaventura",
+  "https://www.facebook.com/211808769627245",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Club+Pilates+19021+Biscayne+Blvd+Aventura+FL"
+ ],
+ "yogamakesme": [
+  "https://yogamakesme.com/",
+  "https://yogamakesme.com/schedule",
+  "https://www.instagram.com/yoga.makes.me/",
+  "https://www.facebook.com/yogamakesme/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=yogamakesme+North+Miami+Beach+FL"
+ ],
+ "Kasa Yoga Studio": [
+  "https://kasayogastudios.com/",
+  "https://www.kasayogastudios.com/",
+  "https://www.instagram.com/kasayogastudios/",
+  "https://www.facebook.com/profile.php?id=61554156358759",
+  null,
+  "https://www.youtube.com/@KasaYogaStudios",
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Kasa+Yoga+Studio+North+Miami+Beach+FL"
+ ],
+ "Adapt": [
+  "https://trainadapt.com/",
+  "https://trainadapt.com/",
+  "https://www.instagram.com/trainadapt/",
+  "https://www.facebook.com/trainadapt",
+  null,
+  "https://www.youtube.com/channel/UCw8UdHB4WPzxxWHEi_YFS1Q?view_as=subscriber",
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Adapt+14901+NE+20th+Ave+Studio+A+North+Miami+FL"
+ ],
+ "SWEAT Studio Aventura": [
+  "https://www.sweatstudiomiami.com/",
+  "https://www.sweatstudiomiami.com/",
+  "https://www.instagram.com/sweatstudio_miami",
+  "https://www.facebook.com/sweatstudiomia/",
+  "https://www.tiktok.com/@sweatstudiomiami",
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=SWEAT+Studio+15400+Biscayne+Blvd+Aventura+FL"
+ ],
+ "Pinecrest Gardens": [
+  "https://www.pinecrestgardens.org",
+  "https://www.pinecrestgardens.org/About-Us/Plan-Your-Visit/Admission",
+  "https://www.instagram.com/pinecrest_gardens/",
+  "https://www.facebook.com/PinecrestGarden",
+  null,
+  "https://www.youtube.com/channel/UCCJeFEX1NkDf7lm7iWMCjMg",
+  "https://www.linkedin.com/company/pinecrest-gardens",
+  "https://www.google.com/maps/search/?api=1&query=Pinecrest+Gardens+11000+Red+Rd+Pinecrest"
+ ],
+ "Normandy Isle Park & Pool": [
+  "https://www.miamibeachfl.gov/city-hall/parks-and-recreation/sports-centers-fields-and-courts/aquatics/flamingo-and-normandy-pools/",
+  "https://www.miamibeachfl.gov/city-hall/parks-and-recreation/parks-facilities-directory/normandy-isle-park/",
+  "https://www.instagram.com/miamibeachnews/",
+  "https://www.facebook.com/cityofmiamibeach/",
+  null,
+  "https://www.youtube.com/user/cityofmiamibeach",
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Normandy+Isle+Park+Pool+Miami+Beach"
+ ],
+ "David T. Kennedy Park": [
+  "https://www.miamiandbeaches.com/l/outdoor-experiences/david-kennedy-park/2981",
+  "https://www.miamigov.com/Residents/Parks-Directory/David-T.-Kennedy-Park",
+  "https://www.instagram.com/cityofmiami/",
+  "https://www.facebook.com/CityOfMiamiGov/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=David+T+Kennedy+Park+2400+S+Bayshore+Dr+Miami"
+ ],
+ "North Shore Open Space Park": [
+  "https://www.yelp.com/biz/north-shore-open-space-park-miami-beach",
+  "https://www.miamibeachfl.gov/city-hall/parks-and-recreation/rentals/open-space-rentals/",
+  null,
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=North+Shore+Open+Space+Park+Miami+Beach"
+ ],
+ "Margaret Pace Park": [
+  "https://www.miamiandbeaches.com/l/outdoor-experiences/margaret-pace-park/23894",
+  "https://www.miami.gov/Parks-Public-Places/Reserve-a-Park-Facility",
+  "https://www.instagram.com/cityofmiami/",
+  "https://www.facebook.com/CityOfMiamiGov/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Margaret+Pace+Park+1745+N+Bayshore+Dr+Miami"
+ ],
+ "The Underline — Brickell Backyard": [
+  "https://www.theunderline.org",
+  null,
+  "https://instagram.com/theunderlinemia",
+  "https://facebook.com/theunderlinemia",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=The+Underline+Brickell+Backyard+700+SW+1st+Ave+Miami"
+ ],
+ "Venetian Pool": [
+  "https://www.coralgables.com/attractions/venetian-pool",
+  "https://www.coralgables.com/attractions/venetian-pool",
+  "https://www.instagram.com/cityofcoralgables/",
+  "https://www.facebook.com/cityofcoralgables",
+  null,
+  "https://www.youtube.com/coralgablestv",
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Venetian+Pool+2701+De+Soto+Blvd+Coral+Gables"
+ ],
+ "Flamingo Park": [
+  "https://www.miamibeachfl.gov/city-hall/parks-and-recreation/parks-facilities-directory/flamingo-park/",
+  null,
+  "https://www.instagram.com/miamibeachnews/",
+  "https://www.facebook.com/cityofmiamibeach/",
+  null,
+  "https://www.youtube.com/user/cityofmiamibeach",
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Flamingo+Park+999+11th+St+Miami+Beach+FL+33139"
+ ],
+ "Pulse Fitness": [
+  "https://www.pulseitout.com",
+  "https://www.pulseitout.com/schedule/south-miami",
+  "https://www.instagram.com/pulseitout_",
+  "https://facebook.com/profile.php?id=100095302972514",
+  "https://www.tiktok.com/@pulseitout_",
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Pulse+Fitness+5864+Sunset+Dr+South+Miami"
+ ],
+ "Matheson Hammock Park": [
+  "https://www.miamidade.gov/parks/matheson-hammock.asp",
+  null,
+  "https://instagram.com/miamidadeparks",
+  "https://www.facebook.com/miamidadeparks",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Matheson+Hammock+Park+9610+Old+Cutler+Rd+Coral+Gables"
+ ],
+ "Polestar Pilates Studio — Dadeland": [
+  "https://polestarmiami.com",
+  "https://polestarmiami.com/",
+  "https://www.instagram.com/polestarstudiodadeland/",
+  "https://www.facebook.com/PolestarPilatesDadeland/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Polestar+Pilates+Dadeland+Miami"
+ ],
+ "Crandon Park": [
+  "https://www.miamidade.gov/parks/crandon.asp",
+  null,
+  "https://instagram.com/miamidadeparks",
+  "https://www.facebook.com/miamidadeparks",
+  null,
+  "https://www.youtube.com/user/MiamiDadeTV",
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Crandon+Park+6747+Crandon+Blvd+Key+Biscayne"
+ ],
+ "Reserve Padel — Design District": [
+  "https://www.reservepadel.com",
+  null,
+  "https://www.instagram.com/reservepadel/",
+  "https://www.facebook.com/reservepadel/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Reserve+Padel+75+NE+39th+St+Miami"
+ ],
+ "Ultra Padel Club (Magic City)": [
+  "https://ultrapadelclub.com/ultra-padel-miami-magic-city",
+  "https://ultrapadelclub.com/ultra-padel-miami-magic-city",
+  "https://www.instagram.com/ultraclubofficial/",
+  "https://www.facebook.com/UltraClubMiami",
+  null,
+  null,
+  "https://www.linkedin.com/company/ultra-padel-club-miami",
+  "https://www.google.com/maps/search/?api=1&query=Ultra+Padel+Club+Magic+City+Miami"
+ ],
+ "Ahana Yoga": [
+  "https://www.ahanayoga.com",
+  "https://www.ahanayoga.com/",
+  "https://www.instagram.com/ahanayoga/",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Ahana+Yoga+Miami+Design+District"
+ ],
+ "Wynwood Padel Club": [
+  "https://wynwoodpadelclub.com/",
+  "https://book.wynwoodpadelmiami.com/book/wynwood-padel-club",
+  "https://www.instagram.com/wynwoodpadelclub/",
+  null,
+  null,
+  null,
+  "https://www.linkedin.com/company/wynwood-padel-club",
+  "https://www.google.com/maps/search/?api=1&query=Wynwood+Padel+Club+Miami"
+ ],
+ "Anatomy Midtown": [
+  "https://anatomyfitness.com",
+  "https://anatomyfitness.com/locations/",
+  "https://www.instagram.com/anatomyfitness/",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Anatomy+Midtown+3415+NE+2nd+Ave+Miami"
+ ],
+ "The Standard Spa": [
+  "https://www.standardhotels.com/miami",
+  "https://www.standardhotels.com/miami/properties/miami-beach#spa",
+  "https://www.instagram.com/thestandardmiami",
+  "https://www.facebook.com/TheStandardMiami/",
+  "https://www.tiktok.com/@thestandardmiami",
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=The+Standard+Spa+40+Island+Ave+Miami+Beach"
+ ],
+ "Carillon Miami Wellness Resort": [
+  "https://www.carillonhotel.com",
+  "https://www.carillonhotel.com/en/experiences/day-passes/",
+  "https://www.instagram.com/carillonhotel",
+  "https://www.facebook.com/CarillonHotel",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Carillon+Miami+Wellness+Resort+6801+Collins+Ave+Miami+Beach"
+ ],
+ "Reserve Padel — Seaplane Base": [
+  "https://www.reservepadel.com/miami-seaplane",
+  "https://www.reservepadel.com/miami-seaplane",
+  "https://www.instagram.com/reservepadel/",
+  "https://www.facebook.com/reservepadel/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Reserve+Padel+Miami+Seaplane+Base+1000+MacArthur+Causeway"
+ ],
+ "BÜNDA Coral Gables": [
+  "https://www.trainbunda.com/locations/coral-gables/",
+  "https://trainbunda.com/locations/coral-gables/",
+  "https://www.instagram.com/trainbundacoralgables",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=BUNDA+25+Merrick+Way+Coral+Gables"
+ ],
+ "Skanda Yoga Studio": [
+  "https://www.skandayogastudio.com/",
+  "https://www.skandayogastudio.com/",
+  "https://www.instagram.com/skandayogastudio",
+  "https://www.facebook.com/skandayogastudio/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Skanda+Yoga+Studio+1800+SW+1st+Ave+Miami"
+ ],
+ "Studio Three": [
+  "https://studiothree.com/studio/miami/",
+  "https://studiothree.com/studio/miami/",
+  "https://www.instagram.com/studiothree/",
+  "https://www.facebook.com/studiothreemembers",
+  "https://www.tiktok.com/@studiothreetok",
+  null,
+  "https://www.linkedin.com/company/studiothree",
+  "https://www.google.com/maps/search/?api=1&query=Studio+Three+96+NW+29th+St+Miami"
+ ],
+ "TREMBLE Brickell": [
+  "https://www.makeittremble.com/",
+  "https://www.makeittremble.com/",
+  "https://www.instagram.com/makeittremble_",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=TREMBLE+1060+Brickell+Ave+Miami"
+ ],
+ "Life Time Gables": [
+  "https://www.lifetime.life/",
+  "https://www.lifetime.life/locations/fl/coral-gables.html",
+  null,
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Life+Time+237+S+Dixie+Hwy+Coral+Gables"
+ ],
+ "Fight Sports Club Miami": [
+  "https://wellhub.com/en-us/search/partners/fight-sports-club-miami-little-river/",
+  "https://fightsportsclub.com/",
+  null,
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Fight+Sports+Club+339+NE+61st+St+Miami"
+ ],
+ "Mimi Yoga & Pilates (Wynwood)": [
+  "https://mimiyoga.com/",
+  "https://mimiyoga.com/pages/studio",
+  "https://www.instagram.com/mimiyogastudio",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Mimi+Yoga+278+NW+27th+Street+Miami"
+ ],
+ "The Ice Room": [
+  "https://www.theiceroommiami.com/",
+  "https://www.theiceroommiami.com/what-we-offer",
+  "https://www.instagram.com/theiceroom.mia/",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=The+Ice+Room+1200+Brickell+Bay+Drive+Miami"
+ ],
+ "Break Free Movement": [
+  "https://www.thebreakfreemovement.com/",
+  "https://www.thebreakfreemovement.com/schedule",
+  "https://www.instagram.com/thebreakfreemvmt",
+  "https://www.facebook.com/thebreakfreemvmt",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Break+Free+Movement+4203+Ponce+de+Leon+Blvd+Coral+Gables"
+ ],
+ "Suva Yoga": [
+  "https://www.suvayoga.net/",
+  "https://www.suvayoga.net/instudio-schedule-3",
+  "https://www.instagram.com/suvayoga",
+  "https://www.facebook.com/people/Suva-Yoga/61565690169253/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Suva+Yoga+166+Alhambra+Circle+Coral+Gables"
+ ],
+ "Mimi Yoga & Pilates (Coconut Grove)": [
+  "https://mimiyoga.com/",
+  "https://mimiyoga.com/pages/studio",
+  "https://www.instagram.com/mimiyogastudio",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Mimi+Yoga+2829+Bird+Ave+Miami"
+ ],
+ "Om Movement": [
+  "https://www.ommovementstudio.com/",
+  "https://www.ommovementstudio.com/yoga-group-classes",
+  "https://www.instagram.com/ommovement",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Om+Movement+2895+McFarlane+Rd+Coconut+Grove"
+ ],
+ "JETSET Pilates Sunset Harbour": [
+  "https://jetsetpilates.com/fl/sunset-harbour/",
+  "https://jetsetpilates.com/fl/sunset-harbour/",
+  "https://www.instagram.com/jetsetpilatessunsetharbour",
+  "https://www.facebook.com/jetsetpilatesmiami",
+  null,
+  null,
+  "https://www.linkedin.com/company/jetset-pilates",
+  "https://www.google.com/maps/search/?api=1&query=JETSET+Pilates+1860+West+Ave+Miami+Beach"
+ ],
+ "Centner Wellness Gables": [
+  "https://coralgables.centnerwellness.com/",
+  "https://www.centner.me/",
+  "https://www.instagram.com/centnergables/",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Centner+Wellness+3000+Coral+Way+Commercial+Unit+3+Miami+FL+33145"
+ ],
+ "Pause Studio Brickell": [
+  "https://pausestudio.com/brickell/contrast-therapy",
+  "https://pausestudio.com/brickell/contrast-therapy",
+  "https://www.instagram.com/pause.miami",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Pause+Studio+25+SW+9th+St+Miami"
+ ],
+ "Casa Vinyasa": [
+  "https://casavinyasamiami.com/",
+  "https://casavinyasamiami.com/schedule",
+  "https://www.instagram.com/casavinyasa_miami",
+  "https://www.facebook.com/CasaVinyasaMiami/",
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Casa+Vinyasa+1430+S+Dixie+Hwy+Coral+Gables"
+ ],
+ "LEGACY Little River": [
+  "https://legacyfit.com/",
+  "https://legacyfit.com/membership",
+  "https://www.instagram.com/legacylittleriver/",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=LEGACY+7400+NW+Miami+Ct+Miami"
+ ],
+ "Wynwood Yoga Studio": [
+  "https://wynwoodyogastudio.com/",
+  "https://wynwoodyogastudio.com/",
+  "https://www.instagram.com/wynwood_yoga",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Wynwood+Yoga+2920+NW+5th+Ave+Miami"
+ ],
+ "Open Door Yoga": [
+  "https://opendooryoga.com/",
+  "https://opendooryoga.com/yoga-membership-class-pricing/",
+  "https://www.instagram.com/open.door.yoga",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Open+Door+Yoga+2801+Florida+Ave+Coconut+Grove"
+ ],
+ "TREMBLE Miami Beach": [
+  "https://www.makeittremble.com/miamibeach",
+  "https://www.makeittremble.com/miamibeach",
+  "https://www.instagram.com/makeittremble_",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=TREMBLE+1935+West+Ave+Miami+Beach"
+ ],
+ "Raw Fit-Miami": [
+  "https://www.rawfitmiami.com/",
+  "https://www.rawfitmiami.com/",
+  "https://www.instagram.com/rawfitmiami",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Raw+Fit+6350+NE+4th+Ave+Miami"
+ ],
+ "SWEAT440 Brickell": [
+  "https://sweat440.com/gyms/florida/brickell-33130/",
+  "https://sweat440.com/gyms/florida/brickell-33130/",
+  "https://www.instagram.com/sweat440brickell",
+  "https://www.facebook.com/sweat440/",
+  "https://www.tiktok.com/@sweat440",
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=SWEAT440+25+SW+9th+St+Miami"
+ ],
+ "Pause Studio Coral Gables": [
+  "https://pausestudio.com/locations/coral-gables",
+  "https://pausestudio.com/locations/coral-gables",
+  "https://www.instagram.com/pause.miami",
+  null,
+  null,
+  null,
+  null,
+  "https://www.google.com/maps/search/?api=1&query=Pause+Studio+111+Palermo+Ave+Coral+Gables"
  ]
 }

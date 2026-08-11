@@ -1,158 +1,19 @@
 [
  {
-  "n": "3rd Street Beach Yoga",
-  "h": "Miami Beach",
+  "n": "Ecstatic Dance Miami",
+  "h": "Little River",
   "c": [
-   "Yoga/Pilates"
+   "Dance",
+   "Breathwork/Meditation"
   ],
   "v": [
-   "Free/Community",
-   "Conscious/Chill"
-  ],
-  "gf": [
-   "First-Timers",
-   "Community/Social",
-   "Solo Reset"
-  ],
-  "ac": [
-   "Free/Open",
-   "Drop-In"
-  ],
-  "fmt": "Recurring Series",
-  "who": [
-   "All Levels",
-   "Beginner-Friendly",
-   "Mindfulness-Focused"
-  ],
-  "freq": "Weekly",
-  "sched": "Daily; November–March: 7:00 AM and 5:00 PM. April–October: 7:00 AM and 6:00 PM.",
-  "meet": "3rd Street and Ocean Drive, Miami Beach, FL",
-  "note": "Sunrise and sunset, daily, by the 3rd Street lifeguard tower — as reliable as the tide.",
-  "know": "Outdoor beach yoga offered every day, year-round. Check the official site for weather-related changes and current class details.",
-  "tip": null,
-  "bring": null,
-  "w": "https://www.3rdstreetbeachyoga.com/",
-  "book": "https://www.3rdstreetbeachyoga.com/",
-  "ig": "https://instagram.com/3rdstreetbeachyoga"
- },
- {
-  "n": "BreathTribe Miami",
-  "h": "Miami Shores/El Portal",
-  "c": [
-   "Breathwork/Meditation",
-   "Recovery/Plunge",
-   "Sauna/Bathhouse"
-  ],
-  "v": [
-   "Conscious/Chill"
-  ],
-  "gf": [
-   "Recovery Day",
-   "Solo Reset"
-  ],
-  "ac": [
-   "Reservation Required"
-  ],
-  "fmt": "Membership Community",
-  "who": [
-   "Recovery-Focused",
-   "Mindfulness-Focused"
-  ],
-  "freq": "Weekly",
-  "sched": "Current schedule lists Wednesday breathwork + ice bath, Thursday contrast therapy, and Saturday sessions; verify before attending.",
-  "meet": "180 NE 86th St, Miami, FL 33138",
-  "note": "A holistic recovery-and-regulation community that bridges guided breathwork with contrast therapy and strength practice.",
-  "know": "Offers breathwork, ice baths, sauna, and strength training; no prior experience is required for group sessions.",
-  "tip": null,
-  "bring": null,
-  "w": "https://www.breathtribemiami.com/",
-  "book": "https://www.breathtribemiami.com/",
-  "ig": null
- },
- {
-  "n": "Brickell Run Club",
-  "h": "Brickell",
-  "c": [
-   "Run/Cardio"
-  ],
-  "v": [
-   "High-Energy",
-   "Social Fitness",
-   "Free/Community"
-  ],
-  "gf": [
-   "First-Timers",
-   "Community/Social"
-  ],
-  "ac": [
-   "Free/Open",
-   "Drop-In"
-  ],
-  "fmt": "Open Community",
-  "who": [
-   "All Levels",
-   "Beginner-Friendly",
-   "Social-First"
-  ],
-  "freq": "Weekly",
-  "sched": "Tuesdays, 7:00 PM; free 3–3.5 mile group run, rain or shine.",
-  "meet": "Fortune International, 1300 Brickell Ave, Miami, FL 33131",
-  "note": "700+ runners, Tuesday nights, Nike-powered chaos — the closest thing Miami has to a running megachurch.",
-  "know": "Free, all-paces run club; check the club's Instagram before attending because special-route meet points can occasionally change.",
-  "tip": null,
-  "bring": null,
-  "w": null,
-  "book": "https://www.instagram.com/brickellrunclub/",
-  "ig": "https://instagram.com/brickellrunclub"
- },
- {
-  "n": "Coconut Grove Run Club",
-  "h": "Coconut Grove",
-  "c": [
-   "Run/Cardio"
-  ],
-  "v": [
-   "Social Fitness",
-   "Free/Community"
-  ],
-  "gf": [
-   "First-Timers",
-   "Community/Social"
-  ],
-  "ac": [
-   "Free/Open",
-   "Drop-In"
-  ],
-  "fmt": "Open Community",
-  "who": [
-   "All Levels",
-   "Beginner-Friendly",
-   "Social-First"
-  ],
-  "freq": "Weekly",
-  "sched": "Wednesday, 6:30 PM at Regatta Park; Friday, 6:15 AM at Alice Wainwright Park; Sunday, 7:00 AM at Chug's Diner.",
-  "meet": "Wednesday: Regatta Park; Friday: Alice Wainwright Park; Sunday: Chug's Diner.",
-  "note": "Three runs a week through the Grove's canopy streets — beginner-friendly and genuinely neighborhood-y.",
-  "know": "Free waterfront community runs with multiple weekly options; current run information is also posted through the club's website and social channels.",
-  "tip": null,
-  "bring": null,
-  "w": "https://www.coconutgrove.run/",
-  "book": "https://www.coconutgrove.run/",
-  "ig": "https://instagram.com/coconutgroverunclub"
- },
- {
-  "n": "Coffee & Chill",
-  "h": null,
-  "c": [
-   "Recovery/Plunge"
-  ],
-  "v": [
+   "Conscious/Chill",
    "Social Fitness"
   ],
   "gf": [
    "First-Timers",
    "Community/Social",
-   "Post-Workout Fuel"
+   "Solo Reset"
   ],
   "ac": [
    "Reservation Required"
@@ -160,95 +21,166 @@
   "fmt": "Event Series",
   "who": [
    "All Levels",
+   "Beginner-Friendly",
    "Social-First"
   ],
-  "freq": "Biweekly",
-  "sched": "Every other weekend; check the Miami event page for current dates and locations.",
-  "meet": null,
-  "note": "An approachable entry point for someone who wants the social side of wellness without committing to a standing club.",
-  "know": "Social-wellness events pairing coffee, cold plunges, and wellness vendors; locations vary.",
+  "freq": "Monthly",
+  "sched": "Monthly on Saturdays, 7:00 PM; full moon immersion events, confirm the date on the website.",
+  "meet": "6310 NE 2nd Ave, Miami, FL 33138",
+  "note": "Regional monthly special-event community for sober, free-form movement, embodiment and sound healing; locations vary and are usually in Southeast Hollywood.",
+  "know": null,
   "tip": null,
   "bring": null,
-  "w": "https://coffeeandchill.com/products/miami",
-  "book": "https://coffeeandchill.com/products/miami",
+  "w": null,
+  "book": "https://ecstaticdancemiami.com/",
   "ig": null
  },
  {
-  "n": "Dolphins & Rainbows Swim Group",
-  "h": "Miami Beach",
+  "n": "EXPANSION Ecstatic Dance Miami",
+  "h": "Little River",
   "c": [
-   "Swim",
-   "Outdoor/Parks"
+   "Dance",
+   "Breathwork/Meditation"
   ],
   "v": [
-   "Free/Community",
-   "Conscious/Chill"
+   "Conscious/Chill",
+   "Social Fitness",
+   "Free/Community"
   ],
   "gf": [
-   "Serious Training",
-   "Community/Social"
+   "First-Timers",
+   "Community/Social",
+   "Solo Reset"
   ],
   "ac": [
-   "Free/Open",
-   "Drop-In"
+   "Reservation Required"
   ],
-  "fmt": "Open Community",
+  "fmt": "Event Series",
   "who": [
    "All Levels",
-   "Competitive"
+   "Beginner-Friendly",
+   "Social-First"
   ],
-  "freq": "Weekly",
-  "sched": "Sundays, early morning (location varies — bay or ocean by weather)",
-  "meet": "South Beach; bay or ocean location varies by weather.",
-  "note": "A welcoming crew of capable open-water swimmers who meet Sunday mornings in South Beach — the rare structured way into ocean swimming in Miami.",
-  "know": "Open-water practice usually happens early Sunday; request to join the Facebook group for the current meeting details and conditions.",
+  "freq": "Schedule Varies",
+  "sched": "Fridays, 7:00 to 10:00 PM; twice a month, confirm the date on the website.",
+  "meet": "150 NW 73rd St, Miami, FL 33150",
+  "note": "Alcohol-free, free-form conscious-dance series in Miami; programming may include cacao, medicine music, sound healing and integration.",
+  "know": null,
   "tip": null,
   "bring": null,
-  "w": "https://www.nadadoresswimteam.org/open-water-swimming",
-  "book": "https://www.facebook.com/groups/221896808143533/",
+  "w": null,
+  "book": "https://www.ecstatic-flow.com/danceevents",
   "ig": null
  },
  {
-  "n": "Everglades Bicycle Club",
-  "h": "Gables",
+  "n": "Dance Events in South Florida",
+  "h": null,
   "c": [
-   "Cycling"
+   "Dance"
   ],
   "v": [
    "Social Fitness",
    "Free/Community"
   ],
   "gf": [
-   "Serious Training",
    "Community/Social"
   ],
   "ac": [
-   "Membership"
+   "Free/Open"
   ],
-  "fmt": "Membership Community",
+  "fmt": "Open Community",
   "who": [
    "All Levels",
-   "Competitive"
+   "Social-First"
   ],
-  "freq": "Weekly",
-  "sched": "Saturday training rides, 7:00 AM, through the end of September 2026; check the club calendar for future seasonal start times.",
-  "meet": "Ponce de Leon Middle School, across from UM, Coral Gables",
-  "note": "South Florida's premier cycling club since 1976 — 50 years in 2026. Leader-led, no-drop rides mean nobody gets left on the Rickenbacker with a flat.",
-  "know": "Annual membership is $40. New and prospective riders must read the Ride Guide and start at the back of the group to learn club protocols.",
+  "freq": "Schedule Varies",
+  "sched": null,
+  "meet": null,
+  "note": "Broad local dance-event discovery group spanning Latin, ballroom, tango, zouk, swing and more.",
+  "know": null,
   "tip": null,
   "bring": null,
-  "w": "https://www.evergladesbc.com/",
-  "book": "https://www.evergladesbc.com",
-  "ig": "https://instagram.com/evergladesbicycleclub"
+  "w": null,
+  "book": null,
+  "ig": null
  },
  {
-  "n": "Gables Run Club",
-  "h": "Gables",
+  "n": "Bachata/Salsa/Zouk & Kizomba: Social/classes events in Miami",
+  "h": null,
   "c": [
-   "Run/Cardio"
+   "Dance"
   ],
   "v": [
    "Social Fitness",
+   "Free/Community"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "fmt": "Open Community",
+  "who": [
+   "All Levels",
+   "Beginner-Friendly",
+   "Social-First"
+  ],
+  "freq": "Weekly",
+  "sched": "Fridays: salsa class, bachata class, then social dancing; additional events vary.",
+  "meet": null,
+  "note": "Active cross-style social-dance community built around salsa, bachata, zouk and kizomba classes and socials.",
+  "know": null,
+  "tip": null,
+  "bring": null,
+  "w": null,
+  "book": "https://www.meetup.com/bachata-classes-and-socials-in-miami/",
+  "ig": null
+ },
+ {
+  "n": "The Board Walks – Miami",
+  "h": "Gables",
+  "c": [
+   "Walking",
+   "Outdoor/Parks"
+  ],
+  "v": [
+   "Conscious/Chill"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "ac": [
+   "Free/Open",
+   "Reservation Required"
+  ],
+  "fmt": "Open Community",
+  "who": [
+   "All Levels",
+   "Beginner-Friendly",
+   "Social-First"
+  ],
+  "freq": "Weekly",
+  "sched": "Saturdays; use the official Join a Walk page to join the Miami Meetup group and RSVP for the current route and time.",
+  "meet": null,
+  "note": "A rare Miami third place built around unhurried movement and substantive conversation—especially valuable for newcomers seeking genuine connection.",
+  "know": "A 5-mile walk-and-talk format centered on meaningful conversation and serendipity. All RSVPs are handled through Meetup.",
+  "tip": null,
+  "bring": null,
+  "w": "https://www.theboardwalks.com/join-a-walk",
+  "book": "https://www.theboardwalks.com/join-a-walk",
+  "ig": "https://www.instagram.com/theboardwalks_"
+ },
+ {
+  "n": "Miami Hiking Club",
+  "h": null,
+  "c": [
+   "Outdoor/Parks",
+   "Walking"
+  ],
+  "v": [
    "Free/Community"
   ],
   "gf": [
@@ -265,16 +197,16 @@
    "Beginner-Friendly",
    "Social-First"
   ],
-  "freq": "Weekly",
-  "sched": "Wednesdays, 7:00 PM",
-  "meet": "Life Time Gables, 237 S Dixie Hwy, Coral Gables, FL 33146",
-  "note": "Wednesday nights out of Life Time Gables — polished, punctual, and quietly competitive.",
-  "know": "Baptist Health Run Club powered by Nike; free parking is promoted by the club. Check Instagram for occasional special programming.",
+  "freq": "Schedule Varies",
+  "sched": "Urban and wilderness hikes are announced through the club's mailing list and social channels.",
+  "meet": null,
+  "note": "The directory's outdoor-adventure counterpart to city walk clubs—well suited to people seeking longer routes and South Florida nature.",
+  "know": "An outdoor-walking and hiking community; sign up for the mailing list to receive upcoming hike details and preparation requirements.",
   "tip": null,
   "bring": null,
-  "w": "https://www.werunthecity.co/locations/gables",
-  "book": "https://www.facebook.com/gablesrunclub/",
-  "ig": "https://instagram.com/gablesrunclub"
+  "w": "https://miamihikingclub.com/",
+  "book": "https://miamihikingclub.com/",
+  "ig": "https://www.instagram.com/miamihikingclub/"
  },
  {
   "n": "Girls On the Walk Miami",
@@ -313,286 +245,6 @@
   "ig": "https://instagram.com/onthewalkmiami"
  },
  {
-  "n": "iRun & Company Social Runs",
-  "h": "Midtown/Design District",
-  "c": [
-   "Run/Cardio"
-  ],
-  "v": [
-   "Free/Community",
-   "Social Fitness"
-  ],
-  "gf": [
-   "First-Timers",
-   "Serious Training",
-   "Community/Social"
-  ],
-  "ac": [
-   "Free/Open",
-   "Drop-In"
-  ],
-  "fmt": "Recurring Series",
-  "who": [
-   "All Levels",
-   "Beginner-Friendly",
-   "Social-First"
-  ],
-  "freq": "Weekly",
-  "sched": "Free workout Mondays, 6:45 PM; Thursday Social Run, 7:00 PM.",
-  "meet": "iRun & Company, 5050 Biscayne Blvd, Suite 103, Miami, FL 33137",
-  "note": "The Upper Eastside's running-store-as-clubhouse — free workout Mondays and social run Thursdays from the shop, all levels welcome.",
-  "know": null,
-  "tip": null,
-  "bring": null,
-  "w": "https://www.iruncompany.com/",
-  "book": "https://www.iruncompany.com/",
-  "ig": null
- },
- {
-  "n": "Legion Park Yoga",
-  "h": null,
-  "c": [
-   "Yoga/Pilates",
-   "Outdoor/Parks"
-  ],
-  "v": [
-   "Free/Community"
-  ],
-  "gf": [
-   "First-Timers",
-   "Solo Reset",
-   "Community/Social"
-  ],
-  "ac": [
-   "Free/Open",
-   "Drop-In"
-  ],
-  "fmt": "Open Community",
-  "who": [
-   "All Levels",
-   "Beginner-Friendly",
-   "Mindfulness-Focused"
-  ],
-  "freq": "Weekly",
-  "sched": "Saturdays, 10:00 AM, weather permitting; virtual option also available.",
-  "meet": "Legion Park, 6447 NE 7th Ave, Miami, FL 33138",
-  "note": "A durable neighborhood ritual—low-barrier, outdoors, and community-forward rather than studio-centric.",
-  "know": "Check the organizer's Instagram by 9:00 AM when weather is uncertain; streamed via Instagram and Zoom.",
-  "tip": null,
-  "bring": null,
-  "w": "https://www.anamargret.com/yoga-legion-park",
-  "book": "https://www.anamargret.com/yoga-legion-park",
-  "ig": null
- },
- {
-  "n": "Lincoln Road Free Community Yoga",
-  "h": "Miami Beach",
-  "c": [
-   "Yoga/Pilates",
-   "Outdoor/Parks"
-  ],
-  "v": [
-   "Free/Community"
-  ],
-  "gf": [
-   "First-Timers",
-   "Solo Reset",
-   "Community/Social"
-  ],
-  "ac": [
-   "Free/Open",
-   "Drop-In"
-  ],
-  "fmt": "Recurring Series",
-  "who": [
-   "All Levels",
-   "Beginner-Friendly",
-   "Mindfulness-Focused"
-  ],
-  "freq": "Weekly",
-  "sched": "Sundays, 10:00–11:00 AM through December 27, 2026.",
-  "meet": "Euclid Courtyard, 690 Lincoln Rd, Miami Beach, FL 33139",
-  "note": "Sunday 10am at Euclid Courtyard — the most low-key way to start a Lincoln Road morning.",
-  "know": "Free outdoor class; bring your own mat and water. Space may be limited, so confirm the current listing before attending.",
-  "tip": null,
-  "bring": "Yoga mat and water; registration may be required depending on the session",
-  "w": "https://www.miamiandbeaches.com/event/community-yoga-on-lincoln-road/16778",
-  "book": "https://www.miamiandbeaches.com/event/community-yoga-on-lincoln-road/16778",
-  "ig": null
- },
- {
-  "n": "Miami Critical Mass",
-  "h": "Downtown",
-  "c": [
-   "Cycling",
-   "Outdoor/Parks"
-  ],
-  "v": [
-   "Free/Community",
-   "High-Energy",
-   "Social Fitness"
-  ],
-  "gf": [
-   "Community/Social"
-  ],
-  "ac": [
-   "Free/Open",
-   "Drop-In"
-  ],
-  "fmt": "Open Community",
-  "who": [
-   "All Levels",
-   "Social-First"
-  ],
-  "freq": "Monthly",
-  "sched": "Last Friday of every month — meet 6:30 PM, ride at 7:15 PM",
-  "meet": "Government Center, Downtown Miami",
-  "note": "Miami's monthly mass bike ride — 12–18 miles at 12–14 mph through the city, rain or shine. Not a protest, just the biggest rolling social event on two wheels.",
-  "know": "A large, social group ride held on the last Friday of each month; meet at 6:30 PM and expect the ride to depart at 7:15 PM.",
-  "tip": null,
-  "bring": null,
-  "w": "https://www.themiamibikescene.com/p/miami-critical-mass-guidelines.html",
-  "book": "https://www.themiamibikescene.com/p/miami-critical-mass-guidelines.html",
-  "ig": null
- },
- {
-  "n": "Miami Hiking Club",
-  "h": null,
-  "c": [
-   "Outdoor/Parks",
-   "Walking"
-  ],
-  "v": [
-   "Free/Community"
-  ],
-  "gf": [
-   "First-Timers",
-   "Community/Social"
-  ],
-  "ac": [
-   "Free/Open",
-   "Drop-In"
-  ],
-  "fmt": "Open Community",
-  "who": [
-   "All Levels",
-   "Beginner-Friendly",
-   "Social-First"
-  ],
-  "freq": "Schedule Varies",
-  "sched": "Urban and wilderness hikes are announced through the club's mailing list and social channels.",
-  "meet": null,
-  "note": "The directory's outdoor-adventure counterpart to city walk clubs—well suited to people seeking longer routes and South Florida nature.",
-  "know": "An outdoor-walking and hiking community; sign up for the mailing list to receive upcoming hike details and preparation requirements.",
-  "tip": null,
-  "bring": null,
-  "w": "https://miamihikingclub.com/",
-  "book": "https://miamihikingclub.com/",
-  "ig": "https://www.instagram.com/miamihikingclub/"
- },
- {
-  "n": "Miami Ice Club",
-  "h": "Brickell",
-  "c": [
-   "Recovery/Plunge"
-  ],
-  "v": [
-   "Social Fitness",
-   "Conscious/Chill"
-  ],
-  "gf": [
-   "Community/Social",
-   "Recovery Day"
-  ],
-  "ac": [
-   "Drop-In",
-   "Reservation Required"
-  ],
-  "fmt": "Membership Community",
-  "who": [
-   "Recovery-Focused"
-  ],
-  "freq": "Schedule Varies",
-  "sched": "Member sessions and events; check host page for current dates.",
-  "meet": null,
-  "note": "Wim Hof-certified breathwork and ice baths, based in Little River but roaming to Wynwood, Brickell, and South Beach. A community-led recovery practice rather than a drop-in treatment menu — strong fit for nervous-system and resilience-minded members.",
-  "know": "Breathwork and ice-bath community; membership pricing and session details can change.",
-  "tip": "Follow their Instagram and RSVP to the next session — arrive early for the guided breathwork before you get in the water.",
-  "bring": null,
-  "w": "https://www.miamiiceclub.com/",
-  "book": "https://sweatpals.com/host/Miami_Ice_Club",
-  "ig": "https://www.instagram.com/miamiiceclub"
- },
- {
-  "n": "Miami Run Club",
-  "h": "Miami Beach",
-  "c": [
-   "Run/Cardio"
-  ],
-  "v": [
-   "Social Fitness",
-   "Free/Community"
-  ],
-  "gf": [
-   "First-Timers",
-   "Community/Social"
-  ],
-  "ac": [
-   "Free/Open",
-   "Drop-In"
-  ],
-  "fmt": "Open Community",
-  "who": [
-   "All Levels",
-   "Beginner-Friendly",
-   "Social-First"
-  ],
-  "freq": "Weekly",
-  "sched": "Tuesdays, 7:15 PM at Club Studio, Miami Worldcenter; choose a 1-mile walk or 3-mile run. Check Miami Run Club for additional sessions.",
-  "meet": "Club Studio, Miami Worldcenter",
-  "note": "Fiesta Tuesdays and 6am Breakfast Club runs — community first, splits second.",
-  "know": "A guided warmup is included. Participants in the Miami Worldcenter series must complete and show the event waiver before running.",
-  "tip": null,
-  "bring": null,
-  "w": "https://miamirun.club/",
-  "book": "https://miamirun.club/",
-  "ig": "https://instagram.com/miamirunclub"
- },
- {
-  "n": "Miami Tri Club",
-  "h": null,
-  "c": [
-   "Run/Cardio",
-   "Cycling",
-   "Swim"
-  ],
-  "v": [
-   "Social Fitness"
-  ],
-  "gf": [
-   "Serious Training",
-   "Community/Social"
-  ],
-  "ac": [
-   "Membership"
-  ],
-  "fmt": "Club",
-  "who": [
-   "All Levels",
-   "Competitive"
-  ],
-  "freq": "Schedule Varies",
-  "sched": "Group workouts; see club schedule for current sessions.",
-  "meet": null,
-  "note": "The directory’s clearest multisport community entry—useful for people seeking structured training plus social accountability.",
-  "know": "USA Triathlon-affiliated club with a beginner program and group training across swim, bike, and run.",
-  "tip": null,
-  "bring": null,
-  "w": "https://www.themiamitriclub.com/",
-  "book": "https://www.themiamitriclub.com/",
-  "ig": null
- },
- {
   "n": "Miami Walk Club",
   "h": null,
   "c": [
@@ -626,6 +278,42 @@
   "w": null,
   "book": "https://www.instagram.com/miamiwalkclub/",
   "ig": "https://instagram.com/miamiwalkclub"
+ },
+ {
+  "n": "Vizcaya Village Sunday Wellness Classes",
+  "h": "Coconut Grove",
+  "c": [
+   "Yoga/Pilates",
+   "Outdoor/Parks"
+  ],
+  "v": [
+   "Conscious/Chill"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset",
+   "Community/Social"
+  ],
+  "ac": [
+   "Drop-In",
+   "Reservation Required"
+  ],
+  "fmt": "Recurring Series",
+  "who": [
+   "All Levels",
+   "Beginner-Friendly",
+   "Mindfulness-Focused"
+  ],
+  "freq": "Weekly",
+  "sched": "Sundays, 9:30–10:30 AM; first three Sundays are all-level outdoor yoga, with a rotating final-Sunday class.",
+  "meet": "Vizcaya Village Farmers Market, 3250 S Miami Ave",
+  "note": "Pairs an unusually beautiful setting with gentle, low-cost weekly wellness—ideal for a Sunday reset rather than performance training.",
+  "know": "$5 for the public and free for Vizcaya members; the final Sunday may feature Tai Chi, Zumba, or sound-bowl meditation.",
+  "tip": null,
+  "bring": null,
+  "w": "https://vizcaya.org/event/5-sunday-wellness-classes/",
+  "book": "https://vizcaya.org/event/5-sunday-wellness-classes/",
+  "ig": "https://www.instagram.com/vizcaya_museum/"
  },
  {
   "n": "NOBE Yoga in the Park",
@@ -664,6 +352,174 @@
   "ig": null
  },
  {
+  "n": "BreathTribe Miami",
+  "h": "Miami Shores/El Portal",
+  "c": [
+   "Breathwork/Meditation",
+   "Recovery/Plunge",
+   "Sauna/Bathhouse"
+  ],
+  "v": [
+   "Conscious/Chill"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Solo Reset"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "fmt": "Membership Community",
+  "who": [
+   "Recovery-Focused",
+   "Mindfulness-Focused"
+  ],
+  "freq": "Weekly",
+  "sched": "Current schedule lists Wednesday breathwork + ice bath, Thursday contrast therapy, and Saturday sessions; verify before attending.",
+  "meet": "180 NE 86th St, Miami, FL 33138",
+  "note": "A holistic recovery-and-regulation community that bridges guided breathwork with contrast therapy and strength practice.",
+  "know": "Offers breathwork, ice baths, sauna, and strength training; no prior experience is required for group sessions.",
+  "tip": null,
+  "bring": null,
+  "w": "https://www.breathtribemiami.com/",
+  "book": "https://www.breathtribemiami.com/",
+  "ig": "https://www.instagram.com/breathtribe/"
+ },
+ {
+  "n": "Miami Tri Club",
+  "h": null,
+  "c": [
+   "Run/Cardio",
+   "Cycling",
+   "Swim"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "gf": [
+   "Serious Training",
+   "Community/Social"
+  ],
+  "ac": [
+   "Membership"
+  ],
+  "fmt": "Club",
+  "who": [
+   "All Levels",
+   "Competitive"
+  ],
+  "freq": "Schedule Varies",
+  "sched": "Group workouts; see club schedule for current sessions.",
+  "meet": null,
+  "note": "The directory’s clearest multisport community entry—useful for people seeking structured training plus social accountability.",
+  "know": "USA Triathlon-affiliated club with a beginner program and group training across swim, bike, and run.",
+  "tip": null,
+  "bring": null,
+  "w": "https://www.themiamitriclub.com/",
+  "book": "https://www.themiamitriclub.com/",
+  "ig": "https://www.instagram.com/themiamitriclub/"
+ },
+ {
+  "n": "Legion Park Yoga",
+  "h": null,
+  "c": [
+   "Yoga/Pilates",
+   "Outdoor/Parks"
+  ],
+  "v": [
+   "Free/Community"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset",
+   "Community/Social"
+  ],
+  "ac": [
+   "Free/Open",
+   "Drop-In"
+  ],
+  "fmt": "Open Community",
+  "who": [
+   "All Levels",
+   "Beginner-Friendly",
+   "Mindfulness-Focused"
+  ],
+  "freq": "Weekly",
+  "sched": "Saturdays, 10:00 AM, weather permitting; virtual option also available.",
+  "meet": "Legion Park, 6447 NE 7th Ave, Miami, FL 33138",
+  "note": "A durable neighborhood ritual—low-barrier, outdoors, and community-forward rather than studio-centric.",
+  "know": "Check the organizer’s Instagram by 9:00 AM when weather is uncertain; streamed via Instagram and Zoom.",
+  "tip": null,
+  "bring": null,
+  "w": "https://www.anamargret.com/yoga-legion-park",
+  "book": "https://www.anamargret.com/yoga-legion-park",
+  "ig": null
+ },
+ {
+  "n": "Coffee & Chill",
+  "h": null,
+  "c": [
+   "Recovery/Plunge"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social",
+   "Post-Workout Fuel"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "fmt": "Event Series",
+  "who": [
+   "All Levels",
+   "Social-First"
+  ],
+  "freq": "Biweekly",
+  "sched": "Every other weekend; check the Miami event page for current dates and locations.",
+  "meet": null,
+  "note": "An approachable entry point for someone who wants the social side of wellness without committing to a standing club.",
+  "know": "Social-wellness events pairing coffee, cold plunges, and wellness vendors; locations vary.",
+  "tip": null,
+  "bring": null,
+  "w": "https://coffeeandchill.com/products/miami",
+  "book": "https://coffeeandchill.com/products/miami",
+  "ig": "https://www.instagram.com/coffeeandchillmiami"
+ },
+ {
+  "n": "Ziel Cycling Club",
+  "h": "Gables",
+  "c": [
+   "Cycling"
+  ],
+  "v": [],
+  "gf": [
+   "Serious Training",
+   "Community/Social"
+  ],
+  "ac": [
+   "Free/Open",
+   "Membership"
+  ],
+  "fmt": "Membership Community",
+  "who": [
+   "All Levels",
+   "Competitive"
+  ],
+  "freq": "Weekly",
+  "sched": "Tuesday & Thursday, 6:30 AM; Saturday, 6:30 AM from the Tolls or 7:00 AM from ZIeL. Details are shared with members.",
+  "meet": "Tuesday & Thursday: Key Biscayne Tolls; Saturday: Key Biscayne Tolls or ZIeL, 6917 S Red Rd, Coral Gables.",
+  "note": "Coral Gables-based road cycling club running organized group rides — the concept-store storefront doubles as the ride HQ.",
+  "know": "ZIeL Founders Club members receive weekly training rides and private WhatsApp instructions; contact ZIeL to coordinate a guest ride.",
+  "tip": null,
+  "bring": null,
+  "w": "https://ziel.miami/pages/ziel-rides",
+  "book": "https://ziel.miami/pages/ziel-rides",
+  "ig": "https://www.instagram.com/ziel.conceptstore/"
+ },
+ {
   "n": "SoLé Mia Running Club",
   "h": "North Miami/NMB",
   "c": [
@@ -693,16 +549,16 @@
   "bring": null,
   "w": "https://www.solemiarentals.com/running-club/",
   "book": "https://www.solemiarentals.com/running-club/",
-  "ig": "https://www.instagram.com/teamsoul/"
+  "ig": "https://www.instagram.com/teamsoul/reels/"
  },
  {
-  "n": "South Beach Run Club",
-  "h": "Miami Beach",
+  "n": "We Run The City",
+  "h": "Downtown",
   "c": [
    "Run/Cardio"
   ],
   "v": [
-   "High-Energy",
+   "Free/Community",
    "Social Fitness"
   ],
   "gf": [
@@ -720,15 +576,118 @@
    "Social-First"
   ],
   "freq": "Weekly",
-  "sched": "Thursdays, 7:01 PM; free 5K run/walk, rain or shine.",
-  "meet": "Nike Miami, 1035 Lincoln Rd, Miami Beach, FL 33139",
-  "note": "7:01pm sharp outside Nike on Lincoln Road — DJs, ocean air, and a crowd that dresses for the after-party.",
-  "know": "All paces are welcome; the club describes the experience as a 3.5-mile coastal group run with music and a social atmosphere.",
+  "sched": "Free weekly run clubs across South Florida; see the official location directory for the current Miami schedule and meeting points.",
+  "meet": null,
+  "note": "Billed as South Florida's largest run community — the Run Club Network umbrella spans multiple weekly meetups across the city.",
+  "know": null,
   "tip": null,
   "bring": null,
-  "w": "https://www.werunthecity.co/locations/south-beach",
-  "book": "https://www.instagram.com/southbeachrunclub/",
-  "ig": "https://instagram.com/southbeachrunclub"
+  "w": "https://www.werunthecity.co/",
+  "book": "https://www.werunthecity.co/run-cubs",
+  "ig": null
+ },
+ {
+  "n": "Everglades Bicycle Club",
+  "h": "Gables",
+  "c": [
+   "Cycling"
+  ],
+  "v": [
+   "Social Fitness",
+   "Free/Community"
+  ],
+  "gf": [
+   "Serious Training",
+   "Community/Social"
+  ],
+  "ac": [
+   "Membership"
+  ],
+  "fmt": "Membership Community",
+  "who": [
+   "All Levels",
+   "Competitive"
+  ],
+  "freq": "Weekly",
+  "sched": "Saturday training rides, 7:00 AM, through the end of September 2026; check the club calendar for future seasonal start times.",
+  "meet": "Ponce de Leon Middle School, across from UM, Coral Gables",
+  "note": "South Florida's premier cycling club since 1976 — 50 years in 2026. Leader-led, no-drop rides mean nobody gets left on the Rickenbacker with a flat.",
+  "know": "Annual membership is $40. New and prospective riders must read the Ride Guide and start at the back of the group to learn club protocols.",
+  "tip": null,
+  "bring": null,
+  "w": "https://www.evergladesbc.com/",
+  "book": "https://www.evergladesbc.com",
+  "ig": "https://instagram.com/evergladesbicycleclub"
+ },
+ {
+  "n": "Miami Critical Mass",
+  "h": "Downtown",
+  "c": [
+   "Cycling",
+   "Outdoor/Parks"
+  ],
+  "v": [
+   "Free/Community",
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "gf": [
+   "Community/Social"
+  ],
+  "ac": [
+   "Free/Open",
+   "Drop-In"
+  ],
+  "fmt": "Open Community",
+  "who": [
+   "All Levels",
+   "Social-First"
+  ],
+  "freq": "Monthly",
+  "sched": "Last Friday of every month — meet 6:30 PM, ride at 7:15 PM",
+  "meet": "Government Center, Downtown Miami",
+  "note": "Miami's monthly mass bike ride — 12–18 miles at 12–14 mph through the city, rain or shine. Not a protest, just the biggest rolling social event on two wheels.",
+  "know": "A large, social group ride held on the last Friday of each month; meet at 6:30 PM and expect the ride to depart at 7:15 PM.",
+  "tip": null,
+  "bring": null,
+  "w": "https://www.themiamibikescene.com/p/miami-critical-mass-guidelines.html",
+  "book": "https://www.themiamibikescene.com/p/miami-critical-mass-guidelines.html",
+  "ig": null
+ },
+ {
+  "n": "Dolphins & Rainbows Swim Group",
+  "h": "Miami Beach",
+  "c": [
+   "Swim",
+   "Outdoor/Parks"
+  ],
+  "v": [
+   "Free/Community",
+   "Conscious/Chill"
+  ],
+  "gf": [
+   "Serious Training",
+   "Community/Social"
+  ],
+  "ac": [
+   "Free/Open",
+   "Drop-In"
+  ],
+  "fmt": "Open Community",
+  "who": [
+   "All Levels",
+   "Competitive"
+  ],
+  "freq": "Weekly",
+  "sched": "Sundays, early morning (location varies — bay or ocean by weather)",
+  "meet": "South Beach; bay or ocean location varies by weather.",
+  "note": "A welcoming crew of capable open-water swimmers who meet Sunday mornings in South Beach — the rare structured way into ocean swimming in Miami.",
+  "know": "Open-water practice usually happens early Sunday; request to join the Facebook group for the current meeting details and conditions.",
+  "tip": null,
+  "bring": null,
+  "w": "https://www.nadadoresswimteam.org/open-water-swimming",
+  "book": "https://www.facebook.com/groups/221896808143533/",
+  "ig": null
  },
  {
   "n": "TeamFootWorks Fun Runs",
@@ -767,58 +726,59 @@
   "ig": "https://instagram.com/footworksmiami"
  },
  {
-  "n": "The Board Walks – Miami",
-  "h": "Gables",
+  "n": "iRun & Company Social Runs",
+  "h": "Midtown/Design District",
   "c": [
-   "Walking",
-   "Outdoor/Parks"
+   "Run/Cardio"
   ],
   "v": [
-   "Conscious/Chill"
+   "Free/Community",
+   "Social Fitness"
   ],
   "gf": [
    "First-Timers",
+   "Serious Training",
    "Community/Social"
   ],
   "ac": [
    "Free/Open",
-   "Reservation Required"
+   "Drop-In"
   ],
-  "fmt": "Open Community",
+  "fmt": "Recurring Series",
   "who": [
    "All Levels",
    "Beginner-Friendly",
    "Social-First"
   ],
   "freq": "Weekly",
-  "sched": "Saturdays; use the official Join a Walk page to join the Miami Meetup group and RSVP for the current route and time.",
-  "meet": null,
-  "note": "A rare Miami third place built around unhurried movement and substantive conversation—especially valuable for newcomers seeking genuine connection.",
-  "know": "A 5-mile walk-and-talk format centered on meaningful conversation and serendipity. All RSVPs are handled through Meetup.",
+  "sched": "Free workout Mondays, 6:45 PM; Thursday Social Run, 7:00 PM.",
+  "meet": "iRun & Company, 5050 Biscayne Blvd, Suite 103, Miami, FL 33137",
+  "note": "The Upper Eastside's running-store-as-clubhouse — free workout Mondays and social run Thursdays from the shop, all levels welcome.",
+  "know": null,
   "tip": null,
   "bring": null,
-  "w": "https://www.theboardwalks.com/join-a-walk",
-  "book": "https://www.theboardwalks.com/join-a-walk",
+  "w": "https://www.iruncompany.com/",
+  "book": "https://www.iruncompany.com/",
   "ig": null
  },
  {
-  "n": "Vizcaya Village Sunday Wellness Classes",
-  "h": "Coconut Grove",
+  "n": "3rd Street Beach Yoga",
+  "h": "Miami Beach",
   "c": [
-   "Yoga/Pilates",
-   "Outdoor/Parks"
+   "Yoga/Pilates"
   ],
   "v": [
+   "Free/Community",
    "Conscious/Chill"
   ],
   "gf": [
    "First-Timers",
-   "Solo Reset",
-   "Community/Social"
+   "Community/Social",
+   "Solo Reset"
   ],
   "ac": [
-   "Drop-In",
-   "Reservation Required"
+   "Free/Open",
+   "Drop-In"
   ],
   "fmt": "Recurring Series",
   "who": [
@@ -827,24 +787,130 @@
    "Mindfulness-Focused"
   ],
   "freq": "Weekly",
-  "sched": "Sundays, 9:30–10:30 AM; first three Sundays are all-level outdoor yoga, with a rotating final-Sunday class.",
-  "meet": "Vizcaya Village Farmers Market, 3250 S Miami Ave",
-  "note": "Pairs an unusually beautiful setting with gentle, low-cost weekly wellness—ideal for a Sunday reset rather than performance training.",
-  "know": "$5 for the public and free for Vizcaya members; the final Sunday may feature Tai Chi, Zumba, or sound-bowl meditation.",
+  "sched": "Daily; November–March: 7:00 AM and 5:00 PM. April–October: 7:00 AM and 6:00 PM.",
+  "meet": "3rd Street and Ocean Drive, Miami Beach, FL",
+  "note": "Sunrise and sunset, daily, by the 3rd Street lifeguard tower — as reliable as the tide.",
+  "know": "Outdoor beach yoga offered every day, year-round. Check the official site for weather-related changes and current class details.",
   "tip": null,
   "bring": null,
-  "w": "https://vizcaya.org/event/5-sunday-wellness-classes/",
-  "book": "https://vizcaya.org/event/5-sunday-wellness-classes/",
+  "w": "https://www.3rdstreetbeachyoga.com/",
+  "book": "https://www.3rdstreetbeachyoga.com/",
+  "ig": "https://instagram.com/3rdstreetbeachyoga"
+ },
+ {
+  "n": "Lincoln Road Free Community Yoga",
+  "h": "Miami Beach",
+  "c": [
+   "Yoga/Pilates",
+   "Outdoor/Parks"
+  ],
+  "v": [
+   "Free/Community"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset",
+   "Community/Social"
+  ],
+  "ac": [
+   "Free/Open",
+   "Drop-In"
+  ],
+  "fmt": "Recurring Series",
+  "who": [
+   "All Levels",
+   "Beginner-Friendly",
+   "Mindfulness-Focused"
+  ],
+  "freq": "Weekly",
+  "sched": "Sundays, 10:00–11:00 AM through December 27, 2026.",
+  "meet": "Euclid Courtyard, 690 Lincoln Rd, Miami Beach, FL 33139",
+  "note": "Sunday 10am at Euclid Courtyard — the most low-key way to start a Lincoln Road morning.",
+  "know": "Free outdoor class; bring your own mat and water. Space may be limited, so confirm the current listing before attending.",
+  "tip": null,
+  "bring": "Yoga mat and water; registration may be required depending on the session",
+  "w": "https://www.miamiandbeaches.com/event/community-yoga-on-lincoln-road/16778",
+  "book": "https://www.miamiandbeaches.com/event/community-yoga-on-lincoln-road/16778",
   "ig": null
  },
  {
-  "n": "We Run The City",
-  "h": "Downtown",
+  "n": "Coconut Grove Run Club",
+  "h": "Coconut Grove",
   "c": [
    "Run/Cardio"
   ],
   "v": [
-   "Free/Community",
+   "Social Fitness",
+   "Free/Community"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "ac": [
+   "Free/Open",
+   "Drop-In"
+  ],
+  "fmt": "Open Community",
+  "who": [
+   "All Levels",
+   "Beginner-Friendly",
+   "Social-First"
+  ],
+  "freq": "Weekly",
+  "sched": "Wednesday, 6:30 PM at Regatta Park; Friday, 6:15 AM at Alice Wainwright Park; Sunday, 7:00 AM at Chug's Diner.",
+  "meet": "Wednesday: Regatta Park; Friday: Alice Wainwright Park; Sunday: Chug's Diner.",
+  "note": "Three runs a week through the Grove's canopy streets — beginner-friendly and genuinely neighborhood-y.",
+  "know": "Free waterfront community runs with multiple weekly options; current run information is also posted through the club’s website and social channels.",
+  "tip": null,
+  "bring": null,
+  "w": "https://www.coconutgrove.run/",
+  "book": "https://www.coconutgrove.run/",
+  "ig": "https://instagram.com/coconutgroverunclub"
+ },
+ {
+  "n": "Gables Run Club",
+  "h": "Gables",
+  "c": [
+   "Run/Cardio"
+  ],
+  "v": [
+   "Social Fitness",
+   "Free/Community"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "ac": [
+   "Free/Open",
+   "Drop-In"
+  ],
+  "fmt": "Open Community",
+  "who": [
+   "All Levels",
+   "Beginner-Friendly",
+   "Social-First"
+  ],
+  "freq": "Weekly",
+  "sched": "Wednesdays, 7:00 PM",
+  "meet": "Life Time Gables, 237 S Dixie Hwy, Coral Gables, FL 33146",
+  "note": "Wednesday nights out of Life Time Gables — polished, punctual, and quietly competitive.",
+  "know": "Baptist Health Run Club powered by Nike; free parking is promoted by the club. Check Instagram for occasional special programming.",
+  "tip": null,
+  "bring": null,
+  "w": "https://www.werunthecity.co/locations/gables",
+  "book": "https://www.facebook.com/gablesrunclub/",
+  "ig": "https://instagram.com/gablesrunclub"
+ },
+ {
+  "n": "South Beach Run Club",
+  "h": "Miami Beach",
+  "c": [
+   "Run/Cardio"
+  ],
+  "v": [
+   "High-Energy",
    "Social Fitness"
   ],
   "gf": [
@@ -862,45 +928,118 @@
    "Social-First"
   ],
   "freq": "Weekly",
-  "sched": "Free weekly run clubs across South Florida; see the official location directory for the current Miami schedule and meeting points.",
-  "meet": null,
-  "note": "Billed as South Florida's largest run community — the Run Club Network umbrella spans multiple weekly meetups across the city.",
-  "know": null,
+  "sched": "Thursdays, 7:01 PM; free 5K run/walk, rain or shine.",
+  "meet": "Nike Miami, 1035 Lincoln Rd, Miami Beach, FL 33139",
+  "note": "7:01pm sharp outside Nike on Lincoln Road — DJs, ocean air, and a crowd that dresses for the after-party.",
+  "know": "All paces are welcome; the club describes the experience as a 3.5-mile coastal group run with music and a social atmosphere.",
   "tip": null,
   "bring": null,
-  "w": "https://www.werunthecity.co/",
-  "book": "https://www.werunthecity.co/run-cubs",
-  "ig": null
+  "w": "https://www.werunthecity.co/locations/south-beach",
+  "book": "https://www.instagram.com/southbeachrunclub/",
+  "ig": "https://instagram.com/southbeachrunclub"
  },
  {
-  "n": "Ziel Cycling Club",
-  "h": "Gables",
+  "n": "Miami Run Club",
+  "h": "Miami Beach",
   "c": [
-   "Cycling"
+   "Run/Cardio"
   ],
-  "v": [],
+  "v": [
+   "Social Fitness",
+   "Free/Community"
+  ],
   "gf": [
-   "Serious Training",
+   "First-Timers",
    "Community/Social"
   ],
   "ac": [
    "Free/Open",
-   "Membership"
+   "Drop-In"
+  ],
+  "fmt": "Open Community",
+  "who": [
+   "All Levels",
+   "Beginner-Friendly",
+   "Social-First"
+  ],
+  "freq": "Weekly",
+  "sched": "Tuesdays, 7:15 PM at Club Studio, Miami Worldcenter; choose a 1-mile walk or 3-mile run. Check Miami Run Club for additional sessions.",
+  "meet": "Club Studio, Miami Worldcenter",
+  "note": "Fiesta Tuesdays and 6am Breakfast Club runs — community first, splits second.",
+  "know": "A guided warmup is included. Participants in the Miami Worldcenter series must complete and show the event waiver before running.",
+  "tip": null,
+  "bring": null,
+  "w": "https://miamirun.club/",
+  "book": "https://miamirun.club/",
+  "ig": "https://instagram.com/miamirunclub"
+ },
+ {
+  "n": "Brickell Run Club",
+  "h": "Brickell",
+  "c": [
+   "Run/Cardio"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness",
+   "Free/Community"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "ac": [
+   "Free/Open",
+   "Drop-In"
+  ],
+  "fmt": "Open Community",
+  "who": [
+   "All Levels",
+   "Beginner-Friendly",
+   "Social-First"
+  ],
+  "freq": "Weekly",
+  "sched": "Tuesdays, 7:00 PM; free 3–3.5 mile group run, rain or shine.",
+  "meet": "Fortune International, 1300 Brickell Ave, Miami, FL 33131",
+  "note": "700+ runners, Tuesday nights, Nike-powered chaos — the closest thing Miami has to a running megachurch.",
+  "know": "Free, all-paces run club; check the club’s Instagram before attending because special-route meet points can occasionally change.",
+  "tip": null,
+  "bring": null,
+  "w": null,
+  "book": "https://www.instagram.com/brickellrunclub/",
+  "ig": "https://instagram.com/brickellrunclub"
+ },
+ {
+  "n": "Miami Ice Club",
+  "h": "Brickell",
+  "c": [
+   "Recovery/Plunge"
+  ],
+  "v": [
+   "Social Fitness",
+   "Conscious/Chill"
+  ],
+  "gf": [
+   "Community/Social",
+   "Recovery Day"
+  ],
+  "ac": [
+   "Drop-In",
+   "Reservation Required"
   ],
   "fmt": "Membership Community",
   "who": [
-   "All Levels",
-   "Competitive"
+   "Recovery-Focused"
   ],
-  "freq": "Weekly",
-  "sched": "Tuesday & Thursday, 6:30 AM; Saturday, 6:30 AM from the Tolls or 7:00 AM from ZIeL. Details are shared with members.",
-  "meet": "Tuesday & Thursday: Key Biscayne Tolls; Saturday: Key Biscayne Tolls or ZIeL, 6917 S Red Rd, Coral Gables.",
-  "note": "Coral Gables-based road cycling club running organized group rides — the concept-store storefront doubles as the ride HQ.",
-  "know": "ZIeL Founders Club members receive weekly training rides and private WhatsApp instructions; contact ZIeL to coordinate a guest ride.",
-  "tip": null,
+  "freq": "Schedule Varies",
+  "sched": "Member sessions and events; check host page for current dates.",
+  "meet": null,
+  "note": "Wim Hof-certified breathwork and ice baths, based in Little River but roaming to Wynwood, Brickell, and South Beach. A community-led recovery practice rather than a drop-in treatment menu — strong fit for nervous-system and resilience-minded members.",
+  "know": "Breathwork and ice-bath community; membership pricing and session details can change.",
+  "tip": "Follow their Instagram and RSVP to the next session — arrive early for the guided breathwork before you get in the water.",
   "bring": null,
-  "w": "https://ziel.miami/pages/ziel-rides",
-  "book": "https://ziel.miami/pages/ziel-rides",
-  "ig": null
+  "w": "https://www.miamiiceclub.com/",
+  "book": "https://sweatpals.com/host/Miami_Ice_Club",
+  "ig": "https://www.instagram.com/miamiiceclub"
  }
 ]
