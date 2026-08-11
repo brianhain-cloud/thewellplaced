@@ -2762,22 +2762,20 @@ function executeIntent(p, q) {
     return !results.some(function (it) { return blobOf(it).indexOf(wd) > -1; });
   });
 
+  // When the question was understood the cards are the whole answer. The chips
+  // above already show what was applied, so there is nothing to narrate.
   if (n > 0 && !unmet.length) {
-    // The cards below are the answer. This line says what was understood and how
-    // much it found, and alsoTxt points at the other tabs; naming every result
-    // here only duplicated the grid.
-    ans.innerHTML = "Showing <b>" + n + " " + LABEL[activeTab] + (n === 1 ? "" : "s") + "</b>" +
-      (applied.length ? " for " + applied.map(function (a) { return "<b>" + esc(a) + "</b>"; }).join(" + ") : "") +
-      "." + alsoTxt;
+    ans.innerHTML = "";
     return;
   }
 
+  // The one thing the cards cannot say is what was left out. Asking for yoga
+  // with dogs and getting plain yoga back, silently, is worse than no answer.
   var near = askFullText(unmet.length ? unmet : p.rest);
   if (n > 0 && unmet.length) {
-    ans.innerHTML = "Showing <b>" + n + " " + LABEL[activeTab] + (n === 1 ? "" : "s") + "</b> for " +
-      applied.map(function (a) { return "<b>" + esc(a) + "</b>"; }).join(" + ") +
-      ', but <span class="miss">nothing here pairs that with ' + esc(unmet.join(" and ")) + "</span>." +
-      (near.length ? " Closest on that: " + near.slice(0, 3).map(link).join(", ") + "." : "") + alsoTxt;
+    ans.innerHTML = '<span class="miss">Nothing here pairs that with ' +
+      esc(unmet.join(" and ")) + ".</span>" +
+      (near.length ? " Closest on that: " + near.slice(0, 3).map(link).join(", ") + "." : "");
     return;
   }
   if (near.length) {
