@@ -100,7 +100,10 @@ for r in active:
         "note": note, "space": space, "getin": getin, "know": know, "move": tip,
         "park": park, "bring": bring, "best": best,
         "hrs": clean(r.get("hrs")),
-        "tel": r.get("tel"), "addr": r.get("addr"),
+        # Addresses go through clean() too. A Notion address can carry an en dash
+        # in a block range ("11th–15th St") and the no-dash rule covers the whole
+        # site, not just the prose.
+        "tel": r.get("tel"), "addr": clean(r.get("addr")),
         "w": lk[0], "book": lk[1],
         "ig": handle(lk[2], "instagram.com"), "fb": lk[3], "tt": handle(lk[4], "tiktok.com"),
         "yt": lk[5], "li": lk[6], "gmu": lk[7],

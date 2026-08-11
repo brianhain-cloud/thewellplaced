@@ -1,84 +1,2554 @@
 [
-{"n":"ActiveSoul Wellness Studio","br":"ActiveSoul Wellness Studio","h":"Coral Way","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Solo Reset","Community/Social"],"v":["Conscious/Chill","Social Fitness"],"ac":["Drop-In","Class Pack","Membership"],"pf":null,"hrs":"Class and service schedules vary; confirm live availability through the official booking flow.","tel":"(786) 865-7177","addr":"2223 SW 13th Ave, Miami, FL 33145"},
-{"n":"Adapt","br":"Adapt","h":"North Miami/NMB","st":"Active","c":["Strength","Recovery/Plunge"],"gf":["Serious Training","Community/Social","Recovery Day"],"v":["High-Energy","Social Fitness"],"ac":["Membership","Class Pack","Reservation Required"],"pf":null,"hrs":"Mon–Fri 5:30 AM–9 PM; Sat–Sun 8 AM–4 PM.","tel":"(786) 717-7470","addr":"14901 NE 20th Ave, Studio A, North Miami, FL"},
-{"n":"Ahana Yoga","br":null,"h":"Midtown/Design District","st":"Active","c":["Yoga/Pilates","Breathwork/Meditation"],"gf":["First-Timers","Solo Reset","Community/Social"],"v":["Conscious/Chill","Social Fitness"],"ac":["Drop-In","Class Pack","Membership"],"pf":null,"hrs":null,"tel":"(305) 456-5339","addr":"43 NE 38th St, Miami, FL 33137"},
-{"n":"Anatomy Coconut Grove","br":"Anatomy","h":"Coconut Grove","st":"Active","c":["Strength","Recovery/Plunge","Sauna/Bathhouse"],"gf":["Serious Training","Recovery Day","Community/Social"],"v":["Premium/Luxury","Social Fitness"],"ac":["Membership","Day Pass","Reservation Required"],"pf":null,"hrs":"Mon–Fri 5 AM–10 PM; Sat–Sun 7 AM–7 PM. Verify before publishing.","tel":"(786) 275-4477","addr":"3363 Pan American Drive, Coconut Grove, FL 33133"},
-{"n":"Anatomy Doral","br":"Anatomy","h":"Doral","st":"Active","c":["Strength","Recovery/Plunge","Sauna/Bathhouse"],"gf":["Serious Training","Recovery Day"],"v":["Premium/Luxury","Social Fitness"],"ac":["Membership","Day Pass","Reservation Required"],"pf":null,"hrs":"Mon–Fri 5 AM–10 PM; Sat–Sun 8 AM–7 PM. Verify before publishing.","tel":"(305) 423-8364","addr":"3450 NW 83rd Ave, Suite 200, Doral, FL 33122"},
-{"n":"Anatomy Miami Beach","br":"Anatomy","h":"Miami Beach","st":"Active","c":["Strength","Recovery/Plunge","Sauna/Bathhouse"],"gf":["Serious Training","Recovery Day"],"v":["Premium/Luxury","Social Fitness"],"ac":["Membership","Day Pass","Reservation Required"],"pf":null,"hrs":"Mon–Fri 5 AM–10 PM; Sat–Sun 7 AM–7 PM. Verify before publishing.","tel":"(786) 213-1220","addr":"1212 Lincoln Road, Suite 204, Miami Beach, FL 33139"},
-{"n":"Anatomy Midtown","br":"Anatomy","h":"Midtown/Design District","st":"Active","c":["Strength"],"gf":["Serious Training","Recovery Day","Community/Social"],"v":["Premium/Luxury","High-Energy"],"ac":["Membership","Day Pass","Reservation Required"],"pf":null,"hrs":"Mon–Fri 5 AM–10 PM; Sat–Sun 8 AM–8 PM. Verify before publishing.","tel":"(786) 300-7415","addr":"3415 NE 2nd Ave, Miami, FL 33137"},
-{"n":"Area Centre Padel","br":"Area Centre Padel","h":"Doral","st":"Active","c":["Racquet/Padel"],"gf":["First-Timers","Community/Social","Serious Training"],"v":["Social Fitness","High-Energy"],"ac":["Reservation Required"],"pf":null,"hrs":"Court, coworking, and wellness hours vary; book through Playtomic or contact AREA Centre to confirm.","tel":"(305) 333-1477","addr":"6700 NW 77th Ct #200, Doral, FL 33166"},
-{"n":"Barry's Miami Midtown","br":"Barry's","h":"Wynwood/Edgewater","st":"Active","c":["Strength"],"gf":["Serious Training","Community/Social"],"v":["High-Energy","Premium/Luxury","Social Fitness"],"ac":["Drop-In","Class Pack","Membership","Reservation Required"],"pf":null,"hrs":"Mon–Fri 6 AM–9 PM; Sat–Sun 8 AM–2 PM. Confirm live class schedule before visiting.","tel":"(786) 725-5791","addr":"3250 NE 1st Ave, Suite 105, Miami, FL 33137"},
-{"n":"Biscayne National Park — Dante Fascell Visitor Center","br":"National Park Service","h":"Homestead/South Dade","st":"Active","c":["Outdoor/Parks","Swim"],"gf":["Family-Friendly","Recovery Day","Solo Reset"],"v":["Free/Community","Conscious/Chill"],"ac":["Free/Open"],"pf":null,"hrs":"Visitor center daily 9 AM–5 PM; Convoy Point grounds open 24 hours.","tel":"(786) 465-4058","addr":"9700 SW 328th St, Homestead, FL"},
-{"n":"Break Free Movement","br":null,"h":"Gables","st":"Active","c":["Yoga/Pilates","Strength"],"gf":["First-Timers","Community/Social"],"v":["Premium/Luxury","Social Fitness","High-Energy"],"ac":["Drop-In","Class Pack"],"pf":null,"hrs":"Class schedule varies; verify before publishing.","tel":"(305) 456-8234","addr":"4203 Ponce de Leon Blvd, Suite 200, Coral Gables, FL 33146"},
-{"n":"BÜNDA Coral Gables","br":"BÜNDA","h":"Gables","st":"Active","c":["Strength"],"gf":["Serious Training","Community/Social"],"v":["High-Energy","Social Fitness"],"ac":["Drop-In","Class Pack","Membership"],"pf":null,"hrs":"Schedule varies by class; book through BÜNDA.","tel":"(305) 200-3117","addr":"25 Merrick Way, Coral Gables, FL 33134"},
-{"n":"Carillon Miami Wellness Resort","br":"Carillon Miami Wellness Resort","h":"North Beach","st":"Active","c":["Sauna/Bathhouse","Recovery/Plunge"],"gf":["Recovery Day","Solo Reset","Date Spot","Serious Training"],"v":["Premium/Luxury","Conscious/Chill"],"ac":["Day Pass","Reservation Required"],"pf":null,"hrs":"Spa, fitness, class, and beach-club hours vary; verify before publishing.","tel":"(866) 800-3858","addr":"6801 Collins Ave, Miami Beach, FL 33141"},
-{"n":"Casa Vinyasa","br":null,"h":"Gables","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Solo Reset"],"v":["Conscious/Chill","Social Fitness"],"ac":["Drop-In","Class Pack"],"pf":null,"hrs":"Class schedule varies; verify before publishing.","tel":"(786) 238-7327","addr":"1430 S Dixie Hwy, Suite 113-115, Coral Gables, FL 33146"},
-{"n":"Centner Wellness Brickell","br":"Centner Wellness","h":"Brickell","st":"Active","c":["Recovery/Plunge","Sauna/Bathhouse"],"gf":["Recovery Day","Solo Reset"],"v":["Premium/Luxury"],"ac":["Reservation Required","Membership","Drop-In"],"pf":null,"hrs":"Mon–Fri 9:30 AM–7 PM; Sat–Sun closed. Verify before publishing.","tel":"(305) 602-5260","addr":"2333 Brickell Ave, Suite A-1, Miami, FL 33129"},
-{"n":"Centner Wellness Edgewater","br":"Centner Wellness","h":"Wynwood/Edgewater","st":"Active","c":["Recovery/Plunge"],"gf":["Recovery Day","Solo Reset"],"v":["Premium/Luxury","Conscious/Chill"],"ac":["Reservation Required","Membership","Drop-In"],"pf":null,"hrs":"Mon–Fri 10 AM–6 PM; Sat 10 AM–4 PM; Sun closed. Verify before publishing.","tel":"(305) 603-8540","addr":"2336 Biscayne Blvd, Miami, FL 33137"},
-{"n":"Centner Wellness Gables","br":"Centner Wellness","h":"Gables","st":"Active","c":["Recovery/Plunge","Sauna/Bathhouse","Breathwork/Meditation"],"gf":["Recovery Day","Solo Reset"],"v":["Premium/Luxury","Conscious/Chill"],"ac":["Reservation Required","Membership","Drop-In"],"pf":null,"hrs":"Verify before publishing.","tel":"(844) 357-8940","addr":"3000 Coral Way, Commercial Unit #3, Miami, FL 33145"},
-{"n":"Champions Padel Club","br":"Champions Padel Club","h":"Doral","st":"Active","c":["Racquet/Padel"],"gf":["Serious Training","Community/Social"],"v":["High-Energy","Social Fitness"],"ac":["Reservation Required"],"pf":null,"hrs":"Mon–Fri 8:30 AM–11:30 PM; Sat–Sun 8 AM–6:30 PM. Verify before publishing.","tel":"(786) 431-1489","addr":"1360 NW 88th Ave, Doral, FL 33172"},
-{"n":"Club Pilates Aventura","br":"Club Pilates","h":"Aventura","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Solo Reset"],"v":["Conscious/Chill"],"ac":["Class Pack","Membership"],"pf":null,"hrs":"Mon 7 AM–8 PM; Tue 7 AM–9 PM; Wed 7 AM–8 PM; Thu 7 AM–9 PM; Fri 7:30 AM–3 PM; Sat 7 AM–2 PM; Sun 8 AM–2 PM. Verify before publishing.","tel":"(786) 565-9340","addr":"19021 Biscayne Blvd, Aventura, FL"},
-{"n":"Club Pilates Midtown Miami","br":"Club Pilates","h":"Midtown/Design District","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Solo Reset"],"v":["Conscious/Chill","Social Fitness"],"ac":["Membership","Class Pack","Reservation Required"],"pf":null,"hrs":"Mon 7 AM–8:30 PM; Tue 6:30 AM–9 PM; Wed 7 AM–8:30 PM; Thu 7 AM–9 PM; Fri 6:30 AM–1 PM; Sat 8:30 AM–1 PM; Sun 8:30 AM–12:30 PM. Verify before publishing.","tel":"(786) 817-2170","addr":"3252 Buena Vista Blvd, Unit #102, Miami, FL 33137"},
-{"n":"Club Pilates South Beach","br":"Club Pilates","h":"Miami Beach","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Solo Reset"],"v":["Conscious/Chill","Social Fitness"],"ac":["Membership","Class Pack","Reservation Required"],"pf":null,"hrs":"Verify before publishing.","tel":"(786) 891-0271","addr":"1824 Alton Rd, Miami Beach, FL 33139"},
-{"n":"Club Pilates West Kendall","br":"Club Pilates","h":"Kendall","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Solo Reset"],"v":["Conscious/Chill"],"ac":["Class Pack","Membership"],"pf":null,"hrs":null,"tel":"(786) 238-7414","addr":"West Kendall, Miami, FL"},
-{"n":"Club Studio Miami","br":"Club Studio","h":"Downtown","st":"Active","c":["Yoga/Pilates","Strength"],"gf":["First-Timers","Serious Training","Community/Social"],"v":["High-Energy","Social Fitness"],"ac":["Drop-In","Class Pack","Membership"],"pf":null,"hrs":null,"tel":"(305) 423-7204","addr":"850 NE 2nd Ave, Space 121, Miami, FL 33132"},
-{"n":"Crandon Park","br":null,"h":"Key Biscayne","st":"Active","c":["Outdoor/Parks","Swim","Racquet/Padel"],"gf":["Family-Friendly","Recovery Day","Serious Training"],"v":["Free/Community"],"ac":["Free/Open"],"pf":null,"hrs":"Main park office: daily 8 AM–5 PM; individual facility hours vary.","tel":"(305) 361-5421","addr":"6747 Crandon Blvd, Key Biscayne, FL 33149"},
-{"n":"David T. Kennedy Park","br":"City of Miami Parks","h":"Coconut Grove","st":"Active","c":["Outdoor/Parks","Run/Cardio","Strength"],"gf":["Community/Social","Family-Friendly","Serious Training","Solo Reset"],"v":["Free/Community","Social Fitness"],"ac":["Free/Open"],"pf":null,"hrs":"Daily, sunrise to sunset.","tel":"(305) 416-1300","addr":"2400 S Bayshore Dr, Miami, FL 33133"},
-{"n":"EoS Fitness Kendall","br":"EoS Fitness","h":"Kendall","st":"Active","c":["Strength"],"gf":["Serious Training","First-Timers"],"v":["High-Energy"],"ac":["Membership","Day Pass"],"pf":null,"hrs":"Open 24/7.","tel":"(786) 936-3711","addr":"8400 Mills Dr, Kendall, FL"},
-{"n":"Fight Sports Club Miami","br":null,"h":"Little River","st":"Active","c":["Strength"],"gf":["Serious Training","Community/Social"],"v":["High-Energy","Social Fitness"],"ac":["Membership","Class Pack"],"pf":null,"hrs":"Classes run Monday–Saturday, with weekday sessions beginning at 6 AM and Saturday open mat 11 AM–1 PM. Consult the official schedule for class-specific times.","tel":"(786) 290-6875","addr":"339 NE 61st St, Miami, FL 33137"},
-{"n":"Flamingo Park","br":"City of Miami Beach Parks","h":"Miami Beach","st":"Active","c":["Outdoor/Parks","Swim","Racquet/Padel","Run/Cardio"],"gf":["Serious Training","Family-Friendly","Community/Social","Solo Reset"],"v":["Free/Community","Social Fitness"],"ac":["Free/Open","Drop-In","Reservation Required"],"pf":null,"hrs":"Park: daily sunrise–sunset. Track: daily 6:15 AM–9 PM. Other facility hours vary.","tel":"(305) 673-7761","addr":"999 11th St, Miami Beach, FL 33139"},
-{"n":"Fruit & Spice Park","br":"Miami-Dade Parks","h":"Homestead/South Dade","st":"Active","c":["Outdoor/Parks"],"gf":["Solo Reset","Family-Friendly"],"v":["Conscious/Chill","Free/Community"],"ac":["Drop-In"],"pf":null,"hrs":"Daily 10 AM–5 PM; closed Thanksgiving Day and Christmas Day.","tel":"(305) 247-5727","addr":"24801 SW 187th Ave, Homestead, FL 33031"},
-{"n":"JETSET Pilates Downtown Miami","br":"JETSET Pilates","h":"Downtown","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Solo Reset"],"v":["Premium/Luxury","High-Energy"],"ac":["Class Pack","Membership","Reservation Required"],"pf":null,"hrs":"Verify before publishing.","tel":"(305) 565-3349","addr":"151 SE 1st St, Suite 10, Miami, FL 33131"},
-{"n":"JETSET Pilates SoFi","br":"JETSET Pilates","h":"Miami Beach","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Solo Reset"],"v":["Premium/Luxury","High-Energy"],"ac":["Class Pack","Membership","Reservation Required"],"pf":null,"hrs":"Verify before publishing.","tel":"(305) 424-2227","addr":"110 Washington Ave, Suite CU8, Miami Beach, FL 33139"},
-{"n":"JETSET Pilates Sunset Harbour","br":"JETSET Pilates","h":"Miami Beach","st":"Active","c":["Yoga/Pilates","Strength"],"gf":["Serious Training","First-Timers"],"v":["Premium/Luxury","High-Energy"],"ac":["Drop-In","Class Pack","Membership"],"pf":null,"hrs":"Class schedule varies; use the official studio schedule to confirm current times.","tel":"(786) 542-5009","addr":"1860 West Ave, 2nd Floor, Miami Beach, FL 33139"},
-{"n":"Kasa Yoga Studio","br":"Kasa Yoga Studio","h":"North Miami/NMB","st":"Active","c":["Yoga/Pilates","Breathwork/Meditation"],"gf":["First-Timers","Solo Reset"],"v":["Conscious/Chill"],"ac":["Drop-In","Class Pack","Membership"],"pf":null,"hrs":null,"tel":"(786) 496-4424","addr":"17810 W Dixie Hwy, North Miami Beach, FL 33160"},
-{"n":"Las Rocas Climbing Gym","br":"Las Rocas","h":"South Miami/Pinecrest","st":"Upcoming (Draft)","c":["Strength","Yoga/Pilates","Recovery/Plunge"],"gf":["First-Timers","Serious Training","Recovery Day","Community/Social","Solo Reset"],"v":["Social Fitness","Premium/Luxury","Conscious/Chill"],"ac":["Membership","Drop-In","Reservation Required"],"pf":null,"hrs":null,"tel":null,"addr":"9600 S Dixie Highway, Miami, FL 33156"},
-{"n":"LEGACY Little River","br":null,"h":"Little River","st":"Active","c":["Strength"],"gf":["Serious Training"],"v":["High-Energy","Social Fitness"],"ac":["Membership","Class Pack"],"pf":null,"hrs":"Mon–Thu 5 AM–9:30 PM; Fri 5 AM–8 PM; Sat 7 AM–4 PM; Sun 7 AM–4 PM. Confirm before visiting.","tel":"(786) 221-6435","addr":"7400 NW Miami Ct, Miami, FL 33150"},
-{"n":"Life Time Gables","br":null,"h":"Gables","st":"Active","c":["Strength"],"gf":["Serious Training","Family-Friendly"],"v":["Premium/Luxury","Social Fitness"],"ac":["Membership"],"pf":null,"hrs":"Mon–Fri 4 AM–12 AM; Sat–Sun 5 AM–10 PM. Guest and limited-access hours differ; confirm before visiting.","tel":"(786) 437-4400","addr":"237 S Dixie Hwy, Coral Gables, FL 33146"},
-{"n":"Margaret Pace Park","br":"City of Miami Parks","h":"Wynwood/Edgewater","st":"Active","c":["Outdoor/Parks","Strength","Racquet/Padel"],"gf":["Community/Social","Serious Training","Family-Friendly"],"v":["Free/Community","High-Energy","Social Fitness"],"ac":["Free/Open"],"pf":null,"hrs":"Daily 7 AM–10 PM.","tel":"(305) 533-3552","addr":"1745 N. Bayshore Drive, Miami, FL 33132"},
-{"n":"Matheson Hammock Park","br":null,"h":"Gables","st":"Active","c":["Outdoor/Parks","Swim"],"gf":["Family-Friendly","Recovery Day","Date Spot"],"v":["Free/Community","Conscious/Chill"],"ac":["Free/Open"],"pf":null,"hrs":"Park office: daily 8 AM–5 PM; park and amenity hours vary. Confirm current atoll-pool and marina hours before visiting.","tel":"(305) 665-5475","addr":"9610 Old Cutler Rd, Coral Gables, FL 33156"},
-{"n":"Miami Shores Aquatic Center","br":"Miami Shores Village","h":"Miami Shores/El Portal","st":"Active","c":["Swim"],"gf":["Family-Friendly","Solo Reset","Serious Training"],"v":["Free/Community"],"ac":["Day Pass"],"pf":null,"hrs":"Competition pool: Mon/Wed/Fri 6–11 AM and 2–8 PM; Tue/Thu 7–11 AM and 2–8 PM; Sat–Sun 11 AM–5 PM. Wild Waters water park is open weekends only through Sept. 21; confirm session times before visiting.","tel":"(305) 795-2241","addr":"10200 Biscayne Blvd, Miami Shores, FL"},
-{"n":"Mimi Yoga & Pilates (Coconut Grove)","br":"Mimi Yoga & Pilates","h":"Coconut Grove","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Solo Reset"],"v":["Premium/Luxury","Conscious/Chill"],"ac":["Drop-In","Class Pack"],"pf":null,"hrs":"Class schedule varies; use the official studio schedule or Mindbody to confirm current times.","tel":"(954) 790-3807","addr":"2829 Bird Ave, Ste 1, Miami, FL 33133"},
-{"n":"Mimi Yoga & Pilates (Wynwood)","br":"Mimi Yoga & Pilates","h":"Wynwood/Edgewater","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Solo Reset"],"v":["Premium/Luxury","Conscious/Chill"],"ac":["Drop-In","Class Pack"],"pf":null,"hrs":"Class schedule varies; book through the official schedule, which uses Mindbody for customer profiles and purchases.","tel":"(305) 456-8686","addr":"278 NW 27th Street, Miami, FL 33127"},
-{"n":"Normandy Isle Park & Pool","br":"City of Miami Beach Parks","h":"North Beach","st":"Active","c":["Swim"],"gf":["Solo Reset","Family-Friendly","Serious Training"],"v":["Free/Community"],"ac":["Drop-In"],"pf":null,"hrs":"Park: daily sunrise–sunset. Pool summer schedule through Aug. 12, 2026: weekdays 6–8:30 AM lap swim, 1–4:30 PM and 5–8 PM lap/open swim; weekend public-swim sessions 12–4:30 PM and 5–8 PM.","tel":"(305) 993-2021","addr":"7030 Trouville Esplanade, Miami Beach, FL 33141"},
-{"n":"North Shore Open Space Park","br":null,"h":"North Beach","st":"Active","c":["Outdoor/Parks","Run/Cardio"],"gf":["Solo Reset","Recovery Day","Family-Friendly"],"v":["Free/Community","Conscious/Chill"],"ac":["Free/Open"],"pf":null,"hrs":"Daily, sunrise to sunset.","tel":"(305) 861-3616","addr":"Collins Avenue from 79th to 87th Street, Miami Beach, FL 33141"},
-{"n":"Om Movement","br":null,"h":"Coconut Grove","st":"Active","c":["Yoga/Pilates","Strength"],"gf":["Community/Social","First-Timers"],"v":["Conscious/Chill","Social Fitness"],"ac":["Drop-In","Class Pack"],"pf":null,"hrs":"Schedule varies by class; weekday classes begin as early as 6:30 AM. Confirm live class times before visiting.","tel":"(786) 452-8428","addr":"2895 McFarlane Rd, 2nd Floor, Coconut Grove, FL 33133"},
-{"n":"Open Door Yoga","br":null,"h":"Coconut Grove","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Solo Reset"],"v":["Conscious/Chill","Free/Community"],"ac":["Drop-In","Class Pack"],"pf":null,"hrs":"Class and event schedules vary; use the official schedule to confirm current times.","tel":"(305) 204-8319","addr":"2801 Florida Ave, Suite 20, Coconut Grove, FL 33133"},
-{"n":"Padel X","br":"Padel X","h":"Downtown","st":"Active","c":["Racquet/Padel"],"gf":["Community/Social","First-Timers","Serious Training"],"v":["Social Fitness","High-Energy"],"ac":["Reservation Required"],"pf":null,"hrs":"Mon–Sat 7 AM–11 PM; Sun 7 AM–10 PM.","tel":"(305) 515-0956","addr":"141 NE 13th Terrace, Miami, FL 33132"},
-{"n":"Padel X Summer Club","br":"Padel X","h":"Miami Beach","st":"Active","c":["Racquet/Padel"],"gf":["First-Timers","Community/Social","Family-Friendly"],"v":["High-Energy","Social Fitness"],"ac":["Drop-In","Reservation Required"],"pf":["Direct Only"],"hrs":"Daily, 7:00 AM–10:00 PM, June 22 through September 15, 2026","tel":"(305) 515-0956","addr":"1111 Lincoln Road, Ste 8, Miami Beach, FL 33139"},
-{"n":"Pause Studio Brickell","br":"Pause Studio","h":"Brickell","st":"Active","c":["Recovery/Plunge"],"gf":["Recovery Day","Solo Reset"],"v":["Premium/Luxury","Conscious/Chill"],"ac":["Drop-In","Reservation Required","Membership"],"pf":null,"hrs":"Appointment and service availability varies; book through the official Brickell service page.","tel":"(786) 224-6784","addr":"25 SW 9th St, Floor M, Miami, FL 33130"},
-{"n":"Pause Studio Coral Gables","br":"Pause Studio","h":"Gables","st":"Active","c":["Recovery/Plunge"],"gf":["Recovery Day","Solo Reset"],"v":["Premium/Luxury","Conscious/Chill"],"ac":["Drop-In","Reservation Required","Membership"],"pf":null,"hrs":"Appointment and service availability varies; book through the official location page.","tel":"(305) 239-5619","addr":"Plaza Coral Gables, 111 Palermo Ave #214, Coral Gables, FL 33134"},
-{"n":"Pinecrest Gardens","br":null,"h":"South Miami/Pinecrest","st":"Active","c":["Outdoor/Parks"],"gf":["Family-Friendly","Solo Reset","Community/Social"],"v":["Conscious/Chill","Free/Community"],"ac":["Drop-In"],"pf":null,"hrs":"Daily 9 AM–5 PM; closed on holidays. Event and special-program hours vary.","tel":"(305) 669-6990","addr":"11000 Red Rd, Pinecrest, FL 33156"},
-{"n":"Polestar Pilates Studio — Dadeland","br":"Polestar Pilates","h":"South Miami/Pinecrest","st":"Active","c":["Yoga/Pilates"],"gf":["Recovery Day","First-Timers","Serious Training"],"v":["Conscious/Chill","Premium/Luxury"],"ac":["Reservation Required","Class Pack"],"pf":null,"hrs":null,"tel":"(305) 539-9363","addr":"9015 Dadeland Blvd, F104, Miami, FL 33156"},
-{"n":"Pulse Fitness","br":"Pulse Fitness","h":"South Miami/Pinecrest","st":"Active","c":["Yoga/Pilates","Strength"],"gf":["First-Timers","Serious Training","Solo Reset"],"v":["Premium/Luxury","High-Energy"],"ac":["Drop-In","Class Pack","Membership"],"pf":null,"hrs":"Mon 6 AM–9:30 PM; Tue 5:30 AM–9:30 PM; Wed 5 AM–8:30 PM; Thu 5:30 AM–8:30 PM; Fri 6 AM–7 PM; Sat 7:30 AM–1:30 PM; Sun 8:30 AM–2:30 PM.","tel":"(833) 583-1800","addr":"5864 Sunset Dr, South Miami, FL 33143"},
-{"n":"Raw Fit-Miami","br":null,"h":"Little River","st":"Active","c":["Strength"],"gf":["Serious Training","Community/Social"],"v":["High-Energy","Social Fitness"],"ac":["Membership","Class Pack"],"pf":null,"hrs":"Class schedule varies; the location has free parking. Confirm current class times through the official booking flow.","tel":"(305) 340-1501","addr":"6350 NE 4th Ave, Miami, FL 33138"},
-{"n":"Reserve Padel — Design District","br":"Reserve Padel","h":"Midtown/Design District","st":"Active","c":["Racquet/Padel"],"gf":["Community/Social","Serious Training"],"v":["Premium/Luxury","Social Fitness"],"ac":["Membership","Reservation Required"],"pf":null,"hrs":"Daily 7 AM–11 PM. Confirm before visiting, as court and event access may vary.","tel":"(786) 224-9962","addr":"75 NE 39th St, Miami, FL 33137"},
-{"n":"Reserve Padel — Seaplane Base","br":"Reserve Padel","h":"Downtown","st":"Active","c":["Racquet/Padel"],"gf":["Date Spot","Community/Social"],"v":["Premium/Luxury","Social Fitness"],"ac":["Reservation Required","Membership","Drop-In"],"pf":null,"hrs":"Daily 7 AM–11 PM.","tel":"(786) 279-0722","addr":"1000 MacArthur Causeway, Watson Island, Miami, FL 33132"},
-{"n":"Reset Cryotherapy South Beach","br":"Reset Cryotherapy","h":"Miami Beach","st":"Active","c":["Recovery/Plunge","Sauna/Bathhouse"],"gf":["Recovery Day","Solo Reset"],"v":["Premium/Luxury","Conscious/Chill"],"ac":["Drop-In","Reservation Required","Membership"],"pf":null,"hrs":"Mon–Fri 10 AM–7 PM; Sat–Sun 10 AM–3 PM.","tel":"(305) 763-8297","addr":"1800 Purdy Ave, Miami Beach, FL"},
-{"n":"SILA Miami","br":null,"h":"Little River","st":"Active","c":["Yoga/Pilates","Recovery/Plunge","Strength","Sauna/Bathhouse","Breathwork/Meditation"],"gf":["First-Timers","Serious Training","Recovery Day","Community/Social"],"v":["Conscious/Chill","Social Fitness","Premium/Luxury"],"ac":["Drop-In","Membership","Day Pass","Reservation Required"],"pf":["Mindbody"],"hrs":"Mon: private bookings; Tue–Wed 12 PM–9 PM; Thu 12 PM–10:30 PM; Fri 2 PM–8 PM; Sat–Sun 11 AM–5 PM.","tel":"(305) 224-6399","addr":"5030 NE 2nd Ave, Unit 405, Miami, FL 33137"},
-{"n":"Skanda Yoga Studio","br":null,"h":"Brickell","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Solo Reset","Community/Social"],"v":["Conscious/Chill","Premium/Luxury"],"ac":["Drop-In","Class Pack"],"pf":null,"hrs":"Monday–Saturday 6:30 AM–9 PM; closed Sunday. Confirm class-specific schedule before visiting.","tel":"(786) 567-8124","addr":"1800 SW 1st Ave, Ste 102, Miami, FL 33129"},
-{"n":"Smart Padel House","br":"Smart Padel House","h":"Doral","st":"Active","c":["Racquet/Padel"],"gf":["Community/Social","Serious Training"],"v":["Social Fitness","High-Energy"],"ac":["Reservation Required"],"pf":null,"hrs":"Open 24/7.","tel":"(561) 519-7832","addr":"8440 NW 64th St Unit 1, Doral, FL 33166"},
-{"n":"Studio Three","br":null,"h":"Wynwood/Edgewater","st":"Active","c":["Strength","Yoga/Pilates"],"gf":["Serious Training","Community/Social"],"v":["Premium/Luxury","High-Energy"],"ac":["Drop-In","Class Pack","Membership"],"pf":null,"hrs":"Class schedule varies; use the official Miami studio page to book and confirm current class times.","tel":"(877) 651-8620","addr":"96 NW 29th St, Miami, FL 33127"},
-{"n":"Sunset Padel","br":"Sunset Padel","h":"Miami Beach","st":"Active","c":["Racquet/Padel"],"gf":["Community/Social","Serious Training"],"v":["Premium/Luxury","Social Fitness"],"ac":["Membership","Reservation Required"],"pf":null,"hrs":"Daily 7 AM–10 PM.","tel":"(305) 432-7807","addr":"1880 West Ave, Miami Beach, FL"},
-{"n":"Suva Yoga","br":null,"h":"Gables","st":"Active","c":["Yoga/Pilates"],"gf":["Solo Reset","First-Timers"],"v":["Conscious/Chill"],"ac":["Drop-In","Class Pack"],"pf":null,"hrs":"In-studio and online class schedules vary; use the official schedule to confirm current times.","tel":"(305) 338-7038","addr":"166 Alhambra Circle, Coral Gables, FL 33134"},
-{"n":"SWEAT Studio Aventura","br":"SWEAT Studio","h":"Aventura","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Serious Training"],"v":["High-Energy","Premium/Luxury"],"ac":["Drop-In","Class Pack","Membership","Reservation Required"],"pf":null,"hrs":null,"tel":"(305) 627-3767","addr":"15400 Biscayne Blvd, Aventura, FL"},
-{"n":"SWEAT440 Brickell","br":"SWEAT440","h":"Brickell","st":"Active","c":["Strength"],"gf":["First-Timers","Serious Training"],"v":["High-Energy","Social Fitness"],"ac":["Drop-In","Class Pack","Membership"],"pf":null,"hrs":"Mon–Thu 6 AM–12:30 PM and 4–8 PM; Fri 6 AM–12:30 PM and 4:30–6:30 PM; Sat 8 AM–1 PM; Sun 9 AM–1 PM.","tel":"(888) 507-9328","addr":"25 SW 9th St, Unit G100, Miami, FL 33130"},
-{"n":"SWEAT440 Coral Gables","br":"SWEAT440","h":"Gables","st":"Active","c":["Strength","Run/Cardio"],"gf":["First-Timers","Serious Training"],"v":["High-Energy","Social Fitness"],"ac":["Membership","Class Pack","Drop-In"],"pf":null,"hrs":"Verify before publishing.","tel":"(888) 507-9328","addr":"301 Altara Ave, Suite 111, Coral Gables, FL 33146"},
-{"n":"SWEAT440 Doral","br":"SWEAT440","h":"Doral","st":"Active","c":["Strength","Run/Cardio"],"gf":["First-Timers","Serious Training"],"v":["High-Energy","Social Fitness"],"ac":["Membership","Class Pack","Drop-In"],"pf":null,"hrs":"Verify before publishing.","tel":"(888) 507-9328","addr":"8395 NW 53rd St, Miami, FL 33166"},
-{"n":"SWEAT440 Miami Beach","br":"SWEAT440","h":"Miami Beach","st":"Active","c":["Strength","Run/Cardio"],"gf":["First-Timers","Serious Training","Community/Social"],"v":["High-Energy","Social Fitness"],"ac":["Membership","Class Pack","Drop-In"],"pf":null,"hrs":null,"tel":"(888) 507-9328","addr":"1916 Bay Rd, Miami Beach, FL 33139"},
-{"n":"The Edge Rock Gym","br":"The Edge Rock Gym","h":"Kendall","st":"Active","c":["Strength"],"gf":["First-Timers","Family-Friendly"],"v":["Social Fitness","High-Energy"],"ac":["Day Pass","Membership"],"pf":null,"hrs":"Mon–Fri 11 AM–10 PM; Sat 11 AM–9 PM; Sun 11 AM–8 PM.","tel":"(305) 233-6623","addr":"13972 SW 139th Ct, Miami, FL"},
-{"n":"The Ice Room","br":null,"h":"Brickell","st":"Active","c":["Recovery/Plunge"],"gf":["Recovery Day","Solo Reset"],"v":["Premium/Luxury","High-Energy"],"ac":["Drop-In","Reservation Required","Membership"],"pf":null,"hrs":"Mon–Fri 8 AM–7 PM; Sat 7 AM–6 PM; Sun closed.","tel":"(305) 798-7302","addr":"1200 Brickell Bay Drive, Suite 106, Miami, FL 33131"},
-{"n":"The Set Padel Haus","br":"The Set Padel Haus","h":"Doral","st":"Active","c":["Racquet/Padel"],"gf":["Community/Social","Serious Training","First-Timers"],"v":["Social Fitness","High-Energy"],"ac":["Reservation Required"],"pf":null,"hrs":"Daily 7 AM–11:30 PM.","tel":"(786) 481-7774","addr":"1800 NW 108th Ave, Doral, FL 33172"},
-{"n":"The Standard Spa","br":null,"h":"Miami Beach","st":"Active","c":["Sauna/Bathhouse","Recovery/Plunge"],"gf":["Recovery Day","Date Spot","Solo Reset"],"v":["Premium/Luxury","Conscious/Chill"],"ac":["Reservation Required"],"pf":null,"hrs":"Spa: daily 8 AM–10 PM. Gym: daily 6 AM–10 PM. Other hotel outlets and pool access hours vary.","tel":"(305) 673-1717","addr":"40 Island Ave, Miami Beach, FL 33139"},
-{"n":"The Underline — Brickell Backyard","br":null,"h":"Brickell","st":"Active","c":["Outdoor/Parks","Strength","Run/Cardio"],"gf":["Community/Social","First-Timers","Serious Training"],"v":["Free/Community","Social Fitness"],"ac":["Free/Open"],"pf":null,"hrs":"Urban Gym and Flex Court: daily 7 AM–9 PM. Park access and event times vary by segment and program.","tel":"(305) 603-9895","addr":"700 SW 1st Ave, Miami, FL 33130"},
-{"n":"TREMBLE Brickell","br":"TREMBLE","h":"Brickell","st":"Active","c":["Strength","Yoga/Pilates"],"gf":["Serious Training","First-Timers"],"v":["High-Energy","Premium/Luxury"],"ac":["Drop-In","Class Pack"],"pf":null,"hrs":"Class schedule varies; use the official booking flow to confirm live Brickell class times.","tel":"(833) 873-6253","addr":"1060 Brickell Ave, Unit M3/105, Miami, FL 33131"},
-{"n":"TREMBLE Miami Beach","br":"TREMBLE","h":"Miami Beach","st":"Active","c":["Yoga/Pilates","Strength"],"gf":["Serious Training","First-Timers"],"v":["High-Energy","Premium/Luxury"],"ac":["Drop-In","Class Pack"],"pf":null,"hrs":"Class schedule varies; use the official Miami Beach page to confirm live class times and book.","tel":"(833) 873-6253","addr":"1935 West Ave, Ste 208, Miami Beach, FL 33139"},
-{"n":"UFC Gym Doral","br":"UFC Gym","h":"Doral","st":"Active","c":["Strength"],"gf":["Serious Training","First-Timers"],"v":["High-Energy","Social Fitness"],"ac":["Membership","Day Pass"],"pf":null,"hrs":"Sun 6 AM–8 PM; Mon 5 AM–midnight; Tue–Thu open 24 hours; Fri midnight–11 PM; Sat 6 AM–8 PM.","tel":"(305) 400-0017","addr":"8700 NW 36th St, Doral, FL 33178"},
-{"n":"Ultra Padel Club (Magic City)","br":"Ultra Padel","h":"Little River","st":"Active","c":["Racquet/Padel"],"gf":["Community/Social","Serious Training","First-Timers"],"v":["Social Fitness","High-Energy"],"ac":["Drop-In","Reservation Required","Membership"],"pf":null,"hrs":"Court and program hours vary; book through the official site to confirm availability.","tel":"(786) 765-4599","addr":"400 NE 67th St, Miami, FL 33138"},
-{"n":"Ultra Padel Club — Aventura","br":"Ultra Padel","h":"Aventura","st":"Active","c":["Racquet/Padel"],"gf":["Community/Social","Serious Training","First-Timers"],"v":["Premium/Luxury","Social Fitness"],"ac":["Membership","Reservation Required","Drop-In"],"pf":null,"hrs":"Daily 7:30 AM–8 PM.","tel":"(305) 340-3540","addr":"3455 NE 207th St, Building 2, Aventura, FL 33180"},
-{"n":"Venetian Pool","br":null,"h":"Gables","st":"Active","c":["Swim"],"gf":["Family-Friendly","Date Spot","Solo Reset"],"v":["Conscious/Chill","Free/Community"],"ac":["Drop-In"],"pf":null,"hrs":"Seasonal. Jun 8–Sep 7: Mon–Fri 11 AM–6:30 PM; Sat–Sun 10 AM–4:30 PM. Check the official page for current seasonal hours and closures.","tel":"(305) 460-5306","addr":"2701 De Soto Blvd, Coral Gables, FL 33134"},
-{"n":"Wynwood Padel Club","br":null,"h":"Wynwood/Edgewater","st":"Active","c":["Racquet/Padel"],"gf":["First-Timers","Community/Social","Serious Training"],"v":["Social Fitness","High-Energy"],"ac":["Drop-In","Membership","Reservation Required"],"pf":null,"hrs":"Mon–Fri 7 AM–11 PM; Sat–Sun 8 AM–9:30 PM.","tel":"(786) 534-2926","addr":"1932 NW Miami Ct, Miami, FL 33136"},
-{"n":"Wynwood Yoga Studio","br":null,"h":"Wynwood/Edgewater","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Community/Social"],"v":["High-Energy","Conscious/Chill"],"ac":["Drop-In","Class Pack"],"pf":null,"hrs":"Class schedule varies; use the official website or booking flow to confirm live times.","tel":"(786) 558-9390","addr":"2920 NW 5th Ave, Ste 104, Miami, FL 33127"},
-{"n":"yogamakesme","br":"yogamakesme","h":"North Miami/NMB","st":"Active","c":["Yoga/Pilates"],"gf":["First-Timers","Serious Training"],"v":["Conscious/Chill"],"ac":["Drop-In","Class Pack","Membership"],"pf":["Mindbody"],"hrs":"Class schedule varies by day; book from the live schedule on the studio website or Mindbody.","tel":"(305) 944-0030","addr":"3525 NE 163rd St, North Miami Beach, FL 33160"},
-{"n":"YouFit Gyms Coral Way","br":"YouFit","h":"Coral Way","st":"Active","c":["Strength"],"gf":["Serious Training","First-Timers"],"v":["Free/Community"],"ac":["Membership","Day Pass"],"pf":null,"hrs":"Mon–Thu 5 AM–11 PM; Fri 5 AM–10 PM; Sat–Sun 8 AM–6 PM.","tel":"(888) 968-3562","addr":"7070 Coral Way, Miami, FL"}
+ {
+  "n": "ActiveSoul Wellness Studio",
+  "br": "ActiveSoul Wellness Studio",
+  "h": "Coral Way",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset",
+   "Community/Social"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Class and service schedules vary; confirm live availability through the official booking flow.",
+  "tel": "(786) 865-7177",
+  "addr": "2223 SW 13th Ave, Miami, FL 33145"
+ },
+ {
+  "n": "Adapt",
+  "br": "Adapt",
+  "h": "North Miami/NMB",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Recovery/Plunge"
+  ],
+  "gf": [
+   "Serious Training",
+   "Community/Social",
+   "Recovery Day"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Class Pack",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 5:30 AM–9 PM; Sat–Sun 8 AM–4 PM.",
+  "tel": "(786) 717-7470",
+  "addr": "14901 NE 20th Ave, Studio A, North Miami, FL"
+ },
+ {
+  "n": "Ahana Yoga",
+  "br": null,
+  "h": "Midtown/Design District",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates",
+   "Breathwork/Meditation"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset",
+   "Community/Social"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": null,
+  "tel": "(305) 456-5339",
+  "addr": "43 NE 38th St, Miami, FL 33137"
+ },
+ {
+  "n": "Anatomy Coconut Grove",
+  "br": "Anatomy",
+  "h": "Coconut Grove",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Recovery/Plunge",
+   "Sauna/Bathhouse"
+  ],
+  "gf": [
+   "Serious Training",
+   "Recovery Day",
+   "Community/Social"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Day Pass",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 5 AM–10 PM; Sat–Sun 7 AM–7 PM. Verify before publishing.",
+  "tel": "(786) 275-4477",
+  "addr": "3363 Pan American Drive, Coconut Grove, FL 33133"
+ },
+ {
+  "n": "Anatomy Doral",
+  "br": "Anatomy",
+  "h": "Doral",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Recovery/Plunge",
+   "Sauna/Bathhouse"
+  ],
+  "gf": [
+   "Serious Training",
+   "Recovery Day"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Day Pass",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 5 AM–10 PM; Sat–Sun 8 AM–7 PM. Verify before publishing.",
+  "tel": "(305) 423-8364",
+  "addr": "3450 NW 83rd Ave, Suite 200, Doral, FL 33122"
+ },
+ {
+  "n": "Anatomy Miami Beach",
+  "br": "Anatomy",
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Recovery/Plunge",
+   "Sauna/Bathhouse"
+  ],
+  "gf": [
+   "Serious Training",
+   "Recovery Day"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Day Pass",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 5 AM–10 PM; Sat–Sun 7 AM–7 PM. Verify before publishing.",
+  "tel": "(786) 213-1220",
+  "addr": "1212 Lincoln Road, Suite 204, Miami Beach, FL 33139"
+ },
+ {
+  "n": "Anatomy Midtown",
+  "br": "Anatomy",
+  "h": "Midtown/Design District",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "Serious Training",
+   "Recovery Day",
+   "Community/Social"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "High-Energy"
+  ],
+  "ac": [
+   "Membership",
+   "Day Pass",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 5 AM–10 PM; Sat–Sun 8 AM–8 PM. Verify before publishing.",
+  "tel": "(786) 300-7415",
+  "addr": "3415 NE 2nd Ave, Miami, FL 33137"
+ },
+ {
+  "n": "Area Centre Padel",
+  "br": "Area Centre Padel",
+  "h": "Doral",
+  "st": "Active",
+  "c": [
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social",
+   "Serious Training"
+  ],
+  "v": [
+   "Social Fitness",
+   "High-Energy"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Court, coworking, and wellness hours vary; book through Playtomic or contact AREA Centre to confirm.",
+  "tel": "(305) 333-1477",
+  "addr": "6700 NW 77th Ct #200, Doral, FL 33166"
+ },
+ {
+  "n": "Barry's Miami Midtown",
+  "br": "Barry's",
+  "h": "Wynwood/Edgewater",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "High-Energy",
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 6 AM–9 PM; Sat–Sun 8 AM–2 PM. Confirm live class schedule before visiting.",
+  "tel": "(786) 725-5791",
+  "addr": "3250 NE 1st Ave, Suite 105, Miami, FL 33137"
+ },
+ {
+  "n": "Belly Motions",
+  "br": null,
+  "h": null,
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Miami, FL"
+ },
+ {
+  "n": "Biscayne National Park — Dante Fascell Visitor Center",
+  "br": "National Park Service",
+  "h": "Homestead/South Dade",
+  "st": "Active",
+  "c": [
+   "Outdoor/Parks",
+   "Swim"
+  ],
+  "gf": [
+   "Family-Friendly",
+   "Recovery Day",
+   "Solo Reset"
+  ],
+  "v": [
+   "Free/Community",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Free/Open"
+  ],
+  "pf": null,
+  "hrs": "Visitor center daily 9 AM–5 PM; Convoy Point grounds open 24 hours.",
+  "tel": "(786) 465-4058",
+  "addr": "9700 SW 328th St, Homestead, FL"
+ },
+ {
+  "n": "Break Free Movement",
+  "br": null,
+  "h": "Gables",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates",
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness",
+   "High-Energy"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Class schedule varies; verify before publishing.",
+  "tel": "(305) 456-8234",
+  "addr": "4203 Ponce de Leon Blvd, Suite 200, Coral Gables, FL 33146"
+ },
+ {
+  "n": "BÜNDA Coral Gables",
+  "br": "BÜNDA",
+  "h": "Gables",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Schedule varies by class; book through BÜNDA.",
+  "tel": "(305) 200-3117",
+  "addr": "25 Merrick Way, Coral Gables, FL 33134"
+ },
+ {
+  "n": "Carillon Miami Wellness Resort",
+  "br": "Carillon Miami Wellness Resort",
+  "h": "North Beach",
+  "st": "Active",
+  "c": [
+   "Sauna/Bathhouse",
+   "Recovery/Plunge"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Solo Reset",
+   "Date Spot",
+   "Serious Training"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Day Pass",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Spa, fitness, class, and beach-club hours vary; verify before publishing.",
+  "tel": "(866) 800-3858",
+  "addr": "6801 Collins Ave, Miami Beach, FL 33141"
+ },
+ {
+  "n": "Casa Vinyasa",
+  "br": null,
+  "h": "Gables",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Class schedule varies; verify before publishing.",
+  "tel": "(786) 238-7327",
+  "addr": "1430 S Dixie Hwy, Suite 113-115, Coral Gables, FL 33146"
+ },
+ {
+  "n": "Centner Wellness Brickell",
+  "br": "Centner Wellness",
+  "h": "Brickell",
+  "st": "Active",
+  "c": [
+   "Recovery/Plunge",
+   "Sauna/Bathhouse"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury"
+  ],
+  "ac": [
+   "Reservation Required",
+   "Membership",
+   "Drop-In"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 9:30 AM–7 PM; Sat–Sun closed. Verify before publishing.",
+  "tel": "(305) 602-5260",
+  "addr": "2333 Brickell Ave, Suite A-1, Miami, FL 33129"
+ },
+ {
+  "n": "Centner Wellness Edgewater",
+  "br": "Centner Wellness",
+  "h": "Wynwood/Edgewater",
+  "st": "Active",
+  "c": [
+   "Recovery/Plunge"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Reservation Required",
+   "Membership",
+   "Drop-In"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 10 AM–6 PM; Sat 10 AM–4 PM; Sun closed. Verify before publishing.",
+  "tel": "(305) 603-8540",
+  "addr": "2336 Biscayne Blvd, Miami, FL 33137"
+ },
+ {
+  "n": "Centner Wellness Gables",
+  "br": "Centner Wellness",
+  "h": "Gables",
+  "st": "Active",
+  "c": [
+   "Recovery/Plunge",
+   "Sauna/Bathhouse",
+   "Breathwork/Meditation"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Reservation Required",
+   "Membership",
+   "Drop-In"
+  ],
+  "pf": null,
+  "hrs": "Verify before publishing.",
+  "tel": "(844) 357-8940",
+  "addr": "3000 Coral Way, Commercial Unit #3, Miami, FL 33145"
+ },
+ {
+  "n": "Champions Padel Club",
+  "br": "Champions Padel Club",
+  "h": "Doral",
+  "st": "Active",
+  "c": [
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 8:30 AM–11:30 PM; Sat–Sun 8 AM–6:30 PM. Verify before publishing.",
+  "tel": "(786) 431-1489",
+  "addr": "1360 NW 88th Ave, Doral, FL 33172"
+ },
+ {
+  "n": "Club Pilates Aventura",
+  "br": "Club Pilates",
+  "h": "Aventura",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset"
+  ],
+  "v": [
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Mon 7 AM–8 PM; Tue 7 AM–9 PM; Wed 7 AM–8 PM; Thu 7 AM–9 PM; Fri 7:30 AM–3 PM; Sat 7 AM–2 PM; Sun 8 AM–2 PM. Verify before publishing.",
+  "tel": "(786) 565-9340",
+  "addr": "19021 Biscayne Blvd, Aventura, FL"
+ },
+ {
+  "n": "Club Pilates Midtown Miami",
+  "br": "Club Pilates",
+  "h": "Midtown/Design District",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Class Pack",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Mon 7 AM–8:30 PM; Tue 6:30 AM–9 PM; Wed 7 AM–8:30 PM; Thu 7 AM–9 PM; Fri 6:30 AM–1 PM; Sat 8:30 AM–1 PM; Sun 8:30 AM–12:30 PM. Verify before publishing.",
+  "tel": "(786) 817-2170",
+  "addr": "3252 Buena Vista Blvd, Unit #102, Miami, FL 33137"
+ },
+ {
+  "n": "Club Pilates South Beach",
+  "br": "Club Pilates",
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Class Pack",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Verify before publishing.",
+  "tel": "(786) 891-0271",
+  "addr": "1824 Alton Rd, Miami Beach, FL 33139"
+ },
+ {
+  "n": "Club Pilates West Kendall",
+  "br": "Club Pilates",
+  "h": "Kendall",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset"
+  ],
+  "v": [
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": null,
+  "tel": "(786) 238-7414",
+  "addr": "West Kendall, Miami, FL"
+ },
+ {
+  "n": "Club Studio Miami",
+  "br": "Club Studio",
+  "h": "Downtown",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates",
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": null,
+  "tel": "(305) 423-7204",
+  "addr": "850 NE 2nd Ave, Space 121, Miami, FL 33132"
+ },
+ {
+  "n": "Crandon Park",
+  "br": null,
+  "h": "Key Biscayne",
+  "st": "Active",
+  "c": [
+   "Outdoor/Parks",
+   "Swim",
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "Family-Friendly",
+   "Recovery Day",
+   "Serious Training"
+  ],
+  "v": [
+   "Free/Community"
+  ],
+  "ac": [
+   "Free/Open"
+  ],
+  "pf": null,
+  "hrs": "Main park office: daily 8 AM–5 PM; individual facility hours vary.",
+  "tel": "(305) 361-5421",
+  "addr": "6747 Crandon Blvd, Key Biscayne, FL 33149"
+ },
+ {
+  "n": "Dance Empire",
+  "br": null,
+  "h": "South Miami/Pinecrest",
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Family-Friendly"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "South Miami / Cutler area, Miami, FL"
+ },
+ {
+  "n": "Dance Town South Florida",
+  "br": null,
+  "h": "Doral",
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Family-Friendly"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Doral, Miami, FL"
+ },
+ {
+  "n": "DanceArts Miami",
+  "br": null,
+  "h": null,
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Miami, FL"
+ },
+ {
+  "n": "David T. Kennedy Park",
+  "br": "City of Miami Parks",
+  "h": "Coconut Grove",
+  "st": "Active",
+  "c": [
+   "Outdoor/Parks",
+   "Run/Cardio",
+   "Strength"
+  ],
+  "gf": [
+   "Community/Social",
+   "Family-Friendly",
+   "Serious Training",
+   "Solo Reset",
+   "Dog-Friendly"
+  ],
+  "v": [
+   "Free/Community",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Free/Open"
+  ],
+  "pf": null,
+  "hrs": "Daily, sunrise to sunset.",
+  "tel": "(305) 416-1300",
+  "addr": "2400 S Bayshore Dr, Miami, FL 33133"
+ },
+ {
+  "n": "EoS Fitness Kendall",
+  "br": "EoS Fitness",
+  "h": "Kendall",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "Serious Training",
+   "First-Timers"
+  ],
+  "v": [
+   "High-Energy"
+  ],
+  "ac": [
+   "Membership",
+   "Day Pass"
+  ],
+  "pf": null,
+  "hrs": "Open 24/7.",
+  "tel": "(786) 936-3711",
+  "addr": "8400 Mills Dr, Kendall, FL"
+ },
+ {
+  "n": "Fight Sports Club Miami",
+  "br": null,
+  "h": "Little River",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Classes run Monday–Saturday, with weekday sessions beginning at 6 AM and Saturday open mat 11 AM–1 PM. Consult the official schedule for class-specific times.",
+  "tel": "(786) 290-6875",
+  "addr": "339 NE 61st St, Miami, FL 33137"
+ },
+ {
+  "n": "Flamingo Park",
+  "br": "City of Miami Beach Parks",
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Outdoor/Parks",
+   "Swim",
+   "Racquet/Padel",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "Serious Training",
+   "Family-Friendly",
+   "Community/Social",
+   "Solo Reset",
+   "Dog-Friendly"
+  ],
+  "v": [
+   "Free/Community",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Free/Open",
+   "Drop-In",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Park: daily sunrise–sunset. Track: daily 6:15 AM–9 PM. Other facility hours vary.",
+  "tel": "(305) 673-7761",
+  "addr": "999 11th St / 11th–15th St, Miami Beach, FL 33139"
+ },
+ {
+  "n": "Fruit & Spice Park",
+  "br": "Miami-Dade Parks",
+  "h": "Homestead/South Dade",
+  "st": "Active",
+  "c": [
+   "Outdoor/Parks"
+  ],
+  "gf": [
+   "Solo Reset",
+   "Family-Friendly"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Free/Community"
+  ],
+  "ac": [
+   "Drop-In"
+  ],
+  "pf": null,
+  "hrs": "Daily 10 AM–5 PM; closed Thanksgiving Day and Christmas Day.",
+  "tel": "(305) 247-5727",
+  "addr": "24801 SW 187th Ave, Homestead, FL 33031"
+ },
+ {
+  "n": "Grotto Baths",
+  "br": null,
+  "h": "Wynwood/Edgewater",
+  "st": "Active",
+  "c": [
+   "Recovery/Plunge",
+   "Sauna/Bathhouse",
+   "Breathwork/Meditation"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Community/Social",
+   "Solo Reset",
+   "Date Spot"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Social Fitness",
+   "Premium/Luxury"
+  ],
+  "ac": [
+   "Day Pass",
+   "Reservation Required",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Check official website for current hours.",
+  "tel": null,
+  "addr": "325 NW 28th St, Miami, FL"
+ },
+ {
+  "n": "JETSET Pilates Downtown Miami",
+  "br": "JETSET Pilates",
+  "h": "Downtown",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "High-Energy"
+  ],
+  "ac": [
+   "Class Pack",
+   "Membership",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Verify before publishing.",
+  "tel": "(305) 565-3349",
+  "addr": "151 SE 1st St, Suite 10, Miami, FL 33131"
+ },
+ {
+  "n": "JETSET Pilates SoFi",
+  "br": "JETSET Pilates",
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "High-Energy"
+  ],
+  "ac": [
+   "Class Pack",
+   "Membership",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Verify before publishing.",
+  "tel": "(305) 424-2227",
+  "addr": "110 Washington Ave, Suite CU8, Miami Beach, FL 33139"
+ },
+ {
+  "n": "JETSET Pilates Sunset Harbour",
+  "br": null,
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates",
+   "Strength"
+  ],
+  "gf": [
+   "Serious Training",
+   "First-Timers"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "High-Energy"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Class schedule varies; use the official studio schedule to confirm current times.",
+  "tel": "(786) 542-5009",
+  "addr": "1860 West Ave, 2nd Floor, Miami Beach, FL 33139"
+ },
+ {
+  "n": "Karibe Dance Studio",
+  "br": null,
+  "h": "Doral",
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "12750 NW 17th St, Unit 204, Miami, FL 33182"
+ },
+ {
+  "n": "Kasa Yoga Studio",
+  "br": "Kasa Yoga Studio",
+  "h": "North Miami/NMB",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates",
+   "Breathwork/Meditation"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset"
+  ],
+  "v": [
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": null,
+  "tel": "(786) 496-4424",
+  "addr": "17810 W Dixie Hwy, North Miami Beach, FL 33160"
+ },
+ {
+  "n": "Las Rocas Climbing Gym",
+  "br": "Las Rocas",
+  "h": "South Miami/Pinecrest",
+  "st": "Upcoming (Draft)",
+  "c": [
+   "Strength",
+   "Yoga/Pilates",
+   "Recovery/Plunge"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Recovery Day",
+   "Community/Social",
+   "Solo Reset"
+  ],
+  "v": [
+   "Social Fitness",
+   "Premium/Luxury",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Membership",
+   "Drop-In",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": null,
+  "tel": null,
+  "addr": "9600 S Dixie Highway, Miami, FL 33156"
+ },
+ {
+  "n": "LEGACY Little River",
+  "br": null,
+  "h": "Little River",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Mon–Thu 5 AM–9:30 PM; Fri 5 AM–8 PM; Sat 7 AM–4 PM; Sun 7 AM–4 PM. Confirm before visiting.",
+  "tel": "(786) 221-6435",
+  "addr": "7400 NW Miami Ct, Miami, FL 33150"
+ },
+ {
+  "n": "Life Time Gables",
+  "br": null,
+  "h": "Gables",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "Serious Training",
+   "Family-Friendly"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Day Pass"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 4 AM–12 AM; Sat–Sun 5 AM–10 PM. Guest and limited-access hours differ; confirm before visiting.",
+  "tel": "(786) 437-4400",
+  "addr": "237 S Dixie Hwy, Coral Gables, FL 33146"
+ },
+ {
+  "n": "Margaret Pace Park",
+  "br": "City of Miami Parks",
+  "h": "Wynwood/Edgewater",
+  "st": "Active",
+  "c": [
+   "Outdoor/Parks",
+   "Strength",
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "Community/Social",
+   "Serious Training",
+   "Family-Friendly",
+   "Dog-Friendly"
+  ],
+  "v": [
+   "Free/Community",
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Free/Open"
+  ],
+  "pf": null,
+  "hrs": "Daily 7 AM–10 PM.",
+  "tel": "(305) 533-3552",
+  "addr": "1745 N. Bayshore Drive, Miami, FL 33132"
+ },
+ {
+  "n": "Matheson Hammock Park",
+  "br": null,
+  "h": "Gables",
+  "st": "Active",
+  "c": [
+   "Outdoor/Parks",
+   "Swim"
+  ],
+  "gf": [
+   "Family-Friendly",
+   "Recovery Day",
+   "Date Spot"
+  ],
+  "v": [
+   "Free/Community",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Free/Open"
+  ],
+  "pf": null,
+  "hrs": "Park office: daily 8 AM–5 PM; park and amenity hours vary. Confirm current atoll-pool and marina hours before visiting.",
+  "tel": "(305) 665-5475",
+  "addr": "9610 Old Cutler Rd, Coral Gables, FL 33156"
+ },
+ {
+  "n": "Miami Baila",
+  "br": null,
+  "h": "Coral Way",
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness",
+   "Free/Community"
+  ],
+  "ac": [
+   "Drop-In"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Little Havana, Miami, FL"
+ },
+ {
+  "n": "Miami Dade College Continuing Education Dance",
+  "br": null,
+  "h": null,
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "Free/Community"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Multiple Miami-Dade College campuses, Miami, FL"
+ },
+ {
+  "n": "Miami Dance Academy",
+  "br": null,
+  "h": "Sunny Isles Beach",
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Sunny Isles Beach, FL"
+ },
+ {
+  "n": "Miami Dance Center",
+  "br": null,
+  "h": "North Miami/NMB",
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "2165 NE 163rd St, North Miami Beach, FL"
+ },
+ {
+  "n": "Miami Dance Collective",
+  "br": null,
+  "h": "South Miami/Pinecrest",
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Family-Friendly"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "9549 S Dixie Hwy, Miami, FL 33156"
+ },
+ {
+  "n": "Miami Shores Aquatic Center",
+  "br": "Miami Shores Village",
+  "h": "Miami Shores/El Portal",
+  "st": "Active",
+  "c": [
+   "Swim"
+  ],
+  "gf": [
+   "Family-Friendly",
+   "Solo Reset",
+   "Serious Training"
+  ],
+  "v": [
+   "Free/Community"
+  ],
+  "ac": [
+   "Day Pass"
+  ],
+  "pf": null,
+  "hrs": "Competition pool: Mon/Wed/Fri 6–11 AM and 2–8 PM; Tue/Thu 7–11 AM and 2–8 PM; Sat–Sun 11 AM–5 PM. Wild Waters water park is open weekends only through Sept. 21; confirm session times before visiting.",
+  "tel": "(305) 795-2241",
+  "addr": "10200 Biscayne Blvd, Miami Shores, FL"
+ },
+ {
+  "n": "Mimi Yoga & Pilates (Coconut Grove)",
+  "br": "Mimi Yoga & Pilates",
+  "h": "Coconut Grove",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Class schedule varies; use the official studio schedule or Mindbody to confirm current times.",
+  "tel": "(954) 790-3807",
+  "addr": "2829 Bird Ave, Ste 1, Miami, FL 33133"
+ },
+ {
+  "n": "Mimi Yoga & Pilates (Wynwood)",
+  "br": "Mimi Yoga & Pilates",
+  "h": "Wynwood/Edgewater",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Class schedule varies; book through the official schedule, which uses Mindbody for customer profiles and purchases.",
+  "tel": "(305) 456-8686",
+  "addr": "278 NW 27th Street, Miami, FL 33127"
+ },
+ {
+  "n": "Nara Bollywood Dance Academy",
+  "br": null,
+  "h": null,
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness",
+   "Free/Community"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Miami, FL"
+ },
+ {
+  "n": "Normandy Isle Park & Pool",
+  "br": "City of Miami Beach Parks",
+  "h": "North Beach",
+  "st": "Active",
+  "c": [
+   "Swim"
+  ],
+  "gf": [
+   "Solo Reset",
+   "Family-Friendly",
+   "Serious Training"
+  ],
+  "v": [
+   "Free/Community"
+  ],
+  "ac": [
+   "Drop-In"
+  ],
+  "pf": null,
+  "hrs": "Park: daily sunrise–sunset. Pool summer schedule through Aug. 12, 2026: weekdays 6–8:30 AM lap swim, 1–4:30 PM and 5–8 PM lap/open swim; weekend public-swim sessions 12–4:30 PM and 5–8 PM. Schedule subject to change.",
+  "tel": "(305) 993-2021",
+  "addr": "7030 Trouville Esplanade, Miami Beach, FL 33141"
+ },
+ {
+  "n": "North Shore Open Space Park",
+  "br": null,
+  "h": "North Beach",
+  "st": "Active",
+  "c": [
+   "Outdoor/Parks",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "Solo Reset",
+   "Recovery Day",
+   "Family-Friendly",
+   "Dog-Friendly"
+  ],
+  "v": [
+   "Free/Community",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Free/Open"
+  ],
+  "pf": null,
+  "hrs": "Daily, sunrise to sunset.",
+  "tel": "(305) 861-3616",
+  "addr": "Collins Avenue from 79th to 87th Street, Miami Beach, FL 33141"
+ },
+ {
+  "n": "Om Movement",
+  "br": null,
+  "h": "Coconut Grove",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates",
+   "Strength"
+  ],
+  "gf": [
+   "Community/Social",
+   "First-Timers"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Schedule varies by class; weekday classes begin as early as 6:30 AM. Confirm live class times before visiting.",
+  "tel": "(786) 452-8428",
+  "addr": "2895 McFarlane Rd, 2nd Floor, Coconut Grove, FL 33133"
+ },
+ {
+  "n": "Open Door Yoga",
+  "br": null,
+  "h": "Coconut Grove",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Free/Community"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Class and event schedules vary; use the official schedule to confirm current times.",
+  "tel": "(305) 204-8319",
+  "addr": "2801 Florida Ave, Suite 20, Coconut Grove, FL 33133"
+ },
+ {
+  "n": "Padel X",
+  "br": "Padel X",
+  "h": "Downtown",
+  "st": "Active",
+  "c": [
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "Community/Social",
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "Social Fitness",
+   "High-Energy"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Mon–Sat 7 AM–11 PM; Sun 7 AM–10 PM.",
+  "tel": "(305) 515-0956",
+  "addr": "141 NE 13th Terrace, Miami, FL 33132"
+ },
+ {
+  "n": "Padel X Summer Club",
+  "br": "Padel X",
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social",
+   "Family-Friendly"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Reservation Required"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": "Daily, 7:00 AM–10:00 PM, June 22 through September 15, 2026",
+  "tel": "(305) 515-0956",
+  "addr": "1111 Lincoln Road, Ste 8, Miami Beach, FL 33139"
+ },
+ {
+  "n": "Pause Studio Brickell",
+  "br": "Pause Studio",
+  "h": "Brickell",
+  "st": "Active",
+  "c": [
+   "Recovery/Plunge"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Drop-In",
+   "Reservation Required",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Appointment and service availability varies; book through the official Brickell service page.",
+  "tel": "(786) 224-6784",
+  "addr": "25 SW 9th St, Floor M, Miami, FL 33130"
+ },
+ {
+  "n": "Pause Studio Coral Gables",
+  "br": "Pause Studio",
+  "h": "Gables",
+  "st": "Active",
+  "c": [
+   "Recovery/Plunge"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Drop-In",
+   "Reservation Required",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Appointment and service availability varies; book through the official location page.",
+  "tel": "(305) 239-5619",
+  "addr": "Plaza Coral Gables, 111 Palermo Ave #214, Coral Gables, FL 33134"
+ },
+ {
+  "n": "Pinecrest Dance Project",
+  "br": null,
+  "h": "South Miami/Pinecrest",
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness"
+  ],
+  "ac": [
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Pinecrest, Miami, FL"
+ },
+ {
+  "n": "Pinecrest Gardens",
+  "br": null,
+  "h": "South Miami/Pinecrest",
+  "st": "Active",
+  "c": [
+   "Outdoor/Parks"
+  ],
+  "gf": [
+   "Family-Friendly",
+   "Solo Reset",
+   "Community/Social"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Free/Community"
+  ],
+  "ac": [
+   "Drop-In"
+  ],
+  "pf": null,
+  "hrs": "Daily 9 AM–5 PM; closed on holidays. Event and special-program hours vary.",
+  "tel": "(305) 669-6990",
+  "addr": "11000 Red Rd, Pinecrest, FL 33156"
+ },
+ {
+  "n": "Polestar Pilates Studio — Dadeland",
+  "br": "Polestar Pilates",
+  "h": "South Miami/Pinecrest",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "Recovery Day",
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Premium/Luxury"
+  ],
+  "ac": [
+   "Reservation Required",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": null,
+  "tel": "(305) 539-9363",
+  "addr": "9015 Dadeland Blvd, F104, Miami, FL 33156"
+ },
+ {
+  "n": "Pulse Fitness",
+  "br": "Pulse Fitness",
+  "h": "South Miami/Pinecrest",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates",
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "High-Energy"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Mon 6 AM–9:30 PM; Tue 5:30 AM–9:30 PM; Wed 5 AM–8:30 PM; Thu 5:30 AM–8:30 PM; Fri 6 AM–7 PM; Sat 7:30 AM–1:30 PM; Sun 8:30 AM–2:30 PM.",
+  "tel": "(833) 583-1800",
+  "addr": "5864 Sunset Dr, South Miami, FL 33143"
+ },
+ {
+  "n": "Raw Fit-Miami",
+  "br": null,
+  "h": "Little River",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Class schedule varies; the location has free parking. Confirm current class times through the official booking flow.",
+  "tel": "(305) 340-1501",
+  "addr": "6350 NE 4th Ave, Miami, FL 33138"
+ },
+ {
+  "n": "Reserve Padel — Design District",
+  "br": "Reserve Padel",
+  "h": "Midtown/Design District",
+  "st": "Active",
+  "c": [
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "Community/Social",
+   "Serious Training"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Daily 7 AM–11 PM. Confirm before visiting, as court and event access may vary.",
+  "tel": "(786) 224-9962",
+  "addr": "75 NE 39th St, Miami, FL 33137"
+ },
+ {
+  "n": "Reserve Padel — Seaplane Base",
+  "br": "Reserve Padel",
+  "h": "Downtown",
+  "st": "Active",
+  "c": [
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "Date Spot",
+   "Community/Social"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Reservation Required",
+   "Membership",
+   "Drop-In"
+  ],
+  "pf": null,
+  "hrs": "Daily 7 AM–11 PM.",
+  "tel": "(786) 279-0722",
+  "addr": "1000 MacArthur Causeway, Watson Island, Miami, FL 33132"
+ },
+ {
+  "n": "Reset Cryotherapy South Beach",
+  "br": "Reset Cryotherapy",
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Recovery/Plunge",
+   "Sauna/Bathhouse"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Drop-In",
+   "Reservation Required",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 10 AM–7 PM; Sat–Sun 10 AM–3 PM.",
+  "tel": "(305) 763-8297",
+  "addr": "1800 Purdy Ave, Miami Beach, FL"
+ },
+ {
+  "n": "SILA Miami",
+  "br": null,
+  "h": "Little River",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates",
+   "Recovery/Plunge",
+   "Strength",
+   "Sauna/Bathhouse",
+   "Breathwork/Meditation"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Recovery Day",
+   "Community/Social"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Social Fitness",
+   "Premium/Luxury"
+  ],
+  "ac": [
+   "Drop-In",
+   "Membership",
+   "Day Pass",
+   "Reservation Required"
+  ],
+  "pf": [
+   "Mindbody"
+  ],
+  "hrs": "Mon: private bookings; Tue–Wed 12 PM–9 PM; Thu 12 PM–10:30 PM; Fri 2 PM–8 PM; Sat–Sun 11 AM–5 PM.",
+  "tel": "(305) 224-6399",
+  "addr": "5030 NE 2nd Ave, Unit 405, Miami, FL 33137 (Inside Upper Buena Vista)"
+ },
+ {
+  "n": "Skanda Yoga Studio",
+  "br": null,
+  "h": "Brickell",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Solo Reset",
+   "Community/Social"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Premium/Luxury"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Monday–Saturday 6:30 AM–9 PM; closed Sunday. Confirm class-specific schedule before visiting.",
+  "tel": "(786) 567-8124",
+  "addr": "1800 SW 1st Ave, Ste 102, Miami, FL 33129"
+ },
+ {
+  "n": "Smart Padel House",
+  "br": "Smart Padel House",
+  "h": "Doral",
+  "st": "Active",
+  "c": [
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "Community/Social",
+   "Serious Training"
+  ],
+  "v": [
+   "Social Fitness",
+   "High-Energy"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Open 24/7.",
+  "tel": "(561) 519-7832",
+  "addr": "8440 NW 64th St Unit 1, Doral, FL 33166"
+ },
+ {
+  "n": "Studio Three",
+  "br": null,
+  "h": "Wynwood/Edgewater",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "High-Energy"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Class schedule varies; use the official Miami studio page to book and confirm current class times.",
+  "tel": "(877) 651-8620",
+  "addr": "96 NW 29th St, Miami, FL 33127"
+ },
+ {
+  "n": "Sunset Padel",
+  "br": "Sunset Padel",
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "Community/Social",
+   "Serious Training"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Daily 7 AM–10 PM.",
+  "tel": "(305) 432-7807",
+  "addr": "1880 West Ave, Miami Beach, FL"
+ },
+ {
+  "n": "Suva Yoga",
+  "br": null,
+  "h": "Gables",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "Solo Reset",
+   "First-Timers"
+  ],
+  "v": [
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "In-studio and online class schedules vary; use the official schedule to confirm current times.",
+  "tel": "(305) 338-7038",
+  "addr": "166 Alhambra Circle, Coral Gables, FL 33134"
+ },
+ {
+  "n": "SWEAT Studio Aventura",
+  "br": "SWEAT Studio",
+  "h": "Aventura",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Premium/Luxury"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": null,
+  "tel": "(305) 627-3767",
+  "addr": "15400 Biscayne Blvd, Aventura, FL"
+ },
+ {
+  "n": "SWEAT440 Brickell",
+  "br": null,
+  "h": "Brickell",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Mon–Thu 6 AM–12:30 PM and 4–8 PM; Fri 6 AM–12:30 PM and 4:30–6:30 PM; Sat 8 AM–1 PM; Sun 9 AM–1 PM.",
+  "tel": "(888) 507-9328",
+  "addr": "25 SW 9th St, Unit G100, Miami, FL 33130"
+ },
+ {
+  "n": "SWEAT440 Coral Gables",
+  "br": "SWEAT440",
+  "h": "Gables",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Class Pack",
+   "Drop-In"
+  ],
+  "pf": null,
+  "hrs": "Verify before publishing.",
+  "tel": "(888) 507-9328",
+  "addr": "301 Altara Ave, Suite 111, Coral Gables, FL 33146"
+ },
+ {
+  "n": "SWEAT440 Doral",
+  "br": "SWEAT440",
+  "h": "Doral",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Class Pack",
+   "Drop-In"
+  ],
+  "pf": null,
+  "hrs": "Verify before publishing.",
+  "tel": "(888) 507-9328",
+  "addr": "8395 NW 53rd St, Miami, FL 33166"
+ },
+ {
+  "n": "SWEAT440 Miami Beach",
+  "br": "SWEAT440",
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training",
+   "Community/Social"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Class Pack",
+   "Drop-In"
+  ],
+  "pf": null,
+  "hrs": null,
+  "tel": "(888) 507-9328",
+  "addr": "1916 Bay Rd, Miami Beach, FL 33139"
+ },
+ {
+  "n": "Tango a Tiempo",
+  "br": null,
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Drop-In"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "5700 Collins Ave, Miami Beach, FL"
+ },
+ {
+  "n": "Tango Times Dance Studio",
+  "br": null,
+  "h": "North Miami/NMB",
+  "st": "Active",
+  "c": [
+   "Dance"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Drop-In"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "1613 NE 163rd St, North Miami Beach, FL"
+ },
+ {
+  "n": "The Edge Rock Gym",
+  "br": "The Edge Rock Gym",
+  "h": "Kendall",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "First-Timers",
+   "Family-Friendly"
+  ],
+  "v": [
+   "Social Fitness",
+   "High-Energy"
+  ],
+  "ac": [
+   "Day Pass",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 11 AM–10 PM; Sat 11 AM–9 PM; Sun 11 AM–8 PM.",
+  "tel": "(305) 233-6623",
+  "addr": "13972 SW 139th Ct, Miami, FL"
+ },
+ {
+  "n": "The Ice Room",
+  "br": null,
+  "h": "Brickell",
+  "st": "Active",
+  "c": [
+   "Recovery/Plunge"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "High-Energy"
+  ],
+  "ac": [
+   "Drop-In",
+   "Reservation Required",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 8 AM–7 PM; Sat 7 AM–6 PM; Sun closed.",
+  "tel": "(305) 798-7302",
+  "addr": "1200 Brickell Bay Drive, Suite 106, Miami, FL 33131"
+ },
+ {
+  "n": "The Set Padel Haus",
+  "br": "The Set Padel Haus",
+  "h": "Doral",
+  "st": "Active",
+  "c": [
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "Community/Social",
+   "Serious Training",
+   "First-Timers"
+  ],
+  "v": [
+   "Social Fitness",
+   "High-Energy"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Daily 7 AM–11:30 PM.",
+  "tel": "(786) 481-7774",
+  "addr": "1800 NW 108th Ave, Doral, FL 33172"
+ },
+ {
+  "n": "The Standard Spa",
+  "br": null,
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Sauna/Bathhouse",
+   "Recovery/Plunge"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Date Spot",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Spa: daily 8 AM–10 PM. Gym: daily 6 AM–10 PM. Other hotel outlets and pool access hours vary.",
+  "tel": "(305) 673-1717",
+  "addr": "40 Island Ave, Miami Beach, FL 33139 (Belle Isle)"
+ },
+ {
+  "n": "The Underline — Brickell Backyard",
+  "br": null,
+  "h": "Brickell",
+  "st": "Active",
+  "c": [
+   "Outdoor/Parks",
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "Community/Social",
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "Free/Community",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Free/Open"
+  ],
+  "pf": null,
+  "hrs": "Urban Gym and Flex Court: daily 7 AM–9 PM. Park access and event times vary by segment and program.",
+  "tel": "(305) 603-9895",
+  "addr": "700 SW 1st Ave, Miami, FL 33130 (below Brickell Metrorail)"
+ },
+ {
+  "n": "TREMBLE Brickell",
+  "br": "TREMBLE",
+  "h": "Brickell",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "Serious Training",
+   "First-Timers"
+  ],
+  "v": [
+   "High-Energy",
+   "Premium/Luxury"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Class schedule varies; use the official booking flow to confirm live Brickell class times.",
+  "tel": "(833) 873-6253",
+  "addr": "1060 Brickell Ave, Unit M3/105, Miami, FL 33131"
+ },
+ {
+  "n": "TREMBLE Miami Beach",
+  "br": "TREMBLE",
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates",
+   "Strength"
+  ],
+  "gf": [
+   "Serious Training",
+   "First-Timers"
+  ],
+  "v": [
+   "High-Energy",
+   "Premium/Luxury"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Class schedule varies; use the official Miami Beach page to confirm live class times and book.",
+  "tel": "(833) 873-6253",
+  "addr": "1935 West Ave, Ste 208, Miami Beach, FL 33139"
+ },
+ {
+  "n": "UFC Gym Doral",
+  "br": "UFC Gym",
+  "h": "Doral",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "Serious Training",
+   "First-Timers"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Day Pass"
+  ],
+  "pf": null,
+  "hrs": "Sun 6 AM–8 PM; Mon 5 AM–midnight; Tue–Thu open 24 hours; Fri midnight–11 PM; Sat 6 AM–8 PM.",
+  "tel": "(305) 400-0017",
+  "addr": "8700 NW 36th St, Doral, FL 33178"
+ },
+ {
+  "n": "Ultra Padel Club (Magic City)",
+  "br": "Ultra Padel",
+  "h": "Little River",
+  "st": "Active",
+  "c": [
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "Community/Social",
+   "Serious Training",
+   "First-Timers"
+  ],
+  "v": [
+   "Social Fitness",
+   "High-Energy"
+  ],
+  "ac": [
+   "Drop-In",
+   "Reservation Required",
+   "Membership"
+  ],
+  "pf": null,
+  "hrs": "Court and program hours vary; book through the official site to confirm availability.",
+  "tel": "(786) 765-4599",
+  "addr": "400 NE 67th St, Miami, FL 33138"
+ },
+ {
+  "n": "Ultra Padel Club — Aventura",
+  "br": "Ultra Padel",
+  "h": "Aventura",
+  "st": "Active",
+  "c": [
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "Community/Social",
+   "Serious Training",
+   "First-Timers"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Membership",
+   "Reservation Required",
+   "Drop-In"
+  ],
+  "pf": null,
+  "hrs": "Daily 7:30 AM–8 PM.",
+  "tel": "(305) 340-3540",
+  "addr": "3455 NE 207th St, Building 2, Aventura, FL 33180"
+ },
+ {
+  "n": "Venetian Pool",
+  "br": null,
+  "h": "Gables",
+  "st": "Active",
+  "c": [
+   "Swim"
+  ],
+  "gf": [
+   "Family-Friendly",
+   "Date Spot",
+   "Solo Reset"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Free/Community"
+  ],
+  "ac": [
+   "Drop-In"
+  ],
+  "pf": null,
+  "hrs": "Seasonal. Jun 8–Sep 7: Mon–Fri 11 AM–6:30 PM; Sat–Sun 10 AM–4:30 PM. Check the official page for current seasonal hours and closures.",
+  "tel": "(305) 460-5306",
+  "addr": "2701 De Soto Blvd, Coral Gables, FL 33134"
+ },
+ {
+  "n": "Wynwood Padel Club",
+  "br": null,
+  "h": "Wynwood/Edgewater",
+  "st": "Active",
+  "c": [
+   "Racquet/Padel"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social",
+   "Serious Training"
+  ],
+  "v": [
+   "Social Fitness",
+   "High-Energy"
+  ],
+  "ac": [
+   "Drop-In",
+   "Membership",
+   "Reservation Required"
+  ],
+  "pf": null,
+  "hrs": "Mon–Fri 7 AM–11 PM; Sat–Sun 8 AM–9:30 PM.",
+  "tel": "(786) 534-2926",
+  "addr": "1932 NW Miami Ct, Miami, FL 33136"
+ },
+ {
+  "n": "Wynwood Yoga Studio",
+  "br": null,
+  "h": "Wynwood/Edgewater",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social"
+  ],
+  "v": [
+   "High-Energy",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": null,
+  "hrs": "Class schedule varies; use the official website or booking flow to confirm live times.",
+  "tel": "(786) 558-9390",
+  "addr": "2920 NW 5th Ave, Ste 104, Miami, FL 33127"
+ },
+ {
+  "n": "yogamakesme",
+  "br": "yogamakesme",
+  "h": "North Miami/NMB",
+  "st": "Active",
+  "c": [
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": [
+   "Mindbody"
+  ],
+  "hrs": "Class schedule varies by day; book from the live schedule on the studio website/Mindbody.",
+  "tel": "(305) 944-0030",
+  "addr": "3525 NE 163rd St, North Miami Beach, FL 33160, United States"
+ },
+ {
+  "n": "YouFit Gyms Coral Way",
+  "br": "YouFit",
+  "h": "Coral Way",
+  "st": "Active",
+  "c": [
+   "Strength"
+  ],
+  "gf": [
+   "Serious Training",
+   "First-Timers"
+  ],
+  "v": [
+   "Free/Community"
+  ],
+  "ac": [
+   "Membership",
+   "Day Pass"
+  ],
+  "pf": null,
+  "hrs": "Mon–Thu 5 AM–11 PM; Fri 5 AM–10 PM; Sat–Sun 8 AM–6 PM.",
+  "tel": "(888) 968-3562",
+  "addr": "7070 Coral Way, Miami, FL"
+ }
 ]
