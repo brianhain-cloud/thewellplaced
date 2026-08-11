@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import json, re, sys, os, unicodedata, time, urllib.parse, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from clean import clean, handle
+from clean import clean, handle, set_vocab
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 J    = lambda f: json.load(open(os.path.join(HERE, f), encoding="utf-8"))
@@ -112,6 +112,17 @@ def phone(v):
 
 def trim(o):
     return {k: v for k, v in o.items() if v not in (None, "", [], False)}
+
+# Every category and neighbourhood in the live data, so the slash rule knows
+# which slashes are names ("Yoga/Pilates") and which are prose ("hot/cold").
+_vocab = set()
+for _rows in (core, groups, events):
+    for _r in _rows:
+        for _k in ("c", "h", "v", "gf", "ac", "pf", "who"):
+            _v = _r.get(_k)
+            if isinstance(_v, list): _vocab.update(_v)
+            elif _v: _vocab.add(_v)
+set_vocab(_vocab)
 
 # ---------- Spaces ----------
 active = [r for r in core if r["st"] != "Past (Archive)"]
