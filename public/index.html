@@ -2919,6 +2919,36 @@ async function aiTranslate(q) {
   }
 }
 
+// Most visitors are on a phone or on Safari, where there is no on-device model.
+// /translate is the same closed harness running on Cloudflare: it returns the
+// same JSON, and sanitizeIntent still polices it here before anything is applied.
+var askRemote = { strikes: 0, cache: {} };
+
+async function remoteTranslate(q) {
+  var key = q.toLowerCase();
+  if (askRemote.cache[key] !== undefined) return askRemote.cache[key];
+  if (askRemote.strikes >= 2) return null;     // stop paying the wait after two
+  var netErr = false;
+  try {
+    var res = await withTimeout(fetch("/translate", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ q: q.slice(0, 200) })
+    }).catch(function (e) { netErr = true; throw e; }), 9000);
+    if (!res.ok) { askRemote.strikes++; return null; }
+    var intent = sanitizeIntent(await res.json());
+    var out = intentIsEmpty(intent) ? null : intent;
+    askRemote.cache[key] = out;
+    return out;
+  } catch (err) {
+    // A slow answer is not a failure. The request still finishes and caches on
+    // the edge, so asking the same thing again comes back instantly. Only a
+    // refusal or a dead connection is worth giving up over.
+    if (netErr) askRemote.strikes++;
+    return null;
+  }
+}
+
 // ---------------------------------------------------------------- entry point
 async function runAsk(q) {
   var ans = document.getElementById("ask-answer");
@@ -2930,18 +2960,26 @@ async function runAsk(q) {
   executeIntent(intent, q);
   ans.setAttribute("data-translator", "lexicon");
 
-  var ready = await askAIProbe();
-  if (!ready) return;
-
-  // only bother the model when the lexicon clearly came up short
+  // only bother a model when the lexicon clearly came up short
   if (!intentIsEmpty(intent) && !intent.rest.length) return;
 
   ans.classList.add("thinking");
-  var better = await aiTranslate(q);
+  var better = null, via = null;
+
+  // on-device first: free, private, and no round trip
+  if (await askAIProbe()) {
+    better = await aiTranslate(q);
+    if (better) via = "on-device";
+  }
+  if (!better) {
+    better = await remoteTranslate(q);
+    if (better) via = "remote";
+  }
   ans.classList.remove("thinking");
+
   if (better) {
     executeIntent(better, q);
-    ans.setAttribute("data-translator", "on-device");
+    ans.setAttribute("data-translator", via);
   }
 }
 

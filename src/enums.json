@@ -1,0 +1,86 @@
+{
+  "cat": [
+    "Breathwork/Meditation",
+    "Cafe/Nutrition",
+    "Cycling",
+    "Outdoor/Parks",
+    "Racquet/Padel",
+    "Recovery/Plunge",
+    "Run/Cardio",
+    "Sauna/Bathhouse",
+    "Strength",
+    "Swim",
+    "Walking",
+    "Wellness/Health Expo",
+    "Yoga/Pilates"
+  ],
+  "hood": [
+    "Aventura",
+    "Brickell",
+    "Coconut Grove",
+    "Coral Way",
+    "Doral",
+    "Downtown",
+    "Gables",
+    "Homestead/South Dade",
+    "Kendall",
+    "Key Biscayne",
+    "Little River",
+    "Miami Beach",
+    "Miami Shores/El Portal",
+    "Midtown/Design District",
+    "North Beach",
+    "North Miami/NMB",
+    "South Miami/Pinecrest",
+    "Wynwood/Edgewater"
+  ],
+  "gf": [
+    "All Levels",
+    "Beginner-Friendly",
+    "Beginners",
+    "Community/Social",
+    "Competitive",
+    "Date Spot",
+    "Families",
+    "Family-Friendly",
+    "First-Timers",
+    "Founder/Operator",
+    "Friends",
+    "Mindfulness-Focused",
+    "Post-Workout Fuel",
+    "Recovery Day",
+    "Recovery-Focused",
+    "Serious Training",
+    "Social-First",
+    "Solo",
+    "Solo Reset",
+    "Wellness Pros",
+    "Women-Centered"
+  ],
+  "vibe": [
+    "Conscious/Chill",
+    "Free/Community",
+    "High-Energy",
+    "Premium/Luxury",
+    "Social Fitness"
+  ],
+  "plat": [
+    "Direct Only",
+    "Mindbody"
+  ],
+  "day": [
+    "Fri",
+    "Mon",
+    "Sat",
+    "Sun",
+    "Thu",
+    "Tue",
+    "Wed"
+  ],
+  "tab": [
+    "places",
+    "groups",
+    "events",
+    "upcoming"
+  ]
+}

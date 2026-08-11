@@ -24,6 +24,31 @@ Only `public/` is published. Keeping it separate is deliberate: Workers, unlike
 Pages, does not automatically exclude `.git`, so pointing the asset directory at
 the repo root would publish the commit history.
 
+## The ask bar
+
+Typing a question runs through three translators, in order, and stops at the
+first one that produces filter values:
+
+1. **Lexicon**, in the page. Instant, works everywhere, handles most questions.
+2. **On-device**, Chrome's Gemini Nano. Free and private, desktop Chrome only.
+3. **`/translate`**, a Worker calling Workers AI. The fallback for everyone else.
+
+All three return the same small JSON object, and `sanitizeIntent` in the page
+checks it against the live filter values before anything is applied. A translator
+can only ever choose filters that already exist; it cannot write text on the page,
+name a business, or reach the data. The Worker repeats the same check on its own
+copy of the vocabulary, so neither side trusts the other.
+
+`src/enums.json` is that vocabulary, generated from the page:
+
+```bash
+node build/gen_enums.js          # regenerate after a Notion sync
+node build/gen_enums.js --check  # fails if it has drifted
+```
+
+Bump `CACHE_V` in `src/worker.js` whenever the model or the prompt changes,
+otherwise a month of cached answers survives the fix.
+
 ## Deploying
 
 ```bash

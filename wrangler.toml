@@ -1,9 +1,50 @@
 name = "thewellplaced"
 compatibility_date = "2026-08-10"
+workers_dev = true
+main = "src/worker.js"
 
 # Only public/ is published. Keeping the deployable files in their own directory
 # means .git, the Notion build inputs and the scripts cannot be served by
 # accident. An ignore list did not reliably exclude them.
+#
+# run_worker_first names the one path the Worker owns. Everything else is served
+# straight off the edge without ever starting the script, so adding the ask
+# endpoint costs the rest of the site nothing.
 [assets]
 directory = "./public"
+binding = "ASSETS"
 not_found_handling = "404-page"
+run_worker_first = [ "/translate" ]
+
+[ai]
+binding = "AI"
+
+# A visitor's ceiling. IP is a blunt key, so this is set well above what a person
+# typing questions could reach and is there to stop a script, not a guest.
+[[ratelimits]]
+name = "RL_IP"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 15
+  period = 60
+
+# And a ceiling across everyone in a location, so a bad day cannot become a bad
+# bill. Past this the page falls back to its own lexicon and keeps working.
+[[ratelimits]]
+name = "RL_ALL"
+namespace_id = "1002"
+
+  [ratelimits.simple]
+  limit = 500
+  period = 60
+
+# The apex and www both resolve to this Worker. Declaring them here makes
+# wrangler create the proxied DNS records on deploy.
+[[routes]]
+pattern = "thewellplaced.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.thewellplaced.com"
+custom_domain = true
