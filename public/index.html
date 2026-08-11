@@ -259,7 +259,48 @@
   .fchip-all:hover { background: none; opacity: 0.75; }
   .feed { display: none; }
   .feed.show { display: block; }
-  .fd-nav { display: flex; justify-content: center; gap: 7px; margin-bottom: 26px; }
+  .fd-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; margin: 0 0 20px;
+  }
+  .fd-range {
+    font: 600 0.78rem 'Inter', sans-serif; color: rgba(31,42,36,0.5);
+    font-variant-numeric: tabular-nums;
+  }
+  /* "wk" not "nav": .nav is the fixed page header, and reusing it here made
+     these buttons position: fixed and vanish off the top of the page. */
+  .hbtn.wk:disabled { opacity: 0.3; cursor: default; border-color: var(--line); }
+  .hbtn.wk:disabled:hover { border-color: var(--line); }
+
+  /* Featured: the things worth planning around, so they get a picture. */
+  .fd-feat {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px; margin-bottom: 34px;
+  }
+  .fd-feat:has(> :only-child) { grid-template-columns: minmax(260px, 520px); }
+  .ft-card {
+    display: flex; flex-direction: column; text-align: left; padding: 0;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 14px; overflow: hidden; cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  }
+  .ft-card:hover {
+    transform: translateY(-3px); border-color: var(--sage-dark);
+    box-shadow: 0 10px 26px rgba(31,42,36,0.13);
+  }
+  .ft-card .card-img { border-radius: 0; }
+  .ft-card:hover .card-img > img { transform: scale(1.05); }
+  .ft-body {
+    display: flex; flex-direction: column; gap: 4px; align-items: flex-start;
+    padding: 14px 16px 16px; border-top: 3px solid var(--accent, var(--clay));
+  }
+  .ft-card.live .ft-body { border-top-color: var(--sage); }
+  .ft-card.live .fd-when { color: var(--sage-dark); }
+  .ft-title {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 1.12rem; line-height: 1.22; color: var(--title); margin: 1px 0 2px;
+  }
   .hbtn {
     font: 600 0.78rem 'Inter', sans-serif;
     padding: 7px 15px;
@@ -1636,7 +1677,9 @@ var DAYRX = { Mon: /\bmon(day)?s?\b/i, Tue: /\btue(s|sday)?s?\b/i, Wed: /\bwed(n
 var MON_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 var DAY_FULL = { Mon:"Monday", Tue:"Tuesday", Wed:"Wednesday", Thu:"Thursday",
                  Fri:"Friday", Sat:"Saturday", Sun:"Sunday" };
-var horizon = 7;
+// The schedule shows one week at a time. Week 0 starts today, so "Today" keeps
+// its meaning; every week after that is a plain seven day block.
+var weekOffset = 0;
 var expandedDays = {};
 
 function toMins(h, m, ap) {
@@ -1698,10 +1741,40 @@ function cadenceHolds(cadence, date) {
   return true;
 }
 
-// every dated session inside the window, already filter-checked
-function feedSessions(days) {
-  var start = midnight(new Date());
-  var rows = [], dated = [];
+// The start of a given week. Week 0 begins today rather than on a Monday, so
+// the first thing a visitor sees is the rest of their own day.
+function weekStart(offset) {
+  var d = midnight(new Date());
+  d.setDate(d.getDate() + offset * 7);
+  return d;
+}
+
+// Anything with a real date, still to come, best first. This is deliberately
+// independent of the week being viewed: a featured event should not disappear
+// because someone paged forward past it.
+function featuredEvents() {
+  var today = midnight(new Date());
+  var out = [];
+  DATA.events.forEach(function (it) {
+    if (!(it.ds || it.de) || !matchesFilters(it)) return;
+    var a = it.ds ? new Date(it.ds + "T00:00:00") : today;
+    var b = new Date((it.de || it.ds) + "T00:00:00");
+    if (b < today) return;                       // already over
+    out.push({ it: it, from: a, to: b, live: a <= today });
+  });
+  out.sort(function (x, y) {
+    // On now beats flagged. Something you could go to today is more use than a
+    // conference in October, however good the conference.
+    if (x.live !== y.live) return x.live ? -1 : 1;
+    if (!!y.it.feat !== !!x.it.feat) return y.it.feat ? 1 : -1;
+    return x.from - y.from;
+  });
+  return out;
+}
+
+// every recurring session inside one week, already filter-checked
+function feedSessions(start, days) {
+  var rows = [];
 
   for (var i = 0; i < days; i++) {
     var date = new Date(start); date.setDate(date.getDate() + i);
@@ -1722,22 +1795,6 @@ function feedSessions(days) {
     });
   }
 
-  // Tier one: finite, dated things. An event carrying only an end date is a
-  // window that is already open, so it runs from today until it closes.
-  var last = new Date(start); last.setDate(last.getDate() + days - 1);
-  var later = [];
-  DATA.events.forEach(function (it) {
-    if (!(it.ds || it.de) || !matchesFilters(it)) return;
-    var a = it.ds ? new Date(it.ds + "T00:00:00") : start;
-    var b = new Date((it.de || it.ds) + "T00:00:00");
-    if (b < start) return;                       // already over
-    if (a <= last) dated.push({ it: it, from: a, to: b, live: !it.ds || a <= start });
-    else later.push({ it: it, from: a, to: b });
-  });
-  dated.sort(function (x, y) { return x.from - y.from; });
-  later.sort(function (x, y) { return x.from - y.from; });
-  later = later.slice(0, 4);
-
   rows.sort(function (a, b) {
     if (a.iso !== b.iso) return a.iso < b.iso ? -1 : 1;
     if (a.mins === null) return 1;
@@ -1745,7 +1802,7 @@ function feedSessions(days) {
     if (a.mins !== b.mins) return a.mins - b.mins;
     return a.it.n.localeCompare(b.it.n);
   });
-  return { rows: rows, dated: dated, later: later };
+  return rows;
 }
 
 function dateSpan(a, b) {
@@ -1768,44 +1825,62 @@ function feedRow(r, past) {
     '<span class="fd-meta">' + esc(meta.join(" · ")) + "</span></button>";
 }
 
+function weekLabel(offset, start) {
+  if (offset === 0) return "This week";
+  if (offset === 1) return "Next week";
+  var end = new Date(start); end.setDate(end.getDate() + 6);
+  return MON_SHORT[start.getMonth()] + " " + start.getDate() +
+    " to " + MON_SHORT[end.getMonth()] + " " + end.getDate();
+}
+
 function renderFeed() {
-  var data = feedSessions(horizon);
+  var start = weekStart(weekOffset);
+  var rows = feedSessions(start, 7);
+  var feat = featuredEvents();
   var now = new Date();
   var nowMins = now.getHours() * 60 + now.getMinutes();
   var todayIso = isoOf(now);
   var h = "";
 
-  h += '<div class="fd-nav">' + [7, 14, 30].map(function (n) {
-    return '<button class="hbtn' + (horizon === n ? " on" : "") + '" data-horizon="' + n + '">Next ' + n + " days</button>";
-  }).join("") + "</div>";
-
-  // tier one: the things that only happen once
-  function datedCards(list, ongoingLabel) {
-    return '<div class="fd-cards">' + list.map(function (d) {
+  // Featured runs above the week and ignores it. These are the things worth
+  // making a plan around, so they get a photo and room to breathe.
+  if (feat.length) {
+    h += '<div class="fd-head">Featured</div><div class="fd-feat">' + feat.map(function (d) {
       var it = d.it;
-      var when = d.live && ongoingLabel ? "On now, through " + MON_SHORT[d.to.getMonth()] + " " + d.to.getDate()
+      var when = d.live
+        ? "On now, through " + MON_SHORT[d.to.getMonth()] + " " + d.to.getDate()
         : dateSpan(d.from, d.to);
-      return '<button class="fd-card' + (d.live && ongoingLabel ? " live" : "") +
+      return '<button class="ft-card' + (d.live ? " live" : "") +
         '" style="--accent:' + catStyle(it).style.color + '" data-key="' +
         esc(entryKey(it)) + '" data-kind="events">' +
+        cardMedia(it) +
+        '<span class="ft-body">' +
         '<span class="fd-when">' + esc(when) + "</span>" +
-        '<span class="fd-title">' + esc(it.n) + "</span>" +
-        '<span class="fd-meta">' + esc(it.h || "") + "</span>" +
-        (it.feat ? '<span class="pill feat">Featured</span>' : "") + "</button>";
+        '<span class="ft-title">' + esc(it.n) + "</span>" +
+        '<span class="fd-meta">' + esc([it.h || "", (it.c && it.c[0]) || ""].filter(Boolean).join(" · ")) + "</span>" +
+        "</span></button>";
     }).join("") + "</div>";
   }
-  if (data.dated.length) h += '<div class="fd-head">Happening once</div>' + datedCards(data.dated, true);
-  // one-offs are sparse; the big ones are weeks out and burying them would be wrong
-  if (data.later.length) h += '<div class="fd-head">Further ahead</div>' + datedCards(data.later, false);
 
-  // tier two: the weekly rhythm, grouped by day and capped
+  // then the week itself
+  h += '<div class="fd-head">' + esc(weekLabel(weekOffset, start)) + "</div>";
+  h += '<div class="fd-nav">' +
+    '<button class="hbtn wk" data-week="' + (weekOffset - 1) + '"' +
+      (weekOffset === 0 ? " disabled" : "") + ' aria-label="Previous week">&#8592; Previous</button>' +
+    // from week three on the heading is already the date range; saying it twice
+    // reads like a mistake
+    (weekOffset <= 1
+      ? '<span class="fd-range">' + esc(dateSpan(start, new Date(start.getTime() + 6 * 864e5))) + "</span>"
+      : '<span class="fd-range"></span>') +
+    '<button class="hbtn wk" data-week="' + (weekOffset + 1) + '" aria-label="Next week">Next &#8594;</button>' +
+    "</div>";
+
   var byDay = {}, order = [];
-  data.rows.forEach(function (r) {
+  rows.forEach(function (r) {
     if (!byDay[r.iso]) { byDay[r.iso] = []; order.push(r.iso); }
     byDay[r.iso].push(r);
   });
 
-  if (order.length) h += '<div class="fd-head">On repeat</div>';
   order.forEach(function (iso) {
     var list = byDay[iso];
     var date = list[0].date;
@@ -1823,16 +1898,13 @@ function renderFeed() {
       "</div>";
   });
 
-  if (!data.dated.length && !data.later.length && !order.length) {
-    h += '<p class="empty">Nothing matches those filters in the next ' + horizon + " days.</p>";
+  if (!order.length) {
+    h += '<p class="empty">Nothing on the schedule ' +
+      (weekOffset === 0 ? "this week" : "that week") +
+      (feat.length ? ". The featured events above are still on." : ". Try widening the filters.") + "</p>";
   }
 
   document.getElementById("feed").innerHTML = h;
-  // only what actually falls inside the window counts toward the window
-  var total = data.rows.length + data.dated.length;
-  var txt = total + " session" + (total === 1 ? "" : "s") + " in the next " + horizon + " days";
-  if (data.later.length) txt += " · " + data.later.length + " further ahead";
-  document.getElementById("count").textContent = txt;
 }
 
 function render() {
@@ -3008,6 +3080,7 @@ document.querySelectorAll(".tab").forEach(function (btn) {
     activeTab = btn.getAttribute("data-tab");
     clearFilters();
     expandedDays = {};
+    weekOffset = 0;
     shown = PAGE_SIZE;
     activeSort = activeTab === "events" ? "when" : "az";
     // the map only makes sense for Spaces, which are the only entries with pins
@@ -3017,6 +3090,8 @@ document.querySelectorAll(".tab").forEach(function (btn) {
     if (activeTab !== "places" && currentView === "map") setView("list");
     document.getElementById("feed").className = feed ? "feed show" : "feed";
     document.getElementById("cards").style.display = feed ? "none" : "";
+    // the schedule speaks for itself; a running total on top of it is noise
+    document.getElementById("count").style.display = feed ? "none" : "";
     document.getElementById("show-more").style.display = "none";
     document.querySelector(".sort-wrap").style.display = feed ? "none" : "";
     populateFilters();
@@ -3094,8 +3169,14 @@ document.getElementById("filters").addEventListener("click", function (e) {
 
 document.getElementById("feed").addEventListener("click", function (e) {
   if (!e.target.closest) return;
-  var hz = e.target.closest("[data-horizon]");
-  if (hz) { horizon = parseInt(hz.getAttribute("data-horizon"), 10); expandedDays = {}; renderFeed(); return; }
+  var wk = e.target.closest("[data-week]");
+  if (wk && !wk.disabled) {
+    weekOffset = Math.max(0, parseInt(wk.getAttribute("data-week"), 10));
+    expandedDays = {};
+    renderFeed();
+    document.getElementById("guide").scrollIntoView({ block: "start" });
+    return;
+  }
   var more = e.target.closest("[data-day]");
   if (more) { expandedDays[more.getAttribute("data-day")] = 1; renderFeed(); return; }
   var row = e.target.closest("[data-key]");
