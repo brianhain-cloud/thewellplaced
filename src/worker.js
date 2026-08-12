@@ -16,7 +16,10 @@ import ENUM from "./enums.json";
 // filled every list to the brim rather than leaving one out. The job is short,
 // so the larger model is still fractions of a cent per question.
 const MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
-const CACHE_V = "2";        // bump whenever MODEL, SYSTEM or sanitize() changes
+// Bump whenever MODEL, SYSTEM, sanitize() or the vocabulary changes. v3 is the
+// arrival of Dance, Martial Arts, Dog-Friendly and Miami Lakes: answers cached
+// before those existed could never mention them.
+const CACHE_V = "3";
 const MAX_Q = 200;          // a real question is far shorter; longer is abuse or noise
 const MAX_TOKENS = 200;     // the reply is a small JSON object, nothing needs more
 const ORIGINS = ["https://thewellplaced.com", "https://www.thewellplaced.com"];

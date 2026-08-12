@@ -920,7 +920,7 @@
   "https://www.google.com/maps/search/?api=1&query=TREMBLE+1060+Brickell+Ave+Miami"
  ],
  "Life Time Gables": [
-  "https://www.lifetime.life/",
+  "https://www.lifetime.life/locations/fl/coral-gables.html",
   "https://www.lifetime.life/locations/fl/coral-gables.html",
   null,
   null,
@@ -930,9 +930,9 @@
   "https://www.google.com/maps/search/?api=1&query=Life+Time+237+S+Dixie+Hwy+Coral+Gables"
  ],
  "Fight Sports Club Miami": [
-  "https://wellhub.com/en-us/search/partners/fight-sports-club-miami-little-river/",
   "https://fightsportsclub.com/",
-  null,
+  "https://fightsportsclub.com/",
+  "https://www.instagram.com/fightsportsmiami",
   null,
   null,
   null,

@@ -225,7 +225,7 @@
   "h": null,
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
@@ -414,7 +414,7 @@
   "h": "Kendall",
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
@@ -611,7 +611,7 @@
    "Reservation Required"
   ],
   "pf": null,
-  "hrs": "Mon 7 AM–8:30 PM; Tue 6:30 AM–9 PM; Wed 7 AM–8:30 PM; Thu 7 AM–9 PM; Fri 6:30 AM–1 PM; Sat 8:30 AM–1 PM; Sun 8:30 AM–12:30 PM. Verify before publishing.",
+  "hrs": "Mon 7 AM–8:30 PM; Tue 6:30 AM–9 PM; Wed 7 AM–8:30 PM; Thu 7 AM–9 PM; Fri 6:30 AM–1 PM; Sat 8:30 AM–1 PM; Sun 8:30 AM–12:30 PM (confirmed on official site).",
   "tel": "(786) 817-2170",
   "addr": "3252 Buena Vista Blvd, Unit #102, Miami, FL 33137"
  },
@@ -661,9 +661,9 @@
    "Membership"
   ],
   "pf": null,
-  "hrs": null,
+  "hrs": "Mon 6 AM–9 PM; Tue 5:30 AM–9 PM; Wed 6 AM–9 PM; Thu 5:30 AM–9 PM; Fri 6 AM–9 PM; Sat 7 AM–3 PM; Sun 8 AM–3 PM (confirmed on official site).",
   "tel": "(786) 238-7414",
-  "addr": "West Kendall, Miami, FL"
+  "addr": "4258 SW 152nd Ave, Miami, FL 33185"
  },
  {
   "n": "Club Studio Miami",
@@ -715,7 +715,7 @@
    "Free/Open"
   ],
   "pf": null,
-  "hrs": "Main park office: daily 8 AM–5 PM; individual facility hours vary.",
+  "hrs": "Main park office: daily 8 AM–5 PM; individual facility hours vary (golf 7 AM–sunset; tennis center Mon–Fri 8 AM–10 PM, Sat–Sun 8 AM–6 PM). Confirmed on miamidade.gov.",
   "tel": "(305) 361-5421",
   "addr": "6747 Crandon Blvd, Key Biscayne, FL 33149"
  },
@@ -725,7 +725,7 @@
   "h": "South Miami/Pinecrest",
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
@@ -881,7 +881,7 @@
   "h": null,
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
@@ -909,7 +909,7 @@
   "h": "Little River",
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "Serious Training",
@@ -956,7 +956,7 @@
    "Reservation Required"
   ],
   "pf": null,
-  "hrs": "Park: daily sunrise–sunset. Track: daily 6:15 AM–9 PM. Other facility hours vary.",
+  "hrs": "Park: daily sunrise–sunset. Track/stadium: daily 6:15 AM–9 PM. Basketball: 7 AM–10 PM. Handball/racquetball and pickleball: 8 AM–10 PM. Holiday hours vary — call 305-673-7779. Confirmed on miamibeachfl.gov.",
   "tel": "(305) 673-7761",
   "addr": "999 11th St / 11th–15th St, Miami Beach, FL 33139"
  },
@@ -966,7 +966,7 @@
   "h": "Kendall",
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
@@ -1049,7 +1049,7 @@
   "h": "Kendall",
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
@@ -1156,7 +1156,7 @@
   "h": "Miami Beach",
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
@@ -1305,9 +1305,9 @@
    "Day Pass"
   ],
   "pf": null,
-  "hrs": "Mon–Fri 4 AM–12 AM; Sat–Sun 5 AM–10 PM. Guest and limited-access hours differ; confirm before visiting.",
+  "hrs": "Mon–Fri 4 AM–12 AM; Sat–Sun 5 AM–10 PM (confirmed on official club page). Guest and limited-access hours differ.",
   "tel": "(786) 437-4400",
-  "addr": "237 S Dixie Hwy, Coral Gables, FL 33146"
+  "addr": "237 S Dixie Hwy, Coral Gables, FL 33133"
  },
  {
   "n": "Margaret Pace Park",
@@ -1344,7 +1344,7 @@
   "h": "Downtown",
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
@@ -1387,7 +1387,7 @@
    "Free/Open"
   ],
   "pf": null,
-  "hrs": "Park office: daily 8 AM–5 PM; park and amenity hours vary. Confirm current atoll-pool and marina hours before visiting.",
+  "hrs": "Park office: daily 8 AM–5 PM (confirmed on miamidade.gov). Grounds and atoll pool open sunrise to sunset; on-site dining open Wed–Sun (reservations 305-668-8788).",
   "tel": "(305) 665-5475",
   "addr": "9610 Old Cutler Rd, Coral Gables, FL 33156"
  },
@@ -1599,7 +1599,7 @@
   "h": "Aventura",
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
@@ -1666,7 +1666,7 @@
    "Drop-In"
   ],
   "pf": null,
-  "hrs": "Park: daily sunrise–sunset. Pool summer schedule through Aug. 12, 2026: weekdays 6–8:30 AM lap swim, 1–4:30 PM and 5–8 PM lap/open swim; weekend public-swim sessions 12–4:30 PM and 5–8 PM. Schedule subject to change.",
+  "hrs": "Park: sunrise–sunset. Pool summer weekday sessions through Aug 12, 2026 (6–8:30 AM lap only; 1–4:30 PM and 5–8 PM lap/open); summer weekend sessions through Sep 20, 2026 (6–8:30 AM lap; 12–4:30 PM and 5–8 PM open). Non-summer: lap swim daily 6 AM–8 PM, open swim 10 AM–6 PM, water playground 9 AM–7 PM. Confirmed on miamibeachfl.gov.",
   "tel": "(305) 993-2021",
   "addr": "7030 Trouville Esplanade, Miami Beach, FL 33141"
  },
@@ -1806,7 +1806,10 @@
   "br": null,
   "h": "Miami Shores/El Portal",
   "st": "Active",
-  "c": [],
+  "c": [
+   "Dance",
+   "Breathwork/Meditation"
+  ],
   "gf": [
    "Community/Social",
    "Solo Reset",
@@ -1988,7 +1991,7 @@
   "h": "Doral",
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
@@ -2092,7 +2095,7 @@
   "h": "Doral",
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
@@ -2116,10 +2119,10 @@
  {
   "n": "Rilion Gracie Jiu-Jitsu Miami Lakes",
   "br": null,
-  "h": null,
+  "h": "Miami Lakes",
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
@@ -2779,7 +2782,7 @@
   "h": "North Miami/NMB",
   "st": "Active",
   "c": [
-   "Strength"
+   "Martial Arts"
   ],
   "gf": [
    "First-Timers",
