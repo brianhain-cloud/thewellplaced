@@ -330,13 +330,13 @@
   .fd-head + .fd-day, .fd-cards + .fd-head { margin-top: 0; }
   .fd-head:not(:first-child) { margin-top: 34px; }
   .fd-cards {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 10px; margin-bottom: 4px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
+    gap: 8px; margin-bottom: 4px;
   }
-  .fd-cards:has(> :only-child) { grid-template-columns: minmax(220px, 460px); }
+  .fd-cards:has(> :only-child) { grid-template-columns: minmax(186px, 380px); }
   .fd-card {
-    display: flex; flex-direction: column; gap: 3px; align-items: flex-start;
-    text-align: left; padding: 14px 16px; width: 100%;
+    display: flex; flex-direction: column; gap: 2px; align-items: flex-start;
+    text-align: left; padding: 10px 12px; width: 100%;
     background: var(--card); border: 1px solid var(--line);
     border-left: 3px solid var(--accent, var(--clay)); border-radius: 0 12px 12px 0;
     cursor: pointer; font-family: 'Inter', sans-serif;
@@ -350,14 +350,29 @@
   .fd-card.past { opacity: 0.45; }
   .fd-card.live { border-left-color: var(--sage); background: rgba(122,143,124,0.05); }
   .fd-card.live .fd-when { color: var(--sage-dark); }
+  .fd-top {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; width: 100%;
+  }
   .fd-when {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em;
     color: var(--accent, var(--clay)); text-transform: uppercase;
-    font-variant-numeric: tabular-nums;
+    font-variant-numeric: tabular-nums; white-space: nowrap;
+  }
+  /* How often it comes round. Weekly is the norm and stays quiet; anything
+     rarer is the thing worth noticing, so only that gets any weight. */
+  .fd-rep {
+    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; white-space: nowrap;
+    color: rgba(31,42,36,0.32);
+  }
+  .fd-rep.rare {
+    color: var(--sage-dark); background: rgba(122,143,124,0.16);
+    padding: 1px 6px; border-radius: 999px;
   }
   .fd-title {
     font-family: 'Playfair Display', serif; font-weight: 700;
-    font-size: 1rem; line-height: 1.25; color: var(--title); margin: 2px 0;
+    font-size: 0.92rem; line-height: 1.24; color: var(--title); margin: 1px 0;
   }
   .fd-day { margin-bottom: 22px; }
   .fd-date {
@@ -373,6 +388,7 @@
     padding: 1px 7px; border-radius: 999px;
   }
   .fd-meta { font-size: 0.75rem; color: rgba(31,42,36,0.5); }
+  .fd-card .fd-meta { font-size: 0.7rem; line-height: 1.35; }
   .fd-more {
     margin: 10px 0 0; padding: 6px 14px;
     font: 600 0.74rem 'Inter', sans-serif;
@@ -1842,7 +1858,8 @@ function feedSessions(start, days) {
         p.sessions.forEach(function (sess) {
           if (sess.day !== dk) return;
           if (!cadenceHolds(p.cadence, date)) return;
-          rows.push({ iso: iso, date: date, mins: sess.mins, it: it, kind: kind });
+          rows.push({ iso: iso, date: date, mins: sess.mins, it: it, kind: kind,
+                      cad: p.cadence });
         });
       });
     });
@@ -1867,13 +1884,31 @@ function dateSpan(a, b) {
 // A recurring session gets the same card as everything else in the guide, and
 // the same accent colour as its map pin, so a category is recognisable across
 // the list, the map and here without reading a word.
+// How often a session comes round. The cadence parsed out of the schedule text
+// is the most reliable signal; where there is none the entry recurs every week,
+// and a group's own Frequency field is the tie-breaker.
+function rhythm(r) {
+  if (r.cad === "monthly" || r.cad === "last") return { label: "Monthly", rare: true };
+  if (r.cad === "1st3rd") return { label: "2x a month", rare: true };
+  var f = (r.it.freq || "").toLowerCase();
+  if (f.indexOf("month") > -1) return { label: "Monthly", rare: true };
+  if (f.indexOf("biweek") > -1) return { label: "2x a month", rare: true };
+  if (f.indexOf("season") > -1) return { label: "Seasonal", rare: true };
+  if (f.indexOf("varies") > -1) return { label: "Varies", rare: true };
+  return { label: "Weekly", rare: false };
+}
+
 function feedRow(r, past) {
   var it = r.it;
   var cs = catStyle(it);
   var meta = [it.h || it.meet || "", (it.c && it.c[0]) || ""].filter(Boolean);
+  var rh = rhythm(r);
   return '<button class="fd-card' + (past ? " past" : "") + '" style="--accent:' + cs.style.color + '"' +
     ' data-key="' + esc(entryKey(it)) + '" data-kind="' + r.kind + '">' +
-    '<span class="fd-when">' + (r.mins === null ? "Time varies" : esc(fmtTime(r.mins))) + "</span>" +
+    '<span class="fd-top">' +
+      '<span class="fd-when">' + (r.mins === null ? "Time varies" : esc(fmtTime(r.mins))) + "</span>" +
+      '<span class="fd-rep' + (rh.rare ? " rare" : "") + '">' + esc(rh.label) + "</span>" +
+    "</span>" +
     '<span class="fd-title">' + esc(it.n) + "</span>" +
     '<span class="fd-meta">' + esc(meta.join(" · ")) + "</span></button>";
 }
@@ -2547,7 +2582,10 @@ var LEX = {
     "Racquet/Padel": ["padel","tennis","racquet","racket","pickleball","court"],
     "Outdoor/Parks": ["park","parks","outdoor","outside","nature","trail","beach","green","garden","gardens","hike","hiking"],
     "Walking": ["walk","walking","stroll","steps"],
-    "Cafe/Nutrition": ["cafe","coffee","juice","smoothie","acai","food","eat","market","farmers market","nutrition"],
+    // The cafes and juice bars are gone from the guide. All that still carries
+    // this category is two farmers markets, so asking for coffee should come
+    // back empty rather than confidently offering a market in Aventura.
+    "Cafe/Nutrition": ["market","markets","farmers market","farmer's market","produce"],
     "Wellness/Health Expo": ["expo","summit","conference","panel","festival","fest","talk","workshop"],
     "Martial Arts": ["martial arts","jiu jitsu","jiu-jitsu","jiujitsu","bjj","gracie","grappling",
                      "no gi","no-gi","open mat","gi","judo","karate","muay thai","kickboxing",
