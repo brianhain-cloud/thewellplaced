@@ -1,5 +1,43 @@
 [
  {
+  "n": "Modern ŌM",
+  "h": null,
+  "c": [
+   "Breathwork/Meditation"
+  ],
+  "v": [
+   "Conscious/Chill",
+   "Free/Community",
+   "Social Fitness"
+  ],
+  "gf": [
+   "First-Timers",
+   "Community/Social",
+   "Solo Reset"
+  ],
+  "ac": [
+   "Reservation Required",
+   "Membership"
+  ],
+  "fmt": "Open Community",
+  "who": [
+   "All Levels",
+   "Beginner-Friendly",
+   "Social-First",
+   "Mindfulness-Focused"
+  ],
+  "freq": "Schedule Varies",
+  "sched": "Events and practices run across Miami; see the full calendar for current dates and venues.",
+  "meet": null,
+  "note": "Miami’s conscious club for breathwork, meditation, sound, movement and spiritual modalities—built around facilitated practice and genuine connection across beautiful local spaces.",
+  "know": "Single-event tickets are available to anyone; membership offers better rates and priority for limited-capacity events. Reservations are handled through SweatPals.",
+  "tip": null,
+  "bring": "Comfortable clothes, water bottle and a mat if you have one; extras may be available.",
+  "w": "https://clubmodernom.com/",
+  "book": "https://clubmodernom.com/",
+  "ig": null
+ },
+ {
   "n": "Ecstatic Dance Miami",
   "h": "Little River",
   "c": [
@@ -33,72 +71,6 @@
   "bring": null,
   "w": null,
   "book": "https://ecstaticdancemiami.com/",
-  "ig": null
- },
- {
-  "n": "Dance Events in South Florida",
-  "h": null,
-  "c": [
-   "Dance"
-  ],
-  "v": [
-   "Social Fitness",
-   "Free/Community"
-  ],
-  "gf": [
-   "Community/Social"
-  ],
-  "ac": [
-   "Free/Open"
-  ],
-  "fmt": "Open Community",
-  "who": [
-   "All Levels",
-   "Social-First"
-  ],
-  "freq": "Schedule Varies",
-  "sched": null,
-  "meet": null,
-  "note": "Broad local dance-event discovery group spanning Latin, ballroom, tango, zouk, swing and more.",
-  "know": null,
-  "tip": null,
-  "bring": null,
-  "w": null,
-  "book": null,
-  "ig": null
- },
- {
-  "n": "Bachata/Salsa/Zouk & Kizomba: Social/classes events in Miami",
-  "h": null,
-  "c": [
-   "Dance"
-  ],
-  "v": [
-   "Social Fitness",
-   "Free/Community"
-  ],
-  "gf": [
-   "First-Timers",
-   "Community/Social"
-  ],
-  "ac": [
-   "Reservation Required"
-  ],
-  "fmt": "Open Community",
-  "who": [
-   "All Levels",
-   "Beginner-Friendly",
-   "Social-First"
-  ],
-  "freq": "Weekly",
-  "sched": "Fridays: salsa class, bachata class, then social dancing; additional events vary.",
-  "meet": null,
-  "note": "Active cross-style social-dance community built around salsa, bachata, zouk and kizomba classes and socials.",
-  "know": null,
-  "tip": null,
-  "bring": null,
-  "w": null,
-  "book": "https://www.meetup.com/bachata-classes-and-socials-in-miami/",
   "ig": null
  },
  {

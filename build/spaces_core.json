@@ -1,5 +1,145 @@
 [
  {
+  "n": "[solidcore] Aventura",
+  "br": "[solidcore]",
+  "h": "Aventura",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "2980 NE 207th St, Aventura, FL"
+ },
+ {
+  "n": "[solidcore] Brickell",
+  "br": "[solidcore]",
+  "h": "Brickell",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "927 Brickell Ave, Miami, FL 33131"
+ },
+ {
+  "n": "[solidcore] Coral Gables",
+  "br": "[solidcore]",
+  "h": "Gables",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "111 Palermo Ave, Suite 210, Coral Gables, FL 33134"
+ },
+ {
+  "n": "[solidcore] Midtown Miami",
+  "br": "[solidcore]",
+  "h": "Wynwood/Edgewater",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "135 NE 32nd St, Miami, FL 33137"
+ },
+ {
+  "n": "[solidcore] Sunset Harbour",
+  "br": "[solidcore]",
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Yoga/Pilates"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": "(305) 726-0503",
+  "addr": "1784 W Ave, Suite 120, Miami Beach, FL 33139"
+ },
+ {
   "n": "ActiveSoul Wellness Studio",
   "br": "ActiveSoul Wellness Studio",
   "h": "Coral Way",
@@ -852,6 +992,62 @@
   "addr": "2400 S Bayshore Dr, Miami, FL 33133"
  },
  {
+  "n": "DUO — Saunas & Plunges",
+  "br": null,
+  "h": null,
+  "st": "Active",
+  "c": [
+   "Recovery/Plunge",
+   "Sauna/Bathhouse"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Solo Reset",
+   "Community/Social"
+  ],
+  "v": [
+   "Social Fitness",
+   "Premium/Luxury"
+  ],
+  "ac": [
+   "Drop-In",
+   "Reservation Required"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Miami Lakes, FL"
+ },
+ {
+  "n": "EDGE by ELIXR Wellness Brickell",
+  "br": null,
+  "h": "Brickell",
+  "st": "Active",
+  "c": [
+   "Recovery/Plunge",
+   "Sauna/Bathhouse"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": "(786) 323-7099",
+  "addr": "175 SW 7th St, Apt 1102, Miami, FL 33130"
+ },
+ {
   "n": "EoS Fitness Kendall",
   "br": "EoS Fitness",
   "h": "Kendall",
@@ -874,6 +1070,202 @@
   "hrs": "Open 24/7.",
   "tel": "(786) 936-3711",
   "addr": "8400 Mills Dr, Kendall, FL"
+ },
+ {
+  "n": "F45 Training Aventura",
+  "br": "F45 Training",
+  "h": "Aventura",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": "(305) 890-7858",
+  "addr": "3565 NE 207th St, Suite A-12, Aventura, FL"
+ },
+ {
+  "n": "F45 Training Brickell",
+  "br": "F45 Training",
+  "h": "Brickell",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": "(786) 718-1249",
+  "addr": "923 Brickell Ave, Miami, FL 33131"
+ },
+ {
+  "n": "F45 Training Coral Gables",
+  "br": "F45 Training",
+  "h": "South Miami/Pinecrest",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "5958 S Dixie Hwy, South Miami, FL 33143"
+ },
+ {
+  "n": "F45 Training Coral Way",
+  "br": "F45 Training",
+  "h": "Coral Way",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "2750 Coral Way, Miami, FL 33145"
+ },
+ {
+  "n": "F45 Training Dadeland",
+  "br": "F45 Training",
+  "h": "South Miami/Pinecrest",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": "(305) 239-9122",
+  "addr": "9095 S Dixie Hwy, Pinecrest, FL"
+ },
+ {
+  "n": "F45 Training Kendall West",
+  "br": "F45 Training",
+  "h": "Kendall",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": "(786) 280-4498",
+  "addr": "4292 SW 152nd Ave, Miami, FL 33185"
+ },
+ {
+  "n": "F45 Training South Pointe Miami",
+  "br": "F45 Training",
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "601 Washington Ave, Miami Beach, FL 33139"
  },
  {
   "n": "Fight Sports Club",
@@ -1070,6 +1462,62 @@
   "hrs": null,
   "tel": null,
   "addr": "Westchester, Miami, FL"
+ },
+ {
+  "n": "Hydrology Wellness",
+  "br": null,
+  "h": "Gables",
+  "st": "Active",
+  "c": [
+   "Recovery/Plunge",
+   "Sauna/Bathhouse"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Reservation Required"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": null,
+  "addr": "Coral Gables, FL"
+ },
+ {
+  "n": "Hürrem Hammam Wellness & Spa",
+  "br": null,
+  "h": "North Miami/NMB",
+  "st": "Active",
+  "c": [
+   "Sauna/Bathhouse",
+   "Recovery/Plunge"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Date Spot",
+   "Solo Reset"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Conscious/Chill"
+  ],
+  "ac": [
+   "Day Pass",
+   "Reservation Required"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": "Daily, 11:00 AM–9:00 PM",
+  "tel": "(305) 200-2255",
+  "addr": "14652 Biscayne Blvd, North Miami, FL 33181"
  },
  {
   "n": "JETSET Pilates Downtown Miami",
@@ -2145,6 +2593,36 @@
   "addr": "Miami Lakes, FL"
  },
  {
+  "n": "Russian & Turkish Baths",
+  "br": null,
+  "h": "Miami Beach",
+  "st": "Active",
+  "c": [
+   "Sauna/Bathhouse",
+   "Recovery/Plunge"
+  ],
+  "gf": [
+   "Recovery Day",
+   "Date Spot",
+   "Solo Reset",
+   "Community/Social"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Day Pass",
+   "Reservation Required"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": "Mon–Wed/Fri–Sat 12:00 PM–10:00 PM; Thu/Sun 8:00 AM–10:00 PM",
+  "tel": "(786) 525-9901",
+  "addr": "5445 Collins Ave, Miami Beach, FL 33140"
+ },
+ {
   "n": "SILA Miami",
   "br": null,
   "h": "Little River",
@@ -2440,6 +2918,93 @@
   "hrs": null,
   "tel": "(888) 507-9328",
   "addr": "1916 Bay Rd, Miami Beach, FL 33139"
+ },
+ {
+  "n": "SWEAT440 Midtown Miami",
+  "br": "SWEAT440",
+  "h": "Wynwood/Edgewater",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": "(888) 507-9328",
+  "addr": "3401 NE 1st Ave, Miami, FL 33137"
+ },
+ {
+  "n": "SWEAT440 South Miami",
+  "br": "SWEAT440",
+  "h": "South Miami/Pinecrest",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": "(888) 507-9328",
+  "addr": "5829 SW 73rd St, #5A, South Miami, FL 33143"
+ },
+ {
+  "n": "SWEAT440 Upper East Side",
+  "br": "SWEAT440",
+  "h": "Miami Shores/El Portal",
+  "st": "Active",
+  "c": [
+   "Strength",
+   "Run/Cardio"
+  ],
+  "gf": [
+   "First-Timers",
+   "Serious Training"
+  ],
+  "v": [
+   "High-Energy",
+   "Social Fitness"
+  ],
+  "ac": [
+   "Drop-In",
+   "Class Pack",
+   "Membership"
+  ],
+  "pf": [
+   "Direct Only"
+  ],
+  "hrs": null,
+  "tel": "(888) 507-9328",
+  "addr": "6901 Biscayne Blvd, Miami, FL 33138"
  },
  {
   "n": "Tanda Tango",

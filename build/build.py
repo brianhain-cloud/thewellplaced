@@ -12,8 +12,49 @@ prose  = J("spaces_prose.json")
 groups = J("groups.json")
 events = J("events.json")
 
-photos = json.load(open("/tmp/photos.json", encoding="utf-8"))
-geo    = json.load(open("/tmp/geo.json", encoding="utf-8"))
+# Photos and coordinates carry over from the page that is already built, which
+# is their real home: process_photos.py writes image paths straight into
+# index.html, and a coordinate costs a geocoder round trip to rediscover.
+#
+# These used to be read from /tmp. A cleared temp folder then broke the build
+# and, worse, would have silently rebuilt the site with every photo missing.
+def carry_from_page():
+    path = os.path.join(os.path.dirname(HERE), "public", "index.html")
+    if not os.path.exists(path):
+        return {}, {}
+    src = open(path, encoding="utf-8").read()
+    ph, gg = {}, {}
+    for name in ("PLACES", "GROUPS", "EVENTS"):
+        start = src.find("var %s = [" % name)
+        if start < 0: continue
+        i = src.index("[", start)
+        depth, in_str, esc = 0, None, False
+        for j in range(i, len(src)):
+            c = src[j]
+            if in_str:
+                if esc: esc = False
+                elif c == "\\": esc = True
+                elif c == in_str: in_str = None
+                continue
+            if c in "\"'": in_str = c; continue
+            if c == "[": depth += 1
+            elif c == "]":
+                depth -= 1
+                if depth == 0: break
+        for line in src[i + 1:j].splitlines():
+            line = line.strip().rstrip(",")
+            if not line.startswith("{"): continue
+            try: row = json.loads(line)
+            except ValueError: continue
+            for r in (row.get("locs") or [row]):
+                n = r.get("n") or row.get("n")
+                if not n: continue
+                if r.get("imgs"): ph[n] = r["imgs"]
+                elif r.get("img"): ph[n] = [r["img"]]
+                if r.get("ll"): gg[n] = r["ll"]
+    return ph, gg
+
+photos, geo = carry_from_page()
 cache  = {}
 if os.path.exists(os.path.join(HERE, "geocache.json")):
     cache = json.load(open(os.path.join(HERE, "geocache.json"), encoding="utf-8"))

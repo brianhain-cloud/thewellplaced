@@ -1,5 +1,34 @@
 [
  {
+  "n": "Eudēmonia Summit 2026",
+  "h": null,
+  "c": [
+   "Wellness/Health Expo"
+  ],
+  "v": [
+   "Premium/Luxury",
+   "Social Fitness",
+   "Conscious/Chill"
+  ],
+  "who": [
+   "Solo",
+   "Friends",
+   "Wellness Pros",
+   "Founder/Operator"
+  ],
+  "etype": "Pop-Up",
+  "feat": false,
+  "sched": null,
+  "dstart": "2026-11-05",
+  "dend": "2026-11-08",
+  "meet": "Palm Beach County Convention Center, 650 Okeechobee Blvd, West Palm Beach, FL 33401 (regional Palm Beach County event)",
+  "note": "A four-day regional health, wellbeing and longevity summit with 120+ experts, 200+ talks, movement classes, immersive treatments, wellness technology and the EXPOSŌME expo.",
+  "know": "November 5–8, 2026. Regional Palm Beach County listing rather than Miami-Dade. Featured 2026 voices include Andrew Huberman, Rich Roll, Gary Brecka, Robin Berzin, Simon Hill, William Bulsiewicz, Kristen Holmes and more.",
+  "bring": null,
+  "book": "https://eudemonia.net/tickets/",
+  "ig": "https://www.instagram.com/eudemoniasummit/"
+ },
+ {
   "n": "EXPANSION Ecstatic Dance Miami — SUBSQWAD",
   "h": "Little River",
   "c": [
@@ -48,7 +77,7 @@
   "know": null,
   "bring": null,
   "book": "https://www.almadetangomiami.com/argentine-tango-classes",
-  "ig": null
+  "ig": "https://www.instagram.com/monicallobet/"
  },
  {
   "n": "Yoga in the Park — Aventura",
@@ -75,7 +104,7 @@
   "know": "Free Friday morning yoga at Founders Park in Aventura. Classes start at 9 AM and run about one hour; registration is handled through the City’s online registration system.",
   "bring": "Yoga mat, small towel, and water. Aventura residents may want a park ID for easier access; non-residents may need to pay the park entrance fee.",
   "book": "https://www.cityofaventura.com/251/Yoga-in-the-Park",
-  "ig": null
+  "ig": "https://www.instagram.com/cityofaventura/"
  },
  {
   "n": "Biohack-It Women’s Health Workshop & Panel",
@@ -130,7 +159,7 @@
   "know": "Three-day holistic health and conscious longevity conference at Faena Forum with 50+ speakers, 50+ longevity companies, 20+ wellness experiences, workshops, expo activations, and VIP networking options.",
   "bring": "Notebook, layers for conference rooms, and enough time to explore the expo and wellness experiences. Pre-registration is required; VIP ticket includes additional party/lounge perks.",
   "book": "https://www.faena.com/miami-beach/things-to-do/event-calendar/ultimate-wellness-conference-at-faena-forum",
-  "ig": null
+  "ig": "https://instagram.com/ultimatewellness.miami"
  },
  {
   "n": "More Life Summit",
@@ -271,7 +300,7 @@
   "know": "Free community Vinyasa yoga class sponsored by Baptist Health before the Pinecrest Farmers Market. Good Sunday combo: move first, then browse local vendors from 9 AM–2 PM.",
   "bring": "Yoga mat, towel, water, and sun protection. Stay after class for the Farmers Market if you want food, produce, flowers, crafts, and live community energy.",
   "book": "https://www.pinecrestgardens.org/Arts-Events/Markets",
-  "ig": null
+  "ig": "https://www.instagram.com/pinecrest_gardens/"
  },
  {
   "n": "Thursday Evening Yoga — Vizcaya Station Plaza",
@@ -299,7 +328,7 @@
   "know": "Free Thursday evening all-levels yoga at The Underline’s Vizcaya Station Plaza, powered by Baptist Health and led by Anny Noratto. Registration is required; arrive 15 minutes early.",
   "bring": "Yoga mat, water, and sweat towel. Limited loaner mats may be available with valid ID while supplies last.",
   "book": "https://www.eventbrite.com/e/uyoga-vizcaya-station-plaza-tickets-976592463347",
-  "ig": null
+  "ig": "https://www.instagram.com/theunderlinemia/"
  },
  {
   "n": "HIIT & RUN at The Underline",
@@ -355,7 +384,7 @@
   "know": "Annual July–August Miami Spa Months promotion at Carillon, featuring discounted luxury spa and wellness treatments. Carillon is known for its large thermal hydrotherapy circuit and resort-style spa experience.",
   "bring": "Swimsuit or spa-ready attire; confirm treatment, arrival time, and access details when booking. Bring ID and payment method for spa check-in.",
   "book": "https://www.carillonhotel.com/en/experiences/miami-spa-months-at-the-spa-at-carillon/",
-  "ig": null
+  "ig": "https://www.instagram.com/carillonhotel"
  },
  {
   "n": "Full Moon Yoga & Ceremony South Pointe",
