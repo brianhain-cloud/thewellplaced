@@ -1,7 +1,7 @@
 PHOTOS NEEDED — The Well Placed
 Generated 2026-08-17
 
-97 of 176 entries have a photo. 79 still need one.
+142 of 176 entries have a photo. 34 still need one.
 
 HOW TO ADD THEM
   1. Drop images into photos-raw/ named after the entry, any
@@ -16,35 +16,8 @@ HOW TO ADD THEM
 ================================================================
 START HERE: MULTI LOCATION BRANDS
 These share one card on the site, so one good photo covers the
-whole brand. 20 entries in 4 brands.
+whole brand. 2 entries in 1 brands.
 ================================================================
-
-F45 Training  (7 locations)
-   file: photos-raw/f45-training.jpg
-     - F45 Training Aventura  ·  Aventura
-     - F45 Training Brickell  ·  Brickell
-     - F45 Training Coral Gables  ·  South Miami/Pinecrest
-     - F45 Training Coral Way  ·  Coral Way
-     - F45 Training Dadeland  ·  South Miami/Pinecrest
-     - F45 Training Kendall West  ·  Kendall
-     - F45 Training South Pointe Miami  ·  Miami Beach
-
-SWEAT440  (6 locations)
-   file: photos-raw/sweat440.jpg
-     - SWEAT440 Coral Gables  ·  Gables
-     - SWEAT440 Doral  ·  Doral
-     - SWEAT440 Miami Beach  ·  Miami Beach
-     - SWEAT440 Midtown Miami  ·  Wynwood/Edgewater
-     - SWEAT440 South Miami  ·  South Miami/Pinecrest
-     - SWEAT440 Upper East Side  ·  Miami Shores/El Portal
-
-[solidcore]  (5 locations)
-   file: photos-raw/solidcore.jpg
-     - [solidcore] Aventura  ·  Aventura
-     - [solidcore] Brickell  ·  Brickell
-     - [solidcore] Coral Gables  ·  Gables
-     - [solidcore] Midtown Miami  ·  Wynwood/Edgewater
-     - [solidcore] Sunset Harbour  ·  Miami Beach
 
 JETSET Pilates  (2 locations)
    file: photos-raw/jetset-pilates.jpg
@@ -52,40 +25,20 @@ JETSET Pilates  (2 locations)
      - JETSET Pilates SoFi  ·  Miami Beach
 
 ================================================================
-EVERYTHING ELSE, BY CATEGORY (59)
+EVERYTHING ELSE, BY CATEGORY (32)
 ================================================================
 
-BREATHWORK/MEDITATION  (1)
-   Modern ŌM
-      Group · -  ->  photos-raw/modern-om.jpg
-
-CAFE/NUTRITION  (1)
-   The Aventura Market
-      Event · Aventura  ->  photos-raw/the-aventura-market.jpg
-
-CYCLING  (1)
-   Miami Critical Mass
-      Group · Downtown  ->  photos-raw/miami-critical-mass.jpg
-
-DANCE  (18)
-   Alma de Tango
-      Event · Downtown  ->  photos-raw/alma-de-tango.jpg
-   Belly Motions
-      Space · Kendall  ->  photos-raw/belly-motions.jpg
+DANCE  (11)
    Dance Empire
       Space · South Miami/Pinecrest  ->  photos-raw/dance-empire.jpg
    Dance Town South Florida
       Space · Doral  ->  photos-raw/dance-town-south-florida.jpg
    DanceArts Miami
       Space · Little River  ->  photos-raw/dancearts-miami.jpg
-   Ecstatic Dance Miami
-      Group · Little River  ->  photos-raw/ecstatic-dance-miami.jpg
    EXPANSION Ecstatic Dance Miami, SUBSQWAD
       Event · Little River  ->  photos-raw/expansion-ecstatic-dance-miami-subsqwad.jpg
    Karibe Dance Studio
       Space · Doral  ->  photos-raw/karibe-dance-studio.jpg
-   Miami Baila
-      Space · Coral Way  ->  photos-raw/miami-baila.jpg
    Miami Dade College Continuing Education Dance
       Space · -  ->  photos-raw/miami-dade-college-continuing-education-dance.jpg
    Miami Dance Academy
@@ -94,20 +47,12 @@ DANCE  (18)
       Space · North Miami/NMB  ->  photos-raw/miami-dance-center.jpg
    Miami Dance Collective
       Space · South Miami/Pinecrest  ->  photos-raw/miami-dance-collective.jpg
-   Nara Bollywood Dance Academy
-      Space · Brickell  ->  photos-raw/nara-bollywood-dance-academy.jpg
    PALAPA at Upper Buena Vista
       Space · Miami Shores/El Portal  ->  photos-raw/palapa-at-upper-buena-vista.jpg
    Tanda Tango
       Space · North Miami/NMB  ->  photos-raw/tanda-tango.jpg
-   Tango a Tiempo
-      Space · Miami Beach  ->  photos-raw/tango-a-tiempo.jpg
-   Tango Times Dance Studio
-      Space · North Miami/NMB  ->  photos-raw/tango-times-dance-studio.jpg
 
-MARTIAL ARTS  (13)
-   Art In Motion Jiu-Jitsu Academy
-      Space · -  ->  photos-raw/art-in-motion-jiu-jitsu-academy.jpg
+MARTIAL ARTS  (11)
    Carlson Gracie Miami
       Space · Kendall  ->  photos-raw/carlson-gracie-miami.jpg
    Crow Jiu-Jitsu Academy
@@ -130,67 +75,33 @@ MARTIAL ARTS  (13)
       Space · Doral  ->  photos-raw/rilion-gracie-jiu-jitsu-doral.jpg
    Rilion Gracie Jiu-Jitsu Miami Lakes
       Space · Miami Lakes  ->  photos-raw/rilion-gracie-jiu-jitsu-miami-lakes.jpg
-   Valente Brothers Jiu-Jitsu
-      Space · North Miami/NMB  ->  photos-raw/valente-brothers-jiu-jitsu.jpg
 
-RECOVERY/PLUNGE  (4)
+RECOVERY/PLUNGE  (3)
    DUO, Saunas & Plunges
       Space · -  ->  photos-raw/duo-saunas-and-plunges.jpg
    EDGE by ELIXR Wellness Brickell
       Space · Brickell  ->  photos-raw/edge-by-elixr-wellness-brickell.jpg
-   Grotto Baths
-      Space · Wynwood/Edgewater  ->  photos-raw/grotto-baths.jpg
    Hydrology Wellness
       Space · Gables  ->  photos-raw/hydrology-wellness.jpg
 
-RUN/CARDIO  (8)
-   Brickell Run Club
-      Group · Brickell  ->  photos-raw/brickell-run-club.jpg
-   Gables Run Club
-      Group · Gables  ->  photos-raw/gables-run-club.jpg
-   iRun & Company Social Runs
-      Group · Midtown/Design District  ->  photos-raw/irun-and-company-social-runs.jpg
-   Miami Run Club
-      Group · Miami Beach  ->  photos-raw/miami-run-club.jpg
-   Miami Tri Club
-      Group · -  ->  photos-raw/miami-tri-club.jpg
+RUN/CARDIO  (2)
    SoLé Mia Running Club
       Group · North Miami/NMB  ->  photos-raw/sole-mia-running-club.jpg
-   South Beach Run Club
-      Group · Miami Beach  ->  photos-raw/south-beach-run-club.jpg
    TeamFootWorks Fun Runs
       Group · South Miami/Pinecrest  ->  photos-raw/teamfootworks-fun-runs.jpg
 
-SAUNA/BATHHOUSE  (3)
+SAUNA/BATHHOUSE  (2)
    Hürrem Hammam Wellness & Spa
       Space · North Miami/NMB  ->  photos-raw/hurrem-hammam-wellness-and-spa.jpg
-   Miami Spa Months at Carillon
-      Event · North Beach  ->  photos-raw/miami-spa-months-at-carillon.jpg
    Russian & Turkish Baths
       Space · Miami Beach  ->  photos-raw/russian-and-turkish-baths.jpg
 
-STRENGTH  (2)
-   Las Rocas Climbing Gym
-      Space · South Miami/Pinecrest  ->  photos-raw/las-rocas-climbing-gym.jpg
+STRENGTH  (1)
    SWEAT440 Brickell
       Space · Brickell  ->  photos-raw/sweat440-brickell.jpg
 
-WELLNESS/HEALTH EXPO  (1)
-   Eudēmonia Summit 2026
-      Event · -  ->  photos-raw/eudemonia-summit-2026.jpg
-
-YOGA/PILATES  (7)
-   3rd Street Beach Yoga
-      Group · Miami Beach  ->  photos-raw/3rd-street-beach-yoga.jpg
-   Legion Park Yoga
-      Group · -  ->  photos-raw/legion-park-yoga.jpg
+YOGA/PILATES  (2)
    NOBE Yoga in the Park
       Group · Miami Beach  ->  photos-raw/nobe-yoga-in-the-park.jpg
-   Saturday Yoga at The Underline
-      Event · Downtown  ->  photos-raw/saturday-yoga-at-the-underline.jpg
    SILA Miami
       Space · Little River  ->  photos-raw/sila-miami.jpg
-   Thursday Evening Yoga, Vizcaya Station Plaza
-      Event · Coconut Grove  ->  photos-raw/thursday-evening-yoga-vizcaya-station-plaza.jpg
-   Yoga in the Garden, Pinecrest Gardens
-      Event · South Miami/Pinecrest  ->  photos-raw/yoga-in-the-garden-pinecrest-gardens.jpg

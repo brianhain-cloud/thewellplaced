@@ -19,11 +19,23 @@ Re-running is safe: existing img: fields are updated, not duplicated.
 
 import os, re, sys, json, unicodedata
 from PIL import Image, ImageOps
+try:
+    import pillow_avif            # noqa: F401  registers .avif with Pillow
+except ImportError:
+    pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-RAW = os.path.join(HERE, "photos-raw")
 OUT  = os.path.join(HERE, "public", "photos")
 HTML = os.path.join(HERE, "public", "index.html")
+
+# Where to look for raw photos, in order. The Desktop folder is where the
+# photos actually get dropped; photos-raw/ stays supported so nothing that
+# already lived there stops working. A pass a directory on the command line to
+# use a different one.
+RAW_DIRS = [
+    os.path.join(HERE, "photos-raw"),
+    os.path.expanduser("~/Desktop/Well Placed Photos"),
+]
 
 TARGET_W = 1600
 ASPECT = 16 / 10
@@ -33,6 +45,10 @@ EXTS = {".jpg", ".jpeg", ".png", ".webp", ".avif", ".bmp", ".tif", ".tiff"}
 # Filenames that do not resemble the entry name closely enough to auto-match.
 ALIASES = {
     "anatomyfitness": "Anatomy Midtown",
+    "tangotimesdancecompany": "Tango Times Dance Studio",
+    "tangoetiempo": "Tango a Tiempo",
+    "valentejiujitsu": "Valente Brothers Jiu-Jitsu",
+    "thursdayeveningyogaatvizcaya": "Thursday Evening Yoga, Vizcaya Station Plaza",
     "barrysbootcamp": "Barry's Miami Midtown",
     "biscaynenationalpark": "Biscayne National Park, Dante Fascell Visitor Center",
     "biohackitwomenshealthworkshop": "Biohack-It Women's Health Workshop & Panel",
@@ -115,7 +131,11 @@ def photo_index(filename):
 def match_entry(filename, names):
     """Best entry match for a filename, or None."""
     stem = os.path.splitext(os.path.basename(filename))[0]
-    stem = re.sub(r"[\s_-]*\d+$", "", stem)          # drop trailing " 2", "_01"
+    # Drop a trailing photo number: "Venetian Pool 2", "Pause Studio_01". The
+    # separator is required. Without it "F45" lost its digits, became "F", and
+    # a one letter key then matched by containment against almost every entry,
+    # landing the F45 photo on Biscayne National Park.
+    stem = re.sub(r"[\s_-]+\d+$", "", stem)
     key = norm(stem)
     if not key:
         return None
@@ -126,6 +146,11 @@ def match_entry(filename, names):
         return exact[0]
     # containment either direction, longest wins
     cands = [n for n in names if norm(n) and (norm(n) in key or key in norm(n))]
+    # A short key carries little signal, so it has to start the entry name
+    # rather than merely appear inside it. "f45" still finds F45 Training;
+    # a stray "f" no longer finds Biscayne National Park.
+    if len(key) < 5:
+        cands = [n for n in cands if norm(n).startswith(key)]
     if cands:
         return max(cands, key=lambda n: len(norm(n)))
     return None
@@ -174,23 +199,38 @@ def set_imgs(html, name, paths):
 
 
 def main():
-    if not os.path.isdir(RAW):
-        sys.exit("No photos-raw/ folder. Create it and drop photos in.")
+    dirs = [os.path.expanduser(a) for a in sys.argv[1:]] or RAW_DIRS
+    dirs = [d for d in dirs if os.path.isdir(d)]
+    if not dirs:
+        sys.exit("No photo folder found. Looked in:\n  " + "\n  ".join(RAW_DIRS))
+
     os.makedirs(OUT, exist_ok=True)
     html = open(HTML, encoding="utf-8").read()
     names = entry_names(html)
 
-    files = sorted(f for f in os.listdir(RAW)
-                   if os.path.splitext(f)[1].lower() in EXTS and not f.startswith("."))
+    # full paths, first directory wins when a filename appears in both
+    files, seen = [], set()
+    for d in dirs:
+        for f in sorted(os.listdir(d)):
+            if f.startswith(".") or os.path.splitext(f)[1].lower() not in EXTS:
+                continue
+            if f.lower() in seen:
+                continue
+            seen.add(f.lower())
+            files.append(os.path.join(d, f))
+    print("Reading from:")
+    for d in dirs:
+        print("  %s" % d)
+    print("%d image file(s) found.\n" % len(files))
     if not files:
-        sys.exit("photos-raw/ is empty — drop some photos in first.")
+        sys.exit("No images in those folders.")
 
     # group every raw file by the entry it belongs to, ordered by any trailing number
     groups, skipped = {}, []
     for f in files:
         name = match_entry(f, names)
         if not name:
-            skipped.append((f, "no matching entry"))
+            skipped.append((os.path.basename(f), "no matching entry"))
             continue
         groups.setdefault(name, []).append(f)
 
@@ -202,9 +242,15 @@ def main():
         for i, f in enumerate(fl):
             suffix = "" if i == 0 else "-%d" % (i + 1)
             dst = os.path.join(OUT, slug + suffix + ".jpg")
-            q, size = process_image(os.path.join(RAW, f), dst)
+            try:
+                q, size = process_image(f, dst)
+            except Exception as e:
+                skipped.append((os.path.basename(f), "could not read: %s" % e))
+                continue
             paths.append("photos/%s%s.jpg" % (slug, suffix))
-            done.append((f, name, slug + suffix, q, size // 1024, ""))
+            done.append((os.path.basename(f), name, slug + suffix, q, size // 1024, ""))
+        if not paths:
+            continue
         html, status = set_imgs(html, name, paths)
         done[-1] = done[-1][:5] + (status,)
 
