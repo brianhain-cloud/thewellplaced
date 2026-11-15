@@ -68,6 +68,11 @@ CARRY = {
     "centnerwellnessgables":         "Centner Wellness Coral Gables",
     "flamingopark":                  "Flamingo Park Aquatic Center",
     "polestarpilatesstudiodadeland": "Polestar Pilates, Dadeland",
+    # 2026-11-12 event refresh
+    "eudemoniasummit2027":                          "Eudēmonia Summit 2026",
+    "expansionecstaticdancemiamiartbaseldayfest":   "EXPANSION Ecstatic Dance Miami, SUBSQWAD",
+    "yogabythebayatsouthpointepark":                "Sunset Yoga at South Pointe Park",
+    "soundbathmeditationwithfranci":                "Restorative Sound Bath Meditation",
 }
 photo_idx = {norm(k): v for k, v in photos.items()}
 geo_idx   = {norm(k): v for k, v in geo.items()}
@@ -226,6 +231,7 @@ for r in active:
 # ---------- Groups ----------
 gs = []
 for r in groups:
+    if r.get("st") == "Past (Archive)": continue
     o = {"n": clean(r["n"], is_name=True), "h": r["h"], "c": r["c"], "v": r["v"] or [],
          "gf": r["gf"] or [], "ac": r["ac"] or [],
          "fmt": r["fmt"], "who": r["who"] or [], "freq": r["freq"],
@@ -243,6 +249,7 @@ for r in groups:
 # ---------- Events ----------
 es = []
 for r in events:
+    if r.get("st") == "Past (Archive)": continue
     o = {"n": clean(r["n"], is_name=True), "h": r["h"], "c": r["c"], "v": r["v"] or [],
          "who": r["who"] or [], "etype": r["etype"], "feat": r.get("feat", False),
          "draft": r.get("draft", False),

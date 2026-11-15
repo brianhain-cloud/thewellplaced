@@ -161,6 +161,7 @@ def build_groups(rows):
         out.append({
             "n": n,
             "h": rich(prop(r, "Neighborhood")),
+            "st": rich(prop(r, "Status")),
             "c": multi(prop(r, "Category")),
             "v": multi(prop(r, "The Vibe")),
             "gf": multi(prop(r, "Good For")),
@@ -195,6 +196,7 @@ def build_events(rows):
             "c": multi(prop(r, "Category")),
             "v": multi(prop(r, "The Vibe")),
             "who": multi(prop(r, "Who It's For")),
+            "st": rich(prop(r, "Status")),
             "etype": rich(prop(r, "Event Type")),
             "feat": bool(rich(prop(r, "Featured"))),
             "sched": rich(prop(r, "Recurring Schedule")),

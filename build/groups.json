@@ -2,6 +2,7 @@
  {
   "n": "Modern ŌM",
   "h": null,
+  "st": "Active",
   "c": [
    "Breathwork/Meditation"
   ],
@@ -40,6 +41,7 @@
  {
   "n": "Ecstatic Dance Miami",
   "h": "Little River",
+  "st": "Active",
   "c": [
    "Dance",
    "Breathwork/Meditation"
@@ -76,6 +78,7 @@
  {
   "n": "The Board Walks – Miami",
   "h": "Gables",
+  "st": "Active",
   "c": [
    "Walking",
    "Outdoor/Parks"
@@ -111,6 +114,7 @@
  {
   "n": "Miami Hiking Club",
   "h": null,
+  "st": "Active",
   "c": [
    "Outdoor/Parks",
    "Walking"
@@ -146,6 +150,7 @@
  {
   "n": "Girls On the Walk Miami",
   "h": null,
+  "st": "Active",
   "c": [
    "Walking",
    "Outdoor/Parks"
@@ -182,6 +187,7 @@
  {
   "n": "Miami Walk Club",
   "h": null,
+  "st": "Active",
   "c": [
    "Walking",
    "Outdoor/Parks"
@@ -217,6 +223,7 @@
  {
   "n": "Vizcaya Village Sunday Wellness Classes",
   "h": "Coconut Grove",
+  "st": "Active",
   "c": [
    "Yoga/Pilates",
    "Outdoor/Parks"
@@ -253,6 +260,7 @@
  {
   "n": "NOBE Yoga in the Park",
   "h": "Miami Beach",
+  "st": "Active",
   "c": [
    "Yoga/Pilates",
    "Outdoor/Parks"
@@ -289,6 +297,7 @@
  {
   "n": "BreathTribe Miami",
   "h": "Miami Shores/El Portal",
+  "st": "Active",
   "c": [
    "Breathwork/Meditation",
    "Recovery/Plunge",
@@ -323,6 +332,7 @@
  {
   "n": "Miami Tri Club",
   "h": null,
+  "st": "Active",
   "c": [
    "Run/Cardio",
    "Cycling",
@@ -357,6 +367,7 @@
  {
   "n": "Legion Park Yoga",
   "h": null,
+  "st": "Active",
   "c": [
    "Yoga/Pilates",
    "Outdoor/Parks"
@@ -393,6 +404,7 @@
  {
   "n": "Coffee & Chill",
   "h": null,
+  "st": "Active",
   "c": [
    "Recovery/Plunge"
   ],
@@ -426,6 +438,7 @@
  {
   "n": "Ziel Cycling Club",
   "h": "Gables",
+  "st": "Active",
   "c": [
    "Cycling"
   ],
@@ -457,6 +470,7 @@
  {
   "n": "SoLé Mia Running Club",
   "h": "North Miami/NMB",
+  "st": "Active",
   "c": [
    "Run/Cardio"
   ],
@@ -489,6 +503,7 @@
  {
   "n": "We Run The City",
   "h": "Downtown",
+  "st": "Active",
   "c": [
    "Run/Cardio"
   ],
@@ -524,6 +539,7 @@
  {
   "n": "Everglades Bicycle Club",
   "h": "Gables",
+  "st": "Active",
   "c": [
    "Cycling"
   ],
@@ -544,7 +560,7 @@
    "Competitive"
   ],
   "freq": "Weekly",
-  "sched": "Saturday training rides, 7:00 AM, through the end of September 2026; check the club calendar for future seasonal start times.",
+  "sched": "Saturdays, 7:30 AM; winter schedule runs October through April. Check the club calendar for summer start times.",
   "meet": "Ponce de Leon Middle School, across from UM, Coral Gables",
   "note": "South Florida's premier cycling club since 1976 — 50 years in 2026. Leader-led, no-drop rides mean nobody gets left on the Rickenbacker with a flat.",
   "know": "Annual membership is $40. New and prospective riders must read the Ride Guide and start at the back of the group to learn club protocols.",
@@ -557,6 +573,7 @@
  {
   "n": "Miami Critical Mass",
   "h": "Downtown",
+  "st": "Active",
   "c": [
    "Cycling",
    "Outdoor/Parks"
@@ -592,6 +609,7 @@
  {
   "n": "Dolphins & Rainbows Swim Group",
   "h": "Miami Beach",
+  "st": "Active",
   "c": [
    "Swim",
    "Outdoor/Parks"
@@ -627,6 +645,7 @@
  {
   "n": "TeamFootWorks Fun Runs",
   "h": "South Miami/Pinecrest",
+  "st": "Active",
   "c": [
    "Run/Cardio"
   ],
@@ -663,6 +682,7 @@
  {
   "n": "iRun & Company Social Runs",
   "h": "Midtown/Design District",
+  "st": "Active",
   "c": [
    "Run/Cardio"
   ],
@@ -699,6 +719,7 @@
  {
   "n": "3rd Street Beach Yoga",
   "h": "Miami Beach",
+  "st": "Active",
   "c": [
    "Yoga/Pilates"
   ],
@@ -735,6 +756,7 @@
  {
   "n": "Lincoln Road Free Community Yoga",
   "h": "Miami Beach",
+  "st": "Active",
   "c": [
    "Yoga/Pilates",
    "Outdoor/Parks"
@@ -771,6 +793,7 @@
  {
   "n": "Coconut Grove Run Club",
   "h": "Coconut Grove",
+  "st": "Active",
   "c": [
    "Run/Cardio"
   ],
@@ -806,6 +829,7 @@
  {
   "n": "Gables Run Club",
   "h": "Gables",
+  "st": "Active",
   "c": [
    "Run/Cardio"
   ],
@@ -841,6 +865,7 @@
  {
   "n": "South Beach Run Club",
   "h": "Miami Beach",
+  "st": "Active",
   "c": [
    "Run/Cardio"
   ],
@@ -876,6 +901,7 @@
  {
   "n": "Miami Run Club",
   "h": "Miami Beach",
+  "st": "Active",
   "c": [
    "Run/Cardio"
   ],
@@ -911,6 +937,7 @@
  {
   "n": "Brickell Run Club",
   "h": "Brickell",
+  "st": "Active",
   "c": [
    "Run/Cardio"
   ],
@@ -947,6 +974,7 @@
  {
   "n": "Miami Ice Club",
   "h": "Brickell",
+  "st": "Active",
   "c": [
    "Recovery/Plunge"
   ],

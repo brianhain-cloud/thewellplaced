@@ -130,4 +130,16 @@ console.log('missing:', r.filter(x=>!d.has(x.slice(7))).join(', ')||'none');"
 
 # no dashes
 grep -c $'—\|–' public/index.html
+
+# no stale dates: past events still Active, or prose naming a date that has gone
+python3 build/stale.py
 ```
+
+### Keeping dates honest
+
+Every database has a Status. Set an entry to **Past (Archive)** and the next
+build leaves it out; set it back to **Active** to bring it back, photo and all
+(Miami Spa Months is the one to flip back each June). The page also hides a dated
+event on its own the day after it ends, so a late deploy never shows a finished
+conference. When you rename an entry in Notion, add the old name to `CARRY` in
+`build/build.py` so its photo follows it.
