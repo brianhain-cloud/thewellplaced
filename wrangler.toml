@@ -7,14 +7,14 @@ main = "src/worker.js"
 # means .git, the Notion build inputs and the scripts cannot be served by
 # accident. An ignore list did not reliably exclude them.
 #
-# run_worker_first names the one path the Worker owns. Everything else is served
+# run_worker_first names the paths the Worker owns. Everything else is served
 # straight off the edge without ever starting the script, so adding the ask
 # endpoint costs the rest of the site nothing.
 [assets]
 directory = "./public"
 binding = "ASSETS"
 not_found_handling = "404-page"
-run_worker_first = [ "/translate" ]
+run_worker_first = [ "/translate", "/contact" ]
 
 [ai]
 binding = "AI"

@@ -1,4 +1,4 @@
-// The Well Placed: /translate
+// The Well Placed: /translate and /contact
 //
 // Turns a plain English question into filter values the guide already knows how
 // to apply. It never sees the guide's contents and never writes prose, so the
@@ -141,17 +141,80 @@ async function translate(env, q) {
   return sanitize(parseLoose(raw));
 }
 
+// ------------------------------------------------------------------ /contact
+// The Contact form. Each message becomes a row in the Messages database in
+// Notion, next to the guide's own data. NOTION_TOKEN is a Worker secret
+// (wrangler secret put NOTION_TOKEN) and never reaches the browser.
+const MESSAGES_DS = "41d4d6e7-2934-81a7-9ff3-000bb76eb39a";
+const KINDS = ["Suggest a space", "Correction", "Hello"];
+const MAX_MSG = 3000;
+
+function clip(v, n) {
+  return typeof v === "string" ? v.trim().slice(0, n) : "";
+}
+
+async function contact(request, env) {
+  if (!env.NOTION_TOKEN) return json({ error: "not set up" }, 503);
+
+  let b;
+  try { b = await request.json(); } catch (e) { return json({ error: "bad body" }, 400); }
+
+  // A field people never see. Anything that fills it in is a script, and it
+  // gets the same "thanks" a person would, so it learns nothing.
+  if (clip(b.website, 200)) return json({ ok: true });
+
+  const message = clip(b.message, MAX_MSG);
+  if (message.length < 2) return json({ error: "empty" }, 400);
+  const name = clip(b.name, 120);
+  let email = clip(b.email, 200);
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) email = "";
+  const kind = KINDS.includes(b.kind) ? b.kind : "Hello";
+  let page = clip(b.page, 300);
+  if (!/^https:\/\/(www\.)?thewellplaced\.com\//.test(page)) page = "";
+
+  // A person sends a note or two. Keyed apart from /translate so asking
+  // questions never uses up someone's chance to write in.
+  const ip = request.headers.get("cf-connecting-ip") || "unknown";
+  const mine = await env.RL_IP.limit({ key: "contact:" + ip });
+  if (!mine.success) return json({ error: "slow down" }, 429, { "retry-after": "60" });
+
+  const props = {
+    Name: { title: [{ text: { content: name || "(no name)" } }] },
+    Kind: { select: { name: kind } },
+    Status: { select: { name: "New" } },
+    // Notion caps one text run at 2000 characters.
+    Message: { rich_text: message.match(/[\s\S]{1,2000}/g).map((c) => ({ text: { content: c } })) }
+  };
+  if (email) props.Email = { email };
+  if (page) props.Page = { url: page };
+
+  const r = await fetch("https://api.notion.com/v1/pages", {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + env.NOTION_TOKEN,
+      "Notion-Version": "2025-09-03",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ parent: { type: "data_source_id", data_source_id: MESSAGES_DS }, properties: props })
+  });
+  if (!r.ok) { console.log("notion", r.status, (await r.text()).slice(0, 300)); return json({ error: "unavailable" }, 502); }
+  return json({ ok: true });
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // run_worker_first scopes this Worker to /translate, but a config change
+    // run_worker_first scopes this Worker to its two paths, but a config change
     // should not silently turn the site into a 404.
-    if (url.pathname !== "/translate") return env.ASSETS.fetch(request);
+    if (url.pathname !== "/translate" && url.pathname !== "/contact") return env.ASSETS.fetch(request);
     if (request.method !== "POST") return json({ error: "post only" }, 405);
 
     const origin = request.headers.get("origin");
     if (origin && !ORIGINS.includes(origin)) return json({ error: "bad origin" }, 403);
+
+    // A browser always sends Origin with a form post. Only scripts leave it out.
+    if (url.pathname === "/contact") return origin ? contact(request, env) : json({ error: "bad origin" }, 403);
 
     let q;
     try {

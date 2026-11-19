@@ -62,6 +62,27 @@ else. Check what would ship before a large change:
 npx wrangler deploy --dry-run
 ```
 
+## The contact form
+
+The footer's Contact link opens a form. It posts to `/contact` on the Worker,
+which adds a row to the **Messages** database in Notion (under The Well Placed
+page) with Status set to New. No email is involved.
+
+The Worker uses the same integration as `sync.py`, stored as a Worker secret:
+
+```
+grep NOTION_TOKEN .env | cut -d= -f2 | npx wrangler secret put NOTION_TOKEN
+```
+
+That integration needs **Insert content** turned on in its capabilities, and
+it must be connected to the Messages database (`...`, Connections), just like
+the other three. Without the secret the form answers 503; without the
+capability or the connection, Notion refuses and the form says it didn't go
+through (`npx wrangler tail` shows Notion's reason).
+
+Spam guards: a hidden field scripts fill in, a browser Origin check, and the
+per visitor rate limit.
+
 ## Adding photos
 
 Drop originals into `photos-raw/`, then:
@@ -98,7 +119,8 @@ repo root. `.env` is git-ignored; `.env.example` shows the shape.
 
 1. Go to <https://www.notion.so/profile/integrations> and create a new internal
    integration in the workspace that holds The Well Placed.
-2. Give it read access. It never writes, so no write capability is needed.
+2. Give it read access, plus insert content for the contact form. `sync.py`
+   itself never writes.
 3. Copy the secret into `.env` as `NOTION_TOKEN=...`.
 4. Open each of the three databases in Notion, then `...` menu, Connections,
    and add the integration. A token alone is not enough; Notion also requires

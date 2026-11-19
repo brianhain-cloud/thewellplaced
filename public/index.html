@@ -850,6 +850,30 @@
   }
   .modal-x:hover { color: var(--ink); }
 
+  /* Contact form */
+  .contact-form { display: grid; gap: 10px; text-align: left; }
+  .contact-form label { font: 600 0.78rem 'Inter', sans-serif; color: var(--sage-dark); }
+  .contact-form input, .contact-form select, .contact-form textarea {
+    width: 100%; margin-top: 4px; padding: 11px 14px;
+    font: 500 0.95rem 'Inter', sans-serif; color: var(--ink);
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    outline: none; transition: border-color 0.15s;
+  }
+  .contact-form textarea { min-height: 120px; resize: vertical; }
+  .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--sage); }
+  .contact-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .contact-form button {
+    margin-top: 4px; padding: 13px 22px;
+    font: 600 0.95rem 'Inter', sans-serif; color: #fff;
+    background: var(--sage-dark); border: none; border-radius: 10px; cursor: pointer;
+  }
+  .contact-form button:hover { background: var(--ink); }
+  .contact-form button:disabled { opacity: 0.6; cursor: default; }
+  .contact-note { font-size: 0.88rem; color: var(--sage-dark); min-height: 1.2em; text-align: center; }
+  .contact-note.err { color: var(--clay); }
+  .contact-done { font-size: 1rem; color: var(--ink); line-height: 1.5; }
+  .contact-form[hidden], .contact-done[hidden] { display: none; }
+
   .card { cursor: pointer; }
   .card:hover { border-color: rgba(92,114,99,0.4); }
   .locline { font-size: 0.78rem; color: rgba(31,42,36,0.55); }
@@ -1228,6 +1252,36 @@
   </div>
 </div>
 
+<div class="modal" id="contact-modal" role="dialog" aria-modal="true" aria-label="Contact The Well Placed">
+  <div class="modal-card">
+    <button class="modal-x" id="close-contact" aria-label="Close">&times;</button>
+    <span class="news-kicker">Say hello</span>
+    <h3 class="modal-title">Write to <em>us</em></h3>
+    <form class="contact-form" id="contact-form" novalidate>
+      <label>What's this about
+        <select name="kind">
+          <option>Suggest a space</option>
+          <option>Correction</option>
+          <option selected>Hello</option>
+        </select>
+      </label>
+      <label>Your name
+        <input name="name" autocomplete="name" maxlength="120">
+      </label>
+      <label>Your email, if you'd like a reply
+        <input name="email" type="email" autocomplete="email" maxlength="200">
+      </label>
+      <label>Message
+        <textarea name="message" required maxlength="3000"></textarea>
+      </label>
+      <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Send</button>
+      <p class="contact-note" id="contact-note" role="status"></p>
+    </form>
+    <p class="contact-done" id="contact-done" hidden>Thanks, it's in. If you left an email, you'll hear back soon.</p>
+  </div>
+</div>
+
 <footer>
   <div class="wrap-narrow">
     <div class="foot-links">
@@ -1235,7 +1289,7 @@
       <a href="https://thewellplaced.substack.com/" id="newsletter-link" target="_blank" rel="noopener">Newsletter</a>
       <!-- Instagram goes here once the handle is live:
       <a href="https://instagram.com/HANDLE" target="_blank" rel="noopener">Instagram</a> -->
-      <a href="mailto:hello@thewellplaced.com">Contact</a>
+      <a href="#contact" id="contact-link">Contact</a>
     </div>
     <div class="copyright">© 2026 The Well Placed · Miami, FL</div>
   </div>
@@ -3364,8 +3418,77 @@ document.getElementById("close-sub").addEventListener("click", closeSub);
 subModal.addEventListener("click", function (e) {
   if (e.target === subModal) closeSub();
 });
+// Contact form. Posts to the Worker, which files it in Notion.
+var contactModal = document.getElementById("contact-modal");
+var contactForm = document.getElementById("contact-form");
+var contactNote = document.getElementById("contact-note");
+var contactDone = document.getElementById("contact-done");
+
+function openContact(kind) {
+  contactForm.hidden = false;
+  contactDone.hidden = true;
+  contactNote.textContent = "";
+  contactNote.className = "contact-note";
+  if (kind) contactForm.kind.value = kind;
+  contactModal.className = "modal show";
+  setTimeout(function () { contactForm.message.focus(); }, 30);
+}
+function closeContact() { contactModal.className = "modal"; }
+
+document.getElementById("contact-link").addEventListener("click", function (e) {
+  e.preventDefault();
+  openContact();
+});
+document.getElementById("close-contact").addEventListener("click", closeContact);
+contactModal.addEventListener("click", function (e) {
+  if (e.target === contactModal) closeContact();
+});
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  var f = contactForm;
+  var msg = f.message.value.trim();
+  if (msg.length < 2) {
+    contactNote.className = "contact-note err";
+    contactNote.textContent = "Add a message first.";
+    f.message.focus();
+    return;
+  }
+  var email = f.email.value.trim();
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    contactNote.className = "contact-note err";
+    contactNote.textContent = "That email doesn't look right.";
+    f.email.focus();
+    return;
+  }
+  var btn = f.querySelector("button");
+  btn.disabled = true;
+  contactNote.className = "contact-note";
+  contactNote.textContent = "Sending\u2026";
+  fetch("/contact", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      kind: f.kind.value, name: f.name.value, email: email,
+      message: msg, website: f.website.value, page: location.href
+    })
+  }).then(function (r) {
+    if (!r.ok) throw new Error(r.status);
+    f.reset();
+    contactNote.textContent = "";
+    f.hidden = true;
+    contactDone.hidden = false;
+  }).catch(function (err) {
+    contactNote.className = "contact-note err";
+    contactNote.textContent = String(err.message) === "429"
+      ? "That's a lot of messages at once. Try again in a minute."
+      : "That didn't go through. Please try again in a moment.";
+  }).then(function () { btn.disabled = false; });
+});
+if (location.hash === "#contact") openContact();
+
 document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") { closeSub(); closeDetail(); }
+  if (e.key === "Escape") { closeSub(); closeDetail(); closeContact(); }
 });
 
 // open detail from a card (button or anywhere on the card that isn't a link)
